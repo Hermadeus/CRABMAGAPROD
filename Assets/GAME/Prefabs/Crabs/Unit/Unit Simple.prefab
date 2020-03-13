@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5759074482398561906}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Position 1
   m_TagString: Untagged
   m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
@@ -40,7 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5759074482579562653}
   - component: {fileID: 5759074482579562642}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Unit Simple
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -79,7 +79,10 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 11400000, guid: 0575ac5cd34d0cd4fa8f5225bc8aee02, type: 2}
+    - {fileID: 11400000, guid: 1fb26abf0061a2046b1fc264fe1de535, type: 2}
+    - {fileID: 11400000, guid: 51f7bae9978654945b7cb378da55f058, type: 2}
+    - {fileID: 11400000, guid: e6880928965898c4a895cef358ff5626, type: 2}
+    - {fileID: 11400000, guid: 8ef5e624b1644dd4ea475ecc0d5c7325, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -92,10 +95,24 @@ MonoBehaviour:
       Entry: 6
       Data: 
     - Name: attackBehaviour
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 1
+    - Name: detectBehaviour
+      Entry: 10
+      Data: 2
+    - Name: surroundBehaviour
+      Entry: 10
+      Data: 3
   pv: 0
   speed: 0
+  unitDetectable: []
+  layerMaskToDetect:
+    serializedVersion: 2
+    m_Bits: 512
+  detectableRange: 1.5
+  haveDetectUnit: 0
+  unitTarget: {fileID: 0}
+  asSurround: 0
   crabFormation:
     entities:
     - crab: {fileID: 0}
@@ -127,7 +144,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5759074482679509514}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Position 2
   m_TagString: Untagged
   m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
@@ -157,7 +174,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5759074482744069109}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Position 9
   m_TagString: Untagged
   m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
@@ -187,7 +204,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5759074482813966509}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Position 7
   m_TagString: Untagged
   m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
@@ -217,7 +234,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5759074483057807235}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Position 5
   m_TagString: Untagged
   m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
@@ -247,7 +264,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5759074483640111412}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Position 8
   m_TagString: Untagged
   m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
@@ -277,7 +294,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5759074483689935627}
-  m_Layer: 0
+  - component: {fileID: 2600827926860565710}
+  m_Layer: 8
   m_Name: Crabs[]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -298,6 +316,19 @@ Transform:
   m_Father: {fileID: 5759074482579562653}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2600827926860565710
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5759074483689935626}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5657109, y: 1, z: 0.56546164}
+  m_Center: {x: 0.0077551156, y: 0, z: -0.27934623}
 --- !u!1 &5759074483731919485
 GameObject:
   m_ObjectHideFlags: 0
@@ -307,7 +338,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5759074483731919474}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Position 4
   m_TagString: Untagged
   m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
@@ -337,7 +368,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5759074483755302153}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Positions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -376,7 +407,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5759074483851501871}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Position 3
   m_TagString: Untagged
   m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
@@ -406,7 +437,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5759074483864148338}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Position 6
   m_TagString: Untagged
   m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}

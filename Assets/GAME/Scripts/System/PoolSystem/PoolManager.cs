@@ -14,14 +14,12 @@ namespace CrabMaga
         [TableList(ShowPaging = true)]
         public List<Unit> unitsQueue = new List<Unit>();
 
-        public CrabUnit CrabUnitTest;
-        public int quantiteToPool = 8;
 
+        public Vector3 poolPosition = new Vector3(100, 0, 100);
 
         private void Start()
         {
-            PoolCrabsToUnit(CrabUnitTest, quantiteToPool);
-            PoolCrabToUnit(CrabUnitTest);
+            
         }
 
         public Crab PoolCrabToUnit(CrabUnit crabUnit)

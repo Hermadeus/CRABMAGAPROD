@@ -13,6 +13,8 @@ namespace CrabMaga
         float BaseSpeed { get; set; }
         void Move(Unit unit);
 
+        void MoveTowardTarget(Unit unit, Transform target, Action arrivedAction);
+
         void StopMove(Unit unit);
 
         void RestartMove(Unit unit);
@@ -20,10 +22,6 @@ namespace CrabMaga
 
     public interface IAttackBehaviour
     {
-        float Range { get; set; }
-        float Power { get; set; }
-        float AttackSpeed { get; set; }
-
         void Attack(Unit unit);
     }
 
@@ -72,5 +70,10 @@ namespace CrabMaga
         Collider[] DetectEnemies(Unit unit);
 
         Unit GetNearestUnitToAttack(Unit unit);
+    }
+
+    public interface ISurroundBehaviour
+    {
+        void Surround(Unit unit, Transform target);
     }
 }

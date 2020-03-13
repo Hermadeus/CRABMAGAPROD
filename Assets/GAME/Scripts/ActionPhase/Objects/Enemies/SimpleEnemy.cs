@@ -4,8 +4,12 @@ using UnityEngine;
 
 namespace CrabMaga
 {
-    public class SimpleEnemy : CrabUnit
+    public class SimpleEnemy : Unit
     {
-
+        public override void Push()
+        {
+            base.Push();
+            Destroy(gameObject);
+        }
     }
 }

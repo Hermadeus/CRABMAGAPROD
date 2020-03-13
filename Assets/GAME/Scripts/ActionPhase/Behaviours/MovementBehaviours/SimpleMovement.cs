@@ -15,7 +15,7 @@ namespace CrabMaga
         /// <param name="unit"></param>
         public override void Move(Unit unit)
         {
-            unit.transform.position += unit.transform.forward * unit.Speed * deltaTime.Value;
+            GoAllRight(unit);
         }
 
         /// <summary>

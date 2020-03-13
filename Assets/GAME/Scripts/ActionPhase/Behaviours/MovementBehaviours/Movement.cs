@@ -8,6 +8,7 @@ using Sirenix.OdinInspector;
 using DG.Tweening;
 
 using QRTools.Variables;
+using System;
 
 namespace CrabMaga
 {
@@ -17,6 +18,9 @@ namespace CrabMaga
 
         [SerializeField, BoxGroup("Properties")] float baseSpeed = .5f;
         public float BaseSpeed { get => baseSpeed; set => baseSpeed = value; }
+
+        [SerializeField, BoxGroup("Properties")] float baseRotationSpeed = .5f;
+        public float BaseRotationSpeed { get => baseRotationSpeed; set => baseRotationSpeed = value; }
 
         [BoxGroup("Properties")]
         public Ease ease = Ease.Linear;
@@ -45,6 +49,28 @@ namespace CrabMaga
         protected void StopMoving(Unit unit)
         {
             unit.IsMoving = false;
+        }
+
+        protected void GoAllRight(Unit unit)
+        {
+            unit.transform.position += unit.transform.forward * unit.Speed * deltaTime.Value;
+        }
+
+        public virtual void MoveTowardTarget(Unit unit, Transform target, Action arrivedAction)
+        {
+            if (target == null)
+                return;
+
+            
+            if (Vector3.Distance(unit.transform.position, target.position) > .5f)
+            {
+                GoAllRight(unit);
+                unit.transform.DOLookAt(unit.UnitTarget.transform.position, BaseRotationSpeed).SetEase(ease);
+            }
+            else if (Vector3.Distance(unit.UnitTarget.transform.position, unit.transform.position) < .5f)
+            {
+                arrivedAction.Invoke();
+            }
         }
     }
 }
