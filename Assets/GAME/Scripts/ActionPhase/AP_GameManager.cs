@@ -8,13 +8,19 @@ namespace CrabMaga
     {
         public LevelData levelData = default;
 
-        public void LoseAction()
+        public void WinAction()
         {
+            if(levelData)
+
+            Debug.Log("is Win");
+
             throw new System.NotImplementedException();
         }
 
-        public void WinAction()
+        public void LoseAction()
         {
+            Debug.Log("is Lose");
+
             throw new System.NotImplementedException();
         }
     }
