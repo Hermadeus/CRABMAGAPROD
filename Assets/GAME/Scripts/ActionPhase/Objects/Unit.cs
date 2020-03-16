@@ -12,6 +12,7 @@ namespace CrabMaga
     public class Unit : SerializedMonoBehaviour, IPoolable, IResetable
     {
         [BoxGroup("Data")] public UnitData unitData = default;
+        [BoxGroup("References")] public AP_GameManager ap_GameManager = default;
 
         [BoxGroup("Behaviours")]
         public IMovementBehaviour movementBehaviour = default;
@@ -165,7 +166,6 @@ namespace CrabMaga
         #region PoolSystem
         public virtual void Push()
         {
-            Debug.Log("push");
             IsPool = false;
 
             transform.position = poolManager.poolPosition;

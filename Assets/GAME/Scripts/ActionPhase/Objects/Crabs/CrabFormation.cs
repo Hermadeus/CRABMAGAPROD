@@ -39,18 +39,34 @@ namespace CrabMaga
                     GetRandomCrab();
             }
             else
+            {
+                entities[x].crab = null;
                 return c;
+            }
+
+            return null;
+        }
+
+        public Crab GetNextCrab()
+        {
+            for (int i = 0; i < entities.Count; i++)
+            {
+                if (entities[i].crab != null)
+                {
+                    Crab c = entities[i].crab;
+                    entities[i].crab = null;
+                    return c;
+                }
+            }
 
             return null;
         }
 
         public Crab PushRandomCrab()
         {
-            Crab c = GetRandomCrab();
+            Crab c = GetNextCrab();
 
             c.Push();
-
-            Debug.Log(c);
 
             return c;
         }

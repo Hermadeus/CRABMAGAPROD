@@ -21,6 +21,13 @@ namespace CrabMaga
             FunctionsUseful.DistanceMinAction(transform, castle.transform, .2f, ReachCastle);
         }
 
+        public override void Push()
+        {
+            base.Push();
+
+            ap_GameManager.crabsInvoke.Remove(this);
+        }
+
         public void ReachCastle()
         {
             castle.ReachCastle();

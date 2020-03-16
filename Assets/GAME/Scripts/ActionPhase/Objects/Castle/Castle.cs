@@ -9,12 +9,13 @@ namespace CrabMaga
     public class Castle : MonoBehaviour
     {
         public AP_GameManager APGameManager = default;
+        public int crabReach = 0;
 
         public UnityEvent OnReach = default;
 
         public void ReachCastle()
         {
-            APGameManager.levelData.score++;
+            crabReach++;
             OnReach.Invoke();
         }
     }
