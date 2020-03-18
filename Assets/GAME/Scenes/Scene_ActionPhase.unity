@@ -859,6 +859,51 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 417990232}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &456481118
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 456481119}
+  - component: {fileID: 456481120}
+  m_Layer: 0
+  m_Name: GuardHouse
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &456481119
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456481118}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.21, y: 0, z: 1.71}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 992409521}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &456481120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456481118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2eaa235ef1fa7341bf5a93b566bbf83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOccupy: 0
+  enemyOccupate: {fileID: 0}
 --- !u!1 &484112865
 GameObject:
   m_ObjectHideFlags: 0
@@ -1275,7 +1320,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -3013,6 +3058,54 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 992099801}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &992409520
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 992409521}
+  - component: {fileID: 992409522}
+  m_Layer: 0
+  m_Name: GuardHouses
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &992409521
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992409520}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 456481119}
+  - {fileID: 1764140534}
+  m_Father: {fileID: 1216956780}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &992409522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992409520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 125ba0046e8e1c441a6e4ebfcf9131c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guardHouses:
+  - {fileID: 1764140535}
+  - {fileID: 456481120}
 --- !u!114 &1007955110 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 771473378484606890, guid: 2810b86e2efb2634fa77de4f109daff4,
@@ -3205,6 +3298,8 @@ MonoBehaviour:
   unitTarget: {fileID: 0}
   asSurround: 0
   poolManager: {fileID: 1286813649}
+  guardHouseManager: {fileID: 992409522}
+  guardhouseTarget: {fileID: 0}
 --- !u!4 &1028323193
 Transform:
   m_ObjectHideFlags: 0
@@ -3213,7 +3308,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1028323191}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 1.18, y: 0, z: 1.62}
+  m_LocalPosition: {x: 0.21, y: 0, z: 2.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 294272576}
@@ -3245,7 +3340,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1052652981}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -1.5, y: 0, z: 0}
+  m_LocalPosition: {x: 0.13, y: 0, z: 2.8400002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 667916496}
@@ -3305,6 +3400,8 @@ MonoBehaviour:
   unitTarget: {fileID: 0}
   asSurround: 0
   poolManager: {fileID: 1286813649}
+  guardHouseManager: {fileID: 992409522}
+  guardhouseTarget: {fileID: 0}
 --- !u!1001 &1054147693
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3932,6 +4029,7 @@ Transform:
   m_Children:
   - {fileID: 388222676}
   - {fileID: 912561197}
+  - {fileID: 992409521}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4963,7 +5061,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1669790872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5202,6 +5300,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f198568a1455c94479f956c36c1e700d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1764140533
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1764140534}
+  - component: {fileID: 1764140535}
+  m_Layer: 0
+  m_Name: GuardHouse (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1764140534
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764140533}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.43, y: 0, z: 0.03}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 992409521}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1764140535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764140533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2eaa235ef1fa7341bf5a93b566bbf83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOccupy: 0
+  enemyOccupate: {fileID: 0}
 --- !u!1 &1765163698
 GameObject:
   m_ObjectHideFlags: 0
@@ -6639,6 +6782,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Unit Simple
+      objectReference: {fileID: 0}
+    - target: {fileID: 5759074482579562652, guid: e47217afa42d7cb47b8fd4a04e9e8618,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5759074482579562653, guid: e47217afa42d7cb47b8fd4a04e9e8618,
         type: 3}

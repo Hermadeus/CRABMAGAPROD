@@ -14,13 +14,7 @@ namespace CrabMaga
         [TableList(ShowPaging = true)]
         public List<Unit> unitsQueue = new List<Unit>();
 
-
         public Vector3 poolPosition = new Vector3(100, 0, 100);
-
-        private void Start()
-        {
-            
-        }
 
         public Crab PoolCrabToUnit(CrabUnit crabUnit)
         {
