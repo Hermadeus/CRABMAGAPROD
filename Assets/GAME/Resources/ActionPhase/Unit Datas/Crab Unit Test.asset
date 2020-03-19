@@ -13,13 +13,19 @@ MonoBehaviour:
   m_Name: Crab Unit Test
   m_EditorClassIdentifier: 
   behaviourSystem: {fileID: 11400000, guid: 65fa9772d44e2ec47bab627a75c1152e, type: 2}
-  startMovementBehaviour: 3
+  startMovementBehaviour: 4
   startHealth: 30
   baseSpeed: 0.2
   speedEnum: 1
+  rotationSpeed: 0.5
   acceleration: 2
   accelerationEnum: 2
   damage: 50
   attackSpeed: 0.5
   detectionRange: 1
   detectionBehaviour: 0
+  entityType: 0
+  favoriteTarget: 1
+  layerMaskTarget:
+    serializedVersion: 2
+    m_Bits: 512

@@ -82,6 +82,7 @@ namespace CrabMaga
     public enum MovementBehaviourEnum
     {
         TARGET_MOVEMENT,
+        FOLLOW_TARGET_MOVEMENT,
         NULL_MOVEMENT,
         GO_ALL_RIGHT_MOVEMENT,
         JOIN_CASTLE_MOVEMENT
@@ -97,5 +98,12 @@ namespace CrabMaga
         SHORT,
         MEDIUM,
         LONG
+    }
+
+    [System.Flags]
+    public enum EntityType
+    {
+        CRAB_UNIT = 1,
+        ENEMY = 2
     }
 }

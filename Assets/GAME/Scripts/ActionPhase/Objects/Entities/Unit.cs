@@ -26,13 +26,36 @@ namespace CrabMaga
 
         [FoldoutGroup("Gameplay References")]
         [SerializeField] Entity target = default;
-        public Entity Target
+        public virtual Entity Target
         {
             get => target;
             set
             {
                 target = value;
             }
+        }
+
+        [FoldoutGroup("Attributes")]
+        public EntityType entityType = EntityType.CRAB_UNIT;
+        [FoldoutGroup("Attributes")]
+        public EntityType favoriteTarget = EntityType.CRAB_UNIT;
+        [FoldoutGroup("Attributes")]
+        public LayerMask layerMaskTarget = default;
+
+        public Collider[] unitInRangeOfView;
+
+        public override void UpdateComportement()
+        {
+            base.UpdateComportement();
+
+            if(Target == null)
+                detectionBehaviour?.Detect(this);
+        }
+
+        void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.white;
+            Gizmos.DrawWireSphere(transform.position, DetectionRange);
         }
     }
 }

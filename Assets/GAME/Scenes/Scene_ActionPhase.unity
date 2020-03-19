@@ -241,7 +241,6 @@ GameObject:
   m_Component:
   - component: {fileID: 261077667}
   - component: {fileID: 261077668}
-  - component: {fileID: 261077669}
   m_Layer: 0
   m_Name: '[GAME MANAGER]'
   m_TagString: Untagged
@@ -275,23 +274,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 261077666}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5ec714ac4e7d5b4781e96abdb01fd85, type: 3}
+  m_Script: {fileID: 11500000, guid: 7b7bd9797753f1041b13d3fd4f68f31a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelData: {fileID: 11400000, guid: 6accd0d137ebb4f4287d78c1c9a2c4c7, type: 2}
---- !u!114 &261077669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 261077666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93f8095de0283934dbef806e370100f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AP_GameManager: {fileID: 261077668}
 --- !u!1 &388222675
 GameObject:
   m_ObjectHideFlags: 0
@@ -335,7 +320,7 @@ GameObject:
   m_Component:
   - component: {fileID: 433979253}
   - component: {fileID: 433979252}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrabUnit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -382,6 +367,12 @@ MonoBehaviour:
   destination: {fileID: 0}
   detectionRange: 0
   target: {fileID: 0}
+  entityType: 0
+  favoriteTarget: 0
+  layerMaskTarget:
+    serializedVersion: 2
+    m_Bits: 0
+  unitInRangeOfView: []
 --- !u!4 &433979253
 Transform:
   m_ObjectHideFlags: 0
@@ -472,7 +463,7 @@ GameObject:
   - component: {fileID: 498518176}
   - component: {fileID: 498518178}
   - component: {fileID: 498518177}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -552,7 +543,7 @@ GameObject:
   - component: {fileID: 575752578}
   - component: {fileID: 575752577}
   - component: {fileID: 575752576}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -852,7 +843,7 @@ GameObject:
   - component: {fileID: 590461021}
   - component: {fileID: 590461024}
   - component: {fileID: 590461023}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1056,7 +1047,7 @@ GameObject:
   - component: {fileID: 660536259}
   - component: {fileID: 660536258}
   - component: {fileID: 660536257}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1149,7 +1140,7 @@ GameObject:
   - component: {fileID: 664932323}
   - component: {fileID: 664932322}
   - component: {fileID: 664932321}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1328,7 +1319,7 @@ GameObject:
   m_Component:
   - component: {fileID: 873380483}
   - component: {fileID: 873380484}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1391,6 +1382,12 @@ MonoBehaviour:
   destination: {fileID: 456481119}
   detectionRange: 0
   target: {fileID: 0}
+  entityType: 0
+  favoriteTarget: 0
+  layerMaskTarget:
+    serializedVersion: 2
+    m_Bits: 0
+  unitInRangeOfView: []
 --- !u!1 &912561196
 GameObject:
   m_ObjectHideFlags: 0
@@ -1539,7 +1536,7 @@ GameObject:
   m_Component:
   - component: {fileID: 945363286}
   - component: {fileID: 945363285}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1586,6 +1583,12 @@ MonoBehaviour:
   destination: {fileID: 1764140534}
   detectionRange: 0
   target: {fileID: 0}
+  entityType: 0
+  favoriteTarget: 0
+  layerMaskTarget:
+    serializedVersion: 2
+    m_Bits: 0
+  unitInRangeOfView: []
 --- !u!4 &945363286
 Transform:
   m_ObjectHideFlags: 0
@@ -1708,7 +1711,7 @@ GameObject:
   - component: {fileID: 1222858258}
   - component: {fileID: 1222858260}
   - component: {fileID: 1222858259}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}

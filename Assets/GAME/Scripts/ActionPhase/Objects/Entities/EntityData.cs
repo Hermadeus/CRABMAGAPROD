@@ -39,6 +39,13 @@ namespace CrabMaga
         [FoldoutGroup("Unit attribute")]
         public DetectionBehaviourEnum detectionBehaviour = DetectionBehaviourEnum.CLOSEST_DETECTION;
 
+        [FoldoutGroup("Unit attribute")]
+        public EntityType entityType = EntityType.CRAB_UNIT;
+        [FoldoutGroup("Unit attribute")]
+        public EntityType favoriteTarget = EntityType.CRAB_UNIT;
+        [FoldoutGroup("Unit attribute")]
+        public LayerMask layerMaskTarget = default;
+
         public virtual void Init(Entity entity)
         {
             baseSpeed = behaviourSystem.GetSpeed(speedEnum);
@@ -61,6 +68,10 @@ namespace CrabMaga
                 
                 unit.detectionBehaviour = behaviourSystem.GetDetectionBehaviour(detectionBehaviour);
                 unit.DetectionRange = behaviourSystem.GetDetectionRange(detectionRange);
+
+                unit.entityType = entityType;
+                unit.favoriteTarget = favoriteTarget;
+                unit.layerMaskTarget = layerMaskTarget;
             }
         }
     }

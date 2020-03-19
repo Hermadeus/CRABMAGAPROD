@@ -12,7 +12,7 @@ namespace CrabMaga
         public virtual void Move(Entity _entity)
         {
             _entity.movementTween.Kill();
-
+            
             if (_entity.Speed == 0)
                 DOTween.To(() => _entity.Speed, x => _entity.Speed = x, _entity.entityData.baseSpeed, _entity.entityData.acceleration);
         }
