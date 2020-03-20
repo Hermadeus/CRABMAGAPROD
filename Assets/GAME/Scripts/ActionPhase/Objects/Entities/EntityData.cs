@@ -45,6 +45,8 @@ namespace CrabMaga
         public EntityType favoriteTarget = EntityType.CRAB_UNIT;
         [FoldoutGroup("Unit attribute")]
         public LayerMask layerMaskTarget = default;
+        [FoldoutGroup("Unit attribute")]
+        public AttackEnum attackType = AttackEnum.SIMPLE_ATTACK;
 
         public virtual void Init(Entity entity)
         {
@@ -57,9 +59,6 @@ namespace CrabMaga
             entity.Speed = baseSpeed;
             entity.rotationSpeed = rotationSpeed;
 
-            entity.Damage = damage;
-            entity.AttackSpeed = attackSpeed;
-
             entity.movementBehaviour = behaviourSystem.GetMovementBehaviour(startMovementBehaviour);
 
             if(entity is Unit)
@@ -68,6 +67,10 @@ namespace CrabMaga
                 
                 unit.detectionBehaviour = behaviourSystem.GetDetectionBehaviour(detectionBehaviour);
                 unit.DetectionRange = behaviourSystem.GetDetectionRange(detectionRange);
+
+                unit.Damage = damage;
+                unit.AttackSpeed = attackSpeed;
+                unit.attackBehaviour = behaviourSystem.GetAttackState(attackType);
 
                 unit.entityType = entityType;
                 unit.favoriteTarget = favoriteTarget;

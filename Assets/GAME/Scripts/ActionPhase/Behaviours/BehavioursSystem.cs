@@ -61,6 +61,16 @@ namespace CrabMaga
             detectionState.TryGetValue(_key, out f_detectionRange);
             return f_detectionRange;
         }
+
+        [BoxGroup("Attack System")]
+        public Dictionary<AttackEnum, IAttackBehaviour> attackState = new Dictionary<AttackEnum, IAttackBehaviour>();
+
+        public IAttackBehaviour GetAttackState(AttackEnum _key)
+        {
+            IAttackBehaviour f_attackBehaviour = null;
+            attackState.TryGetValue(_key, out f_attackBehaviour);
+            return f_attackBehaviour;
+        }
     }
 
     public enum SpeedEnum
@@ -90,7 +100,8 @@ namespace CrabMaga
 
     public enum DetectionBehaviourEnum
     {
-        CLOSEST_DETECTION
+        CLOSEST_DETECTION,
+        NULL_DETECTION
     }
 
     public enum DetectionRangeEnum
@@ -105,5 +116,11 @@ namespace CrabMaga
     {
         CRAB_UNIT = 1,
         ENEMY = 2
+    }
+
+    public enum AttackEnum
+    {
+        NULL_ATTACK,
+        SIMPLE_ATTACK
     }
 }

@@ -12,9 +12,20 @@ namespace CrabMaga
             set
             {
                 base.Target = value;
-                movementBehaviour = entityData.behaviourSystem.GetMovementBehaviour(MovementBehaviourEnum.FOLLOW_TARGET_MOVEMENT);
-                movementBehaviour.Move(this);
+
+                if (value != null)
+                {
+                    movementBehaviour = entityData.behaviourSystem.GetMovementBehaviour(MovementBehaviourEnum.FOLLOW_TARGET_MOVEMENT);
+                    movementBehaviour.Move(this);
+                }
             }
         }
+
+        public override void AsWin()
+        {
+            base.AsWin();
+            MovementBehaviourEnum = MovementBehaviourEnum.TARGET_MOVEMENT;
+        }
     }
+
 }

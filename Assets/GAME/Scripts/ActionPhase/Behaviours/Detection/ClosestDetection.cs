@@ -10,29 +10,38 @@ namespace CrabMaga
         public override void Detect(Unit _unit)
         {
             base.Detect(_unit);
+            
+            _unit.UnitInRangeOfView = Physics.OverlapSphere(_unit.position, _unit.DetectionRange, _unit.layerMaskTarget);
+            //if (_unit.UnitInRangeOfView.Length == 0)
+            //    return;
 
-            _unit.unitInRangeOfView = Physics.OverlapSphere(_unit.position, _unit.DetectionRange, _unit.layerMaskTarget);
-            if (_unit.unitInRangeOfView.Length == 0)
-                return;
+            //int x = 0;
+            //float bestDist = 1000f;
 
-            int x = 0;
-            float bestDist = 1000f;
+            //for (int i = 0; i < _unit.UnitInRangeOfView.Length; i++)
+            //{
+            //    if(_unit.UnitInRangeOfView[i].GetComponentInParent<Unit>().entityType == _unit.favoriteTarget)
+            //    {
+            //        Unit t = _unit.UnitInRangeOfView[i].GetComponentInParent<Unit>();
+            //        if (t.attackedBy != null)
+            //            return;
 
-            for (int i = 0; i < _unit.unitInRangeOfView.Length; i++)
-            {
-                if(_unit.unitInRangeOfView[i].GetComponentInParent<Unit>().entityType == _unit.favoriteTarget)
-                {
-                    _unit.Target = _unit.unitInRangeOfView[i].GetComponentInParent<Unit>();
-                    return;
-                }
-                else if (Vector3.Distance(_unit.transform.position, _unit.unitInRangeOfView[i].transform.position) < bestDist)
-                {
-                    x = i;
-                    bestDist = Vector3.Distance(_unit.transform.position, _unit.unitInRangeOfView[i].transform.position);
-                }
-            }
+            //        _unit.Target = t;
+            //        return;
+            //    }
+            //    else if (Vector3.Distance(_unit.transform.position, _unit.UnitInRangeOfView[i].transform.position) < bestDist)
+            //    {
+            //        x = i;
+            //        bestDist = Vector3.Distance(_unit.transform.position, _unit.UnitInRangeOfView[i].transform.position);
+            //    }
+            //}
 
-            _unit.Target = _unit.unitInRangeOfView[x].GetComponentInParent<Unit>();
+            //Unit _t = _unit.UnitInRangeOfView[x].GetComponentInParent<Unit>();
+
+            //if (_t.attackedBy != null)
+            //    return;
+
+            //_unit.Target = _t;
         }
     }
 }

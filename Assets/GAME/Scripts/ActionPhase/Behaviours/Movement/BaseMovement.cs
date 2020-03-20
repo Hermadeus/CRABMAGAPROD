@@ -19,6 +19,7 @@ namespace CrabMaga
 
         public void StopMove(Entity _entity)
         {
+            _entity.movementTween.Kill();
             DOTween.To(() => _entity.Speed, x => _entity.Speed = x, 0, .1f);
         }
     }

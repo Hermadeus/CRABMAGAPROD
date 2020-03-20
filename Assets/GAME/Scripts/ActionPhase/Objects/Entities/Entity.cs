@@ -11,7 +11,7 @@ using DG.Tweening;
 
 namespace CrabMaga
 {
-    public class Entity : SerializedMonoBehaviour, IResetable
+    public class Entity : SerializedMonoBehaviour, IResetable, IAttackReceiver
     {
         public EntityData entityData = default;
 
@@ -40,40 +40,27 @@ namespace CrabMaga
             set
             {
                 movementBehaviourEnum = value;
+                movementTween.Kill();
                 movementBehaviour = entityData.behaviourSystem.GetMovementBehaviour(value);
+                movementBehaviour.Move(this);
             }
         }
     
         [FoldoutGroup("Attributes")]
-        [SerializeField] float health = 0f;
-        public float Health
+        [SerializeField] protected float health = 0f;
+        public virtual float Health
         {
             get => health;
             set
             {
                 health = value;
-            }
-        }
-
-        [FoldoutGroup("Attributes")]
-        [SerializeField] float damage = 0f;
-        public float Damage
-        {
-            get => damage;
-            set
-            {
-                damage = value;
-            }
-        }
-
-        [FoldoutGroup("Attributes")]
-        [SerializeField] float attackSpeed = 0f;
-        public float AttackSpeed
-        {
-            get => attackSpeed;
-            set
-            {
-                attackSpeed = value;
+                if (value <= 0)
+                {
+                    if(this != null)
+                    {
+                        Death();
+                    }
+                }
             }
         }
 
@@ -105,7 +92,7 @@ namespace CrabMaga
 
         public virtual void Init()
         {
-            entityData.Init(this);
+            entityData?.Init(this);
 
             movementBehaviour?.Move(this);
         }
@@ -118,6 +105,17 @@ namespace CrabMaga
         public virtual void ResetObject()
         {
             throw new System.NotImplementedException();
+        }
+
+        protected virtual void Death()
+        {
+            Debug.Log(name + " Death");
+                        Destroy(gameObject);
+        }
+
+        public void ReceiveAttack(float _damage)
+        {
+            Health -= _damage;
         }
     }
 }

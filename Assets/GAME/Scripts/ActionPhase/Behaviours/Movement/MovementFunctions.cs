@@ -18,7 +18,8 @@ namespace CrabMaga
             }
             else
             {
-                _entity.transform.DOLookAt(destinationPoint, _entity.rotationSpeed).OnComplete(delegate {
+                _entity.movementTween =
+                    _entity.transform.DOLookAt(destinationPoint, _entity.rotationSpeed).OnComplete(delegate {
                     _entity.movementTween = _entity.transform.DOMove(destinationPoint, GetTimeMovement(_entity, destinationPoint));
                 });
             }

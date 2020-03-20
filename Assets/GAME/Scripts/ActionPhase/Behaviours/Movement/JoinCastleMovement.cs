@@ -29,9 +29,6 @@ namespace CrabMaga
             }
 
             MovementFunctions.GoTo(_entity, hit.point, true);
-
-            //_entity.transform.DOLookAt(hit.point, _entity.rotationSpeed);
-            //_entity.movementTween = _entity.transform.DOMove(hit.point, GetTimeMovement(_entity, hit.point));
         }
     }
 }
