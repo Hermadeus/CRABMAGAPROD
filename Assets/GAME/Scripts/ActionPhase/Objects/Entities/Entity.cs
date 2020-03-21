@@ -58,10 +58,8 @@ namespace CrabMaga
                 health = value;
                 if (value <= 0)
                 {
-                    if(this != null)
-                    {
-                        Death();
-                    }
+                    Death();
+
                 }
             }
         }
@@ -73,6 +71,8 @@ namespace CrabMaga
 
         [FoldoutGroup("References")]
         public AP_GameManager gameManager = default;
+        [FoldoutGroup("References")]
+        public PoolingManager poolingManager = default;
 
         [FoldoutGroup("Gameplay References")]
         [SerializeField] Transform destination = default;
@@ -120,14 +120,9 @@ namespace CrabMaga
 
         }
 
-        public virtual void ResetObject()
-        {
-            throw new System.NotImplementedException();
-        }
-
         protected virtual void Death()
         {
-            Destroy(gameObject);
+            poolingManager.Push(this);
         }
 
         public void ReceiveAttack(float _damage)
@@ -137,13 +132,31 @@ namespace CrabMaga
 
         public virtual void OnPool()
         {
-            Debug.Log("OnPool " + name);
             Init();
         }
 
         public virtual void OnPush()
         {
-            
+            if (this.enabled == false)
+                return;
+
+            ResetObject();
+        }
+
+        public virtual void ResetObject()
+        {
+            entityData = null;
+
+            movementTween.Kill();
+            movementTween = null;
+            StopAllCoroutines();
+            movementCor = null;
+
+            movementBehaviour = null;
+            Speed = 1000;
+            Health = 10000;
+
+            Destination = null;
         }
     }
 }

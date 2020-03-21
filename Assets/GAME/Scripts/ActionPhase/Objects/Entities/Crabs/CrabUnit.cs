@@ -1,11 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
+
+using Sirenix.OdinInspector;
 
 namespace CrabMaga
 {
     public class CrabUnit : Unit
     {
+        [FoldoutGroup("Gameplay References")]
+        public CrabFormation crabFormationReference = default;
+
         public override Unit Target
         {
             get => base.Target;
@@ -20,22 +26,12 @@ namespace CrabMaga
             base.OnUnitRangeDetectionReachZero();
             MovementBehaviourEnum = MovementBehaviourEnum.JOIN_CASTLE_MOVEMENT;
         }
-    }
 
-    [System.Serializable]
-    public class CrabGroup
-    {
-        [SerializeField] private Crab crab = default;
-        public Vector3 relativePosition = new Vector3();
-        [HideInInspector] public CrabUnit crabUnit;
-
-        public Crab Crab
+        public override void ResetObject()
         {
-            get => crab;
-            set
-            {
-                crab = value;                
-            }
+            base.ResetObject();
+
+            crabFormationReference = null;
         }
     }
 }

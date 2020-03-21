@@ -12,7 +12,7 @@ namespace CrabMaga
         public LevelData levelData = default;
 
         [BoxGroup("AP Informations")] 
-        public List<Entity> crabOnBattle = new List<Entity>();
+        public List<CrabFormation> crabFormationOnBattle = new List<CrabFormation>();
 
         private void Awake()
         {

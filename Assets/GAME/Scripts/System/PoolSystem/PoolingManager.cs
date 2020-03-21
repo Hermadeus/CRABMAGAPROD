@@ -20,18 +20,40 @@ namespace CrabMaga
 
         [BoxGroup("References")]
         public Transform QueueObject;
-
-        public EntityData data;
+        [BoxGroup("References")]
+        public AP_GameManager APgameManager = default;
+        [BoxGroup("References")]
         public InputTouch InputTouch;
 
-        private void Awake()
+        public EntityData data;
+
+        public void PoolUnit()
         {
+            CreateCrabFormation(data);
+
+            PoolEntity<CrabUnit>(data, new Vector3(InputTouch.RayPoint.x, 0, InputTouch.RayPoint.z));
         }
 
-        public void PoolTest()
+        public void CreateCrabFormation(EntityData data)
         {
-            PoolEntity<CrabUnit>(data, new Vector3(InputTouch.RayPoint.x, 0, InputTouch.RayPoint.z));
+            if (APgameManager.crabFormationOnBattle.Count >= 3)
+            {
+                return;
+            }
 
+            CrabFormation _crabFormation = Pool<CrabFormation>(Vector3.zero) as CrabFormation;
+            APgameManager.crabFormationOnBattle.Add(_crabFormation);
+
+            for (int i = 0; i < 3; i++)
+            {
+                for (int y = 0; y < 3; y++)
+                {
+                    CrabUnit crabUnit = PoolEntity<CrabUnit>(data, new Vector3(InputTouch.RayPoint.x * (i / 2f), 0, InputTouch.RayPoint.z * (y / 2f)));
+
+                    _crabFormation.CrabUnits.Add(crabUnit);
+                    crabUnit.crabFormationReference = _crabFormation;
+                }
+            }
         }
 
         public T PoolEntity<T>(EntityData _entityData, Vector3 _position) where T : Entity
@@ -43,35 +65,47 @@ namespace CrabMaga
             return entity;
         }
 
-        public IPoolable Pool(IPoolable obj, Vector3 _position)
+        public IPoolable Pool<T> (Vector3 _position, Transform parent = null, bool onPool = false) where T : MonoBehaviour
         {
-            obj.OnPool();
-            return obj;
-        }
-
-        public IPoolable Pool<T> (Vector3 _position, bool onPool = false) where T : MonoBehaviour
-        {
-            for (int i = 0; i < poolables.Count; i++)
-            {
-                if (poolables[i] is T)
+            if(poolables.Count > 0)
+                for (int i = 0; i < poolables.Count; i++)
                 {
-                    T _obj = poolables[i] as T;
-                    _obj.transform.position = _position;
-                    _obj.transform.parent = null;
+                    if (poolables[i] is T)
+                    {
+                        T _obj = poolables[i] as T;
+                        _obj.enabled = true;
 
-                    if (onPool)
-                        ((IPoolable)_obj).OnPool();
+                        _obj.transform.position = _position;
 
-                    IPoolable _poolable = poolables[i];
-                    poolables.RemoveAt(i);
+                        if (parent == null)
+                            _obj.transform.parent = null;
+                        else
+                            _obj.transform.parent = parent;
 
-                    return _poolable;
+                        if (onPool)
+                            ((IPoolable)_obj).OnPool();
+
+                        IPoolable _poolable = poolables[i];
+                        poolables.RemoveAt(i);
+
+                        return _poolable;
+                    }
                 }
-            }
 
             throw new System.Exception(string.Format(
                 "Impossible de trouver le type de Poolable que tu recherches dans la liste de poolable."
                 ));
+        }
+
+        public void Push(IPushable pushable)
+        {
+            if(pushable is IPoolable)
+                poolables.Add(pushable as IPoolable);
+
+            MonoBehaviour mb = pushable as MonoBehaviour;
+            mb.transform.position = pushPos;
+            pushable.OnPush();
+            mb.enabled = false;
         }
 
         [Button]
@@ -79,12 +113,12 @@ namespace CrabMaga
         {
             poolables.Clear();
 
-            var _poolables = FindObjectsOfType<Entity>();
+            var _poolables = FindObjectsOfType<MonoBehaviour>();
 
             for (int i = 0; i < _poolables.Length; i++)
             {
                 if (_poolables[i] is IPoolable)
-                    poolables.Add(_poolables[i]);
+                    poolables.Add(_poolables[i] as IPoolable);
             }
 
             Debug.Log(poolables.Count + " poolables found");
