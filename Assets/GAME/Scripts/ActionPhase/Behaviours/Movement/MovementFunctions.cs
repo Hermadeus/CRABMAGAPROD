@@ -11,6 +11,9 @@ namespace CrabMaga
     {
         public static void GoTo(Entity _entity, Vector3 destinationPoint, bool rotationAndMove = false)
         {
+            if (_entity == null)
+                return;
+
             if (!rotationAndMove)
             {
                 _entity.transform.DOLookAt(destinationPoint, _entity.rotationSpeed);

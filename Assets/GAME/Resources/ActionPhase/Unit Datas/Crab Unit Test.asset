@@ -14,18 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   behaviourSystem: {fileID: 11400000, guid: 65fa9772d44e2ec47bab627a75c1152e, type: 2}
   startMovementBehaviour: 4
-  startHealth: 30
+  startHealth: 5
   baseSpeed: 0.2
   speedEnum: 1
   rotationSpeed: 0.5
   acceleration: 2
   accelerationEnum: 2
-  damage: 6
+  damage: 0
   attackSpeed: 0.5
   detectionRange: 1
   detectionBehaviour: 0
-  entityType: 0
-  favoriteTarget: 1
+  entityType: 1
+  favoriteTarget: 2
   layerMaskTarget:
     serializedVersion: 2
     m_Bits: 512

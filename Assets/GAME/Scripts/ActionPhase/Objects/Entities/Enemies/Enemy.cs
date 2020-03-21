@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Sirenix.OdinInspector;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,17 +16,35 @@ namespace CrabMaga
 
                 if (value != null)
                 {
-                    movementBehaviour = entityData.behaviourSystem.GetMovementBehaviour(MovementBehaviourEnum.FOLLOW_TARGET_MOVEMENT);
-                    movementBehaviour.Move(this);
+                    MovementBehaviourEnum = MovementBehaviourEnum.FOLLOW_TARGET_MOVEMENT;
                 }
             }
         }
 
+        public Collider[] hitColliders;
+
         public override void AsWin()
         {
             base.AsWin();
-            MovementBehaviourEnum = MovementBehaviourEnum.TARGET_MOVEMENT;
+
+            CheckAttackedBy();
+            if (AttackedBy.Count == 0)
+            {
+                movementTween.onKill();
+                MovementBehaviourEnum = MovementBehaviourEnum.TARGET_MOVEMENT;
+            }
+        }
+
+        public override void FixedUpdateComportement()
+        {
+            base.FixedUpdateComportement();
+            hitColliders = Physics.OverlapBox(gameObject.transform.position, transform.localScale / 2, Quaternion.identity, layerMaskTarget);            
+        }
+
+        void OnDrawGizmos()
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireCube(transform.position, transform.localScale);
         }
     }
-
 }

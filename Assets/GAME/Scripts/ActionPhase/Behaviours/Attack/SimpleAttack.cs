@@ -14,12 +14,16 @@ namespace CrabMaga
 
         public override IEnumerator AttackCor(Unit _unit, IAttackReceiver _receiver)
         {
-            yield return new WaitForSeconds(_unit.AttackSpeed);
+            _unit.isAttacking = true;
 
+            yield return new WaitForSeconds(_unit.AttackSpeed);
+            
             if (_unit == null || _receiver == null)
                 yield break;
 
-            _receiver?.ReceiveAttack(_unit.Damage);
+            Effect(_unit, _receiver);
+
+            _unit.isAttacking = false;
 
             if (_unit == null || _receiver == null)
                 yield break;
@@ -27,6 +31,11 @@ namespace CrabMaga
             _unit.attackCor = _unit.StartCoroutine(AttackCor(_unit, _receiver));
 
             yield break;
+        }
+
+        public override void Effect(Unit _unit, IAttackReceiver _receiver)
+        {
+            _receiver?.ReceiveAttack(_unit.Damage);
         }
     }
 }

@@ -15,5 +15,10 @@ namespace CrabMaga
         {
             yield break;
         }
+
+        public virtual void Effect(Unit _unit, IAttackReceiver _receiver)
+        {
+
+        }
     }
 }

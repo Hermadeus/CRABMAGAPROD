@@ -67,7 +67,14 @@ namespace CrabMaga
         [HideInInspector]
         public Tween movementTween;
         [HideInInspector]
-        public Vector3 position => transform.position;
+        public Vector3 position
+        {
+            get
+            {
+                return transform.position;
+            }
+            set => position = value;
+        }
 
         [FoldoutGroup("Gameplay References")]
         [SerializeField] Transform destination = default;
@@ -90,6 +97,11 @@ namespace CrabMaga
             UpdateComportement();
         }
 
+        private void FixedUpdate()
+        {
+            FixedUpdateComportement();
+        }
+
         public virtual void Init()
         {
             entityData?.Init(this);
@@ -102,6 +114,11 @@ namespace CrabMaga
 
         }
 
+        public virtual void FixedUpdateComportement()
+        {
+
+        }
+
         public virtual void ResetObject()
         {
             throw new System.NotImplementedException();
@@ -110,7 +127,7 @@ namespace CrabMaga
         protected virtual void Death()
         {
             Debug.Log(name + " Death");
-                        Destroy(gameObject);
+            Destroy(gameObject);
         }
 
         public void ReceiveAttack(float _damage)

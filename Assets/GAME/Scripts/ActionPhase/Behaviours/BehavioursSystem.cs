@@ -121,6 +121,8 @@ namespace CrabMaga
     public enum AttackEnum
     {
         NULL_ATTACK,
-        SIMPLE_ATTACK
+        SIMPLE_ATTACK,
+        ATTACK_CRAB_UNIT,
+        COLLIDER_ATTACK
     }
 }

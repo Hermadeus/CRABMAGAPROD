@@ -6,6 +6,12 @@ namespace CrabMaga
 {
     public class Crab : Unit
     {
-        public Unit crabUnitReference = default;
+        public CrabUnit crabUnitReference = default;
+
+        protected override void Death()
+        {
+            crabUnitReference.ReceiveAttack(Health);
+            base.Death();
+        }
     }
 }

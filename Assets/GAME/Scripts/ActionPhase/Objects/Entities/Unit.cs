@@ -75,11 +75,21 @@ namespace CrabMaga
                 unitInRangeOfView = value;                
             }
         }
-        
-        [FoldoutGroup("Gameplay References")]
-        public Unit attackedBy;
 
+        [FoldoutGroup("Gameplay References")]
+        [SerializeField] private List<Unit> attackedBy = new List<Unit>();
+        public List<Unit> AttackedBy
+        {
+            get => attackedBy;
+            set
+            {
+                attackedBy = value;
+                CheckAttackedBy();
+            }
+        }
+        
         [HideInInspector] public Coroutine attackCor;
+        public bool isAttacking = false;
 
         [FoldoutGroup("Debug")] public bool isTarget = false;
 
@@ -102,36 +112,40 @@ namespace CrabMaga
 
         public void IsAttackBy(Unit _unit)
         {
-            attackedBy = _unit;
+            AttackedBy.Add(_unit);
+
+            CheckAttackedBy();
+
             MovementBehaviourEnum = MovementBehaviourEnum.NULL_MOVEMENT;
 
-            if(Target == null)
+            if (!isAttacking)
             {
-                Debug.Log(name);
+                attackBehaviour.Attack(this, Target);
             }
-            
-            attackBehaviour.Attack(this, Target);
         }
 
         public virtual void AsWin()
         {
-            attackedBy = null;
             Target = null;
             isTarget = false;
-            Debug.Log(name + " win");
+
+            isAttacking = false;
         }
 
         protected override void Death()
         {
-            if (Target is Unit)
-                ((Unit)Target).AsWin();
+            if (AttackedBy != null && AttackedBy.Count > 0)
+            {
+                for (int i = 0; i < AttackedBy.Count; i++)
+                    AttackedBy[i].AsWin();
+            }                
 
             base.Death();
         }
 
         void Check()
         {
-            if (UnitInRangeOfView.Length == 0)
+            if (UnitInRangeOfView.Length == 0 || Target != null)
                 return;
 
             int x = 0;
@@ -168,6 +182,15 @@ namespace CrabMaga
 
             t.isTarget = true;
             Target = t;
+        }
+
+        protected void CheckAttackedBy()
+        {
+            for (int i = 0; i < AttackedBy.Count; i++)
+            {
+                if (AttackedBy[i] == null)
+                    AttackedBy.RemoveAt(i);
+            }
         }
     }
 }
