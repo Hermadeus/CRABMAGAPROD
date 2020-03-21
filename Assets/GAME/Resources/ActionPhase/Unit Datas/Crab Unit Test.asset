@@ -13,16 +13,17 @@ MonoBehaviour:
   m_Name: Crab Unit Test
   m_EditorClassIdentifier: 
   behaviourSystem: {fileID: 11400000, guid: 65fa9772d44e2ec47bab627a75c1152e, type: 2}
+  entityName: CrabUnit Test
   startMovementBehaviour: 4
-  startHealth: 5
+  startHealth: 20
   baseSpeed: 0.2
   speedEnum: 1
   rotationSpeed: 0.5
   acceleration: 2
   accelerationEnum: 2
-  damage: 0
-  attackSpeed: 0.5
-  detectionRange: 1
+  damage: 1
+  attackSpeed: 1
+  detectionRange: 0
   detectionBehaviour: 0
   entityType: 1
   favoriteTarget: 2

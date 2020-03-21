@@ -7,38 +7,30 @@ namespace CrabMaga
 {
     public class Enemy : Unit
     {
-        public override Entity Target
+        public override Unit Target
         {
             get => base.Target;
             set
             {
                 base.Target = value;
 
-                if (value != null)
-                {
-                    MovementBehaviourEnum = MovementBehaviourEnum.FOLLOW_TARGET_MOVEMENT;
-                }
+                if (Target != null)
+                    StopCoroutine(movementCor);
             }
         }
 
         public Collider[] hitColliders;
 
-        public override void AsWin()
-        {
-            base.AsWin();
-
-            CheckAttackedBy();
-            if (AttackedBy.Count == 0)
-            {
-                movementTween.onKill();
-                MovementBehaviourEnum = MovementBehaviourEnum.TARGET_MOVEMENT;
-            }
-        }
-
         public override void FixedUpdateComportement()
         {
             base.FixedUpdateComportement();
             hitColliders = Physics.OverlapBox(gameObject.transform.position, transform.localScale / 2, Quaternion.identity, layerMaskTarget);            
+        }
+
+        protected override void OnUnitRangeDetectionReachZero()
+        {
+            base.OnUnitRangeDetectionReachZero();
+            MovementBehaviourEnum = MovementBehaviourEnum.TARGET_MOVEMENT;
         }
 
         void OnDrawGizmos()

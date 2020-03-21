@@ -15,7 +15,7 @@ namespace CrabMaga
             base.Move(_entity);
 
             if (_entity.Destination != null)
-                MovementFunctions.GoTo(_entity, _entity.Destination.position, true);
+                MovementFunctions.GoTo(_entity, _entity.Destination.position, _entity.Speed, null, .1f);
             else
                 throw new System.Exception(
                     string.Format("{0} n'a pas de destination.", _entity.gameObject.name)

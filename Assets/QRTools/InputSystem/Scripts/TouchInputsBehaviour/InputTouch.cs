@@ -41,23 +41,27 @@ namespace QRTools.Inputs
                 {
                     case TouchPhase.Began:
                         InputEnterPosition = touch.position;
-                        onTouchEnter?.Invoke();
                         Raycast();
+
+                        onTouchEnter?.Invoke();
                         break;
                     case TouchPhase.Moved:
                         InputCurrentPosition = touch.position;
-                        onTouchMoving?.Invoke();
                         Raycast();
+
+                        onTouchMoving?.Invoke();
                         break;
                     case TouchPhase.Stationary:
                         InputCurrentPosition = touch.position;
-                        onTouchStay?.Invoke();
                         Raycast();
+
+                        onTouchStay?.Invoke();
                         break;
                     case TouchPhase.Ended:
                         InputExitPosition = touch.position;
-                        onTouchEnd?.Invoke();
                         Raycast();
+
+                        onTouchEnd?.Invoke();
                         break;
                     case TouchPhase.Canceled:
                         break;

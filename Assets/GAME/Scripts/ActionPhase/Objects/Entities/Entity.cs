@@ -11,7 +11,8 @@ using DG.Tweening;
 
 namespace CrabMaga
 {
-    public class Entity : SerializedMonoBehaviour, IResetable, IAttackReceiver
+    public class Entity : SerializedMonoBehaviour,
+        IResetable, IAttackReceiver, IPoolable, IPushable
     {
         public EntityData entityData = default;
 
@@ -41,6 +42,7 @@ namespace CrabMaga
             {
                 movementBehaviourEnum = value;
                 movementTween.Kill();
+                if(movementCor != null) StopCoroutine(movementCor);
                 movementBehaviour = entityData.behaviourSystem.GetMovementBehaviour(value);
                 movementBehaviour.Move(this);
             }
@@ -67,14 +69,10 @@ namespace CrabMaga
         [HideInInspector]
         public Tween movementTween;
         [HideInInspector]
-        public Vector3 position
-        {
-            get
-            {
-                return transform.position;
-            }
-            set => position = value;
-        }
+        public Coroutine movementCor;
+
+        [FoldoutGroup("References")]
+        public AP_GameManager gameManager = default;
 
         [FoldoutGroup("Gameplay References")]
         [SerializeField] Transform destination = default;
@@ -87,9 +85,12 @@ namespace CrabMaga
             }
         }
 
+        [FoldoutGroup("Debug"), SerializeField] bool initALaMano = false;
+
         private void Awake()
         {
-            Init();
+            if (initALaMano)
+                Init();
         }
 
         private void Update()
@@ -126,13 +127,23 @@ namespace CrabMaga
 
         protected virtual void Death()
         {
-            Debug.Log(name + " Death");
             Destroy(gameObject);
         }
 
         public void ReceiveAttack(float _damage)
         {
             Health -= _damage;
+        }
+
+        public virtual void OnPool()
+        {
+            Debug.Log("OnPool " + name);
+            Init();
+        }
+
+        public virtual void OnPush()
+        {
+            
         }
     }
 }

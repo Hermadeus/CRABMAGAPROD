@@ -11,37 +11,24 @@ namespace CrabMaga
         {
             base.Detect(_unit);
             
-            _unit.UnitInRangeOfView = Physics.OverlapSphere(_unit.position, _unit.DetectionRange, _unit.layerMaskTarget);
-            //if (_unit.UnitInRangeOfView.Length == 0)
-            //    return;
+            _unit.UnitInRangeOfView = Physics.OverlapSphere(_unit.transform.position, _unit.DetectionRange, _unit.layerMaskTarget);
 
-            //int x = 0;
-            //float bestDist = 1000f;
+            if (_unit.UnitInRangeOfView.Length > 0)
+            {
+                float _closestDist = 1000f;
+                int _index = 0;
 
-            //for (int i = 0; i < _unit.UnitInRangeOfView.Length; i++)
-            //{
-            //    if(_unit.UnitInRangeOfView[i].GetComponentInParent<Unit>().entityType == _unit.favoriteTarget)
-            //    {
-            //        Unit t = _unit.UnitInRangeOfView[i].GetComponentInParent<Unit>();
-            //        if (t.attackedBy != null)
-            //            return;
+                for (int i = 0; i < _unit.UnitInRangeOfView.Length; i++)
+                {
+                    if(Vector3.Distance(_unit.UnitInRangeOfView[i].transform.position, _unit.transform.position) < _closestDist)
+                    {
+                        _index = i;
+                        _closestDist = Vector3.Distance(_unit.UnitInRangeOfView[i].transform.position, _unit.transform.position);
+                    }
+                }
 
-            //        _unit.Target = t;
-            //        return;
-            //    }
-            //    else if (Vector3.Distance(_unit.transform.position, _unit.UnitInRangeOfView[i].transform.position) < bestDist)
-            //    {
-            //        x = i;
-            //        bestDist = Vector3.Distance(_unit.transform.position, _unit.UnitInRangeOfView[i].transform.position);
-            //    }
-            //}
-
-            //Unit _t = _unit.UnitInRangeOfView[x].GetComponentInParent<Unit>();
-
-            //if (_t.attackedBy != null)
-            //    return;
-
-            //_unit.Target = _t;
+                _unit.Target = _unit.UnitInRangeOfView[_index].GetComponentInParent<Unit>();
+            }
         }
     }
 }

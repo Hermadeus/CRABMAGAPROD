@@ -14,6 +14,9 @@ namespace CrabMaga
         public BehavioursSystem behaviourSystem = default;
 
         [BoxGroup("Entity attribute")]
+        public string entityName = "";
+
+        [BoxGroup("Entity attribute")]
         public MovementBehaviourEnum startMovementBehaviour = MovementBehaviourEnum.TARGET_MOVEMENT;
         
         [BoxGroup("Entity attribute")]
@@ -50,6 +53,8 @@ namespace CrabMaga
 
         public virtual void Init(Entity entity)
         {
+            entity.name = entityName;
+
             baseSpeed = behaviourSystem.GetSpeed(speedEnum);
             acceleration = behaviourSystem.GetAcceleration(accelerationEnum);
             

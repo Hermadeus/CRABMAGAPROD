@@ -8,7 +8,7 @@ using Sirenix.OdinInspector;
 namespace CrabMaga
 {
     [SelectionBase]
-    public class Unit : Entity
+    public class Unit : Entity, IAttack
     {
         [FoldoutGroup("Comportements")]
         public IDetectSomethingBehaviour detectionBehaviour = default;
@@ -48,14 +48,22 @@ namespace CrabMaga
             }
         }
 
+        private Unit previousTarget = null;
+
         [FoldoutGroup("Gameplay References")]
-        [SerializeField] Entity target = default;
-        public virtual Entity Target
+        [SerializeField] Unit target = default;
+        public virtual Unit Target
         {
             get => target;
             set
             {
                 target = value;
+
+                if(value != previousTarget)
+                {
+                    MovementBehaviourEnum = MovementBehaviourEnum.FOLLOW_TARGET_MOVEMENT;
+                    previousTarget = value;
+                }
             }
         }
         
@@ -66,42 +74,26 @@ namespace CrabMaga
         [FoldoutGroup("Attributes")]
         public LayerMask layerMaskTarget = default;
 
-        [FoldoutGroup("Debug"), SerializeField] Collider[] unitInRangeOfView;
+        [FoldoutGroup("Debug"), SerializeField] protected Collider[] unitInRangeOfView;
         public virtual Collider[] UnitInRangeOfView
         {
             get => unitInRangeOfView;
             set
             {
-                unitInRangeOfView = value;                
+                if (value.Length != unitInRangeOfView.Length)
+                    OnUnitRangeDetectionReachZero();
+
+                unitInRangeOfView = value;
             }
         }
 
-        [FoldoutGroup("Gameplay References")]
-        [SerializeField] private List<Unit> attackedBy = new List<Unit>();
-        public List<Unit> AttackedBy
-        {
-            get => attackedBy;
-            set
-            {
-                attackedBy = value;
-                CheckAttackedBy();
-            }
-        }
-        
         [HideInInspector] public Coroutine attackCor;
-        public bool isAttacking = false;
-
-        [FoldoutGroup("Debug")] public bool isTarget = false;
 
         public override void UpdateComportement()
         {
             base.UpdateComportement();
-
-            if(Target == null)
-                detectionBehaviour?.Detect(this);
-
-            if (UnitInRangeOfView.Length > 0 && UnitInRangeOfView != null)
-                Check();
+            
+            detectionBehaviour?.Detect(this);
         }
 
         void OnDrawGizmosSelected()
@@ -110,87 +102,14 @@ namespace CrabMaga
             Gizmos.DrawWireSphere(transform.position, DetectionRange);
         }
 
-        public void IsAttackBy(Unit _unit)
+        public void Attack(Unit _unit, IAttackReceiver _target)
         {
-            AttackedBy.Add(_unit);
-
-            CheckAttackedBy();
-
-            MovementBehaviourEnum = MovementBehaviourEnum.NULL_MOVEMENT;
-
-            if (!isAttacking)
-            {
-                attackBehaviour.Attack(this, Target);
-            }
+            attackBehaviour.Attack(_unit, _target);
         }
 
-        public virtual void AsWin()
+        protected virtual void OnUnitRangeDetectionReachZero()
         {
-            Target = null;
-            isTarget = false;
 
-            isAttacking = false;
-        }
-
-        protected override void Death()
-        {
-            if (AttackedBy != null && AttackedBy.Count > 0)
-            {
-                for (int i = 0; i < AttackedBy.Count; i++)
-                    AttackedBy[i].AsWin();
-            }                
-
-            base.Death();
-        }
-
-        void Check()
-        {
-            if (UnitInRangeOfView.Length == 0 || Target != null)
-                return;
-
-            int x = 0;
-            float bestDist = 1000f;
-
-            Unit t = null;
-
-            for (int i = 0; i < UnitInRangeOfView.Length; i++)
-            {
-                if (UnitInRangeOfView[i].GetComponentInParent<Unit>().entityType == favoriteTarget)
-                {
-                    t = UnitInRangeOfView[i].GetComponentInParent<Unit>();
-                    if (t.isTarget || t == null)
-                        if (Vector3.Distance(transform.position, UnitInRangeOfView[i].transform.position) < bestDist)
-                        {
-                            x = i;
-                            bestDist = Vector3.Distance(transform.position, UnitInRangeOfView[i].transform.position);
-                        }
-
-                    t.isTarget = true;
-                    Target = t;
-
-                    return;
-                }
-            }
-
-            t = UnitInRangeOfView[x].GetComponentInParent<Unit>();
-
-            if (t == null)
-                return;
-
-            if (t.isTarget)
-                return;
-
-            t.isTarget = true;
-            Target = t;
-        }
-
-        protected void CheckAttackedBy()
-        {
-            for (int i = 0; i < AttackedBy.Count; i++)
-            {
-                if (AttackedBy[i] == null)
-                    AttackedBy.RemoveAt(i);
-            }
         }
     }
 }

@@ -18,6 +18,11 @@ namespace CrabMaga
         void Detect(Unit _unit);
     }
 
+    public interface IAttack
+    {
+        void Attack(Unit _unit, IAttackReceiver _target);
+    }
+
     public interface IAttackBehaviour : IBehaviour
     {
         void Attack(Unit _unit, IAttackReceiver _receiver);

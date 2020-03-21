@@ -24,29 +24,23 @@ namespace CrabMaga
             {
                 Unit _unit = _entity as Unit;
 
-                float d = Vector3.Distance(_entity.position, _unit.Target.position);
+                float d = Vector3.Distance(_entity.transform.position, _unit.Target.transform.position);
 
                 while (d > distanceToCheck)
                 {
-                    if (((Unit)_unit.Target).AttackedBy == null)
+                    if (_unit.Target == null)
                         yield break;
 
-                    d = Vector3.Distance(_entity.position, _unit.Target.position);
-                    _entity.transform.DOLookAt(_unit.Target.position, _entity.rotationSpeed);
-                    _entity.movementTween = _entity.transform.DOMove(_unit.Target.position, MovementFunctions.GetTimeMovement(_entity, _unit.Target.position)).OnComplete(                    
-                        delegate { _entity.transform.DOLookAt(_unit.Target.position, _entity.rotationSpeed);}
-                        );
+                    d = Vector3.Distance(_entity.transform.position, _unit.Target.transform.position);
+                    _entity.transform.DOLookAt(_unit.Target.transform.position, _entity.rotationSpeed);
+
+                    _entity.transform.position = Vector3.MoveTowards(_entity.transform.position, _unit.Target.transform.position, _entity.Speed * Time.deltaTime);
+
                     yield return null;
                 }
 
-                _unit.MovementBehaviourEnum = MovementBehaviourEnum.NULL_MOVEMENT;
-
-                Unit _target = ((Unit)_unit.Target);
-
-                // Definir une priorité ?
-
-                _unit.IsAttackBy(_target);
-                _target.IsAttackBy(_unit);
+                //Debug.Log("REACH");
+                _unit.Attack(_unit, _unit.Target);
             }
 
             yield break;

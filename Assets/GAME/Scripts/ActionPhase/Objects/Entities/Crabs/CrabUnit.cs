@@ -6,24 +6,18 @@ namespace CrabMaga
 {
     public class CrabUnit : Unit
     {
-        public override Entity Target
+        public override Unit Target
         {
             get => base.Target;
             set
             {
                 base.Target = value;
-
-                if (value != null)
-                {
-                    movementBehaviour = entityData.behaviourSystem.GetMovementBehaviour(MovementBehaviourEnum.FOLLOW_TARGET_MOVEMENT);
-                    movementBehaviour.Move(this);
-                }
             }
         }
 
-        public override void AsWin()
+        protected override void OnUnitRangeDetectionReachZero()
         {
-            base.AsWin();
+            base.OnUnitRangeDetectionReachZero();
             MovementBehaviourEnum = MovementBehaviourEnum.JOIN_CASTLE_MOVEMENT;
         }
     }

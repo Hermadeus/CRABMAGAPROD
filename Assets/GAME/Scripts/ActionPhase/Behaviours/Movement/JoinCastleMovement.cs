@@ -18,13 +18,13 @@ namespace CrabMaga
 
             RaycastHit hit;
 
-            if (Physics.Raycast(_entity.position, Vector3.forward, out hit, Mathf.Infinity, mask))
+            if (Physics.Raycast(_entity.transform.position, Vector3.forward, out hit, Mathf.Infinity, mask))
             {
-                Debug.DrawRay(_entity.position, Vector3.forward * hit.distance, Color.yellow);
+                Debug.DrawRay(_entity.transform.position, Vector3.forward * hit.distance, Color.yellow);
             }
             else
             {
-                Debug.DrawRay(_entity.position, Vector3.forward * 1000, Color.white);
+                Debug.DrawRay(_entity.transform.position, Vector3.forward * 1000, Color.white);
                 throw new System.Exception(string.Format("{0} ne trouve pas le chateau !", _entity.name));
             }
 
