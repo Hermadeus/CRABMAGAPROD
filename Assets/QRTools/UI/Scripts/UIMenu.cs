@@ -44,6 +44,7 @@ namespace QRTools.UI
         public override void Show()
         {
             menu.blocksRaycasts = true;
+            menu.interactable = true;
 
             switch (apparitionMode)
             {
@@ -61,6 +62,7 @@ namespace QRTools.UI
         public override void Hide()
         {
             menu.blocksRaycasts = false;
+            menu.interactable = false;
 
             switch (apparitionMode)
             {

@@ -21,6 +21,8 @@ namespace CrabMaga
         public PlayerData playerData = default;
         [BoxGroup("References")]
         public PoolingManager poolingManager = default;
+        [BoxGroup("References")]
+        public AP_GameManager AP_GameManager = default;
 
         [FoldoutGroup("Slots")]
         public UnitWheelSlot
@@ -72,9 +74,13 @@ namespace CrabMaga
 
         public override void Show()
         {
-            base.Show();
-
-            rectTransform.localPosition = new Vector2(UnitWheelInput.InputCurrentPosition.x - (Screen.width / 2), UnitWheelInput.InputCurrentPosition.y - (Screen.height / 2));
+            if (UnitWheelInput.objectHit.GetComponent<InstantiationZone>())
+            {
+                base.Show();
+                rectTransform.localPosition = new Vector2(
+                    UnitWheelInput.InputCurrentPosition.x - (Screen.width / 2),
+                    UnitWheelInput.InputCurrentPosition.y - (Screen.height / 2));
+            }
         }
 
         public override void Hide()
@@ -100,6 +106,9 @@ namespace CrabMaga
 
         public void CheckSlot()
         {
+            if (AP_GameManager.InPause)
+                return;
+
             m_PointerEventData = new PointerEventData(m_EventSystem);
             m_PointerEventData.position = Input.mousePosition;
 

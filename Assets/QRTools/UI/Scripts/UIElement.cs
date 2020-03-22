@@ -53,7 +53,7 @@ namespace QRTools.UI
             ShowElement(.5f);
         }
 
-        public void HideElement(float timer)
+        public void HideElement(float timer = 0f)
         {
             show.Kill();
             
@@ -61,7 +61,7 @@ namespace QRTools.UI
             element.interactable = false;
         }
 
-        public void ShowElement(float timer)
+        public void ShowElement(float timer = 0f) 
         {
             hide.Kill();
             
