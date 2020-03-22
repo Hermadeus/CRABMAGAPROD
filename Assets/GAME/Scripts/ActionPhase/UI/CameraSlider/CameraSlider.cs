@@ -79,11 +79,15 @@ namespace CrabMaga
         {
             if (playerData.rightHand)
             {
-                rectTransform.localPosition = new Vector3((screenWidth / 2) - 50, 0, 0);
+                rectTransform.anchorMin = new Vector2(1, 0.5f);
+                rectTransform.anchorMax = new Vector2(1, 0.5f);
+                rectTransform.pivot = new Vector2(1, 0.5f);
             }
             else
             {
-                rectTransform.localPosition = new Vector3((-screenWidth / 2) + 50, 0, 0);
+                rectTransform.anchorMin = new Vector2(0, 0.5f);
+                rectTransform.anchorMax = new Vector2(0, 0.5f);
+                rectTransform.pivot = new Vector2(0, 0.5f);
             }
         }
     }
