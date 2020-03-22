@@ -9,18 +9,18 @@ using Sirenix.OdinInspector;
 
 using QRTools.UI;
 using QRTools.Inputs;
+using QRTools.Utilities.Observer;
 
 namespace CrabMaga
 {
-    public class UnitWheel : UIElement
+    public class UnitWheel : UIElement, IObservable
     {
         [BoxGroup("References")]
         public InputTouch UnitWheelInput = default;
         [BoxGroup("References")]
         public PlayerData playerData = default;
-
-        [BoxGroup("Properties")]
-        public bool rightHand = true;
+        [BoxGroup("References")]
+        public PoolingManager poolingManager = default;
 
         [FoldoutGroup("Slots")]
         public UnitWheelSlot
@@ -29,21 +29,45 @@ namespace CrabMaga
             slot03,
             slot04;
 
-        public UnitWheelSlot currentSelectedSlot;
+        UnitWheelSlot previousSelectedSlot;
+        [SerializeField] UnitWheelSlot currentSelectedSlot;
+        public UnitWheelSlot CurrentSelectedSlot
+        {
+            get => currentSelectedSlot;
+            set
+            {                
+                currentSelectedSlot = value;
+
+                if(value != previousSelectedSlot)
+                {
+                    SetSelectAllSlot(false);
+
+                    if(CurrentSelectedSlot != null)
+                        CurrentSelectedSlot.IsSelected = true;
+
+                    previousSelectedSlot = value;
+                }
+            }
+        }
 
         GraphicRaycaster m_Raycaster;
         PointerEventData m_PointerEventData;
         EventSystem m_EventSystem;
 
+
         public override void Init()
         {
-            if (!rightHand)
+            base.Init();
+
+            if (!playerData.rightHand)
                 rectTransform.localScale = new Vector3(rectTransform.localScale.x * -1, rectTransform.localScale.y, rectTransform.localScale.z);
 
             InitSlots();
 
             m_Raycaster = GetComponent<GraphicRaycaster>();
             m_EventSystem = GetComponent<EventSystem>();
+
+            Add(playerData);
         }
 
         public override void Show()
@@ -57,10 +81,12 @@ namespace CrabMaga
         {
             base.Hide();
 
-            if (currentSelectedSlot != null)
+            if (CurrentSelectedSlot != null)
             {
-                currentSelectedSlot.OnSelect();
-                currentSelectedSlot = null;
+                InstantiateFormation();
+                CurrentSelectedSlot.OnSelect();
+                CurrentSelectedSlot.IsSelected = false;
+                CurrentSelectedSlot = null;
             }
         }
 
@@ -81,10 +107,60 @@ namespace CrabMaga
 
             m_Raycaster.Raycast(m_PointerEventData, results);
 
+            if(results.Count == 0)
+            {
+                SetSelectAllSlot(false);
+                return;
+            }
+
             foreach (RaycastResult result in results)
             {
                 if (result.gameObject.GetComponent<UnitWheelSlot>())
-                    currentSelectedSlot = result.gameObject.GetComponent<UnitWheelSlot>();
+                {
+                    CurrentSelectedSlot = result.gameObject.GetComponent<UnitWheelSlot>();
+                    if (!CurrentSelectedSlot.IsSelected)
+                        CurrentSelectedSlot.IsSelected = true;
+                }
+            }
+        }
+
+        public void InstantiateFormation()
+        {
+            poolingManager.CreateCrabFormation(CurrentSelectedSlot.entityDataRef, UnitWheelInput.RayPoint);
+        }
+
+        void SetSelectAllSlot(bool state)
+        {
+            slot01.IsSelected = state;
+            slot02.IsSelected = state;
+            slot03.IsSelected = state;
+            slot04.IsSelected = state;
+        }
+
+        public void Add(IObserver observer)
+        {
+            playerData.Observables.Add(this);
+        }
+
+        public void Remove(IObserver observer)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Notify()
+        {
+            ChangeHand();
+        }
+
+        void ChangeHand()
+        {
+            if (playerData.rightHand)
+            {
+                rectTransform.localScale = new Vector3(1, rectTransform.localScale.y, rectTransform.localScale.z);
+            }
+            else
+            {
+                rectTransform.localScale = new Vector3(-1, rectTransform.localScale.y, rectTransform.localScale.z);
             }
         }
     }

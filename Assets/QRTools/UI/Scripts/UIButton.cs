@@ -1,17 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+
 using TMPro;
+
+using Sirenix.OdinInspector;
 
 namespace QRTools.UI
 {
     public class UIButton : UIElement, IUIInteractible
     {
-        public Button button = default;
+        public UIButtonParameters buttonParameters = default;
+        public string parameterKey = "Default";
 
-        public Image backGround = default;
+        public Button button = default;
 
         public TextMeshProUGUI title = default;
 
@@ -61,7 +66,17 @@ namespace QRTools.UI
 
         public override void Init()
         {
+            TryGetComponent<Button>(out button);
+
             button.onClick.AddListener(OnClick.Invoke);
+
+            if (buttonParameters != null)
+            {
+                UITheme theme = buttonParameters?.GetTheme(parameterKey);
+                ColorBlock cb = theme.colorBlock;
+                cb.selectedColor = cb.normalColor;
+                button.colors = cb;
+            }
         }
     }
 }

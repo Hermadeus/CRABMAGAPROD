@@ -31,9 +31,29 @@ namespace CrabMaga
         [BoxGroup("References")]
         public Castle castle = default;
 
+        bool inPause = false;
+        public bool InPause
+        {
+            get => inPause;
+            set
+            {
+                inPause = value;
+
+                if (value)
+                {
+                    Time.timeScale = 0f;
+                }
+                else
+                {
+                    Time.timeScale = 1f;
+                }
+            }
+        }
+
         private void Awake()
         {
             Application.targetFrameRate = 60;
+            Time.timeScale = 1f;
         }
 
         public void Win()

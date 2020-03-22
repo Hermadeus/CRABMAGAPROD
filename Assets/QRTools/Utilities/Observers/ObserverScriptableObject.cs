@@ -8,7 +8,7 @@ namespace QRTools.Utilities.Observer
     [CreateAssetMenu(menuName = "QRTools/Utilities/Observer")]
     public class ObserverScriptableObject : SerializedScriptableObject, IObserver
     {
-        public List<IObservable> observables = new List<IObservable>();
+        [SerializeField] List<IObservable> observables = new List<IObservable>();
         public List<IObservable> Observables { get => observables; set => observables = value; }
 
         private void OnEnable()

@@ -7,7 +7,8 @@ namespace CrabMaga
     {
         public string
             textFrancais = default,
-            textAnglais = default;
+            textAnglais = default,
+            textCrab = default;
 
         public string GetCurrentText(LanguageEnum languageEnum)
         {
@@ -20,6 +21,9 @@ namespace CrabMaga
                     break;
                 case LanguageEnum.Anglais:
                     text = textAnglais;
+                    break;
+                case LanguageEnum.Crab:
+                    text = textCrab;
                     break;
             }
 
@@ -30,10 +34,11 @@ namespace CrabMaga
     [System.Serializable]
     public class TextLanguage
     {
-        [TextArea(3,5)]
+        [TextArea(3, 5)]
         public string
             textFrancais = default,
-            textAnglais = default;
+            textAnglais = default,
+            textCrab = default;
 
         public string GetCurrentText(LanguageEnum languageEnum)
         {
@@ -46,6 +51,9 @@ namespace CrabMaga
                     break;
                 case LanguageEnum.Anglais:
                     text = textAnglais;
+                    break;
+                case LanguageEnum.Crab:
+                    text = textCrab;
                     break;
             }
 

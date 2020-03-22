@@ -22,19 +22,10 @@ namespace CrabMaga
         public Transform QueueObject;
         [BoxGroup("References")]
         public AP_GameManager APgameManager = default;
-        [BoxGroup("References")]
-        public InputTouch InputTouch;
 
         public EntityData data;
 
-        public void PoolUnit()
-        {
-            CreateCrabFormation(data);
-
-            PoolEntity<CrabUnit>(data, new Vector3(InputTouch.RayPoint.x, 0, InputTouch.RayPoint.z));
-        }
-
-        public void CreateCrabFormation(EntityData data)
+        public void CreateCrabFormation(EntityData data, Vector3 _position)
         {
             if (APgameManager.crabFormationOnBattle.Count >= 3)
             {
@@ -48,7 +39,7 @@ namespace CrabMaga
             {
                 for (int y = 0; y < 3; y++)
                 {
-                    CrabUnit crabUnit = PoolEntity<CrabUnit>(data, new Vector3(InputTouch.RayPoint.x * (i / 2f), 0, InputTouch.RayPoint.z * (y / 2f)));
+                    CrabUnit crabUnit = PoolEntity<CrabUnit>(data, new Vector3(_position.x * (i / 2f), 0, _position.z * (y / 2f)));
 
                     _crabFormation.CrabUnits.Add(crabUnit);
                     crabUnit.crabFormationReference = _crabFormation;

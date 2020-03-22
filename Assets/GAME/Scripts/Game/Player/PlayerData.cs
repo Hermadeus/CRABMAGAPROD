@@ -6,12 +6,16 @@ using UnityEngine;
 using Sirenix.OdinInspector;
 
 using QRTools.Utilities;
+using QRTools.Utilities.Observer;
 
 namespace CrabMaga
 {
     [CreateAssetMenu(menuName = "CRAB MAGA/Data/Player Data")]
-    public class PlayerData : ScriptableObject, IResetable
+    public class PlayerData : ScriptableObject, IResetable, IObserver
     {
+        [BoxGroup("Player Preference")]
+        public bool rightHand = true;        
+
         [BoxGroup("Economy datas")]
         public int money = 0;
 
@@ -22,10 +26,32 @@ namespace CrabMaga
             entityData_slot03 = default,
             entityData_slot04 = default;
 
+        [SerializeField] List<IObservable> observables = new List<IObservable>();
+        public List<IObservable> Observables { get => observables; set => observables = value; }
+
         [Button]
         public void ResetObject()
         {
             money = 0;
+        }
+
+        [Button]
+        public void ChangeHand(bool right)
+        {
+            if (right)
+                rightHand = true;
+            else
+                rightHand = false;
+
+            UpdateObservable();
+        }
+
+        public void UpdateObservable()
+        {
+            for (int i = 0; i < Observables.Count; i++)
+            {
+                Observables[i].Notify();
+            }
         }
 
         [Button]

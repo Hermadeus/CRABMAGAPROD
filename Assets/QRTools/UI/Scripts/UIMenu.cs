@@ -17,7 +17,6 @@ namespace QRTools.UI
 
         [FoldoutGroup("ApparitionMode")]
         public ApparitionMode apparitionMode = ApparitionMode.FADE;
-
         [FoldoutGroup("ApparitionMode")]
         public float fadeTimer = .5f;
         [FoldoutGroup("ApparitionMode")]
@@ -31,6 +30,8 @@ namespace QRTools.UI
         [ShowIf("apparitionMode", ApparitionMode.ANIMATION), FoldoutGroup("ApparitionMode")]
         public float animSpeed = 1f;
 
+        protected Tween anim;
+
         public override void Init()
         {
             TryGetComponent<CanvasGroup>(out menu);
@@ -39,13 +40,16 @@ namespace QRTools.UI
                 InitAnim();
         }
 
+        [ButtonGroup("Debug")]
         public override void Show()
         {
+            menu.blocksRaycasts = true;
+
             switch (apparitionMode)
             {
                 case ApparitionMode.FADE:
                     float to = 1;
-                    DOTween.To(() => menu.alpha, x => menu.alpha = x, to, fadeTimer).SetEase(ease).OnComplete(OnHide.Invoke);
+                    anim = DOTween.To(() => menu.alpha, x => menu.alpha = x, to, fadeTimer).SetEase(ease).OnComplete(OnHide.Invoke);
                     break;
                 case ApparitionMode.ANIMATION:
                     animShow.Invoke();
@@ -53,13 +57,16 @@ namespace QRTools.UI
             }
         }
 
+        [ButtonGroup("Debug")]
         public override void Hide()
         {
+            menu.blocksRaycasts = false;
+
             switch (apparitionMode)
             {
                 case ApparitionMode.FADE:
                     float to = 0;
-                    DOTween.To(() => menu.alpha, x => menu.alpha = x, to, fadeTimer).SetEase(ease).OnComplete(OnHide.Invoke);
+                    anim = DOTween.To(() => menu.alpha, x => menu.alpha = x, to, fadeTimer).SetEase(ease).OnComplete(OnHide.Invoke);
                     break;
                 case ApparitionMode.ANIMATION:
                     animHide.Invoke();
@@ -157,7 +164,7 @@ namespace QRTools.UI
 
         public void SetAlphaToZero(float timer)
         {
-            DOTween.To(() => menu.alpha, x => menu.alpha = x, 0, timer).SetEase(Ease.Linear);
+            anim = DOTween.To(() => menu.alpha, x => menu.alpha = x, 0, timer).SetEase(Ease.Linear);
         }
 
         public void SetAlphaToOne()
@@ -167,7 +174,7 @@ namespace QRTools.UI
 
         public void SetAlphaToOne(float timer)
         {
-            DOTween.To(() => menu.alpha, x => menu.alpha = x, 1, timer).SetEase(Ease.Linear);
+            anim = DOTween.To(() => menu.alpha, x => menu.alpha = x, 1, timer).SetEase(Ease.Linear);
         }
     }
 

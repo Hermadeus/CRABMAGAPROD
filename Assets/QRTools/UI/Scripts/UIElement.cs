@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 using Sirenix.OdinInspector;
 
@@ -9,10 +11,11 @@ using DG.Tweening;
 
 namespace QRTools.UI
 {
-    public abstract class UIElement : MonoBehaviour, IUIElement
+    public class UIElement : MonoBehaviour, IUIElement
     {
         [HideInInspector] public RectTransform rectTransform;
         [HideInInspector] public CanvasGroup element;
+        [HideInInspector] public Image background;
 
         [BoxGroup("Properties"), Range(0,1)]
         public float timerAppear = .5f;
@@ -28,11 +31,16 @@ namespace QRTools.UI
 
         Tween show, hide;
 
-        protected void Awake()
+        private void Awake()
+        {
+            Init();
+        }
+
+        public virtual void Init()
         {
             rectTransform = GetComponent<RectTransform>();
             TryGetComponent<CanvasGroup>(out element);
-            Init();
+            TryGetComponent<Image>(out background);
         }
 
         public virtual void Hide()
@@ -45,11 +53,10 @@ namespace QRTools.UI
             ShowElement(.5f);
         }
 
-        public abstract void Init();
-
         public void HideElement(float timer)
         {
             show.Kill();
+            
             hide = DOTween.To(() => element.alpha, x => element.alpha = x, 0, timerDesappear).SetEase(Ease.Linear);
             element.interactable = false;
         }
@@ -57,8 +64,10 @@ namespace QRTools.UI
         public void ShowElement(float timer)
         {
             hide.Kill();
+            
             show = DOTween.To(() => element.alpha, x => element.alpha = x, 1, timerAppear).SetEase(Ease.Linear);
             element.interactable = true;
+            
         }
     }
 }

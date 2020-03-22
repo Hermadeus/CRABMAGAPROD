@@ -37,6 +37,7 @@ namespace CrabMaga
     public enum LanguageEnum
     {
         Francais,
-        Anglais
+        Anglais,
+        Crab
     }
 }
