@@ -122,7 +122,6 @@ namespace CrabMaga
     {
         NULL_ATTACK,
         SIMPLE_ATTACK,
-        ATTACK_CRAB_UNIT,
         COLLIDER_ATTACK
     }
 }

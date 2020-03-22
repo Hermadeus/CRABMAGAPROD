@@ -5,6 +5,6 @@ namespace QRTools
 {
     public class ScriptableObjectWithDescription : SerializedScriptableObject
     {
-        [TextArea(3, 5)] string description = default;
+        [TextArea(3, 5), SerializeField] protected string description = default;
     }
 }

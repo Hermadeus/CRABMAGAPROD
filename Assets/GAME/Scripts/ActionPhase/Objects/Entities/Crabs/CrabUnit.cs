@@ -12,6 +12,8 @@ namespace CrabMaga
         [FoldoutGroup("Gameplay References")]
         public CrabFormation crabFormationReference = default;
 
+        public float castlePosZ = 0; 
+
         public override Unit Target
         {
             get => base.Target;
@@ -32,6 +34,31 @@ namespace CrabMaga
             base.ResetObject();
 
             crabFormationReference = null;
+        }
+
+        public override void Init()
+        {
+            base.Init();
+
+            castlePosZ = gameManager.castle.transform.position.z;
+        }
+
+        public override void UpdateComportement()
+        {
+            base.UpdateComportement();
+            CheckReachCastle();
+        }
+
+        void CheckReachCastle()
+        {
+            if (transform.position.z >= castlePosZ)
+                ReachCastle();
+        }
+
+        public void ReachCastle()
+        {
+            poolingManager.Push(this);
+            gameManager.CurrentScore++;
         }
     }
 }

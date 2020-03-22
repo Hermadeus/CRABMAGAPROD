@@ -14,7 +14,7 @@ namespace CrabMaga
             {
                 base.Target = value;
 
-                if (Target != null)
+                if (Target != null && movementCor != null)
                     StopCoroutine(movementCor);
             }
         }

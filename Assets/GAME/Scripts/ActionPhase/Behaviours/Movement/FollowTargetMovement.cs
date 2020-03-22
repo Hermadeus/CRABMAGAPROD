@@ -15,7 +15,6 @@ namespace CrabMaga
             base.Move(_entity);
 
             _entity.StartCoroutine(DistanceMinus(_entity, .5f));
-
         }
 
         IEnumerator DistanceMinus(Entity _entity, float distanceToCheck)
