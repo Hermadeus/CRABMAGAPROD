@@ -105,11 +105,24 @@ namespace CrabMaga
         public void Attack(Unit _unit, IAttackReceiver _target)
         {
             attackBehaviour.Attack(_unit, _target);
+
+            HaveReachTarget();
+        }
+
+        public override void ResetObject()
+        {
+            base.ResetObject();
+            Target = null;
+        }
+
+        public void HaveReachTarget()
+        {
+            MovementBehaviourEnum = MovementBehaviourEnum.NULL_MOVEMENT;
         }
 
         protected virtual void OnUnitRangeDetectionReachZero()
         {
-
+            Target = null;
         }
     }
 }

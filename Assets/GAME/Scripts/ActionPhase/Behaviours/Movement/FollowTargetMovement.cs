@@ -23,7 +23,10 @@ namespace CrabMaga
             {
                 Unit _unit = _entity as Unit;
 
-                float d = Vector3.Distance(_entity.transform.position, _unit.Target.transform.position);
+                float d = 0f;
+
+                if (_unit.Target != null)
+                    d = Vector3.Distance(_entity.transform.position, _unit.Target.transform.position);
 
                 while (d > distanceToCheck)
                 {

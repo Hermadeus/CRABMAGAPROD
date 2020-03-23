@@ -60,5 +60,10 @@ namespace CrabMaga
             poolingManager.Push(this);
             gameManager.CurrentScore++;
         }
+
+        protected override void InitButton()
+        {
+            base.InitButton();
+        }
     }
 }

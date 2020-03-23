@@ -26,6 +26,9 @@ namespace CrabMaga
             entityData_slot03 = default,
             entityData_slot04 = default;
 
+        [BoxGroup("Gameplay datas")]
+        public EntityData leader_slot = default;
+
         [SerializeField] List<IObservable> observables = new List<IObservable>();
         public List<IObservable> Observables { get => observables; set => observables = value; }
 

@@ -43,8 +43,11 @@ namespace CrabMaga
                 movementBehaviourEnum = value;
                 movementTween.Kill();
                 if(movementCor != null) StopCoroutine(movementCor);
-                movementBehaviour = entityData.behaviourSystem.GetMovementBehaviour(value);
-                movementBehaviour.Move(this);
+                if (entityData != null)
+                {
+                    movementBehaviour = entityData.behaviourSystem.GetMovementBehaviour(value);
+                    movementBehaviour?.Move(this);
+                }
             }
         }
     
@@ -59,7 +62,6 @@ namespace CrabMaga
                 if (value <= 0)
                 {
                     Death();
-
                 }
             }
         }
@@ -157,6 +159,13 @@ namespace CrabMaga
             Health = 10000;
 
             Destination = null;
+        }
+
+        [Button]
+        protected virtual void InitButton()
+        {
+            gameManager = FindObjectOfType<AP_GameManager>();
+            poolingManager = FindObjectOfType<PoolingManager>();
         }
     }
 }

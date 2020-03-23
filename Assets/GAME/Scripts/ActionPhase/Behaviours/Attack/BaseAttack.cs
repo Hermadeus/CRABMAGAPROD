@@ -8,6 +8,9 @@ namespace CrabMaga
     {
         public virtual void Attack(Unit _unit, IAttackReceiver _receiver)
         {
+            if (_unit.attackCor != null)
+                _unit.StopCoroutine(_unit.attackCor);
+
             _unit.attackCor = _unit.StartCoroutine(AttackCor(_unit, _receiver));
         }
 

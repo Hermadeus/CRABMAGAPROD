@@ -22,8 +22,10 @@ namespace CrabMaga
         public Transform QueueObject;
         [BoxGroup("References")]
         public AP_GameManager APgameManager = default;
-
-        public EntityData data;
+        [BoxGroup("References")]
+        public PlayerData playerData = default;
+        [BoxGroup("References")]
+        public InputTouch doubleTouch = default;
 
         public void CreateCrabFormation(EntityData data, Vector3 _position)
         {
@@ -45,6 +47,12 @@ namespace CrabMaga
                     crabUnit.crabFormationReference = _crabFormation;
                 }
             }
+        }
+
+        public void InvokeLeader()
+        {
+            if(APgameManager.leaderOnBattle == null && playerData.leader_slot != null)
+                APgameManager.leaderOnBattle = PoolEntity<Leader>(playerData.leader_slot, new Vector3(doubleTouch.RayPoint.x, 0, doubleTouch.RayPoint.z));
         }
 
         public T PoolEntity<T>(EntityData _entityData, Vector3 _position) where T : Entity

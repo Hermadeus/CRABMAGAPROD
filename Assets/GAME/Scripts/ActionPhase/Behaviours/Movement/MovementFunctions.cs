@@ -44,7 +44,7 @@ namespace CrabMaga
 
                 while (d > distanceToCheck)
                 {
-                    if (_destinationPoint == null)
+                    if (_destinationPoint == null || _unit.Target != null)
                         yield break;
 
                     d = Vector3.Distance(_entity.transform.position, _destinationPoint);

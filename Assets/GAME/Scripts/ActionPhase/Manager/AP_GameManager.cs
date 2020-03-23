@@ -13,6 +13,8 @@ namespace CrabMaga
 
         [BoxGroup("AP Informations")] 
         public List<CrabFormation> crabFormationOnBattle = new List<CrabFormation>();
+        [BoxGroup("AP Informations")]
+        public Leader leaderOnBattle;
 
         [BoxGroup("AP Informations")]
         [SerializeField] int currentScore = 0;
