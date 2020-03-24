@@ -20,7 +20,7 @@ namespace CrabMaga
         public int money = 0;
 
         [BoxGroup("Gameplay datas")]
-        public EntityData
+        public CrabUnitData
             entityData_slot01 = default,
             entityData_slot02 = default,
             entityData_slot03 = default,

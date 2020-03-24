@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 using UnityEngine;
 
@@ -27,7 +28,14 @@ namespace CrabMaga
         [BoxGroup("References")]
         public InputTouch doubleTouch = default;
 
-        public void CreateCrabFormation(EntityData data, Vector3 _position)
+        //public CrabUnitData dataCra = default;
+
+        private void Awake()
+        {
+            //CreateCrabFormationWithType(dataCra.crabUnitType.GetType(), Vector3.zero);
+        }
+
+        public void CreateCrabFormation(CrabUnitData data, Vector3 _position)
         {
             if (APgameManager.crabFormationOnBattle.Count >= 3)
             {
@@ -49,6 +57,28 @@ namespace CrabMaga
             }
         }
 
+        public void CreateCrabFormationWithType(Type crabType, Vector3 _position)
+        {
+            if (APgameManager.crabFormationOnBattle.Count >= 3)
+            {
+                return;
+            }
+
+            CrabFormation _crabFormation = Pool<CrabFormation>(Vector3.zero) as CrabFormation;
+            APgameManager.crabFormationOnBattle.Add(_crabFormation);
+
+            for (int i = 0; i < 3; i++)
+            {
+                for (int y = 0; y < 3; y++)
+                {
+                    CrabUnit crabUnit = PoolEntity(crabType, new Vector3(_position.x * (i / 2f), 0, _position.z * (y / 2f))) as CrabUnit;
+
+                    _crabFormation.CrabUnits.Add(crabUnit);
+                    crabUnit.crabFormationReference = _crabFormation;
+                }
+            }
+        }
+
         public void InvokeLeader()
         {
             if(APgameManager.leaderOnBattle == null && playerData.leader_slot != null)
@@ -59,6 +89,15 @@ namespace CrabMaga
         {
             T entity = Pool<T>(_position) as T;
             entity.entityData = _entityData;
+            entity.OnPool();
+
+            return entity;
+        }
+
+        public Entity PoolEntity(Type crabType, Vector3 _position)
+        {
+            Entity entity = Pool(_position, crabType) as Entity;
+            //entity.entityData = _entityData;
             entity.OnPool();
 
             return entity;
@@ -96,6 +135,40 @@ namespace CrabMaga
                 ));
         }
 
+        public IPoolable Pool(Vector3 _position, Type crabUnitType, Transform parent = null, bool onPool = false)
+        {
+            if (poolables.Count > 0)
+                for (int i = 0; i < poolables.Count; i++)
+                {
+                    if (poolables[i].GetType() == crabUnitType)
+                    {
+                        //Debug.Log("found");
+                        
+                        CrabUnit _obj = (CrabUnit)poolables[i];
+                        _obj.enabled = true;
+
+                        _obj.transform.position = _position;
+
+                        if (parent == null)
+                            _obj.transform.parent = null;
+                        else
+                            _obj.transform.parent = parent;
+
+                        if (onPool)
+                            ((IPoolable)_obj).OnPool();
+
+                        IPoolable _poolable = poolables[i];
+                        poolables.RemoveAt(i);
+
+                        return _obj;
+                    }
+                }
+
+            throw new System.Exception(string.Format(
+                "Impossible de trouver le type de Poolable que tu recherches dans la liste de poolable."
+                ));
+        }
+
         public void Push(IPushable pushable)
         {
             if(pushable is IPoolable)
@@ -108,7 +181,7 @@ namespace CrabMaga
         }
 
         [Button]
-        void GetAllIPoolable()
+        public void GetAllIPoolable()
         {
             poolables.Clear();
 

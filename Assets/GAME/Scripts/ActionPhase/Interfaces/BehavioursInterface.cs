@@ -8,7 +8,7 @@ namespace CrabMaga
 
     public interface IMovementBehaviour : IBehaviour
     {
-        void Move(Entity _entity);
+        void Move(Entity _entity) ;
         
         void StopMove(Entity _entity);
     }
@@ -34,8 +34,22 @@ namespace CrabMaga
         void ReceiveAttack(float _damage);
     }
 
+
+    /// <summary>
+    /// Passif
+    /// </summary>
     public interface IPassifBehaviour : IBehaviour
     {
+        void PassifEffect(Unit unit);
+    }
 
+    public interface IStuntAttacker
+    {
+        float StuntTime { get; set; }
+    }
+
+    public interface IStuntable
+    {
+        void Stunt();
     }
 }

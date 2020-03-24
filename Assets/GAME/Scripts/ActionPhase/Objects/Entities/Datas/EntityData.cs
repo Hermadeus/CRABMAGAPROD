@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 
 using UnityEngine;
 
@@ -15,6 +16,8 @@ namespace CrabMaga
 
         [BoxGroup("Entity attribute")]
         public string entityName = "";
+        [BoxGroup("Entity attribute")]
+        public Unit crabUnitType = default;
 
         [BoxGroup("Entity attribute")]
         public MovementBehaviourEnum startMovementBehaviour = MovementBehaviourEnum.TARGET_MOVEMENT;
@@ -40,6 +43,8 @@ namespace CrabMaga
         public DetectionRangeEnum detectionRange = DetectionRangeEnum.MEDIUM;
 
         [FoldoutGroup("Unit attribute")]
+        public CrabUnitType crabUnitEnum;
+        [FoldoutGroup("Unit attribute")]
         public DetectionBehaviourEnum detectionBehaviour = DetectionBehaviourEnum.CLOSEST_DETECTION;
 
         [FoldoutGroup("Unit attribute")]
@@ -50,6 +55,11 @@ namespace CrabMaga
         public LayerMask layerMaskTarget = default;
         [FoldoutGroup("Unit attribute")]
         public AttackEnum attackType = AttackEnum.SIMPLE_ATTACK;
+
+        [FoldoutGroup("Passif attribute")]
+        public PassifBehaviourEnum passifBehaviour = PassifBehaviourEnum.NULL_PASSIF;
+        [FoldoutGroup("Passif attribute")]
+        public PassifEvent passifEvent = PassifEvent.NEVER;
 
         public virtual void Init(Entity entity)
         {
@@ -69,7 +79,9 @@ namespace CrabMaga
             if(entity is Unit)
             {
                 Unit unit = entity as Unit;
-                
+
+                unit.crabUnitType = crabUnitEnum;
+
                 unit.detectionBehaviour = behaviourSystem.GetDetectionBehaviour(detectionBehaviour);
                 unit.DetectionRange = behaviourSystem.GetDetectionRange(detectionRange);
 
@@ -80,6 +92,9 @@ namespace CrabMaga
                 unit.entityType = entityType;
                 unit.favoriteTarget = favoriteTarget;
                 unit.layerMaskTarget = layerMaskTarget;
+
+                unit.passifBehaviour = behaviourSystem.GetPassifBehaviour(passifBehaviour);
+                unit.passifEvent = passifEvent;
             }
         }
     }

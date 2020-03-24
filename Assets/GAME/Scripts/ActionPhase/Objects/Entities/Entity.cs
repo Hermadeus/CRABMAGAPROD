@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 
 using UnityEngine;
+using UnityEngine.Events;
 
 using Sirenix.OdinInspector;
 
@@ -75,6 +76,13 @@ namespace CrabMaga
         public AP_GameManager gameManager = default;
         [FoldoutGroup("References")]
         public PoolingManager poolingManager = default;
+        [FoldoutGroup("References")]
+        [SerializeField] Transform parentPoolingQueue = default;
+
+        [FoldoutGroup("Events")]
+        public EntityEvent
+            onInit = new EntityEvent(),
+            onDie = new EntityEvent();
 
         [FoldoutGroup("Gameplay References")]
         [SerializeField] Transform destination = default;
@@ -124,6 +132,8 @@ namespace CrabMaga
 
         protected virtual void Death()
         {
+            onDie?.Invoke(this);
+
             poolingManager.Push(this);
         }
 
@@ -142,6 +152,8 @@ namespace CrabMaga
             if (this.enabled == false)
                 return;
 
+            transform.parent = parentPoolingQueue;
+
             ResetObject();
         }
 
@@ -151,7 +163,8 @@ namespace CrabMaga
 
             movementTween.Kill();
             movementTween = null;
-            StopAllCoroutines();
+
+            StopCoroutine(movementCor);
             movementCor = null;
 
             movementBehaviour = null;
@@ -166,6 +179,10 @@ namespace CrabMaga
         {
             gameManager = FindObjectOfType<AP_GameManager>();
             poolingManager = FindObjectOfType<PoolingManager>();
+            parentPoolingQueue = transform.parent;
         }
     }
+
+    [System.Serializable]
+    public class EntityEvent : UnityEvent<Entity> { }
 }

@@ -9,29 +9,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56db6c2d5737186428bbf641b03401f8, type: 3}
-  m_Name: Enemy Test
+  m_Script: {fileID: 11500000, guid: 14332260acdbe514dbcbeaf69e3a39bd, type: 3}
+  m_Name: Crabpitaine
   m_EditorClassIdentifier: 
   behaviourSystem: {fileID: 11400000, guid: 65fa9772d44e2ec47bab627a75c1152e, type: 2}
-  entityName: Enemy Test
-  crabUnitType: {fileID: 0}
-  startMovementBehaviour: 0
-  startHealth: 30
-  baseSpeed: 0.6
-  speedEnum: 3
+  entityName: Crab'pitaine
+  startMovementBehaviour: 4
+  startHealth: 20
+  baseSpeed: 0
+  speedEnum: 2
   rotationSpeed: 0.5
-  acceleration: 2
+  acceleration: 0
   accelerationEnum: 2
-  damage: 3
-  attackSpeed: 0.5
-  detectionRange: 2
-  crabUnitEnum: 0
+  damage: 2
+  attackSpeed: 1
+  detectionRange: 0
   detectionBehaviour: 0
-  entityType: 2
-  favoriteTarget: 1
+  entityType: 1
+  favoriteTarget: 2
   layerMaskTarget:
     serializedVersion: 2
-    m_Bits: 1024
-  attackType: 2
-  passifBehaviour: 0
-  passifEvent: 0
+    m_Bits: 512
+  attackType: 1
+  type: 2
+  crabUnitType: {fileID: 3863057427669080910, guid: 1b832dc4cb6da84438eb08863085738d,
+    type: 3}

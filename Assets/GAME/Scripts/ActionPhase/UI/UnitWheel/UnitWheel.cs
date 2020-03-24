@@ -135,7 +135,11 @@ namespace CrabMaga
 
         public void InstantiateFormation()
         {
-            poolingManager.CreateCrabFormation(CurrentSelectedSlot.entityDataRef, UnitWheelInput.RayPoint);
+            //poolingManager.CreateCrabFormation(CurrentSelectedSlot.entityDataRef as CrabUnitData, UnitWheelInput.RayPoint);
+            poolingManager.CreateCrabFormationWithType(
+                CurrentSelectedSlot.entityDataRef.crabUnitType.GetType(),
+                UnitWheelInput.RayPoint
+                );
         }
 
         void SetSelectAllSlot(bool state)

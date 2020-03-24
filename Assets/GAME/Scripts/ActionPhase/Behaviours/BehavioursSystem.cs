@@ -71,6 +71,16 @@ namespace CrabMaga
             attackState.TryGetValue(_key, out f_attackBehaviour);
             return f_attackBehaviour;
         }
+
+        [BoxGroup("Passif System")]
+        public Dictionary<PassifBehaviourEnum, IPassifBehaviour> passifBehaviour = new Dictionary<PassifBehaviourEnum, IPassifBehaviour>();
+
+        public IPassifBehaviour GetPassifBehaviour(PassifBehaviourEnum _key)
+        {
+            IPassifBehaviour f_passifBehaviour = null;
+            passifBehaviour.TryGetValue(_key, out f_passifBehaviour);
+            return f_passifBehaviour;
+        }
     }
 
     public enum SpeedEnum
@@ -124,4 +134,18 @@ namespace CrabMaga
         SIMPLE_ATTACK,
         COLLIDER_ATTACK
     }
+
+    public enum PassifBehaviourEnum
+    {
+        NULL_PASSIF,
+        STUNT_EFFECT
+    }
+
+    public enum PassifEvent
+    {
+        NEVER,
+        ON_INSTANTIATION,
+        ON_DIE,
+    }
+
 }

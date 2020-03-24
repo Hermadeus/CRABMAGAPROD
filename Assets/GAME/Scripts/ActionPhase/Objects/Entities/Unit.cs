@@ -2,18 +2,21 @@
 using System.Collections.Generic;
 
 using UnityEngine;
+using UnityEngine.Events;
 
 using Sirenix.OdinInspector;
 
 namespace CrabMaga
 {
     [SelectionBase]
-    public class Unit : Entity, IAttack
+    public class Unit : Entity, IAttack, IStuntable
     {
         [FoldoutGroup("Comportements")]
         public IDetectSomethingBehaviour detectionBehaviour = default;
         [FoldoutGroup("Comportements")]
         public IAttackBehaviour attackBehaviour = default;
+        [FoldoutGroup("Comportements")]
+        public IPassifBehaviour passifBehaviour = default;
 
         [FoldoutGroup("Attributes")]
         [SerializeField] protected float damage = 0f;
@@ -47,6 +50,9 @@ namespace CrabMaga
                 detectionRange = value;
             }
         }
+
+        [FoldoutGroup("Attributes")]
+        public CrabUnitType crabUnitType;
 
         private Unit previousTarget = null;
 
@@ -89,8 +95,33 @@ namespace CrabMaga
 
         [HideInInspector] public Coroutine attackCor;
 
+        public PassifEvent passifEvent;
+
+        [SerializeField] bool isStunt = false;
+        public bool IsStunt { get => isStunt; set => isStunt = value; }
+
+        public override void Init()
+        {
+            base.Init();
+            InitPassif();
+
+            StartCoroutine(InvokeInitEvent());
+        }
+
+        protected IEnumerator InvokeInitEvent()
+        {
+            yield return new WaitForEndOfFrame();
+
+            Debug.Log(1);
+            onInit?.Invoke(this);
+            yield break;
+        }
+
         public override void UpdateComportement()
         {
+            if (IsStunt)
+                return;
+
             base.UpdateComportement();
             
             detectionBehaviour?.Detect(this);
@@ -104,6 +135,9 @@ namespace CrabMaga
 
         public void Attack(Unit _unit, IAttackReceiver _target)
         {
+            if (IsStunt)
+                return;
+
             attackBehaviour.Attack(_unit, _target);
 
             HaveReachTarget();
@@ -113,6 +147,13 @@ namespace CrabMaga
         {
             base.ResetObject();
             Target = null;
+
+            onDie.RemoveAllListeners();
+
+            StopCoroutine(attackCor);
+            attackCor = null;
+
+            IsStunt = false;
         }
 
         public void HaveReachTarget()
@@ -123,6 +164,33 @@ namespace CrabMaga
         protected virtual void OnUnitRangeDetectionReachZero()
         {
             Target = null;
+        }
+
+        public void InitPassif()
+        {
+            switch (passifEvent)
+            {
+                case PassifEvent.NEVER:
+                    break;
+                case PassifEvent.ON_INSTANTIATION:
+                    onInit.AddListener(AddPassif);
+
+                    break;
+                case PassifEvent.ON_DIE:
+
+                    onDie.AddListener(AddPassif);
+                    break;
+            }
+        }
+
+        void AddPassif(Entity entity)
+        {
+            passifBehaviour.PassifEffect(this);
+        }
+
+        public void Stunt()
+        {
+            Debug.Log("I m stunt !");
         }
     }
 }
