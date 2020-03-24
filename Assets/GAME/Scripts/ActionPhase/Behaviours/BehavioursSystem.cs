@@ -138,7 +138,8 @@ namespace CrabMaga
     public enum PassifBehaviourEnum
     {
         NULL_PASSIF,
-        STUNT_EFFECT
+        STUNT_EFFECT,
+        DOUBLE_EFFECTIF_EFFECT
     }
 
     public enum PassifEvent
@@ -146,6 +147,7 @@ namespace CrabMaga
         NEVER,
         ON_INSTANTIATION,
         ON_DIE,
+        ON_WIN
     }
 
 }

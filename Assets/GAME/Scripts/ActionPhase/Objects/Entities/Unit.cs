@@ -177,8 +177,12 @@ namespace CrabMaga
 
                     break;
                 case PassifEvent.ON_DIE:
-
                     onDie.AddListener(AddPassif);
+
+                    break;
+                case PassifEvent.ON_WIN:
+                    onWin.AddListener(AddPassif);
+
                     break;
             }
         }
@@ -190,7 +194,12 @@ namespace CrabMaga
 
         public void Stunt()
         {
-            Debug.Log("I m stunt !");
+            
+        }
+
+        public virtual void WinCombat()
+        {
+            onWin?.Invoke(this);
         }
     }
 }

@@ -77,6 +77,8 @@ namespace CrabMaga
                     crabUnit.crabFormationReference = _crabFormation;
                 }
             }
+
+            _crabFormation.name = _crabFormation.CrabUnits[0].name.ToString() + " Formation";
         }
 
         public void InvokeLeader()

@@ -31,7 +31,7 @@ namespace CrabMaga
 
     public interface IAttackReceiver : IBehaviour
     {
-        void ReceiveAttack(float _damage);
+        void ReceiveAttack(Unit attaquant, float _damage);
     }
 
 

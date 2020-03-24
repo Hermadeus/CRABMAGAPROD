@@ -61,7 +61,7 @@ namespace CrabMaga
             gameManager.CurrentScore++;
         }
 
-        protected override void InitButton()
+        public override void InitButton()
         {
             base.InitButton();
         }

@@ -82,7 +82,8 @@ namespace CrabMaga
         [FoldoutGroup("Events")]
         public EntityEvent
             onInit = new EntityEvent(),
-            onDie = new EntityEvent();
+            onDie = new EntityEvent(),
+            onWin = new EntityEvent();
 
         [FoldoutGroup("Gameplay References")]
         [SerializeField] Transform destination = default;
@@ -132,13 +133,18 @@ namespace CrabMaga
 
         protected virtual void Death()
         {
+            lastHitUnitReceive?.WinCombat();
+
             onDie?.Invoke(this);
 
             poolingManager.Push(this);
         }
 
-        public void ReceiveAttack(float _damage)
+        public Unit lastHitUnitReceive;
+
+        public void ReceiveAttack(Unit attaquant, float _damage)
         {
+            lastHitUnitReceive = attaquant;
             Health -= _damage;
         }
 
@@ -172,10 +178,12 @@ namespace CrabMaga
             Health = 10000;
 
             Destination = null;
+
+            lastHitUnitReceive = null;
         }
 
         [Button]
-        protected virtual void InitButton()
+        public virtual void InitButton()
         {
             gameManager = FindObjectOfType<AP_GameManager>();
             poolingManager = FindObjectOfType<PoolingManager>();

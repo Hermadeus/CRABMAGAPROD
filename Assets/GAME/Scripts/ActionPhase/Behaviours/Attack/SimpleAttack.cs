@@ -31,9 +31,7 @@ namespace CrabMaga
 
         public override void Effect(Unit _unit, IAttackReceiver _receiver)
         {
-            //Debug.Log(_unit.name + " ATTACK");
-
-            _receiver?.ReceiveAttack(_unit.Damage);
+            _receiver?.ReceiveAttack(_unit, _unit.Damage);
         }
     }
 }

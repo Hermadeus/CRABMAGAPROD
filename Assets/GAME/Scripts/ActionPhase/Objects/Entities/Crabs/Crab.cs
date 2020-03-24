@@ -10,7 +10,7 @@ namespace CrabMaga
 
         protected override void Death()
         {
-            crabUnitReference.ReceiveAttack(Health);
+            crabUnitReference.ReceiveAttack(lastHitUnitReceive, Health);
             base.Death();
         }
     }

@@ -22,6 +22,7 @@ namespace CrabMaga
                     this.transform);
 
                 e.enabled = false;
+                e.InitButton();
             }
 
             PoolingManager pm = FindObjectOfType<PoolingManager>();
