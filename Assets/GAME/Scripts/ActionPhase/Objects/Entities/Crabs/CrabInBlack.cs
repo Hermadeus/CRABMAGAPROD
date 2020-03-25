@@ -9,7 +9,7 @@ namespace CrabMaga
 {
     public class CrabInBlack : CrabUnit, IStuntAttacker
     {
-        [FoldoutGroup("Stunt Attribute")]
+        [FoldoutGroup("Passif Attribute")]
         [SerializeField] float stuntTimer = 1f;
         public float StuntTime { get => stuntTimer; set => stuntTimer = value; }
     }

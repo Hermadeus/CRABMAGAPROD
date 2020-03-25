@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 
 using UnityEngine;
+using UnityEngine.UI;
 
 using Sirenix.OdinInspector;
 
@@ -14,6 +15,9 @@ namespace CrabMaga
         [BoxGroup("AP Informations")] 
         public List<CrabFormation> crabFormationOnBattle = new List<CrabFormation>();
         [BoxGroup("AP Informations")]
+        public List<CrabUnit> crabUnitOnBattle = new List<CrabUnit>();
+
+        [BoxGroup("AP Informations")]
         public Leader leaderOnBattle;
 
         [BoxGroup("AP Informations")]
@@ -24,6 +28,7 @@ namespace CrabMaga
             set
             {
                 currentScore = value;
+                scorePanel.UpdateScore();
 
                 if (value >= levelData.scoreToReach)
                     Win();
@@ -32,6 +37,8 @@ namespace CrabMaga
 
         [BoxGroup("References")]
         public Castle castle = default;
+        [BoxGroup("References")]
+        public ScorePanel scorePanel = default;
 
         bool inPause = false;
         public bool InPause

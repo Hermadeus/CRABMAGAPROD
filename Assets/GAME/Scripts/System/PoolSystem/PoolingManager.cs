@@ -102,6 +102,9 @@ namespace CrabMaga
             //entity.entityData = _entityData;
             entity.OnPool();
 
+            if (entity is CrabUnit)
+                APgameManager.crabUnitOnBattle.Add(entity as CrabUnit);
+
             return entity;
         }
 

@@ -150,7 +150,9 @@ namespace CrabMaga
 
             onDie.RemoveAllListeners();
 
-            StopCoroutine(attackCor);
+            if(attackCor != null)
+                StopCoroutine(attackCor);
+
             attackCor = null;
 
             IsStunt = false;

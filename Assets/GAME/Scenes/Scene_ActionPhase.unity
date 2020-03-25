@@ -434,6 +434,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &4630423
 GameObject:
   m_ObjectHideFlags: 0
@@ -716,6 +718,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &7056857
 GameObject:
   m_ObjectHideFlags: 0
@@ -878,12 +882,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  languageManager: {fileID: 11400000, guid: cc7173560c4531545a2a4dde441db5db, type: 2}
-  text: {fileID: 1404233226}
-  textLanguage:
-    textFrancais: Continue
-    textAnglais: Continue
-    textCrab: crabcrab
 --- !u!1 &7400767
 GameObject:
   m_ObjectHideFlags: 0
@@ -1971,6 +1969,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &28206966
 GameObject:
   m_ObjectHideFlags: 0
@@ -2740,6 +2740,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &41012095
 GameObject:
   m_ObjectHideFlags: 0
@@ -3304,6 +3306,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &67618165
 GameObject:
   m_ObjectHideFlags: 0
@@ -3413,6 +3417,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &67727771
 GameObject:
   m_ObjectHideFlags: 0
@@ -4857,6 +4863,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &116066220
 GameObject:
   m_ObjectHideFlags: 0
@@ -5920,12 +5928,6 @@ MonoBehaviour:
   onClick:
     m_PersistentCalls:
       m_Calls: []
-  languageManager: {fileID: 11400000, guid: cc7173560c4531545a2a4dde441db5db, type: 2}
-  text: {fileID: 274744395}
-  textLanguage:
-    textFrancais: Parametres
-    textAnglais: Settings
-    textCrab: crabouuu
 --- !u!1 &140926539
 GameObject:
   m_ObjectHideFlags: 0
@@ -6932,6 +6934,82 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
+--- !u!1 &172983388
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 172983389}
+  - component: {fileID: 172983391}
+  - component: {fileID: 172983390}
+  m_Layer: 5
+  m_Name: Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &172983389
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172983388}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 188641382}
+  m_Father: {fileID: 1616675098}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 743.8, y: 247.6}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &172983390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172983388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 617c60b7e3dab6d41bcaa2070d993057, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &172983391
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172983388}
+  m_CullTransparentMesh: 0
 --- !u!1 &175272302
 GameObject:
   m_ObjectHideFlags: 0
@@ -7200,6 +7278,161 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 188626375}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &188641381
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 188641382}
+  - component: {fileID: 188641384}
+  - component: {fileID: 188641383}
+  m_Layer: 5
+  m_Name: Text Score
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &188641382
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188641381}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 172983389}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &188641383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188641381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'Score: 9/9'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_outlineColor:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontSize: 125
+  m_fontSizeBase: 125
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_textAlignment: 514
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_firstOverflowCharacterIndex: -1
+  m_linkedTextComponent: {fileID: 0}
+  m_isLinkedTextComponent: 0
+  m_isTextTruncated: 0
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_ignoreRectMaskCulling: 0
+  m_ignoreCulling: 1
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_VertexBufferAutoSizeReduction: 1
+  m_firstVisibleCharacter: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_textInfo:
+    textComponent: {fileID: 188641383}
+    characterCount: 10
+    spriteCount: 0
+    spaceCount: 1
+    wordCount: 3
+    linkCount: 0
+    lineCount: 1
+    pageCount: 1
+    materialCount: 1
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_spriteAnimator: {fileID: 0}
+  m_hasFontAssetChanged: 0
+  m_subTextObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &188641384
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188641381}
+  m_CullTransparentMesh: 0
 --- !u!1 &192399000
 GameObject:
   m_ObjectHideFlags: 0
@@ -9064,7 +9297,7 @@ MonoBehaviour:
   onHide:
     m_PersistentCalls:
       m_Calls: []
-  entityDataRef: {fileID: 11400000, guid: 8b73231f70f925a4b99ba1f5e400e7ec, type: 2}
+  entityDataRef: {fileID: 0}
 --- !u!225 &230187741
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -9186,6 +9419,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &235459608
 GameObject:
   m_ObjectHideFlags: 0
@@ -9295,6 +9530,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &236472011
 GameObject:
   m_ObjectHideFlags: 0
@@ -9781,6 +10018,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &260785448
 GameObject:
   m_ObjectHideFlags: 0
@@ -9874,9 +10113,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelData: {fileID: 11400000, guid: c89ee7f1eba4b4149872138eeee49965, type: 2}
   crabFormationOnBattle: []
+  crabUnitOnBattle: []
   leaderOnBattle: {fileID: 0}
   currentScore: 0
   castle: {fileID: 912561198}
+  scorePanel: {fileID: 1616675099}
 --- !u!1 &262982746
 GameObject:
   m_ObjectHideFlags: 0
@@ -10390,6 +10631,7 @@ GameObject:
   - component: {fileID: 274744394}
   - component: {fileID: 274744396}
   - component: {fileID: 274744395}
+  - component: {fileID: 274744397}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -10534,6 +10776,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 274744393}
   m_CullTransparentMesh: 0
+--- !u!114 &274744397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274744393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8af47612d51246fe80aa93c912a1c3c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 11400000, guid: cc7173560c4531545a2a4dde441db5db, type: 2}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: Observer
+      Entry: 10
+      Data: 0
+  TextRef: {fileID: 0}
+  languageManager: {fileID: 11400000, guid: cc7173560c4531545a2a4dde441db5db, type: 2}
+  text:
+    textFrancais: "Param\xE8tres"
+    textAnglais: Settings
+    textCrab: Crabings
 --- !u!1 &275001768
 GameObject:
   m_ObjectHideFlags: 0
@@ -11005,6 +11278,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &287350800
 GameObject:
   m_ObjectHideFlags: 0
@@ -13191,6 +13466,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &381778695
 GameObject:
   m_ObjectHideFlags: 0
@@ -13600,6 +13877,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &394389532
 GameObject:
   m_ObjectHideFlags: 0
@@ -14527,6 +14806,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &426614090
 GameObject:
   m_ObjectHideFlags: 0
@@ -15245,7 +15526,7 @@ MonoBehaviour:
   onHide:
     m_PersistentCalls:
       m_Calls: []
-  entityDataRef: {fileID: 11400000, guid: 27c3d123a992e1241a7a3f67442ca788, type: 2}
+  entityDataRef: {fileID: 0}
 --- !u!225 &453042549
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -15439,12 +15720,6 @@ MonoBehaviour:
   onClick:
     m_PersistentCalls:
       m_Calls: []
-  languageManager: {fileID: 11400000, guid: cc7173560c4531545a2a4dde441db5db, type: 2}
-  text: {fileID: 2142503356}
-  textLanguage:
-    textFrancais: Carte
-    textAnglais: Map
-    textCrab: crabbbb
 --- !u!1 &458164196
 GameObject:
   m_ObjectHideFlags: 0
@@ -15554,6 +15829,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &459521241
 GameObject:
   m_ObjectHideFlags: 0
@@ -16410,6 +16687,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &491872735
 GameObject:
   m_ObjectHideFlags: 0
@@ -16677,6 +16956,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &493732604
 GameObject:
   m_ObjectHideFlags: 0
@@ -19677,6 +19958,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &591781220
 GameObject:
   m_ObjectHideFlags: 0
@@ -20554,6 +20837,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &616846007
 GameObject:
   m_ObjectHideFlags: 0
@@ -20742,6 +21027,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &619673180
 GameObject:
   m_ObjectHideFlags: 0
@@ -21498,7 +21785,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1669790875}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -21912,6 +22199,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &647249716
 GameObject:
   m_ObjectHideFlags: 0
@@ -22304,6 +22593,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &655146179
 GameObject:
   m_ObjectHideFlags: 0
@@ -23923,7 +24214,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AP_GameManager: {fileID: 261077668}
   poolingManager: {fileID: 1286813649}
+  onInitEvent:
+    m_PersistentCalls:
+      m_Calls: []
   crabUnits: []
+  haveReceivePassif: 0
 --- !u!1 &697188643
 GameObject:
   m_ObjectHideFlags: 0
@@ -24608,6 +24903,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &715900117
 GameObject:
   m_ObjectHideFlags: 0
@@ -24796,6 +25093,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &723856858
 GameObject:
   m_ObjectHideFlags: 0
@@ -25535,6 +25834,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &744417298
 GameObject:
   m_ObjectHideFlags: 0
@@ -26005,6 +26306,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &756682525
 GameObject:
   m_ObjectHideFlags: 0
@@ -26129,7 +26432,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AP_GameManager: {fileID: 261077668}
   poolingManager: {fileID: 1286813649}
+  onInitEvent:
+    m_PersistentCalls:
+      m_Calls: []
   crabUnits: []
+  haveReceivePassif: 0
 --- !u!1 &764802503
 GameObject:
   m_ObjectHideFlags: 0
@@ -26585,6 +26892,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &792701425
 GameObject:
   m_ObjectHideFlags: 0
@@ -27745,7 +28054,7 @@ RectTransform:
   - {fileID: 481696241}
   - {fileID: 215263865}
   m_Father: {fileID: 1669790875}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -27951,6 +28260,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &827880065
 GameObject:
   m_ObjectHideFlags: 0
@@ -28925,6 +29236,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &858183774
 GameObject:
   m_ObjectHideFlags: 0
@@ -29113,6 +29426,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &865967715
 GameObject:
   m_ObjectHideFlags: 0
@@ -29815,6 +30130,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &892183226
 GameObject:
   m_ObjectHideFlags: 0
@@ -30263,7 +30580,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AP_GameManager: {fileID: 261077668}
   poolingManager: {fileID: 1286813649}
+  onInitEvent:
+    m_PersistentCalls:
+      m_Calls: []
   crabUnits: []
+  haveReceivePassif: 0
 --- !u!1 &910262076
 GameObject:
   m_ObjectHideFlags: 0
@@ -30373,6 +30694,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &912287381
 GameObject:
   m_ObjectHideFlags: 0
@@ -30714,6 +31037,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &917744135
 GameObject:
   m_ObjectHideFlags: 0
@@ -32254,6 +32579,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &957908556
 GameObject:
   m_ObjectHideFlags: 0
@@ -33101,6 +33428,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &974737913
 GameObject:
   m_ObjectHideFlags: 0
@@ -33696,6 +34025,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &990334612
 GameObject:
   m_ObjectHideFlags: 0
@@ -34091,6 +34422,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &1006645690
 GameObject:
   m_ObjectHideFlags: 0
@@ -34891,6 +35224,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &1032119347
 GameObject:
   m_ObjectHideFlags: 0
@@ -35000,6 +35335,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &1038106961
 GameObject:
   m_ObjectHideFlags: 0
@@ -35612,6 +35949,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &1056040195
 GameObject:
   m_ObjectHideFlags: 0
@@ -35831,6 +36170,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &1060114201
 GameObject:
   m_ObjectHideFlags: 0
@@ -35940,6 +36281,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &1070415241
 GameObject:
   m_ObjectHideFlags: 0
@@ -36159,6 +36502,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &1087488305
 GameObject:
   m_ObjectHideFlags: 0
@@ -36441,6 +36786,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &1089347566
 GameObject:
   m_ObjectHideFlags: 0
@@ -36943,6 +37290,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &1102245956
 GameObject:
   m_ObjectHideFlags: 0
@@ -38233,6 +38582,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &1145012329
 GameObject:
   m_ObjectHideFlags: 0
@@ -38342,6 +38693,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &1146620220
 GameObject:
   m_ObjectHideFlags: 0
@@ -38561,6 +38914,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &1147861246
 GameObject:
   m_ObjectHideFlags: 0
@@ -39519,6 +39874,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &1168822178
 GameObject:
   m_ObjectHideFlags: 0
@@ -40398,6 +40755,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &1190501717
 GameObject:
   m_ObjectHideFlags: 0
@@ -41628,6 +41987,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &1240514478
 GameObject:
   m_ObjectHideFlags: 0
@@ -42192,6 +42553,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &1263370282
 GameObject:
   m_ObjectHideFlags: 0
@@ -42820,6 +43183,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &1276287861
 GameObject:
   m_ObjectHideFlags: 0
@@ -42929,6 +43294,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &1278484189
 GameObject:
   m_ObjectHideFlags: 0
@@ -45303,6 +45670,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &1334366234
 GameObject:
   m_ObjectHideFlags: 0
@@ -46872,6 +47241,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &1381656601
 GameObject:
   m_ObjectHideFlags: 0
@@ -47185,6 +47556,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &1396127558
 GameObject:
   m_ObjectHideFlags: 0
@@ -47478,6 +47851,7 @@ GameObject:
   - component: {fileID: 1404233225}
   - component: {fileID: 1404233227}
   - component: {fileID: 1404233226}
+  - component: {fileID: 1404233228}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -47622,6 +47996,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1404233224}
   m_CullTransparentMesh: 0
+--- !u!114 &1404233228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404233224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8af47612d51246fe80aa93c912a1c3c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 11400000, guid: cc7173560c4531545a2a4dde441db5db, type: 2}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: Observer
+      Entry: 10
+      Data: 0
+  TextRef: {fileID: 0}
+  languageManager: {fileID: 11400000, guid: cc7173560c4531545a2a4dde441db5db, type: 2}
+  text:
+    textFrancais: Continue
+    textAnglais: Continue
+    textCrab: crabinue
 --- !u!1 &1405632781
 GameObject:
   m_ObjectHideFlags: 0
@@ -48831,6 +49236,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &1436666674
 GameObject:
   m_ObjectHideFlags: 0
@@ -50449,6 +50856,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &1485263753
 GameObject:
   m_ObjectHideFlags: 0
@@ -50494,7 +50903,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AP_GameManager: {fileID: 261077668}
   poolingManager: {fileID: 1286813649}
+  onInitEvent:
+    m_PersistentCalls:
+      m_Calls: []
   crabUnits: []
+  haveReceivePassif: 0
 --- !u!1 &1487400173
 GameObject:
   m_ObjectHideFlags: 0
@@ -51001,7 +51414,7 @@ MonoBehaviour:
   onHide:
     m_PersistentCalls:
       m_Calls: []
-  entityDataRef: {fileID: 11400000, guid: 959d963e636e3cf478ee8c1699691478, type: 2}
+  entityDataRef: {fileID: 0}
 --- !u!225 &1494329691
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -52535,6 +52948,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &1551074640
 GameObject:
   m_ObjectHideFlags: 0
@@ -54282,6 +54697,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &1600275859
 GameObject:
   m_ObjectHideFlags: 0
@@ -54486,6 +54903,68 @@ MonoBehaviour:
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
   stuntTimer: 1
+--- !u!1 &1616675097
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1616675098}
+  - component: {fileID: 1616675099}
+  m_Layer: 5
+  m_Name: CurrentScore
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1616675098
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616675097}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 172983389}
+  m_Father: {fileID: 1669790875}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1616675099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616675097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88bf2a6dae2bfe46ad5d6c194a33130, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rectTransform: {fileID: 0}
+  element: {fileID: 0}
+  background: {fileID: 0}
+  timerAppear: 0.5
+  timerDesappear: 0.5
+  onShow:
+    m_PersistentCalls:
+      m_Calls: []
+  onHide:
+    m_PersistentCalls:
+      m_Calls: []
+  AP_GameManager: {fileID: 261077668}
+  scoreText: {fileID: 188641383}
 --- !u!1 &1617014724
 GameObject:
   m_ObjectHideFlags: 0
@@ -54635,7 +55114,7 @@ RectTransform:
   - {fileID: 513042957}
   - {fileID: 1565100129}
   m_Father: {fileID: 1669790875}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -55320,6 +55799,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &1633597885
 GameObject:
   m_ObjectHideFlags: 0
@@ -56766,6 +57247,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 1616675098}
   - {fileID: 823224365}
   - {fileID: 1619046362}
   - {fileID: 1889965450}
@@ -57842,6 +58324,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &1694526881
 GameObject:
   m_ObjectHideFlags: 0
@@ -57951,6 +58435,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &1697689836
 GameObject:
   m_ObjectHideFlags: 0
@@ -59005,6 +59491,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &1726876943
 GameObject:
   m_ObjectHideFlags: 0
@@ -60545,6 +61033,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &1776573679
 GameObject:
   m_ObjectHideFlags: 0
@@ -61525,7 +62015,7 @@ MonoBehaviour:
   onHide:
     m_PersistentCalls:
       m_Calls: []
-  entityDataRef: {fileID: 11400000, guid: c0e29eab05f74ef42b90aaed5e5dc18f, type: 2}
+  entityDataRef: {fileID: 0}
 --- !u!225 &1809046587
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -61914,6 +62404,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &1816178981
 GameObject:
   m_ObjectHideFlags: 0
@@ -65305,6 +65797,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &1882404182
 GameObject:
   m_ObjectHideFlags: 0
@@ -65604,7 +66098,7 @@ RectTransform:
   m_Children:
   - {fileID: 1278484190}
   m_Father: {fileID: 1669790875}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -65842,6 +66336,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &1901337202
 GameObject:
   m_ObjectHideFlags: 0
@@ -66422,6 +66918,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &1913726905
 GameObject:
   m_ObjectHideFlags: 0
@@ -66641,6 +67139,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &1917353315
 GameObject:
   m_ObjectHideFlags: 0
@@ -67898,6 +68398,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &1955842226
 GameObject:
   m_ObjectHideFlags: 0
@@ -70760,6 +71262,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &2063227238
 GameObject:
   m_ObjectHideFlags: 0
@@ -71178,6 +71682,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &2069238064
 GameObject:
   m_ObjectHideFlags: 0
@@ -71712,6 +72218,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &2074978755
 GameObject:
   m_ObjectHideFlags: 0
@@ -72025,6 +72533,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &2079580321
 GameObject:
   m_ObjectHideFlags: 0
@@ -72134,6 +72644,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &2081538242
 GameObject:
   m_ObjectHideFlags: 0
@@ -72337,6 +72849,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &2083839085
 GameObject:
   m_ObjectHideFlags: 0
@@ -73151,6 +73665,8 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  attackSpeedBoostTimer: 3
+  attackSpeedMultiplier: 2
 --- !u!1 &2109520562
 GameObject:
   m_ObjectHideFlags: 0
@@ -74011,6 +74527,7 @@ GameObject:
   - component: {fileID: 2142503355}
   - component: {fileID: 2142503357}
   - component: {fileID: 2142503356}
+  - component: {fileID: 2142503358}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -74155,6 +74672,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2142503354}
   m_CullTransparentMesh: 0
+--- !u!114 &2142503358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2142503354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8af47612d51246fe80aa93c912a1c3c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 11400000, guid: cc7173560c4531545a2a4dde441db5db, type: 2}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: Observer
+      Entry: 10
+      Data: 0
+  TextRef: {fileID: 0}
+  languageManager: {fileID: 11400000, guid: cc7173560c4531545a2a4dde441db5db, type: 2}
+  text:
+    textFrancais: Abandonner
+    textAnglais: Abandon
+    textCrab: Crabandon
 --- !u!1001 &1249311574653539532
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -52,4 +52,10 @@ namespace CrabMaga
     {
         void Stunt();
     }
+
+    public interface IBoostSpeedAttackOnOther
+    {
+        float AttackSpeedBoostTimer { get; set; }
+        float AttackSpeedMultiplier { get; set; }
+    }
 }

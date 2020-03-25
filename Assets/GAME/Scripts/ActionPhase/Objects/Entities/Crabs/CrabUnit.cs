@@ -61,6 +61,13 @@ namespace CrabMaga
             gameManager.CurrentScore++;
         }
 
+        public override void OnPush()
+        {
+            base.OnPush();
+
+            gameManager.crabUnitOnBattle.Remove(this);
+        }
+
         public override void InitButton()
         {
             base.InitButton();
