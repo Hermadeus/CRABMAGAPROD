@@ -47,6 +47,9 @@ namespace CrabMaga
                     if (_destinationPoint == null || _unit.Target != null)
                         yield break;
 
+                    if (_unit.IsStatic)
+                        yield return null;
+
                     d = Vector3.Distance(_entity.transform.position, _destinationPoint);
                     _entity.transform.DOLookAt(_destinationPoint, _entity.rotationSpeed);
 

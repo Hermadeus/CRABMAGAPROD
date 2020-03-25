@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: df6fa5d3a94f8574fb5c9b76506018ee, type: 3}
-  m_Name: '[LONG TOUCH] UnitWheel'
+  m_Name: '[DOUBLE TAP] Leader Effect'
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 11400000, guid: 68b091d7b956ef34fb09baba94df223b, type: 2}
+    - {fileID: 11400000, guid: 134159db589e1f0429d8d75b9f886b9d, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -32,21 +32,12 @@ MonoBehaviour:
   useRaycast: 1
   mask:
     serializedVersion: 2
-    m_Bits: 3895
+    m_Bits: 1024
   objectHit: {fileID: 0}
   onTouchEnter:
     m_PersistentCalls:
-      m_Calls: []
-  onTouchStay:
-    m_PersistentCalls:
-      m_Calls: []
-  onTouchMoving:
-    m_PersistentCalls:
-      m_Calls: []
-  onTouchEnd:
-    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 95b688abf7ec1214a8dcacf0863d7261, type: 2}
+      - m_Target: {fileID: 11400000, guid: 9c46bb3dd0c69db43acff8f7640951ba, type: 2}
         m_MethodName: Raise
         m_Mode: 1
         m_Arguments:
@@ -57,6 +48,15 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onTouchStay:
+    m_PersistentCalls:
+      m_Calls: []
+  onTouchMoving:
+    m_PersistentCalls:
+      m_Calls: []
+  onTouchEnd:
+    m_PersistentCalls:
+      m_Calls: []
   onDoubleTap:
     m_PersistentCalls:
       m_Calls: []
@@ -77,18 +77,7 @@ MonoBehaviour:
       m_Calls: []
   onLongTapEnd:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 4005f56a471037c45874edcc0395b887, type: 2}
-        m_MethodName: Raise
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onLongTap:
     m_PersistentCalls:
       m_Calls: []
@@ -97,18 +86,7 @@ MonoBehaviour:
       m_Calls: []
   onRayStay:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: dad8bb7d3844e2a4e936425912b879dc, type: 2}
-        m_MethodName: Raise
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onRayExit:
     m_PersistentCalls:
       m_Calls: []
@@ -124,5 +102,5 @@ MonoBehaviour:
   touchOnePrevPos: {x: 0, y: 0}
   prevMagnitude: 0
   currentMagnitude: 0
-  longTapTimer: 0.35
+  longTapTimer: 1
   longTapChargement: 0

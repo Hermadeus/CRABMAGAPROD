@@ -41,9 +41,7 @@ namespace CrabMaga
         public float attackSpeed = 0f;
         [BoxGroup("Entity attribute")]
         public DetectionRangeEnum detectionRange = DetectionRangeEnum.MEDIUM;
-
-        [FoldoutGroup("Unit attribute")]
-        public CrabUnitType crabUnitEnum;
+                
         [FoldoutGroup("Unit attribute")]
         public DetectionBehaviourEnum detectionBehaviour = DetectionBehaviourEnum.CLOSEST_DETECTION;
 
@@ -79,8 +77,6 @@ namespace CrabMaga
             if(entity is Unit)
             {
                 Unit unit = entity as Unit;
-
-                unit.crabUnitType = crabUnitEnum;
 
                 unit.detectionBehaviour = behaviourSystem.GetDetectionBehaviour(detectionBehaviour);
                 unit.DetectionRange = behaviourSystem.GetDetectionRange(detectionRange);

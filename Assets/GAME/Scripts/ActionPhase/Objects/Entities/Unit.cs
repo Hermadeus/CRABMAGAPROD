@@ -100,6 +100,9 @@ namespace CrabMaga
         [SerializeField] bool isStunt = false;
         public bool IsStunt { get => isStunt; set => isStunt = value; }
 
+        [SerializeField] bool isStatic = false;
+        public bool IsStatic { get => isStatic; set => isStatic = value; }
+
         public override void Init()
         {
             base.Init();
@@ -112,14 +115,13 @@ namespace CrabMaga
         {
             yield return new WaitForEndOfFrame();
 
-            Debug.Log(1);
             onInit?.Invoke(this);
             yield break;
         }
 
         public override void UpdateComportement()
         {
-            if (IsStunt)
+            if (IsStunt || IsStatic)
                 return;
 
             base.UpdateComportement();
@@ -135,10 +137,11 @@ namespace CrabMaga
 
         public void Attack(Unit _unit, IAttackReceiver _target)
         {
-            if (IsStunt)
+            if (IsStunt || IsStatic)
                 return;
 
             attackBehaviour.Attack(_unit, _target);
+            onAttack?.Invoke(this);
 
             HaveReachTarget();
         }
@@ -175,21 +178,25 @@ namespace CrabMaga
                 case PassifEvent.NEVER:
                     break;
                 case PassifEvent.ON_INSTANTIATION:
-                    onInit.AddListener(AddPassif);
+                    onInit.AddListener(PlayPassif);
 
                     break;
                 case PassifEvent.ON_DIE:
-                    onDie.AddListener(AddPassif);
+                    onDie.AddListener(PlayPassif);
 
                     break;
                 case PassifEvent.ON_WIN:
-                    onWin.AddListener(AddPassif);
+                    onWin.AddListener(PlayPassif);
+
+                    break;
+                case PassifEvent.ON_ATTACK:
+                    onAttack.AddListener(PlayPassif);
 
                     break;
             }
         }
 
-        void AddPassif(Entity entity)
+        void PlayPassif(Entity entity)
         {
             passifBehaviour.PassifEffect(this);
         }

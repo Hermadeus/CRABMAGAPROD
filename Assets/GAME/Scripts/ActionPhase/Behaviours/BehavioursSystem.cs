@@ -140,7 +140,8 @@ namespace CrabMaga
         NULL_PASSIF,
         STUNT_EFFECT,
         DOUBLE_EFFECTIF_EFFECT,
-        BOOST_ATTACK_SPEED_ON_OTHER_EFFECT
+        BOOST_ATTACK_SPEED_ON_OTHER_EFFECT,
+        LASER_ATTACK_EFFECT
     }
 
     public enum PassifEvent
@@ -148,7 +149,9 @@ namespace CrabMaga
         NEVER,
         ON_INSTANTIATION,
         ON_DIE,
-        ON_WIN
+        ON_WIN,
+        ON_ATTACK,
+        ON_CLICK
     }
 
 }

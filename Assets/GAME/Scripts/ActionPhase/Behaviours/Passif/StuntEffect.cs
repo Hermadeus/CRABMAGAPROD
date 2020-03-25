@@ -22,11 +22,11 @@ namespace CrabMaga
 
                     target.IsStunt = true;
                     target.Stunt();
-                    Debug.Log("stunt" + stuntAttacker.StuntTime);
+                    //Debug.Log("stunt" + stuntAttacker.StuntTime);
 
                     yield return new WaitForSeconds(stuntAttacker.StuntTime);
 
-                    Debug.Log("end stunt");
+                    //Debug.Log("end stunt");
 
                     target.IsStunt = false;
 

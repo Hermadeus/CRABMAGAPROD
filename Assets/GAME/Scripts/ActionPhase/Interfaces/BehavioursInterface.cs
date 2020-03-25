@@ -58,4 +58,18 @@ namespace CrabMaga
         float AttackSpeedBoostTimer { get; set; }
         float AttackSpeedMultiplier { get; set; }
     }
+
+    public interface ILaserAttacker
+    {
+        float LaserDamage { get; set; }
+        GameObject Laser { get; set; }
+        Transform Source { get; set; }
+        Transform Mid { get; set; }
+        float LaserSize { get; set; }
+        float LaserChargeTime { get; set; }
+
+        void ChargeLaser();
+        void StartLaser();
+        void StopLaser();
+    }
 }

@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 4976598051078141991}
   - component: {fileID: 4976598051078141990}
   m_Layer: 10
-  m_Name: Leader
+  m_Name: Leader - Test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -103,7 +103,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4976598051078141988}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 100, y: 0, z: 100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -147,6 +147,9 @@ MonoBehaviour:
     - Name: attackBehaviour
       Entry: 6
       Data: 
+    - Name: passifBehaviour
+      Entry: 6
+      Data: 
     - Name: attackCor
       Entry: 6
       Data: 
@@ -157,11 +160,26 @@ MonoBehaviour:
   health: 0
   gameManager: {fileID: 0}
   poolingManager: {fileID: 0}
+  parentPoolingQueue: {fileID: 0}
+  onInit:
+    m_PersistentCalls:
+      m_Calls: []
+  onDie:
+    m_PersistentCalls:
+      m_Calls: []
+  onWin:
+    m_PersistentCalls:
+      m_Calls: []
+  onAttack:
+    m_PersistentCalls:
+      m_Calls: []
   destination: {fileID: 0}
   initALaMano: 0
+  lastHitUnitReceive: {fileID: 0}
   damage: 0
   attackSpeed: 0
   detectionRange: 0
+  crabUnitType: 0
   target: {fileID: 0}
   entityType: 1
   favoriteTarget: 1
@@ -169,6 +187,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   unitInRangeOfView: []
+  passifEvent: 0
+  isStunt: 0
 --- !u!1 &4976598051176201958
 GameObject:
   m_ObjectHideFlags: 0

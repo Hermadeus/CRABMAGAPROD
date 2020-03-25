@@ -182,7 +182,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5392105307437488006}
-  - component: {fileID: 632072118760293492}
+  - component: {fileID: 1546286160773777499}
   m_Layer: 10
   m_Name: DoubleEffecrtif
   m_TagString: Untagged
@@ -197,7 +197,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6806894772975710165}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -100, y: 0, z: -100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -205,16 +205,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &632072118760293492
+--- !u!114 &1546286160773777499
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6806894772975710165}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe22116ac0076d841a3049293d35a4bc, type: 3}
+  m_Script: {fileID: 11500000, guid: 0d253700a1e11fb4eb526ee548ad2776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
@@ -264,6 +264,9 @@ MonoBehaviour:
   onWin:
     m_PersistentCalls:
       m_Calls: []
+  onAttack:
+    m_PersistentCalls:
+      m_Calls: []
   destination: {fileID: 0}
   initALaMano: 0
   lastHitUnitReceive: {fileID: 0}
@@ -282,4 +285,3 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
-  stuntTimer: 1

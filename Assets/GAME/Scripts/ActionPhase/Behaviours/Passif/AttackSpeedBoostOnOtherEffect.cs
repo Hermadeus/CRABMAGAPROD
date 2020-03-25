@@ -21,7 +21,7 @@ namespace CrabMaga
 
             crabUnit.crabFormationReference.haveReceivePassif = true;
 
-            Debug.Log("effecttttt");
+            //Debug.Log("effecttttt");
 
             if (unit is IBoostSpeedAttackOnOther)
             {

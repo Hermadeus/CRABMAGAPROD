@@ -9,24 +9,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14332260acdbe514dbcbeaf69e3a39bd, type: 3}
-  m_Name: DoubleEffectifCrab
+  m_Script: {fileID: 11500000, guid: 05c038c25ddb7ea43aefbb7d3e2d9d7f, type: 3}
+  m_Name: Crab'Zilla
   m_EditorClassIdentifier: 
   behaviourSystem: {fileID: 11400000, guid: 65fa9772d44e2ec47bab627a75c1152e, type: 2}
-  entityName: DoubleEffectifCrab
-  crabUnitType: {fileID: 1546286160773777499, guid: bbf3f9986af3a26439ec5ea801e2ef44,
+  entityName: Crab'Zilla
+  crabUnitType: {fileID: 1244175487599082764, guid: cb5b489f79437ee47aed97122e1f3bb3,
     type: 3}
   startMovementBehaviour: 4
-  startHealth: 20
-  baseSpeed: 0.4
-  speedEnum: 2
+  startHealth: 50
+  baseSpeed: 0.2
+  speedEnum: 1
   rotationSpeed: 0.5
-  acceleration: 2
-  accelerationEnum: 2
-  damage: 2
-  attackSpeed: 1
-  detectionRange: 0
-  crabUnitEnum: 0
+  acceleration: 1
+  accelerationEnum: 1
+  damage: 10
+  attackSpeed: 5
+  detectionRange: 2
   detectionBehaviour: 0
   entityType: 1
   favoriteTarget: 2
@@ -34,6 +33,5 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   attackType: 1
-  passifBehaviour: 2
-  passifEvent: 3
-  type: 0
+  passifBehaviour: 4
+  passifEvent: 5

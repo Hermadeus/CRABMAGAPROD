@@ -83,7 +83,8 @@ namespace CrabMaga
         public EntityEvent
             onInit = new EntityEvent(),
             onDie = new EntityEvent(),
-            onWin = new EntityEvent();
+            onWin = new EntityEvent(),
+            onAttack = new EntityEvent();
 
         [FoldoutGroup("Gameplay References")]
         [SerializeField] Transform destination = default;

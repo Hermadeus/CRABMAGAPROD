@@ -16,6 +16,7 @@ namespace QRTools.Inputs
 
         [SerializeField, BoxGroup("References")] private CameraVariable camera = default;
         [BoxGroup("Ray")] public bool useRaycast = false;
+        [ShowIf("@this.useRaycast == true"), BoxGroup("Ray")] public LayerMask mask;
         [ReadOnly, BoxGroup("Ray")] public Collider objectHit = null;
         private Ray ray;
         private RaycastHit hit;
@@ -227,9 +228,10 @@ namespace QRTools.Inputs
 
             ray = camera.value.ScreenPointToRay(touch.position);
 
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity, mask))
             {
                 RayPoint = hit.point;
+
                 objectHit = hit.collider;
 
                 if (objectHit != previousObjectHit)

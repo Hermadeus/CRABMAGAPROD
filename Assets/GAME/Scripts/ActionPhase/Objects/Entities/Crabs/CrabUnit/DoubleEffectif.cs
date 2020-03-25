@@ -4,9 +4,8 @@ using UnityEngine;
 
 namespace CrabMaga
 {
-    [CreateAssetMenu(menuName = "CRAB MAGA/Data/EnemyData")]
-    public class EnemyData : CrabUnitData
+    public class DoubleEffectif : CrabUnit
     {
-        
+
     }
 }

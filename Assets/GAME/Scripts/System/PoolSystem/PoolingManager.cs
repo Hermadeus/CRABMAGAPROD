@@ -83,8 +83,11 @@ namespace CrabMaga
 
         public void InvokeLeader()
         {
-            if(APgameManager.leaderOnBattle == null && playerData.leader_slot != null)
-                APgameManager.leaderOnBattle = PoolEntity<Leader>(playerData.leader_slot, new Vector3(doubleTouch.RayPoint.x, 0, doubleTouch.RayPoint.z));
+            if (APgameManager.leaderOnBattle == null && playerData.leader_slot != null)
+                APgameManager.leaderOnBattle = PoolEntity(
+                    playerData.leader_slot.crabUnitType.GetType(),
+                    new Vector3(doubleTouch.RayPoint.x, 0, doubleTouch.RayPoint.z)
+                    ) as Leader;
         }
 
         public T PoolEntity<T>(EntityData _entityData, Vector3 _position) where T : Entity
@@ -140,16 +143,16 @@ namespace CrabMaga
                 ));
         }
 
-        public IPoolable Pool(Vector3 _position, Type crabUnitType, Transform parent = null, bool onPool = false)
+        public IPoolable Pool(Vector3 _position, Type typeToResearch, Transform parent = null, bool onPool = false)
         {
             if (poolables.Count > 0)
                 for (int i = 0; i < poolables.Count; i++)
                 {
-                    if (poolables[i].GetType() == crabUnitType)
+                    if (poolables[i].GetType() == typeToResearch)
                     {
                         //Debug.Log("found");
                         
-                        CrabUnit _obj = (CrabUnit)poolables[i];
+                        Entity _obj = (Entity)poolables[i];
                         _obj.enabled = true;
 
                         _obj.transform.position = _position;

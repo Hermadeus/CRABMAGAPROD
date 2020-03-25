@@ -122,6 +122,11 @@ namespace CrabMaga
                 return;
             }
 
+            if(slot01.IsSelected == false && slot02.IsSelected == false && slot03.IsSelected == false && slot04.IsSelected == false)
+            {
+                CurrentSelectedSlot = null;
+            }
+
             foreach (RaycastResult result in results)
             {
                 if (result.gameObject.GetComponent<UnitWheelSlot>())
