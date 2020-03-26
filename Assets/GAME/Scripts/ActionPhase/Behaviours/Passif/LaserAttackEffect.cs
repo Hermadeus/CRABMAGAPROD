@@ -17,11 +17,11 @@ namespace CrabMaga
         IEnumerator Laser(Unit unit)
         {
             bool firstHit = false, secondHit = false, thirdHit = false, quadHit = false;
-
+            CrabZilla c = unit as CrabZilla;
+            ILaserAttacker laserAttacker = unit as ILaserAttacker;
 
             if (unit is ILaserAttacker)
             {
-                ILaserAttacker laserAttacker = unit as ILaserAttacker;
 
                 laserAttacker.ChargeLaser();
 
@@ -35,54 +35,50 @@ namespace CrabMaga
                 {
                     normalizedTime += Time.deltaTime / duration;
 
-                    Vector3 mMidPosition = laserAttacker.Source.position + ((unit.Target.transform.position - laserAttacker.Source.position) * 0.5F);
-                    Vector3 mDirection = (unit.Target.transform.position - laserAttacker.Source.position).normalized;
+                    #region CASSE
+                    //Vector3 to = unit.Target.transform.position * 10;
 
-                    Vector3 to = ((unit.Target.transform.position - laserAttacker.Source.position * 10f));
-
-                    laserAttacker.Mid.position = mMidPosition;
-                    laserAttacker.Mid.rotation = Quaternion.LookRotation(mDirection, Vector3.up);
-
-                    laserAttacker.Laser.transform.position = mMidPosition;
-                    laserAttacker.Laser.transform.rotation = Quaternion.LookRotation(mDirection, Vector3.right) * Quaternion.Euler(90, 0, 0);
-                    laserAttacker.Laser.transform.localScale = new Vector3(
-                        laserAttacker.LaserSize,
-                        ((to - laserAttacker.Source.position) * .5F).magnitude,
-                        laserAttacker.LaserSize
-                        );
+                    ////Vector3 mMidPosition = laserAttacker.Source.position + ((unit.Target.transform.position - laserAttacker.Source.position) * 0.5F);
+                    //Vector3 mMidPosition = (to - laserAttacker.Source.position).normalized / 2f;
+                    //Vector3 mDirection = (unit.Target.transform.position - laserAttacker.Source.position).normalized;
 
 
-                    RaycastHit hit;
-                    // Does the ray intersect any objects excluding the player layer
-                    if (Physics.Raycast(laserAttacker.Source.transform.position, unit.Target.transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
+                    //laserAttacker.Mid.position = mMidPosition;
+                    //laserAttacker.Mid.rotation = Quaternion.LookRotation(mDirection, Vector3.up);
+
+                    //laserAttacker.Laser.transform.position = mMidPosition;
+                    //laserAttacker.Laser.transform.rotation = Quaternion.LookRotation(mDirection, Vector3.right) * Quaternion.Euler(90, 0, 0);
+                    //laserAttacker.Laser.transform.localScale = new Vector3(
+                    //    laserAttacker.LaserSize,
+                    //    ((to - laserAttacker.Source.position) * .5F).magnitude,
+                    //    laserAttacker.LaserSize
+                    //    );
+                    #endregion
+
+
+                    c.LaserTarget = Physics.OverlapCapsule(laserAttacker.StartPos.position, laserAttacker.EndPos.position, laserAttacker.LaserSize, unit.layerMaskTarget);
+
+                    if (normalizedTime > 0 && !firstHit)
                     {
-                        CrabZilla c = unit as CrabZilla;
-                        c.colli = Physics.OverlapCapsule(unit.transform.position, to, laserAttacker.LaserSize, unit.layerMaskTarget);
-
-                        Debug.Log("Did Hit");
-                    }
-
-                    if(normalizedTime > 0 && !firstHit)
-                    {
-                        Debug.Log("f hit");
+                        InfligeDamage(laserAttacker);
                         firstHit = true;
                     }
 
                     if (normalizedTime > .25f && !secondHit)
                     {
-                        Debug.Log("second hit");
+                        InfligeDamage(laserAttacker);
                         secondHit = true;
                     }
 
                     if (normalizedTime > .5f && !thirdHit)
                     {
-                        Debug.Log("third hit");
+                        InfligeDamage(laserAttacker);
                         thirdHit = true;
                     }
 
                     if (normalizedTime > .75f && !quadHit)
                     {
-                        Debug.Log("quad hit");
+                        InfligeDamage(laserAttacker);
                         quadHit = true;
                     }
 
@@ -92,6 +88,16 @@ namespace CrabMaga
                 laserAttacker.StopLaser();
 
                 yield break;
+            }
+        }
+
+        void InfligeDamage(ILaserAttacker laserAttacker)
+        {
+            for (int i = 0; i < laserAttacker.LaserTarget.Length; i++)
+            {
+                IAttackReceiver attackReceiver = laserAttacker.LaserTarget[i].GetComponentInParent<Unit>() as IAttackReceiver;
+                attackReceiver.ReceiveAttack(laserAttacker as Unit, laserAttacker.LaserDamage / 4f);
+                Debug.Log(((Unit)attackReceiver).name + " + " + laserAttacker.LaserDamage / 4f);
             }
         }
     }

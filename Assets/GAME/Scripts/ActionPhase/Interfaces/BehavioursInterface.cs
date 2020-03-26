@@ -62,11 +62,13 @@ namespace CrabMaga
     public interface ILaserAttacker
     {
         float LaserDamage { get; set; }
-        GameObject Laser { get; set; }
-        Transform Source { get; set; }
-        Transform Mid { get; set; }
+        Transform StartPos { get; set; }
+        Transform EndPos { get; set; }
         float LaserSize { get; set; }
         float LaserChargeTime { get; set; }
+
+        LineRenderer LineRendererLaser { get; set; }
+        Collider[] LaserTarget { get; set; }
 
         void ChargeLaser();
         void StartLaser();

@@ -16,34 +16,38 @@ namespace CrabMaga
         public float LaserDamage { get => laserDamage; set => laserDamage = value; }
 
         [FoldoutGroup("Passif Attribute")]
-        [SerializeField] GameObject laser = default;
-        public GameObject Laser { get => laser; set => laser = value; }
+        [SerializeField] Transform startPos = default;
+        public Transform StartPos { get => startPos; set => startPos = value; }
 
         [FoldoutGroup("Passif Attribute")]
-        [SerializeField] Transform source = default;
-        public Transform Source { get => source; set => source = value; }
+        [SerializeField] Transform endPos = default;
+        public Transform EndPos { get => endPos; set => endPos = value; }
 
-        [FoldoutGroup("Passif Attribute")]
-        [SerializeField] Transform mid = default;
-        public Transform Mid { get => mid; set => mid = value; }
-
-        float laserSize = .2f;
+        [SerializeField] float laserSize = .04f;
         public float LaserSize { get => laserSize; set => laserSize = value; }
 
         [FoldoutGroup("Passif Attribute")]
         [SerializeField] float laserChargeTimer = 1f;
         public float LaserChargeTime { get => laserChargeTimer; set => laserChargeTimer = value; }
 
-        public Collider[] colli;
+        [FoldoutGroup("Passif Attribute")]
+        [SerializeField] LineRenderer lineRendererLaser = default;
+        public LineRenderer LineRendererLaser { get => lineRendererLaser; set => lineRendererLaser = value; }
+
+        [FoldoutGroup("Passif Attribute")]
+        [SerializeField] Collider[] laserTarget;
+        public Collider[] LaserTarget { get => laserTarget; set => laserTarget = value; }
 
         public void StartLaser()
         {
-            DOTween.To(() => LaserSize, x => LaserSize = x, .2f, 1f).SetEase(Ease.InOutElastic);
+            DOTween.To(() => LineRendererLaser.startWidth, x => LineRendererLaser.startWidth = x, LaserSize, 1f).SetEase(Ease.InOutElastic);
+            DOTween.To(() => LineRendererLaser.endWidth, x => LineRendererLaser.endWidth = x, LaserSize, 1f).SetEase(Ease.InOutElastic);
         }
 
         public void StopLaser()
         {
-            DOTween.To(() => LaserSize, x => LaserSize = x, 0, 1f).SetEase(Ease.Linear);
+            DOTween.To(() => LineRendererLaser.startWidth, x => LineRendererLaser.startWidth = x, 0, 1f).SetEase(Ease.Linear);
+            DOTween.To(() => LineRendererLaser.endWidth, x => LineRendererLaser.endWidth = x, 0, 1f).SetEase(Ease.Linear);
 
             IsStatic = false;
         }

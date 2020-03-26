@@ -36,11 +36,13 @@ namespace CrabMaga
                     if (_unit.IsStatic)
                         yield return null;
 
-                    d = Vector3.Distance(_entity.transform.position, _unit.Target.transform.position);
-                    _entity.transform.DOLookAt(_unit.Target.transform.position, _entity.rotationSpeed);
+                    if (_unit.Target != null)
+                    {
+                        d = Vector3.Distance(_entity.transform.position, _unit.Target.transform.position);
+                        _entity.transform.DOLookAt(_unit.Target.transform.position, _entity.rotationSpeed);
 
-                    _entity.transform.position = Vector3.MoveTowards(_entity.transform.position, _unit.Target.transform.position, _entity.Speed * Time.deltaTime);
-
+                        _entity.transform.position = Vector3.MoveTowards(_entity.transform.position, _unit.Target.transform.position, _entity.Speed * Time.deltaTime);
+                    }
                     yield return null;
                 }
 

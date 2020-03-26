@@ -171,7 +171,8 @@ namespace CrabMaga
             movementTween.Kill();
             movementTween = null;
 
-            StopCoroutine(movementCor);
+            if(movementCor != null)
+                StopCoroutine(movementCor);
             movementCor = null;
 
             movementBehaviour = null;
