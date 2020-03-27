@@ -20,7 +20,7 @@ namespace CrabMaga
                 if (crabUnit.crabFormationReference.CrabUnits[i] != null)
                 {
                     crabUnit.poolingManager.PoolEntity(
-                        crabUnit.entityData.crabUnitType.GetType(),
+                        crabUnit.entityData.unitType.GetType(),
                         crabUnit.crabFormationReference.CrabUnits[i].transform.position
                         );
                 }

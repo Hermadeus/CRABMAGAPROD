@@ -27,14 +27,9 @@ namespace CrabMaga
         public PlayerData playerData = default;
         [BoxGroup("References")]
         public InputTouch doubleTouch = default;
-
-        //public CrabUnitData dataCra = default;
-
-        private void Awake()
-        {
-            //CreateCrabFormationWithType(dataCra.crabUnitType.GetType(), Vector3.zero);
-        }
-
+        [BoxGroup("References")]
+        public Transform poolingParent = default;
+        
         public void CreateCrabFormation(CrabUnitData data, Vector3 _position)
         {
             if (APgameManager.crabFormationOnBattle.Count >= 3)
@@ -71,7 +66,11 @@ namespace CrabMaga
             {
                 for (int y = 0; y < 3; y++)
                 {
-                    CrabUnit crabUnit = PoolEntity(crabType, new Vector3(_position.x * (i / 2f), 0, _position.z * (y / 2f))) as CrabUnit;
+                    CrabUnit crabUnit = PoolEntity(
+                        crabType,
+                        new Vector3(_position.x * (i / 2f), 0, _position.z * (y / 2f)),
+                        poolingParent
+                        ) as CrabUnit;
 
                     _crabFormation.CrabUnits.Add(crabUnit);
                     crabUnit.crabFormationReference = _crabFormation;
@@ -84,10 +83,14 @@ namespace CrabMaga
         public void InvokeLeader()
         {
             if (APgameManager.leaderOnBattle == null && playerData.leader_slot != null)
+            {
                 APgameManager.leaderOnBattle = PoolEntity(
-                    playerData.leader_slot.crabUnitType.GetType(),
-                    new Vector3(doubleTouch.RayPoint.x, 0, doubleTouch.RayPoint.z)
+                    playerData.leader_slot.unitType.GetType(),
+                    new Vector3(doubleTouch.RayPoint.x, 0, doubleTouch.RayPoint.z),
+                    poolingParent
                     ) as Leader;
+            }
+                
         }
 
         public T PoolEntity<T>(EntityData _entityData, Vector3 _position) where T : Entity
@@ -99,9 +102,9 @@ namespace CrabMaga
             return entity;
         }
 
-        public Entity PoolEntity(Type crabType, Vector3 _position)
+        public Entity PoolEntity(Type crabType, Vector3 _position, Transform parent = null)
         {
-            Entity entity = Pool(_position, crabType) as Entity;
+            Entity entity = Pool(_position, crabType, parent) as Entity;
             //entity.entityData = _entityData;
             entity.OnPool();
 

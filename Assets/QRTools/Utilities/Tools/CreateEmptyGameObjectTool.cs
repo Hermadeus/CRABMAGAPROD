@@ -10,6 +10,7 @@ namespace QRTools
         static void CreateGameObjectWith3DGraphics()
         {
             GameObject go = new GameObject();
+            if (Selection.activeGameObject != null) go.transform.parent = Selection.activeGameObject.transform;
             go.name = "Nom De Object";
             go.transform.position = Vector3.zero;
             Selection.activeObject = go;

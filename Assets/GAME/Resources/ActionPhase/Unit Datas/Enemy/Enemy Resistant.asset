@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13a427a84d9fab64489c8a0c273fdabe, type: 3}
+  m_Name: Enemy Resistant
+  m_EditorClassIdentifier: 
+  behaviourSystem: {fileID: 11400000, guid: 65fa9772d44e2ec47bab627a75c1152e, type: 2}
+  entityName: Enemy Resistant
+  unitType: {fileID: -9178628451549669157, guid: c92e45e304290bb429441ce3f99b1d78,
+    type: 3}
+  startMovementBehaviour: 0
+  startHealth: 25
+  baseSpeed: 0.4
+  speedEnum: 2
+  rotationSpeed: 0.5
+  acceleration: 1
+  accelerationEnum: 1
+  damage: 3
+  attackSpeed: 2
+  detectionRange: 1
+  detectionBehaviour: 0
+  entityType: 2
+  favoriteTarget: 1
+  layerMaskTarget:
+    serializedVersion: 2
+    m_Bits: 1024
+  attackType: 2
+  passifBehaviour: 0
+  passifEvent: 0
+  type: 0

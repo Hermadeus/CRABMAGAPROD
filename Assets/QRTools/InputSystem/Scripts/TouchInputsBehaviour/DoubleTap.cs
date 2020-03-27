@@ -11,6 +11,8 @@ namespace QRTools.Inputs {
             if (inputTouch.Touch.tapCount == inputTouch.tapCount)
             {
 
+                Debug.Log(inputTouch.tapCount);
+
                 if (!inputTouch.asTap)
                 {
                     inputTouch.onDoubleTap?.Invoke();

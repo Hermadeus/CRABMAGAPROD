@@ -21,6 +21,9 @@ namespace CrabMaga
         public Leader leaderOnBattle;
 
         [BoxGroup("AP Informations")]
+        public List<Enemy> enemiesOnBattle = new List<Enemy>();
+
+        [BoxGroup("AP Informations")]
         [SerializeField] int currentScore = 0;
         public int CurrentScore
         {

@@ -142,7 +142,7 @@ namespace CrabMaga
         {
             //poolingManager.CreateCrabFormation(CurrentSelectedSlot.entityDataRef as CrabUnitData, UnitWheelInput.RayPoint);
             poolingManager.CreateCrabFormationWithType(
-                CurrentSelectedSlot.entityDataRef.crabUnitType.GetType(),
+                CurrentSelectedSlot.entityDataRef.unitType.GetType(),
                 UnitWheelInput.RayPoint
                 );
         }

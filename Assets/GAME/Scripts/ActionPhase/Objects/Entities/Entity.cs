@@ -87,8 +87,8 @@ namespace CrabMaga
             onAttack = new EntityEvent();
 
         [FoldoutGroup("Gameplay References")]
-        [SerializeField] Transform destination = default;
-        public Transform Destination
+        [SerializeField] GuardHouse destination = default;
+        public GuardHouse Destination
         {
             get => destination;
             set

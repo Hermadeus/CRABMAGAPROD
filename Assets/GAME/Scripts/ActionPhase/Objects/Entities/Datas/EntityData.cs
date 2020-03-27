@@ -17,7 +17,7 @@ namespace CrabMaga
         [BoxGroup("Entity attribute")]
         public string entityName = "";
         [BoxGroup("Entity attribute")]
-        public Unit crabUnitType = default;
+        public Unit unitType = default;
 
         [BoxGroup("Entity attribute")]
         public MovementBehaviourEnum startMovementBehaviour = MovementBehaviourEnum.TARGET_MOVEMENT;
