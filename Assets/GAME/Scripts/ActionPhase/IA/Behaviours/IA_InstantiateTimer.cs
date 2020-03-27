@@ -21,7 +21,6 @@ namespace CrabMaga
                 yield break;
 
             int x = Random.Range(0, enemyDatas.Length);
-            Debug.Log(x);
 
             manager.poolingManager.PoolEntity(enemyDatas[x].unitType.GetType(), manager.APgameManager.castle.transform.position);
 

@@ -14,19 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   behaviourSystem: {fileID: 11400000, guid: 65fa9772d44e2ec47bab627a75c1152e, type: 2}
   entityName: Crab'pitaine
-  crabUnitType: {fileID: 3863057427669080910, guid: 1b832dc4cb6da84438eb08863085738d,
+  unitType: {fileID: 3863057427669080910, guid: 1b832dc4cb6da84438eb08863085738d,
     type: 3}
   startMovementBehaviour: 4
-  startHealth: 20
-  baseSpeed: 0
+  startHealth: 1
+  baseSpeed: 0.4
   speedEnum: 2
   rotationSpeed: 0.5
-  acceleration: 0
+  acceleration: 2
   accelerationEnum: 2
   damage: 2
   attackSpeed: 1
   detectionRange: 0
-  crabUnitEnum: 0
   detectionBehaviour: 0
   entityType: 1
   favoriteTarget: 2

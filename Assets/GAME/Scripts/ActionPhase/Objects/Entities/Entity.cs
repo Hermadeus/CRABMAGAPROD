@@ -120,6 +120,8 @@ namespace CrabMaga
             entityData?.Init(this);
 
             movementBehaviour?.Move(this);
+
+            InitButton();
         }
 
         public virtual void UpdateComportement()
@@ -159,9 +161,9 @@ namespace CrabMaga
             if (this.enabled == false)
                 return;
 
-            transform.parent = parentPoolingQueue;
-
             ResetObject();
+
+            transform.parent = parentPoolingQueue;
         }
 
         public virtual void ResetObject()
@@ -176,7 +178,7 @@ namespace CrabMaga
             movementCor = null;
 
             movementBehaviour = null;
-            Speed = 1000;
+            Speed = 0;
             Health = 10000;
 
             Destination = null;

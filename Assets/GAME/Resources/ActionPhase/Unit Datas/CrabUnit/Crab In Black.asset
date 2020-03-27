@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   behaviourSystem: {fileID: 11400000, guid: 65fa9772d44e2ec47bab627a75c1152e, type: 2}
   entityName: Crab In Black
-  crabUnitType: {fileID: 6934997261248455762, guid: 56a85da14dd426d4f9d0651a3b155ef8,
+  unitType: {fileID: 6934997261248455762, guid: 56a85da14dd426d4f9d0651a3b155ef8,
     type: 3}
   startMovementBehaviour: 4
-  startHealth: 20
+  startHealth: 1
   baseSpeed: 0.4
   speedEnum: 2
   rotationSpeed: 0.5
@@ -26,7 +26,6 @@ MonoBehaviour:
   damage: 2
   attackSpeed: 1
   detectionRange: 0
-  crabUnitEnum: 0
   detectionBehaviour: 0
   entityType: 1
   favoriteTarget: 2

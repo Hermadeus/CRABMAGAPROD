@@ -22,13 +22,16 @@ namespace CrabMaga
             set
             {
                 crabUnits = value;
-                if (value.Count == 0)
-                    poolingManager.Push(this);
             }
         }
 
         public bool haveReceivePassif = false;
 
+        public void TestDeath()
+        {
+            if (crabUnits.Count == 0)
+                poolingManager.Push(this);
+        }
 
         public void OnPool()
         {
@@ -37,6 +40,8 @@ namespace CrabMaga
 
         public void OnPush()
         {
+            Debug.Log("formation death");
+            AP_GameManager.crabFormationOnBattle.Remove(this);
             ResetObject();
         }
 

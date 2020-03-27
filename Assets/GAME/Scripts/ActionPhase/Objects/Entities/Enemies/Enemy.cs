@@ -25,10 +25,10 @@ namespace CrabMaga
 
         public override void Init()
         {
-            GuardHouse gh = guardHouseManager.GetNextEmptyGuardHouse();
+            GuardHouse gh = guardHouseManager?.GetNextEmptyGuardHouse();
             if(gh == null)
             {
-                poolingManager.Push(this);
+                poolingManager?.Push(this);
                 return;
             }
             Destination = gh;
@@ -68,11 +68,12 @@ namespace CrabMaga
 
         public override void OnPush()
         {
-            base.OnPush();
             gameManager.enemiesOnBattle.Remove(this);
 
             if(Destination != null)
                 Destination.isOccupy = false;
+
+            base.OnPush();
         }
     }
 }

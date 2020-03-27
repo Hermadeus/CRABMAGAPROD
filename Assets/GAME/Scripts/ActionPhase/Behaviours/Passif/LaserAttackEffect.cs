@@ -9,8 +9,6 @@ namespace CrabMaga
     {
         public override void PassifEffect(Unit unit)
         {
-            Debug.Log("LASER");
-
             unit.StartCoroutine(Laser(unit));
         }
 
@@ -97,7 +95,7 @@ namespace CrabMaga
             {
                 IAttackReceiver attackReceiver = laserAttacker.LaserTarget[i].GetComponentInParent<Unit>() as IAttackReceiver;
                 attackReceiver.ReceiveAttack(laserAttacker as Unit, laserAttacker.LaserDamage / 4f);
-                Debug.Log(((Unit)attackReceiver).name + " + " + laserAttacker.LaserDamage / 4f);
+                //Debug.Log(((Unit)attackReceiver).name + " + " + laserAttacker.LaserDamage / 4f);
             }
         }
     }

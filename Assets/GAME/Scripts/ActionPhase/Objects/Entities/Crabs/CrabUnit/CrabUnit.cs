@@ -33,6 +33,8 @@ namespace CrabMaga
         {
             base.ResetObject();
 
+            crabFormationReference?.CrabUnits.Remove(this);
+            crabFormationReference?.TestDeath();
             crabFormationReference = null;
         }
 
