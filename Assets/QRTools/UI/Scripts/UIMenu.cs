@@ -34,6 +34,8 @@ namespace QRTools.UI
 
         public override void Init()
         {
+            base.Init();
+
             TryGetComponent<CanvasGroup>(out menu);
             
             if(apparitionMode == ApparitionMode.ANIMATION)

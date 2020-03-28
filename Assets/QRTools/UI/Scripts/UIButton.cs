@@ -78,5 +78,11 @@ namespace QRTools.UI
                 button.colors = cb;
             }
         }
+
+        [Button]
+        void OnClickTest()
+        {
+            OnClick.Invoke();
+        }
     }
 }

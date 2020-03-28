@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 using Sirenix.OdinInspector;
 
@@ -43,6 +44,10 @@ namespace CrabMaga
         [BoxGroup("References")]
         public ScorePanel scorePanel = default;
 
+        public UnityEvent
+            OnWinEvent = new UnityEvent(),
+            OnLoseEvent = new UnityEvent();
+
         bool inPause = false;
         public bool InPause
         {
@@ -62,7 +67,46 @@ namespace CrabMaga
             }
         }
 
+        bool asFinish = false;
+        public bool AsFinish
+        {
+            get => asFinish;
+            set
+            {
+                asFinish = value;
+            }
+        }
+
+        bool asWin = false;
+        public bool AsWin
+        {
+            get => asWin;
+            set
+            {
+                asWin = value;
+            }
+        }
+
+        public float AP_Timer = 0f;
+
         private void Awake()
+        {
+            Init();
+        }
+
+        private void Update()
+        {
+            Timer();
+        }
+
+        void Timer()
+        {
+            if (inPause && AsFinish) return;
+
+            AP_Timer += Time.deltaTime;
+        }
+
+        void Init()
         {
             Application.targetFrameRate = 60;
             Time.timeScale = 1f;
@@ -70,7 +114,18 @@ namespace CrabMaga
 
         public void Win()
         {
-            Debug.Log("WIN");
+            AsFinish = true;
+            AsWin = true;
+
+            OnWinEvent.Invoke();
+        }
+
+        public void Lose()
+        {
+            AsFinish = true;
+            AsWin = false;
+
+            OnLoseEvent.Invoke();
         }
     }
 }

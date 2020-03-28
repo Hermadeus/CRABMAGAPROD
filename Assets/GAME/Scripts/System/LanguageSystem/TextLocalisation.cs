@@ -1,8 +1,13 @@
 ﻿using System;
+
 using QRTools.Utilities.Observer;
+
 using UnityEngine;
 using UnityEngine.UI;
+
 using TMPro;
+
+using Sirenix.OdinInspector;
 
 namespace CrabMaga
 {
@@ -21,6 +26,13 @@ namespace CrabMaga
         public override void Notify()
         {
             TextRef.text = text.GetCurrentText(languageManager.LanguageEnum);
+        }
+
+        [Button]
+        void LinkReferences()
+        {
+            this.Observer = Resources.Load<LanguageManager>("Assets/GAME/Resources/System/LanguageSystem/Language Manager.asset") as IObserver;
+            languageManager = Resources.Load<LanguageManager>("Assets/GAME/Resources/System/LanguageSystem/Language Manager.asset");
         }
     }
 }

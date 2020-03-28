@@ -36,6 +36,18 @@ MonoBehaviour:
   objectHit: {fileID: 0}
   onTouchEnter:
     m_PersistentCalls:
+      m_Calls: []
+  onTouchStay:
+    m_PersistentCalls:
+      m_Calls: []
+  onTouchMoving:
+    m_PersistentCalls:
+      m_Calls: []
+  onTouchEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  onDoubleTap:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: 9c46bb3dd0c69db43acff8f7640951ba, type: 2}
         m_MethodName: Raise
@@ -48,18 +60,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onTouchStay:
-    m_PersistentCalls:
-      m_Calls: []
-  onTouchMoving:
-    m_PersistentCalls:
-      m_Calls: []
-  onTouchEnd:
-    m_PersistentCalls:
-      m_Calls: []
-  onDoubleTap:
-    m_PersistentCalls:
-      m_Calls: []
   onSwipeUp:
     m_PersistentCalls:
       m_Calls: []
