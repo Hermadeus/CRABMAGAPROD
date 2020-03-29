@@ -34,7 +34,7 @@ namespace CrabMaga
 
         public void CreateCrabFormation(CrabUnitData data, Vector3 _position)
         {
-            if (APgameManager.crabFormationOnBattle.Count >= 3)
+            if (APgameManager.crabFormationOnBattle.Count >= APgameManager.levelData.maxCrab)
             {
                 return;
             }
@@ -56,7 +56,7 @@ namespace CrabMaga
 
         public void CreateCrabFormationWithType(Type crabType, Vector3 _position)
         {
-            if (APgameManager.crabFormationOnBattle.Count >= 3)
+            if (APgameManager.crabFormationOnBattle.Count >= APgameManager.levelData.maxCrab)
             {
                 return;
             }
