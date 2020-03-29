@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 using Sirenix.OdinInspector;
 
@@ -14,6 +15,8 @@ namespace CrabMaga
     {
         [BoxGroup("Level Information")]
         public string levelName = "";
+        [BoxGroup("Level Information")]
+        public SceneReference sceneLevel = default;
 
         [BoxGroup("Level Rules")]
         public int maxCrab = 3;
