@@ -68,6 +68,9 @@ MonoBehaviour:
     - Name: attackBehaviour
       Entry: 6
       Data: 
+    - Name: passifBehaviour
+      Entry: 6
+      Data: 
     - Name: attackCor
       Entry: 6
       Data: 
@@ -79,11 +82,25 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   poolingManager: {fileID: 0}
   parentPoolingQueue: {fileID: 0}
+  onInit:
+    m_PersistentCalls:
+      m_Calls: []
+  onDie:
+    m_PersistentCalls:
+      m_Calls: []
+  onWin:
+    m_PersistentCalls:
+      m_Calls: []
+  onAttack:
+    m_PersistentCalls:
+      m_Calls: []
   destination: {fileID: 0}
   initALaMano: 0
+  lastHitUnitReceive: {fileID: 0}
   damage: 0
   attackSpeed: 0
   detectionRange: 0
+  crabUnitType: 0
   target: {fileID: 0}
   entityType: 1
   favoriteTarget: 1
@@ -91,8 +108,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   unitInRangeOfView: []
+  passifEvent: 0
+  isStunt: 0
+  isStatic: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  stuntTimer: 1
 --- !u!1 &950087591553008041
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,8 +125,9 @@ GameObject:
   - component: {fileID: 950087591553008040}
   - component: {fileID: 950087591553008021}
   - component: {fileID: 950087591553008042}
+  - component: {fileID: 2204155246304032299}
   m_Layer: 10
-  m_Name: Sphere
+  m_Name: CrabInBlackGraph
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119,8 +141,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 950087591553008041}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.4}
-  m_LocalScale: {x: 0.53802, y: 0.53802, z: 0.53802}
+  m_LocalPosition: {x: 0, y: -3, z: 0.2}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 950087591576137866}
   m_RootOrder: 0
@@ -132,7 +154,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 950087591553008041}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -8545447256379345787, guid: 038af5742f2fdfd4285a285d224448e2, type: 3}
 --- !u!23 &950087591553008042
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -151,7 +173,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: d0367625227510d449836fd2558d1554, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -172,6 +194,25 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!95 &2204155246304032299
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950087591553008041}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: afc6e04b2a66d9643b3fbb7ada818d92, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &950087591576137867
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,7 +262,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 950087591576137867}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
