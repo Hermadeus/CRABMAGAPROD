@@ -68,7 +68,7 @@ namespace QRTools.UI
         {
             TryGetComponent<Button>(out button);
 
-            button.onClick.AddListener(OnClick.Invoke);
+            button.onClick.AddListener(OnClickButton);
 
             if (buttonParameters != null)
             {
@@ -77,6 +77,11 @@ namespace QRTools.UI
                 cb.selectedColor = cb.normalColor;
                 button.colors = cb;
             }
+        }
+
+        public virtual void OnClickButton()
+        {
+            OnClick.Invoke();
         }
 
         [Button]

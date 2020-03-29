@@ -29,7 +29,9 @@ namespace CrabMaga
         public InputTouch doubleTouch = default;
         [BoxGroup("References")]
         public Transform poolingParent = default;
-        
+        [BoxGroup("References")]
+        public CrabCount crabCount = default;
+
         public void CreateCrabFormation(CrabUnitData data, Vector3 _position)
         {
             if (APgameManager.crabFormationOnBattle.Count >= 3)
@@ -61,6 +63,9 @@ namespace CrabMaga
 
             CrabFormation _crabFormation = Pool<CrabFormation>(Vector3.zero) as CrabFormation;
             APgameManager.crabFormationOnBattle.Add(_crabFormation);
+
+            playerData.money -= 9;
+            crabCount.UpdateText();
 
             for (int i = 0; i < 3; i++)
             {
