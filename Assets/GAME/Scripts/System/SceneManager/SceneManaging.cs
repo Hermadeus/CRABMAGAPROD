@@ -12,11 +12,11 @@ namespace CrabMaga
     [CreateAssetMenu(menuName = "CRAB MAGA/Managers/Scene Manager")]
     public class SceneManaging : SerializedScriptableObject
     {
-        public Dictionary<string, Scene> sceneDic = new Dictionary<string, Scene>();
+        public Dictionary<string, SceneReference> sceneDic = new Dictionary<string, SceneReference>();
 
-        public Scene GetScene(string key)
+        public SceneReference GetScene(string key)
         {
-            Scene s;
+            SceneReference s;
 
             sceneDic.TryGetValue(key, out s);
 
@@ -26,6 +26,11 @@ namespace CrabMaga
         public void RestartScene()
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        public void ReturnToSagaMap()
+        {
+            SceneManager.LoadScene(GetScene("sagamap"));
         }
     }
 }
