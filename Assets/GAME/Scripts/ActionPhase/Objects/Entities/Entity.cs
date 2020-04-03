@@ -126,7 +126,7 @@ namespace CrabMaga
 
         public virtual void UpdateComportement()
         {
-
+            
         }
 
         public virtual void FixedUpdateComportement()

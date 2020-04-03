@@ -23,14 +23,22 @@ namespace CrabMaga
         public List<IIABehaviour> behaviours = new List<IIABehaviour>();
 
         [BoxGroup("Events")]
+        public float timerOnGameStart = 5f;
+        [BoxGroup("Events")]
         public IAEvent 
             onGameStart = new IAEvent();
 
         private void Awake()
         {
             InitEvents();
+            StartCoroutine(OnGameStartCor());
+        }
 
+        IEnumerator OnGameStartCor()
+        {
+            yield return new WaitForSeconds(timerOnGameStart);
             onGameStart.Invoke(this);
+            yield break;
         }
 
         void InitEvents()

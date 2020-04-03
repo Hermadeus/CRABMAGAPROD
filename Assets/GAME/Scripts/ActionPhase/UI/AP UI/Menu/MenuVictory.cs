@@ -29,6 +29,8 @@ namespace CrabMaga
         [SerializeField] ImageState drapeauImage = default;
         [FoldoutGroup("References")]
         [SerializeField] CanvasGroup buttonsVictory, buttonsLost;
+        [FoldoutGroup("References")]
+        [SerializeField] LanguageManager languageManager = default;
 
         public override void Init()
         {
@@ -44,7 +46,7 @@ namespace CrabMaga
 
         void InitLevelName()
         {
-            levelNameText.text = APGameManager.levelData.levelName;
+            levelNameText.text = APGameManager.levelData.levelName.GetCurrentText(languageManager.LanguageEnum);
         }
 
         public void UpdateInfos()

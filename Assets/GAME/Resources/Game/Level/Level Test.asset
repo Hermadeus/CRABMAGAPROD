@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 560211e26f48db942b26e93687940c31, type: 3}
   m_Name: Level Test
   m_EditorClassIdentifier: 
-  levelName: Level Test
+  levelName:
+    textFrancais: Level francais
+    textAnglais: Level Anglais
+    textCrab: Level Crab
   sceneLevel:
     sceneAsset: {fileID: 102900000, guid: 90406a9c3285b7842b498ec502e81ffd, type: 3}
     scenePath: Assets/GAME/Scenes/Scene_ActionPhase.unity

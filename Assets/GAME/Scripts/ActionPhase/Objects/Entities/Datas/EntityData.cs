@@ -18,6 +18,8 @@ namespace CrabMaga
         public string entityName = "";
         [BoxGroup("Entity attribute")]
         public Unit unitType = default;
+        [BoxGroup("Entity attribute")]
+        public Sprite pastilleSprite = default;
 
         [BoxGroup("Entity attribute")]
         public MovementBehaviourEnum startMovementBehaviour = MovementBehaviourEnum.TARGET_MOVEMENT;

@@ -92,6 +92,7 @@ namespace CrabMaga
                 unitInRangeOfView = value;
             }
         }
+        [FoldoutGroup("Debug")] public Pastille pastilleRef = default;
 
         [HideInInspector] public Coroutine attackCor;
 
@@ -121,6 +122,8 @@ namespace CrabMaga
 
         public override void UpdateComportement()
         {
+            pastilleRef?.SetHeight(transform.position.z);
+
             if (IsStunt || IsStatic)
                 return;
 
@@ -159,6 +162,12 @@ namespace CrabMaga
             attackCor = null;
 
             IsStunt = false;
+
+            if(pastilleRef != null)
+            {
+                pastilleRef.IsUsed = false;
+                pastilleRef = null;
+            }
         }
 
         public void HaveReachTarget()

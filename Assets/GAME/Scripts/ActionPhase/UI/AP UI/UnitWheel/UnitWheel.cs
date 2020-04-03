@@ -23,6 +23,8 @@ namespace CrabMaga
         public PoolingManager poolingManager = default;
         [BoxGroup("References")]
         public AP_GameManager AP_GameManager = default;
+        [BoxGroup("References")]
+        public CameraSlider cameraSlider = default;
 
         [FoldoutGroup("Slots")]
         public UnitWheelSlot
@@ -32,7 +34,7 @@ namespace CrabMaga
             slot04;
 
         UnitWheelSlot previousSelectedSlot;
-        [SerializeField] UnitWheelSlot currentSelectedSlot;
+        [SerializeField, ReadOnly] UnitWheelSlot currentSelectedSlot;
         public UnitWheelSlot CurrentSelectedSlot
         {
             get => currentSelectedSlot;
@@ -74,13 +76,14 @@ namespace CrabMaga
 
         public override void Show()
         {
-            if (UnitWheelInput.objectHit.GetComponent<InstantiationZone>())
-            {
-                base.Show();
-                rectTransform.localPosition = new Vector2(
-                    UnitWheelInput.InputCurrentPosition.x - (Screen.width / 2),
-                    UnitWheelInput.InputCurrentPosition.y - (Screen.height / 2));
-            }
+            //if (UnitWheelInput.objectHit.GetComponent<InstantiationZone>())
+            //{
+                
+            //}
+            base.Show();
+            rectTransform.localPosition = new Vector2(
+                UnitWheelInput.InputCurrentPosition.x - (Screen.width / 2),
+                UnitWheelInput.InputCurrentPosition.y - (Screen.height / 2));
         }
 
         public override void Hide()
@@ -141,10 +144,13 @@ namespace CrabMaga
         public void InstantiateFormation()
         {
             //poolingManager.CreateCrabFormation(CurrentSelectedSlot.entityDataRef as CrabUnitData, UnitWheelInput.RayPoint);
+
             poolingManager.CreateCrabFormationWithType(
                 CurrentSelectedSlot.entityDataRef.unitType.GetType(),
-                UnitWheelInput.RayPoint
-                );
+                new Vector3(UnitWheelInput.RayPoint.x,
+                0,
+                AP_GameManager.CurrentInstantiationZone.transform.position.z
+                ));
         }
 
         void SetSelectAllSlot(bool state)

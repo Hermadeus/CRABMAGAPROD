@@ -9,6 +9,8 @@ using TMPro;
 
 using Sirenix.OdinInspector;
 
+using DG.Tweening;
+
 namespace QRTools.UI
 {
     public class UIButton : UIElement, IUIInteractible
@@ -54,6 +56,9 @@ namespace QRTools.UI
         [SerializeField] private UnityEvent onClick = new UnityEvent();
         public UnityEvent OnClick { get => onClick; set => onClick = value; }
 
+        delegate void AnimEvent();
+        AnimEvent animEvent;
+
         public override void Hide()
         {
             IsInteractible = false;
@@ -77,17 +82,36 @@ namespace QRTools.UI
                 cb.selectedColor = cb.normalColor;
                 button.colors = cb;
             }
+
+            InitAnim();
         }
 
         public virtual void OnClickButton()
         {
             OnClick.Invoke();
+
+            animEvent.Invoke();
         }
 
         [Button]
         void OnClickTest()
         {
             OnClick.Invoke();
+        }
+
+        void InitAnim()
+        {
+            animEvent += AnimDezoom;
+        }
+
+        void AnimDezoom()
+        {
+            rectTransform.DOScale(new Vector3(1.5f, 1.5f, 1.5f), .2f).SetEase(Ease.InOutSine).OnComplete(SetScaleToOne);
+        }
+
+        void SetScaleToOne()
+        {
+            rectTransform.DOScale(new Vector3(1, 1, 1), .2f).SetEase(Ease.InOutSine);
         }
     }
 }

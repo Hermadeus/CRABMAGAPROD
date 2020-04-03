@@ -7,6 +7,9 @@ using UnityEngine.UI;
 using QRTools.UI;
 using QRTools.Utilities.Observer;
 
+using Sirenix.OdinInspector;
+using DG.Tweening;
+
 namespace CrabMaga
 {
     public class CameraSlider : UIElement, IObservable
@@ -17,11 +20,15 @@ namespace CrabMaga
         public Camera cameraObj = default;
         public Castle castle = default;
 
-        public Vector2 clampedValue;
+        [ReadOnly] public Vector2 clampedValue;
 
         float screenWidth;
-
         const float OFFSET = 3f;
+        
+        Vector3 pos;
+
+        public Pastille[] pastilles = default;
+        [HideInInspector] public float tailleMap;
 
         public override void Init()
         {
@@ -35,9 +42,10 @@ namespace CrabMaga
             ChangeHand();
 
             InitSlider();
+
+            tailleMap = castle.transform.position.z;
         }
 
-        Vector3 pos;
 
         void InitSlider()
         {
@@ -49,6 +57,9 @@ namespace CrabMaga
 
             pos = new Vector3();
             pos.y = cameraObj.transform.position.y;
+
+            slider.value = clampedValue.y;
+            cameraObj.transform.position = new Vector3(cameraObj.transform.position.x, cameraObj.transform.position.y, clampedValue.y - OFFSET);
 
             slider.onValueChanged.AddListener(OnSliderMove);
         }
@@ -89,6 +100,34 @@ namespace CrabMaga
                 rectTransform.anchorMax = new Vector2(0, 0.5f);
                 rectTransform.pivot = new Vector2(0, 0.5f);
             }
+        }
+
+        public void SetSlider(float toValue, float timer = 2f)
+        {
+            DOTween.To(() => slider.value, (x) => slider.value = x, toValue, timer).SetEase(Ease.InOutSine);
+        }
+
+        public Pastille AddPastille(float height, Sprite spr)
+        {
+            Pastille pastille = null;
+
+            for (int i = 0; i < pastilles.Length; i++)
+            {
+                if (pastilles[i].IsUsed == false)
+                {
+                    pastille = pastilles[i];
+                    pastille.IsUsed = true;
+                    break;
+                }
+            }
+
+            pastille.background.sprite = spr;
+
+            float _coef = tailleMap / height;
+
+            pastille.rectTransform.anchoredPosition = new Vector3(0, rectTransform.sizeDelta.y / _coef, 0);
+
+            return pastille;
         }
     }
 }

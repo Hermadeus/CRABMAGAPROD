@@ -31,6 +31,8 @@ namespace CrabMaga
         public Transform poolingParent = default;
         [BoxGroup("References")]
         public CrabCount crabCount = default;
+        [BoxGroup("References")]
+        public CameraSlider cameraSlider = default;
 
         public void CreateCrabFormation(CrabUnitData data, Vector3 _position)
         {
@@ -79,6 +81,8 @@ namespace CrabMaga
 
                     _crabFormation.CrabUnits.Add(crabUnit);
                     crabUnit.crabFormationReference = _crabFormation;
+
+                    crabUnit.pastilleRef = cameraSlider.AddPastille(_position.z, crabUnit.entityData.pastilleSprite);
                 }
             }
 

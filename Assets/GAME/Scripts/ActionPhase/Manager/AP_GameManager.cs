@@ -13,15 +13,15 @@ namespace CrabMaga
     {
         public LevelData levelData = default;
 
-        [BoxGroup("AP Informations")] 
+        [BoxGroup("AP Informations"), ReadOnly] 
         public List<CrabFormation> crabFormationOnBattle = new List<CrabFormation>();
-        [BoxGroup("AP Informations")]
+        [BoxGroup("AP Informations"), ReadOnly]
         public List<CrabUnit> crabUnitOnBattle = new List<CrabUnit>();
 
-        [BoxGroup("AP Informations")]
+        [BoxGroup("AP Informations"), ReadOnly]
         public Leader leaderOnBattle;
 
-        [BoxGroup("AP Informations")]
+        [BoxGroup("AP Informations"), ReadOnly]
         public List<Enemy> enemiesOnBattle = new List<Enemy>();
 
         [BoxGroup("AP Informations")]
@@ -38,6 +38,9 @@ namespace CrabMaga
                     Win();
             }
         }
+
+        [BoxGroup("AP Informations")]
+        public float AP_Timer = 0f;
 
         [BoxGroup("References")]
         public Castle castle = default;
@@ -87,7 +90,7 @@ namespace CrabMaga
             }
         }
 
-        public float AP_Timer = 0f;
+        public InstantiationZone CurrentInstantiationZone = default;
 
         private void Awake()
         {

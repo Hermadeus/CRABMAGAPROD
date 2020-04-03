@@ -14,7 +14,7 @@ namespace CrabMaga
     public class LevelData : ScriptableObject, IResetable
     {
         [BoxGroup("Level Information")]
-        public string levelName = "";
+        public TextLanguage levelName;
         [BoxGroup("Level Information")]
         public SceneReference sceneLevel = default;
 

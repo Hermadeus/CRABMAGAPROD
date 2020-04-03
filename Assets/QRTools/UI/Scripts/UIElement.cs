@@ -69,5 +69,14 @@ namespace QRTools.UI
             element.interactable = true;
             
         }
+
+        public void ShowElementWithoutInteractable(float timer = 0f)
+        {
+            hide.Kill();
+
+            show = DOTween.To(() => element.alpha, x => element.alpha = x, 1, timerAppear).SetEase(Ease.Linear);
+            element.interactable = false;
+
+        }
     }
 }
