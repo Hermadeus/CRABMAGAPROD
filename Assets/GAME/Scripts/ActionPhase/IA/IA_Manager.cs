@@ -6,6 +6,8 @@ using UnityEngine.Events;
 
 using Sirenix.OdinInspector;
 
+using QRTools.Functions;
+
 namespace CrabMaga
 {
     public class IA_Manager : SerializedMonoBehaviour
@@ -49,6 +51,7 @@ namespace CrabMaga
                     onGameStart.AddListener(behaviours[i].CallEvent);
             }
         }
+        
     }
 
     [System.Serializable]

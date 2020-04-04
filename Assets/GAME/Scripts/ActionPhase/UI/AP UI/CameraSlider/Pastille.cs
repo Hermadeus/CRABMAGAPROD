@@ -31,7 +31,6 @@ namespace CrabMaga
         public void SetHeight(float height)
         {
             coef = CameraSlider.tailleMap / height;
-            Debug.Log(coef);
 
             rectTransform.anchoredPosition = new Vector3(0, CameraSlider.rectTransform.sizeDelta.y / coef, 0);
         }

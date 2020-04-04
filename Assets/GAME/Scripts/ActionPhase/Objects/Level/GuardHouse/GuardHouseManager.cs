@@ -5,6 +5,8 @@ using UnityEngine;
 
 using Sirenix.OdinInspector;
 
+using QRTools.Functions;
+
 namespace CrabMaga
 {
     public class GuardHouseManager : MonoBehaviour
@@ -13,15 +15,10 @@ namespace CrabMaga
 
         public PoolingManager poolingManager = default;
 
-        public EnemyData enemyData = default;
+        public AP_GameManager AP_GameManager = default;
 
         public bool allEmpty = false;
-
-        private void Awake()
-        {
-            //poolingManager.PoolEntity(enemyData.unitType.GetType(), Vector3.zero);
-        }
-
+        
         public GuardHouse GetNextEmptyGuardHouse()
         {
             for (int i = 0; i < guardHouses.Count; i++)
@@ -47,6 +44,50 @@ namespace CrabMaga
             }
 
             Debug.Log("GUARDHOUSES : " + guardHouses.Count + " are founded.");
+        }
+
+        public GuardHouse GetNearnestGuardHouseOfThisPosition(Vector3 position)
+        {
+            float d = Mathf.Infinity;
+            GuardHouse gh = null;
+
+            for (int i = 0; i < guardHouses.Count; i++)
+            {
+                if (Vector3.Distance(guardHouses[i].transform.position, position) < d && !guardHouses[i].isOccupy)
+                {
+                    d = Vector3.Distance(guardHouses[i].transform.position, position);
+                    gh = guardHouses[i];
+                }
+            }
+
+            return gh;
+        }
+
+        public GuardHouse GetGuardHouseOnThisLine(int line)
+        {
+            for (int i = 0; i < guardHouses.Count; i++)
+            {
+                if (guardHouses[i].lineIndex == line)
+                    return guardHouses[i];
+            }
+
+            return null;
+        }
+
+        public GuardHouse GetGuardHouseLineWithHighterUnits()
+        {
+            List<float> values = new List<float>();
+            CrabFormation crabFormation = AP_GameManager.GetFormationWithHighterCrabs();
+            if (crabFormation == null)
+                return null;
+
+            for (int i = 0; i < crabFormation.CrabUnits.Count; i++)
+                if (crabFormation.CrabUnits[i] != null)
+                    values.Add(crabFormation.CrabUnits[i].transform.position.x);
+
+            int averragePosX = Mathf.RoundToInt(FunctionsUseful.GetAverrage(values.ToArray()));
+
+            return GetGuardHouseOnThisLine(averragePosX);
         }
     }
 }

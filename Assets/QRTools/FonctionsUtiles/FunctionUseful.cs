@@ -28,5 +28,16 @@ namespace QRTools.Functions
             if (Vector3.Distance(ObjectOne.position, ObjectTwo.position) > distanceMax)
                 action.Invoke();
         }
+
+        public static float GetAverrage(params float[] values)
+        {
+            float result = 0f;
+
+            for (int i = 0; i < values.Length; i++)
+                result += values[i];
+            result /= values.Length;
+
+            return result;
+        }
     }
 }

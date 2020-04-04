@@ -46,6 +46,8 @@ namespace CrabMaga
         public Castle castle = default;
         [BoxGroup("References")]
         public ScorePanel scorePanel = default;
+        [BoxGroup("References")]
+        public GuardHouseManager guardHouseManager = default;
 
         public UnityEvent
             OnWinEvent = new UnityEvent(),
@@ -129,6 +131,21 @@ namespace CrabMaga
             AsWin = false;
 
             OnLoseEvent.Invoke();
+        }
+
+        public CrabFormation GetFormationWithHighterCrabs()
+        {
+            float x = 0f;
+            CrabFormation crabFormation = null;
+
+            if (crabFormationOnBattle.Count == 0)
+                return null;
+
+            for (int i = 0; i < crabFormationOnBattle.Count; i++)
+                if(crabFormationOnBattle[i].CrabUnits.Count > x)
+                    crabFormation = crabFormationOnBattle[i];
+
+            return crabFormation;
         }
     }
 }
