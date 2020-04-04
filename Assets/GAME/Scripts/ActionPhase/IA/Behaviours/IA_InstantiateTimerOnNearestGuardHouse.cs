@@ -7,7 +7,6 @@ namespace CrabMaga
     [CreateAssetMenu(menuName = "CRAB MAGA/IA/Behaviour/Instantiate with Timer On Nearest Guard House")]
     public class IA_InstantiateTimerOnNearestGuardHouse : IA_Behaviour
     {
-        public EnemyData[] enemyDatas = default;
         public float timer = 5f;
 
         WaitForSeconds wait;
@@ -35,12 +34,7 @@ namespace CrabMaga
                 yield break;
             }
 
-            int x = Random.Range(0, enemyDatas.Length);
-
-            Entity e = manager.poolingManager.PoolEntity(enemyDatas[x].unitType.GetType(), manager.APgameManager.castle.transform.position);
-
-            if(e.gameManager.guardHouseManager.GetGuardHouseLineWithHighterUnits() != null)
-                e.Destination = e.gameManager.guardHouseManager.GetGuardHouseLineWithHighterUnits();
+            instantiationRule.Instantiation(manager);
 
             yield return wait;
 

@@ -17,6 +17,8 @@ namespace CrabMaga
         [SerializeField] CallMoment callMoment = CallMoment.NULL; 
         public CallMoment CallMoment { get => callMoment; set => callMoment = value; }
 
+        [SerializeField] protected IA_InstantationRules instantiationRule = default;
+
         public virtual void CallEvent(IA_Manager manager)
         {
         }
