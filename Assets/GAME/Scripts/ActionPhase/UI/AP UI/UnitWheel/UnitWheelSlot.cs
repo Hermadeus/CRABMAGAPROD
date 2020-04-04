@@ -1,8 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
+using UnityEngine.UI;
 
 using QRTools.UI;
+
+using DG.Tweening;
 
 namespace CrabMaga
 {
@@ -19,16 +23,19 @@ namespace CrabMaga
                 isSelected = value;
                 if (value)
                 {
-                    if(background != null)
-                        background.color = Color.red;
+                    if (background != null)
+                        IsSelect();
                 }
                 else
                 {
                     if (background != null)
-                        background.color = Color.white;
+                        IsDeselect();
                 }
             }
         }
+
+        [SerializeField] CanvasGroup canvasGroup = default;
+        [SerializeField] Image crabThumbnailImage = default;
 
         public override void Init()
         {
@@ -38,16 +45,49 @@ namespace CrabMaga
         public void InitSlot(EntityData _entityData)
         {
             if(_entityData != null)
-                entityDataRef = _entityData;
-            else
             {
-                Hide();
+                entityDataRef = _entityData;
+                crabThumbnailImage.sprite = ((CrabUnitData)_entityData).wheelThumbnail;
             }
+            else
+                Hide();
         }
 
         public void OnSelect()
         {
             //Debug.Log("select " + gameObject.name);
+        }
+
+        public void IsSelect()
+        {
+            DOTween.To(
+                () => canvasGroup.alpha,
+                (x) => canvasGroup.alpha = x,
+                1f,
+                .2f);
+
+            DOTween.To(
+                () => rectTransform.sizeDelta,
+                (x) => rectTransform.sizeDelta = x,
+                new Vector2(120f, 120f),
+                .2f
+                );
+        }
+
+        public void IsDeselect()
+        {
+            DOTween.To(
+                () => canvasGroup.alpha,
+                (x) => canvasGroup.alpha = x,
+                .5f,
+                .2f);
+
+            DOTween.To(
+                () => rectTransform.sizeDelta,
+                (x) => rectTransform.sizeDelta = x,
+                new Vector2(100f, 100f),
+                .2f
+                );
         }
     }
 }

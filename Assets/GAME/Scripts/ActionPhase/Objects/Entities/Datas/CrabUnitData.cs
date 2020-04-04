@@ -12,5 +12,8 @@ namespace CrabMaga
     {
         [FoldoutGroup("Unit attribute")]
         public CrabUnitType type;
+
+        [BoxGroup("Entity attribute")]
+        public Sprite wheelThumbnail = default;
     }
 }
