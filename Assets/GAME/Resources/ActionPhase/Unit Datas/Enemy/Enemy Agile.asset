@@ -18,7 +18,7 @@ MonoBehaviour:
     type: 3}
   startMovementBehaviour: 0
   startHealth: 25
-  baseSpeed: 0.4
+  baseSpeed: 0.6
   speedEnum: 3
   rotationSpeed: 0.5
   acceleration: 1
@@ -33,6 +33,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   attackType: 2
+  havePastille: 1
+  pastilleSprite: {fileID: 21300000, guid: 796932730049cca4dbb63054ffa7e191, type: 3}
+  pastilleCombatSprite: {fileID: 21300000, guid: 4d786c4d44918f2488491ab5f4da5be5,
+    type: 3}
   passifBehaviour: 0
   passifEvent: 0
   type: 0
+  wheelThumbnail: {fileID: 0}

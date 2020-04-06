@@ -48,6 +48,8 @@ namespace CrabMaga
         public ScorePanel scorePanel = default;
         [BoxGroup("References")]
         public GuardHouseManager guardHouseManager = default;
+        [BoxGroup("References")]
+        public CameraSlider cameraSlider = default;
 
         public UnityEvent
             OnWinEvent = new UnityEvent(),

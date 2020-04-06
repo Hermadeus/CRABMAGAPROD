@@ -31,8 +31,6 @@ namespace CrabMaga
         public Transform poolingParent = default;
         [BoxGroup("References")]
         public CrabCount crabCount = default;
-        [BoxGroup("References")]
-        public CameraSlider cameraSlider = default;
 
         public void CreateCrabFormation(CrabUnitData data, Vector3 _position)
         {
@@ -81,8 +79,6 @@ namespace CrabMaga
 
                     _crabFormation.CrabUnits.Add(crabUnit);
                     crabUnit.crabFormationReference = _crabFormation;
-
-                    crabUnit.pastilleRef = cameraSlider.AddPastille(_position.z, crabUnit.entityData.pastilleSprite);
                 }
             }
 
@@ -114,8 +110,14 @@ namespace CrabMaga
         public Entity PoolEntity(Type crabType, Vector3 _position, Transform parent = null)
         {
             Entity entity = Pool(_position, crabType, parent) as Entity;
-            //entity.entityData = _entityData;
             entity.OnPool();
+
+            if(entity is Unit)
+            {
+                Unit u = entity as Unit;
+                if(u.entityData.havePastille)
+                    u.SetPastille();
+            }
 
             if (entity is CrabUnit)
                 APgameManager.crabUnitOnBattle.Add(entity as CrabUnit);

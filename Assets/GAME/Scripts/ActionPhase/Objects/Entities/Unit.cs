@@ -9,7 +9,7 @@ using Sirenix.OdinInspector;
 namespace CrabMaga
 {
     [SelectionBase]
-    public class Unit : Entity, IAttack, IStuntable
+    public class Unit : Entity, IAttack, IStuntable, IPastillable
     {
         [FoldoutGroup("Comportements")]
         public IDetectSomethingBehaviour detectionBehaviour = default;
@@ -92,6 +92,7 @@ namespace CrabMaga
                 unitInRangeOfView = value;
             }
         }
+
         [FoldoutGroup("Debug")] public Pastille pastilleRef = default;
 
         [HideInInspector] public Coroutine attackCor;
@@ -146,7 +147,20 @@ namespace CrabMaga
             attackBehaviour.Attack(_unit, _target);
             onAttack?.Invoke(this);
 
+            if (pastilleRef != null)
+            {
+                StartCoroutine(BattlePastille());
+            }
+
             HaveReachTarget();
+        }
+
+        IEnumerator BattlePastille()
+        {
+            pastilleRef?.SetBackgroundPastille(entityData.pastilleCombatSprite);
+            yield return new WaitForSeconds(1f);
+            pastilleRef?.SetBackgroundPastille(entityData.pastilleSprite);
+            yield break;
         }
 
         public override void ResetObject()
@@ -217,7 +231,12 @@ namespace CrabMaga
 
         public virtual void WinCombat()
         {
-            onWin?.Invoke(this);
+            onWin?.Invoke(this);            
+        }
+
+        public void SetPastille()
+        {
+            pastilleRef = gameManager.cameraSlider.AddPastille(transform.position.z, entityData.pastilleSprite);
         }
     }
 }

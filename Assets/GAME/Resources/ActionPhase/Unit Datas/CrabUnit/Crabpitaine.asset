@@ -16,7 +16,6 @@ MonoBehaviour:
   entityName: Crab'pitaine
   unitType: {fileID: 3863057427669080910, guid: 1b832dc4cb6da84438eb08863085738d,
     type: 3}
-  pastilleSprite: {fileID: 21300000, guid: b73eba6116660f047bedccdaabd628cc, type: 3}
   startMovementBehaviour: 4
   startHealth: 1
   baseSpeed: 0.4
@@ -34,6 +33,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   attackType: 1
+  havePastille: 1
+  pastilleSprite: {fileID: 21300000, guid: b73eba6116660f047bedccdaabd628cc, type: 3}
+  pastilleCombatSprite: {fileID: 21300000, guid: 15da0ef48f41a5949a8a5f3c5b0ad178,
+    type: 3}
   passifBehaviour: 3
   passifEvent: 1
   type: 2

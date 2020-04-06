@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 
 using UnityEngine;
+using UnityEngine.UI;
 
 using QRTools.UI;
 
@@ -33,6 +34,11 @@ namespace CrabMaga
             coef = CameraSlider.tailleMap / height;
 
             rectTransform.anchoredPosition = new Vector3(0, CameraSlider.rectTransform.sizeDelta.y / coef, 0);
+        }
+
+        public void SetBackgroundPastille(Sprite spr)
+        {
+            background.sprite = spr;
         }
     }
 }

@@ -74,4 +74,9 @@ namespace CrabMaga
         void StartLaser();
         void StopLaser();
     }
+
+    public interface IPastillable
+    {
+        void SetPastille();
+    }
 }
