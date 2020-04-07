@@ -99,6 +99,9 @@ namespace CrabMaga
         private void Awake()
         {
             Init();
+
+            OnLoseEvent.AddListener(OnLose);
+            OnWinEvent.AddListener(OnWin);
         }
 
         private void Update()
@@ -148,6 +151,24 @@ namespace CrabMaga
                     crabFormation = crabFormationOnBattle[i];
 
             return crabFormation;
+        }
+
+        public void OnWin()
+        {
+            for (int i = 0; i < crabUnitOnBattle.Count; i++)
+                crabUnitOnBattle[i].OnWin();
+
+            for (int i = 0; i < enemiesOnBattle.Count; i++)
+                enemiesOnBattle[i].OnLose();
+        }
+
+        public void OnLose()
+        {
+            for (int i = 0; i < crabUnitOnBattle.Count; i++)
+                crabUnitOnBattle[i].OnLose();
+
+            for (int i = 0; i < enemiesOnBattle.Count; i++)
+                enemiesOnBattle[i].OnWin();
         }
     }
 }

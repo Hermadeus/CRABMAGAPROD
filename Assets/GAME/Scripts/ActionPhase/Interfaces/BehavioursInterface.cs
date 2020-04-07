@@ -79,4 +79,9 @@ namespace CrabMaga
     {
         void SetPastille();
     }
+
+    public interface IAttire
+    {
+
+    }
 }

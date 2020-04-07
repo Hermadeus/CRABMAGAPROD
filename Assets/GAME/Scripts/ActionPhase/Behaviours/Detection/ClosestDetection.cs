@@ -20,8 +20,14 @@ namespace CrabMaga
 
                 for (int i = 0; i < _unit.UnitInRangeOfView.Length; i++)
                 {
-                    if(Vector3.Distance(_unit.UnitInRangeOfView[i].transform.position, _unit.transform.position) < _closestDist)
+                    if (Vector3.Distance(_unit.UnitInRangeOfView[i].transform.position, _unit.transform.position) < _closestDist)
                     {
+                        if (_unit.UnitInRangeOfView[i].GetComponentInParent<Crablinde>())
+                        {
+                            _unit.Target = _unit.UnitInRangeOfView[i].GetComponentInParent<Unit>();
+                            Debug.Log("Je detecte un crablinde");
+                        }
+
                         _index = i;
                         _closestDist = Vector3.Distance(_unit.UnitInRangeOfView[i].transform.position, _unit.transform.position);
                     }

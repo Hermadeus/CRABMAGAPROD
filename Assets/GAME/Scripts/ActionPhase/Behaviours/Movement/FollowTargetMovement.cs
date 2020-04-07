@@ -46,8 +46,9 @@ namespace CrabMaga
                     yield return null;
                 }
 
-                //Debug.Log("REACH");
-                _unit.Attack(_unit, _unit.Target);
+                Debug.Log(1 + _entity.name + " Reach " + _unit.Target);
+                _unit.HaveReachTarget();
+                _unit.Attack(_unit, _unit.Target); //JE COMMENCE L'ATTAQUE
             }
 
             yield break;

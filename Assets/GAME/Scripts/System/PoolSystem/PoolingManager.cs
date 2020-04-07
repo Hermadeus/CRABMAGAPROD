@@ -95,7 +95,18 @@ namespace CrabMaga
                     poolingParent
                     ) as Leader;
             }
-                
+        }
+
+        public void InvokeLeader(InputTouch touch)
+        {
+            if (APgameManager.leaderOnBattle == null && playerData.leader_slot != null)
+            {
+                APgameManager.leaderOnBattle = PoolEntity(
+                    playerData.leader_slot.unitType.GetType(),
+                    new Vector3(touch.RayPoint.x, 0, touch.RayPoint.z),
+                    poolingParent
+                    ) as Leader;
+            }
         }
 
         public T PoolEntity<T>(EntityData _entityData, Vector3 _position) where T : Entity
@@ -115,7 +126,7 @@ namespace CrabMaga
             if(entity is Unit)
             {
                 Unit u = entity as Unit;
-                if(u.entityData.havePastille)
+                if(u.entityData.havePastille && u != null)
                     u.SetPastille();
             }
 

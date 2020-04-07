@@ -14,17 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   behaviourSystem: {fileID: 11400000, guid: 65fa9772d44e2ec47bab627a75c1152e, type: 2}
   entityName: Enemy Combat
+  description: 
   unitType: {fileID: 5471222624432554914, guid: 6984ee21412973c4693be1fb3982f7be,
     type: 3}
   startMovementBehaviour: 0
-  startHealth: 25
-  baseSpeed: 0.4
+  startHealth: 350
   speedEnum: 2
+  baseSpeed: 0.4
   rotationSpeed: 0.5
+  accelerationEnum: 2
   acceleration: 1
-  accelerationEnum: 1
-  damage: 5
+  damage: 1
   attackSpeed: 2
+  DamagePerSeconds: 2.5
   detectionRange: 1
   detectionBehaviour: 0
   entityType: 2

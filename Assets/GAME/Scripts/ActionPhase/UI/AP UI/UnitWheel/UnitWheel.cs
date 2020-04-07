@@ -54,10 +54,11 @@ namespace CrabMaga
             }
         }
 
+        public LeaderToken leaderToken = default;
+
         GraphicRaycaster m_Raycaster;
         PointerEventData m_PointerEventData;
         EventSystem m_EventSystem;
-
 
         public override void Init()
         {
@@ -76,10 +77,9 @@ namespace CrabMaga
 
         public override void Show()
         {
-            //if (UnitWheelInput.objectHit.GetComponent<InstantiationZone>())
-            //{
-                
-            //}
+            if (leaderToken.isSelected)
+                return;
+
             base.Show();
             rectTransform.localPosition = new Vector2(
                 UnitWheelInput.InputCurrentPosition.x - (Screen.width / 2),
@@ -107,6 +107,14 @@ namespace CrabMaga
             slot04.InitSlot(playerData.entityData_slot04);
         }
 
+        private void Update()
+        {
+            if (slot01.IsSelected == false && slot02.IsSelected == false && slot03.IsSelected == false && slot04.IsSelected == false)
+            {
+                CurrentSelectedSlot = null;
+            }
+        }
+
         public void CheckSlot()
         {
             if (AP_GameManager.InPause)
@@ -125,11 +133,6 @@ namespace CrabMaga
                 return;
             }
 
-            if(slot01.IsSelected == false && slot02.IsSelected == false && slot03.IsSelected == false && slot04.IsSelected == false)
-            {
-                CurrentSelectedSlot = null;
-            }
-
             foreach (RaycastResult result in results)
             {
                 if (result.gameObject.GetComponent<UnitWheelSlot>())
@@ -143,8 +146,6 @@ namespace CrabMaga
 
         public void InstantiateFormation()
         {
-            //poolingManager.CreateCrabFormation(CurrentSelectedSlot.entityDataRef as CrabUnitData, UnitWheelInput.RayPoint);
-
             poolingManager.CreateCrabFormationWithType(
                 CurrentSelectedSlot.entityDataRef.unitType.GetType(),
                 new Vector3(UnitWheelInput.RayPoint.x,

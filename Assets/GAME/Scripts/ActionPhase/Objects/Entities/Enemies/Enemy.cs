@@ -1,12 +1,16 @@
 ﻿using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace CrabMaga
 {
     public class Enemy : Unit
     {
+        [SerializeField] private Slider sliderHealth = default;
+
         public override Unit Target
         {
             get => base.Target;
@@ -16,6 +20,14 @@ namespace CrabMaga
 
                 if (Target != null && movementCor != null)
                     StopCoroutine(movementCor);
+            }
+        }
+
+        public override float Health { get => base.Health;
+            set
+            {
+                base.Health = value;
+                sliderHealth.value = value;
             }
         }
 
@@ -34,6 +46,9 @@ namespace CrabMaga
             Destination = gh;
 
             base.Init();
+
+            sliderHealth.maxValue = entityData.startHealth;
+            sliderHealth.value = sliderHealth.maxValue;
         }
 
         public override void FixedUpdateComportement()

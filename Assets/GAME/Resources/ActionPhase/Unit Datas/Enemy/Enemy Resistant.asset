@@ -14,17 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   behaviourSystem: {fileID: 11400000, guid: 65fa9772d44e2ec47bab627a75c1152e, type: 2}
   entityName: Enemy Resistant
+  description: 
   unitType: {fileID: -9178628451549669157, guid: c92e45e304290bb429441ce3f99b1d78,
     type: 3}
   startMovementBehaviour: 0
-  startHealth: 25
-  baseSpeed: 0.2
+  startHealth: 500
   speedEnum: 1
+  baseSpeed: 0.2
   rotationSpeed: 0.5
-  acceleration: 1
   accelerationEnum: 1
+  acceleration: 1
   damage: 3
   attackSpeed: 2
+  DamagePerSeconds: 1.5
   detectionRange: 2
   detectionBehaviour: 0
   entityType: 2

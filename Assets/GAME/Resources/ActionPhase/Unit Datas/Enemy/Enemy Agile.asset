@@ -14,17 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   behaviourSystem: {fileID: 11400000, guid: 65fa9772d44e2ec47bab627a75c1152e, type: 2}
   entityName: Enemy Agile
+  description: 
   unitType: {fileID: 4938889763506876349, guid: b36b60d25f02744418e435dc10763ff0,
     type: 3}
   startMovementBehaviour: 0
-  startHealth: 25
-  baseSpeed: 0.6
+  startHealth: 310
   speedEnum: 3
+  baseSpeed: 0.6
   rotationSpeed: 0.5
+  accelerationEnum: 3
   acceleration: 1
-  accelerationEnum: 1
-  damage: 3
-  attackSpeed: 2
+  damage: 1
+  attackSpeed: 1
+  DamagePerSeconds: 1.5
   detectionRange: 0
   detectionBehaviour: 0
   entityType: 2

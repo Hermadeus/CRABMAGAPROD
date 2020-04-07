@@ -144,6 +144,7 @@ namespace CrabMaga
             if (IsStunt || IsStatic)
                 return;
 
+            ///Effect
             attackBehaviour.Attack(_unit, _target);
             onAttack?.Invoke(this);
 
@@ -151,8 +152,6 @@ namespace CrabMaga
             {
                 StartCoroutine(BattlePastille());
             }
-
-            HaveReachTarget();
         }
 
         IEnumerator BattlePastille()
@@ -237,6 +236,16 @@ namespace CrabMaga
         public void SetPastille()
         {
             pastilleRef = gameManager.cameraSlider.AddPastille(transform.position.z, entityData.pastilleSprite);
+        }
+
+        public void OnWin()
+        {
+            
+        }
+
+        public void OnLose()
+        {
+            ReceiveAttack(this, 1000f);
         }
     }
 }

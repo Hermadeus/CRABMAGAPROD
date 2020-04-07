@@ -121,7 +121,8 @@ namespace CrabMaga
                 }
             }
 
-            pastille.background.sprite = spr;
+            if(spr != null && pastille != null)
+                pastille.background.sprite = spr;
 
             float _coef = tailleMap / height;
 
