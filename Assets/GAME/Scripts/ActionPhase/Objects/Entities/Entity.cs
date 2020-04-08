@@ -7,6 +7,7 @@ using UnityEngine.Events;
 using Sirenix.OdinInspector;
 
 using QRTools.Utilities;
+using QRTools.Audio;
 
 using DG.Tweening;
 
@@ -99,6 +100,16 @@ namespace CrabMaga
 
         [FoldoutGroup("Debug"), SerializeField] bool initALaMano = false;
 
+        [FoldoutGroup("Audio")]
+        public AudioSource audiosource;
+
+        [FoldoutGroup("Audio"), SerializeField]
+        public SimpleAudioEvent
+            assaultSound,
+            deathSound,
+            winSound,
+            attackSound;
+
         private void Awake()
         {
             if (initALaMano)
@@ -121,6 +132,9 @@ namespace CrabMaga
 
             movementBehaviour?.Move(this);
 
+            audiosource = GetComponent<AudioSource>();
+            assaultSound?.Play(audiosource);
+
             InitButton();
         }
 
@@ -141,6 +155,8 @@ namespace CrabMaga
             onDie?.Invoke(this);
 
             poolingManager.Push(this);
+
+            deathSound?.Play(audiosource);
         }
 
         public Unit lastHitUnitReceive;

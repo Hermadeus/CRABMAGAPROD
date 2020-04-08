@@ -11,6 +11,7 @@ namespace CrabMaga
     public class Pastille : UIElement
     {
         public CameraSlider CameraSlider = default;
+        public Outline outline = default;
 
         private bool isUsed = false;
 
@@ -28,6 +29,14 @@ namespace CrabMaga
         }
 
         float coef;
+
+        public override void Init()
+        {
+            base.Init();
+
+            rectTransform = GetComponent<RectTransform>();
+            outline = GetComponent<Outline>();
+        }
 
         public void SetHeight(float height)
         {

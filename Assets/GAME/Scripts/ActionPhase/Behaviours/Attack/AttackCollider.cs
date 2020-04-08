@@ -9,6 +9,8 @@ namespace CrabMaga
     {
         public override void Effect(Unit _unit, IAttackReceiver _receiver)
         {
+            base.Effect(_unit, _receiver);
+
             Enemy e = _unit as Enemy;
 
             for (int i = 0; i < e.hitColliders.Length; i++)

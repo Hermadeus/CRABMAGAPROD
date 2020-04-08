@@ -149,9 +149,12 @@ namespace CrabMaga
             poolingManager.CreateCrabFormationWithType(
                 CurrentSelectedSlot.entityDataRef.unitType.GetType(),
                 new Vector3(UnitWheelInput.RayPoint.x,
-                0,
-                AP_GameManager.CurrentInstantiationZone.transform.position.z
-                ));
+                            0,
+                            AP_GameManager.CurrentInstantiationZone.transform.position.z),
+                CurrentSelectedSlot.entityDataRef.formationX,
+                CurrentSelectedSlot.entityDataRef.formationY,
+                CurrentSelectedSlot.entityDataRef.density
+                );
         }
 
         void SetSelectAllSlot(bool state)

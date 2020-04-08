@@ -41,9 +41,9 @@ namespace CrabMaga
             screenWidth = Screen.width;
             ChangeHand();
 
-            InitSlider();
+            tailleMap = castle.transform.position.z + OFFSET;
 
-            tailleMap = castle.transform.position.z;
+            InitSlider();
         }
 
 
@@ -51,7 +51,7 @@ namespace CrabMaga
         {
             slider = GetComponent<Slider>();
 
-            clampedValue = new Vector2(OFFSET, castle.transform.position.z);
+            clampedValue = new Vector2(OFFSET, tailleMap);
             slider.minValue = clampedValue.x;
             slider.maxValue = clampedValue.y;
 
@@ -121,7 +121,7 @@ namespace CrabMaga
                 }
             }
 
-            if(spr != null && pastille != null)
+            if (spr != null && pastille != null && pastille != null)
                 pastille.background.sprite = spr;
 
             float _coef = tailleMap / height;

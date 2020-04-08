@@ -157,8 +157,11 @@ namespace CrabMaga
         IEnumerator BattlePastille()
         {
             pastilleRef?.SetBackgroundPastille(entityData.pastilleCombatSprite);
+            pastilleRef.outline.effectColor = new Color(pastilleRef.outline.effectColor.r, pastilleRef.outline.effectColor.g, pastilleRef.outline.effectColor.b, 1f);
             yield return new WaitForSeconds(1f);
             pastilleRef?.SetBackgroundPastille(entityData.pastilleSprite);
+            pastilleRef.outline.effectColor = new Color(pastilleRef.outline.effectColor.r, pastilleRef.outline.effectColor.g, pastilleRef.outline.effectColor.b, 0f);
+
             yield break;
         }
 
@@ -240,7 +243,7 @@ namespace CrabMaga
 
         public void OnWin()
         {
-            
+            winSound?.Play(audiosource);
         }
 
         public void OnLose()

@@ -7,6 +7,8 @@ using UnityEngine.Events;
 
 using Sirenix.OdinInspector;
 
+using QRTools.Audio;
+
 namespace CrabMaga
 {
     public class AP_GameManager : MonoBehaviour
@@ -33,6 +35,7 @@ namespace CrabMaga
             {
                 currentScore = value;
                 scorePanel.UpdateScore();
+                castle.healthSlider.value = value;
 
                 if (value >= levelData.scoreToReach)
                     Win();
@@ -95,6 +98,13 @@ namespace CrabMaga
         }
 
         public InstantiationZone CurrentInstantiationZone = default;
+
+        [BoxGroup("Audio")]
+        public AudioSource audioSource = default;
+        [BoxGroup("Audio")]
+        public SimpleAudioEvent winSound = default;
+        [BoxGroup("Audio")]
+        public SimpleAudioEvent loseSound = default;
 
         private void Awake()
         {
@@ -160,6 +170,8 @@ namespace CrabMaga
 
             for (int i = 0; i < enemiesOnBattle.Count; i++)
                 enemiesOnBattle[i].OnLose();
+
+            winSound.Play(audioSource);
         }
 
         public void OnLose()
@@ -169,6 +181,8 @@ namespace CrabMaga
 
             for (int i = 0; i < enemiesOnBattle.Count; i++)
                 enemiesOnBattle[i].OnWin();
+
+            loseSound.Play(audioSource);
         }
     }
 }

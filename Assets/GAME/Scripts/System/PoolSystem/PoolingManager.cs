@@ -32,7 +32,29 @@ namespace CrabMaga
         [BoxGroup("References")]
         public CrabCount crabCount = default;
 
-        public void CreateCrabFormation(CrabUnitData data, Vector3 _position)
+        //public void CreateCrabFormation(CrabUnitData data, Vector3 _position)
+        //{
+        //    if (APgameManager.crabFormationOnBattle.Count >= APgameManager.levelData.maxCrab)
+        //    {
+        //        return;
+        //    }
+
+        //    CrabFormation _crabFormation = Pool<CrabFormation>(Vector3.zero) as CrabFormation;
+        //    APgameManager.crabFormationOnBattle.Add(_crabFormation);
+
+        //    for (int i = 0; i < 3; i++)
+        //    {
+        //        for (int y = 0; y < 3; y++)
+        //        {
+        //            CrabUnit crabUnit = PoolEntity<CrabUnit>(data, new Vector3(_position.x * (i / 2f), 0, _position.z * (y / 2f)));
+
+        //            _crabFormation.CrabUnits.Add(crabUnit);
+        //            crabUnit.crabFormationReference = _crabFormation;
+        //        }
+        //    }
+        //}
+
+        public void CreateCrabFormationWithType(Type crabType, Vector3 _position, int nbrCrabX, int nbrCrabY, float density)
         {
             if (APgameManager.crabFormationOnBattle.Count >= APgameManager.levelData.maxCrab)
             {
@@ -42,38 +64,16 @@ namespace CrabMaga
             CrabFormation _crabFormation = Pool<CrabFormation>(Vector3.zero) as CrabFormation;
             APgameManager.crabFormationOnBattle.Add(_crabFormation);
 
-            for (int i = 0; i < 3; i++)
-            {
-                for (int y = 0; y < 3; y++)
-                {
-                    CrabUnit crabUnit = PoolEntity<CrabUnit>(data, new Vector3(_position.x * (i / 2f), 0, _position.z * (y / 2f)));
-
-                    _crabFormation.CrabUnits.Add(crabUnit);
-                    crabUnit.crabFormationReference = _crabFormation;
-                }
-            }
-        }
-
-        public void CreateCrabFormationWithType(Type crabType, Vector3 _position)
-        {
-            if (APgameManager.crabFormationOnBattle.Count >= APgameManager.levelData.maxCrab)
-            {
-                return;
-            }
-
-            CrabFormation _crabFormation = Pool<CrabFormation>(Vector3.zero) as CrabFormation;
-            APgameManager.crabFormationOnBattle.Add(_crabFormation);
-
-            playerData.money -= 9;
+            playerData.money -= nbrCrabX * nbrCrabY;
             crabCount.UpdateText();
 
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < nbrCrabX; i++)
             {
-                for (int y = 0; y < 3; y++)
+                for (int y = 0; y < nbrCrabY; y++)
                 {
                     CrabUnit crabUnit = PoolEntity(
                         crabType,
-                        new Vector3(_position.x * (i / 2f), 0, _position.z * (y / 2f)),
+                        new Vector3(_position.x + (i * density), 0, _position.z + (y * density)),
                         poolingParent
                         ) as CrabUnit;
 

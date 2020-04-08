@@ -12,7 +12,7 @@ namespace CrabMaga
 {
     public class UnitWheelSlot : UIElement
     {
-        public EntityData entityDataRef = default;
+        public CrabUnitData entityDataRef = default;
 
         bool isSelected = false;
         public bool IsSelected
@@ -42,12 +42,12 @@ namespace CrabMaga
             base.Init();
         }
 
-        public void InitSlot(EntityData _entityData)
+        public void InitSlot(CrabUnitData _entityData)
         {
             if(_entityData != null)
             {
                 entityDataRef = _entityData;
-                crabThumbnailImage.sprite = ((CrabUnitData)_entityData).wheelThumbnail;
+                crabThumbnailImage.sprite = _entityData.wheelThumbnail;
             }
             else
                 Hide();
