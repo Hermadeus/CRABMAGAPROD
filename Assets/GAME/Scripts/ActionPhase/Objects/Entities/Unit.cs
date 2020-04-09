@@ -125,12 +125,13 @@ namespace CrabMaga
         {
             pastilleRef?.SetHeight(transform.position.z);
 
+            detectionBehaviour?.Detect(this);
+
             if (IsStunt || IsStatic)
                 return;
 
             base.UpdateComportement();
             
-            detectionBehaviour?.Detect(this);
         }
 
         void OnDrawGizmosSelected()
@@ -160,7 +161,9 @@ namespace CrabMaga
             pastilleRef.outline.effectColor = new Color(pastilleRef.outline.effectColor.r, pastilleRef.outline.effectColor.g, pastilleRef.outline.effectColor.b, 1f);
             yield return new WaitForSeconds(1f);
             pastilleRef?.SetBackgroundPastille(entityData.pastilleSprite);
-            pastilleRef.outline.effectColor = new Color(pastilleRef.outline.effectColor.r, pastilleRef.outline.effectColor.g, pastilleRef.outline.effectColor.b, 0f);
+
+            if(pastilleRef != null)
+                pastilleRef.outline.effectColor = new Color(pastilleRef.outline.effectColor.r, pastilleRef.outline.effectColor.g, pastilleRef.outline.effectColor.b, 0f);
 
             yield break;
         }

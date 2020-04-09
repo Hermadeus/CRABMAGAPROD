@@ -51,22 +51,12 @@ namespace CrabMaga
             sliderHealth.value = sliderHealth.maxValue;
         }
 
-        public override void FixedUpdateComportement()
-        {
-            base.FixedUpdateComportement();
-            hitColliders = Physics.OverlapBox(gameObject.transform.position, transform.localScale / 2, Quaternion.identity, layerMaskTarget);            
-        }
+        
 
         protected override void OnUnitRangeDetectionReachZero()
         {
             base.OnUnitRangeDetectionReachZero();
             MovementBehaviourEnum = MovementBehaviourEnum.TARGET_MOVEMENT;
-        }
-
-        void OnDrawGizmos()
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireCube(transform.position, transform.localScale);
         }
 
         public override void InitButton()
@@ -89,6 +79,29 @@ namespace CrabMaga
                 Destination.isOccupy = false;
 
             base.OnPush();
+        }
+
+        public override void FixedUpdateComportement()
+        {
+            base.FixedUpdateComportement();
+        }
+
+        protected Collider[] LineCollider(Vector3 position, float longueur, float largueur, float rotation, LayerMask layermask)
+        {
+            return Physics.OverlapBox(
+                position,
+                new Vector3(largueur, 1f, longueur),
+                Quaternion.Euler(transform.rotation.x, transform.rotation.y + rotation, transform.rotation.z),
+                layerMaskTarget);
+        }
+
+        protected Collider[] CircleCollider(Vector3 position, float radius, LayerMask layerMask)
+        {
+            return Physics.OverlapSphere(
+                position,
+                radius,
+                layerMask
+                );
         }
     }
 }
