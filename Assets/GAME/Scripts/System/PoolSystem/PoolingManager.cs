@@ -9,6 +9,8 @@ using Sirenix.OdinInspector;
 
 using QRTools.Inputs;
 
+using TMPro;
+
 namespace CrabMaga
 {
     public class PoolingManager : SerializedMonoBehaviour
@@ -56,7 +58,7 @@ namespace CrabMaga
 
         public void CreateCrabFormationWithType(Type crabType, Vector3 _position, int nbrCrabX, int nbrCrabY, float density)
         {
-            if (APgameManager.crabFormationOnBattle.Count >= APgameManager.levelData.maxCrab)
+            if (APgameManager.crabFormationOnBattle.Count >= APgameManager.levelData.maxCrabInSameTime)
             {
                 return;
             }
@@ -83,6 +85,9 @@ namespace CrabMaga
             }
 
             _crabFormation.name = _crabFormation.CrabUnits[0].name.ToString() + " Formation";
+
+            APgameManager.CurrentUnitCountInt++;
+            APgameManager.TotalUnitCountInt++;
         }
 
         public void InvokeLeader()
@@ -94,7 +99,11 @@ namespace CrabMaga
                     new Vector3(doubleTouch.RayPoint.x, 0, doubleTouch.RayPoint.z),
                     poolingParent
                     ) as Leader;
+
+                APgameManager.CurrentUnitCountInt++;
+                APgameManager.TotalUnitCountInt++;
             }
+
         }
 
         public void InvokeLeader(Vector3 pos)

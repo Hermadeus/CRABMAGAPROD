@@ -47,5 +47,11 @@ namespace CrabMaga
 
             passifBehaviour?.PassifEffect(this);
         }
+
+        public override void OnPush()
+        {
+            base.OnPush();
+            gameManager.CurrentUnitCountInt--;
+        }
     }
 }

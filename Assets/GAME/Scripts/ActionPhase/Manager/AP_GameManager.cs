@@ -9,6 +9,8 @@ using Sirenix.OdinInspector;
 
 using QRTools.Audio;
 
+using TMPro;
+
 namespace CrabMaga
 {
     public class AP_GameManager : MonoBehaviour
@@ -34,7 +36,7 @@ namespace CrabMaga
             set
             {
                 currentScore = value;
-                scorePanel.UpdateScore();
+                //scorePanel.UpdateScore();
                 castle.healthSlider.value = value;
 
                 if (value >= levelData.scoreToReach)
@@ -47,12 +49,49 @@ namespace CrabMaga
 
         [BoxGroup("References")]
         public Castle castle = default;
-        [BoxGroup("References")]
-        public ScorePanel scorePanel = default;
+        //[BoxGroup("References")]
+        //public ScorePanel scorePanel = default;
         [BoxGroup("References")]
         public GuardHouseManager guardHouseManager = default;
         [BoxGroup("References")]
         public CameraSlider cameraSlider = default;
+
+        private int currentUnitCountInt;
+        public int CurrentUnitCountInt
+        {
+            get => currentUnitCountInt;
+            set
+            {
+                currentUnitCountInt = value;
+                currentUnitCount.SetText(value.ToString());
+
+                if (value > levelData.maxCrabInSameTime - 1)
+                    currentUnitCount.color = new Color(255, 165, 0);
+                if (value == levelData.maxCrabInSameTime)
+                    currentUnitCount.color = Color.red;
+            }
+        }
+
+        private int totalUnitCountInt;
+        public int TotalUnitCountInt
+        {
+            get => totalUnitCountInt;
+            set
+            {
+                totalUnitCountInt = value;
+                totalUnitCount.SetText(value.ToString());
+
+                if (value > levelData.maxCrab - 1)
+                    currentUnitCount.color = new Color(255, 165, 0);
+                if (value == levelData.maxCrab)
+                    currentUnitCount.color = Color.red;
+            }
+        }
+
+        [BoxGroup("References")]
+        public TextMeshProUGUI currentUnitCount = default;
+        [BoxGroup("References")]
+        public TextMeshProUGUI totalUnitCount = default;
 
         public UnityEvent
             OnWinEvent = new UnityEvent(),
@@ -97,6 +136,7 @@ namespace CrabMaga
             }
         }
 
+
         public InstantiationZone CurrentInstantiationZone = default;
 
         [BoxGroup("Audio")]
@@ -112,6 +152,7 @@ namespace CrabMaga
 
             OnLoseEvent.AddListener(OnLose);
             OnWinEvent.AddListener(OnWin);
+
         }
 
         private void Update()
@@ -130,6 +171,9 @@ namespace CrabMaga
         {
             Application.targetFrameRate = 60;
             Time.timeScale = 1f;
+
+            currentUnitCount.text = 0.ToString();
+            totalUnitCount.text = 0.ToString();
         }
 
         public void Win()

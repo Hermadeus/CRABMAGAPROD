@@ -19,8 +19,10 @@ namespace CrabMaga
         public SceneReference sceneLevel = default;
 
         [BoxGroup("Level Rules")]
-        public int maxCrab = 3;
-        public int scoreToReach = 9;
+        public int 
+            maxCrabInSameTime = 3,
+            maxCrab = 10,
+            scoreToReach = 9;
 
         [BoxGroup("Player Achievements")]
         public int bestScore = 0;
