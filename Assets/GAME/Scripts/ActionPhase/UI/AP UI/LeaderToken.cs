@@ -31,6 +31,8 @@ namespace CrabMaga
 
         bool havntUseUlt = false;
 
+        Vector2 pos = new Vector2();
+
         public override void Init()
         {
             base.Init();
@@ -43,6 +45,8 @@ namespace CrabMaga
 
             m_Raycaster = GetComponent<GraphicRaycaster>();
             m_EventSystem = GetComponent<EventSystem>();
+
+            pos = rectTransform.anchoredPosition;
         }
 
         public void OnInput()
@@ -79,8 +83,8 @@ namespace CrabMaga
                     if (isSelected)
                     {
                         rectTransform.localPosition = new Vector2(
-                            inputTouchToken.InputCurrentPosition.x - ((Screen.width / 2) + (rectTransform.sizeDelta.x / 2)),
-                            inputTouchToken.InputCurrentPosition.y - ((Screen.height / 2) + (rectTransform.sizeDelta.y / 2)));
+                            inputTouchToken.InputCurrentPosition.x - (Screen.width / 2),
+                            inputTouchToken.InputCurrentPosition.y - (Screen.height / 2));
                     }
                     break;
                 case StateToken.ULTI:
@@ -104,7 +108,7 @@ namespace CrabMaga
                 case StateToken.UNIT:
                     if (isSelected)
                     {
-                        rectTransform.anchoredPosition = Vector2.zero;
+                        rectTransform.anchoredPosition = pos;
                         isSelected = false;
 
                         poolingManager.InvokeLeader(new Vector3(inputTouchToken.RayPoint.x, 0, gameManager.CurrentInstantiationZone.transform.position.z));
