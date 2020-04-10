@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78aca2213b529424395395c9ff25678d, type: 3}
+  m_Name: Snd_DeathCrab
+  m_EditorClassIdentifier: 
+  Name: 
+  baseClip:
+  - {fileID: 8300000, guid: 59dd9e8eba291f149a7fd2cef0eef35d, type: 3}
+  - {fileID: 8300000, guid: 762295342e3b718408e7a882dc77ff5a, type: 3}
+  - {fileID: 8300000, guid: 9c22d2042a4393b44a10a190e7023308, type: 3}
+  - {fileID: 8300000, guid: 438c7b94b7a904449bb4ec2dee43eff5, type: 3}
+  - {fileID: 8300000, guid: 1f6f6f762f38f424e8aed8e47f372203, type: 3}
+  audioPlayMode: 1
+  volume: {x: 1, y: 1}
+  pitch: {x: 1, y: 1}
+  delay: {x: 0, y: 1}
+  ResetValue: 1

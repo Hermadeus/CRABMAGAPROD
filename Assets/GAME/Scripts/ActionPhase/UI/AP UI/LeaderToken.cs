@@ -29,6 +29,8 @@ namespace CrabMaga
         PointerEventData m_PointerEventData;
         EventSystem m_EventSystem;
 
+        bool havntUseUlt = false;
+
         public override void Init()
         {
             base.Init();
@@ -62,6 +64,9 @@ namespace CrabMaga
                 if (result.gameObject.GetComponent<LeaderToken>())
                 {
                     isSelected = true;
+
+                    if (stateToken == StateToken.ULTI)
+                        havntUseUlt = true;
                 }
             }
         }
@@ -79,6 +84,13 @@ namespace CrabMaga
                     }
                     break;
                 case StateToken.ULTI:
+                    if (havntUseUlt)
+                    {
+                        GetComponent<Image>().sprite = noneSprite;
+                        gameManager.leaderOnBattle.UsePassif();
+                        stateToken = StateToken.NONE;
+                        isSelected = false;
+                    }
                     break;
                 case StateToken.NONE:
                     break;
@@ -95,17 +107,13 @@ namespace CrabMaga
                         rectTransform.anchoredPosition = Vector2.zero;
                         isSelected = false;
 
-                        poolingManager.InvokeLeader(inputTouchToken);
+                        poolingManager.InvokeLeader(new Vector3(inputTouchToken.RayPoint.x, 0, gameManager.CurrentInstantiationZone.transform.position.z));
 
                         GetComponent<Image>().sprite = ultiSprite;
                         stateToken = StateToken.ULTI;
                     }
                     break;
                 case StateToken.ULTI:
-
-                    GetComponent<Image>().sprite = noneSprite;
-                    gameManager.leaderOnBattle.UsePassif();
-                    stateToken = StateToken.NONE;
 
                     break;
                 case StateToken.NONE:

@@ -23,10 +23,10 @@ MonoBehaviour:
   baseSpeed: 0.4
   rotationSpeed: 0.5
   accelerationEnum: 2
-  acceleration: 1
-  damage: 1
+  acceleration: 2
+  damage: 25
   attackSpeed: 2
-  DamagePerSeconds: 2.5
+  DamagePerSeconds: 12.5
   detectionRange: 1
   detectionBehaviour: 0
   entityType: 2
@@ -43,3 +43,6 @@ MonoBehaviour:
   passifEvent: 0
   type: 0
   wheelThumbnail: {fileID: 0}
+  formationX: 3
+  formationY: 3
+  density: 1

@@ -552,6 +552,11 @@ MonoBehaviour:
       m_Calls: []
   destination: {fileID: 0}
   initALaMano: 0
+  audiosource: {fileID: 0}
+  assaultSound: {fileID: 0}
+  deathSound: {fileID: 0}
+  winSound: {fileID: 0}
+  attackSound: {fileID: 0}
   lastHitUnitReceive: {fileID: 0}
   damage: 0
   attackSpeed: 0
@@ -569,6 +574,7 @@ MonoBehaviour:
   isStunt: 0
   isStatic: 0
   asUsePassif: 0
+  sliderHealth: {fileID: 103980936812731678}
   laserDamage: 50
   startPos: {fileID: 2811359904305940714}
   endPos: {fileID: 1877335950}

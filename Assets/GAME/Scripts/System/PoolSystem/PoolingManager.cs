@@ -97,13 +97,13 @@ namespace CrabMaga
             }
         }
 
-        public void InvokeLeader(InputTouch touch)
+        public void InvokeLeader(Vector3 pos)
         {
             if (APgameManager.leaderOnBattle == null && playerData.leader_slot != null)
             {
                 APgameManager.leaderOnBattle = PoolEntity(
                     playerData.leader_slot.unitType.GetType(),
-                    new Vector3(touch.RayPoint.x, 0, touch.RayPoint.z),
+                    pos,
                     poolingParent
                     ) as Leader;
             }
@@ -163,9 +163,11 @@ namespace CrabMaga
                     }
                 }
 
-            throw new System.Exception(string.Format(
+            Debug.LogWarning(string.Format(
                 "Impossible de trouver le type de Poolable que tu recherches dans la liste de poolable."
                 ));
+
+            return null;
         }
 
         public IPoolable Pool(Vector3 _position, Type typeToResearch, Transform parent = null, bool onPool = false)
@@ -211,6 +213,7 @@ namespace CrabMaga
             mb.transform.position = pushPos;
             pushable.OnPush();
             mb.enabled = false;
+            mb.transform.parent = QueueObject;
         }
 
         [Button]

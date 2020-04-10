@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78aca2213b529424395395c9ff25678d, type: 3}
+  m_Name: Snd_AssaultCrab
+  m_EditorClassIdentifier: 
+  Name: 
+  baseClip:
+  - {fileID: 8300000, guid: ce83c6bdd3ede874e9cd572f20201555, type: 3}
+  - {fileID: 8300000, guid: 49197916ab0147b4caaacbd15936aca8, type: 3}
+  - {fileID: 8300000, guid: 80e1ceb376f953b48adf54738212ea9e, type: 3}
+  - {fileID: 8300000, guid: 6fe9118909f7f854dad2d46a5ae7b714, type: 3}
+  - {fileID: 8300000, guid: af378f2b50ed380409ff425a1441352b, type: 3}
+  - {fileID: 8300000, guid: b52e0e1ee90f550449cf668f03082082, type: 3}
+  audioPlayMode: 1
+  volume: {x: 1, y: 1}
+  pitch: {x: 1, y: 1}
+  delay: {x: 0, y: 1}
+  ResetValue: 1

@@ -37,9 +37,14 @@ namespace CrabMaga
         [SerializeField] CanvasGroup canvasGroup = default;
         [SerializeField] Image crabThumbnailImage = default;
 
+        Vector2 sizeDeltaBase = new Vector2();
+        [SerializeField] Vector2 sizeDeltaOnSelect = new Vector2();
+
         public override void Init()
         {
             base.Init();
+
+            sizeDeltaBase = rectTransform.sizeDelta;
         }
 
         public void InitSlot(CrabUnitData _entityData)
@@ -69,7 +74,7 @@ namespace CrabMaga
             DOTween.To(
                 () => rectTransform.sizeDelta,
                 (x) => rectTransform.sizeDelta = x,
-                new Vector2(120f, 120f),
+                sizeDeltaOnSelect,
                 .2f
                 );
         }
@@ -85,7 +90,7 @@ namespace CrabMaga
             DOTween.To(
                 () => rectTransform.sizeDelta,
                 (x) => rectTransform.sizeDelta = x,
-                new Vector2(100f, 100f),
+                sizeDeltaBase,
                 .2f
                 );
         }

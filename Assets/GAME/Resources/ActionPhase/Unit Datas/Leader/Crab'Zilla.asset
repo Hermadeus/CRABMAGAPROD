@@ -14,17 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   behaviourSystem: {fileID: 11400000, guid: 65fa9772d44e2ec47bab627a75c1152e, type: 2}
   entityName: Crab'Zilla
+  description: 
   unitType: {fileID: 1244175487599082764, guid: cb5b489f79437ee47aed97122e1f3bb3,
     type: 3}
   startMovementBehaviour: 4
-  startHealth: 50
-  baseSpeed: 0.2
+  startHealth: 480
   speedEnum: 1
+  baseSpeed: 0.2
   rotationSpeed: 0.5
-  acceleration: 1
   accelerationEnum: 1
+  acceleration: 1
   damage: 100
   attackSpeed: 0.5
+  DamagePerSeconds: 200
   detectionRange: 2
   detectionBehaviour: 0
   entityType: 1
@@ -33,5 +35,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   attackType: 1
+  havePastille: 0
+  pastilleSprite: {fileID: 0}
+  pastilleCombatSprite: {fileID: 0}
   passifBehaviour: 4
   passifEvent: 5

@@ -104,7 +104,7 @@ namespace CrabMaga
         public AudioSource audiosource;
 
         [FoldoutGroup("Audio"), SerializeField]
-        public SimpleAudioEvent
+        public AudioEvent
             assaultSound,
             deathSound,
             winSound,
@@ -157,6 +157,8 @@ namespace CrabMaga
             poolingManager.Push(this);
 
             deathSound?.Play(audiosource);
+
+            Debug.Log(name + " DEATH");
         }
 
         public Unit lastHitUnitReceive;
