@@ -21,6 +21,7 @@ namespace CrabMaga
 
         public Sprite ultiSprite = default;
         public Sprite noneSprite = default;
+        public RectTransform mbackground = default;
 
         enum StateToken { UNIT, ULTI, NONE}
         StateToken stateToken = StateToken.UNIT;
@@ -72,6 +73,20 @@ namespace CrabMaga
                     if (stateToken == StateToken.ULTI)
                         havntUseUlt = true;
                 }
+            }            
+        }
+
+        public void UseUlt()
+        {
+            if (stateToken == StateToken.ULTI)
+            {
+                if (havntUseUlt)
+                {
+                    GetComponent<Image>().sprite = noneSprite;
+                    gameManager.leaderOnBattle.UsePassif();
+                    stateToken = StateToken.NONE;
+                    isSelected = false;
+                }
             }
         }
 
@@ -83,18 +98,11 @@ namespace CrabMaga
                     if (isSelected)
                     {
                         rectTransform.localPosition = new Vector2(
-                            inputTouchToken.InputCurrentPosition.x - (Screen.width / 2),
-                            inputTouchToken.InputCurrentPosition.y - (Screen.height / 2));
+                                inputTouchToken.InputCurrentPosition.x - Screen.width,
+                                inputTouchToken.InputCurrentPosition.y);
                     }
                     break;
                 case StateToken.ULTI:
-                    if (havntUseUlt)
-                    {
-                        GetComponent<Image>().sprite = noneSprite;
-                        gameManager.leaderOnBattle.UsePassif();
-                        stateToken = StateToken.NONE;
-                        isSelected = false;
-                    }
                     break;
                 case StateToken.NONE:
                     break;
@@ -110,6 +118,12 @@ namespace CrabMaga
                     {
                         rectTransform.anchoredPosition = pos;
                         isSelected = false;
+
+                        if (Vector2.Distance(rectTransform.anchoredPosition, mbackground.anchoredPosition) < 200)
+                        {
+                            Debug.Log("Retour Du Token");
+                            return;
+                        }
 
                         poolingManager.InvokeLeader(new Vector3(inputTouchToken.RayPoint.x, 0, gameManager.CurrentInstantiationZone.transform.position.z));
 
