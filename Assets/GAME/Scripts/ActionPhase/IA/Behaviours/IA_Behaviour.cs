@@ -53,6 +53,7 @@ namespace CrabMaga
         ON_ENEMY_KILL,
         ON_CRAB_KILL,
         ON_LEADER_KILL,
-        ON_CASTLE_REACH_MIDLE_PV
+        ON_CASTLE_REACH_MIDLE_PV,
+        ON_CASTLE_REACH_QUART_PV
     }
 }

@@ -9,11 +9,13 @@ namespace CrabMaga
     {
         public EnemyData[] enemyDatas = default;
 
-        public override void Instantiation(IA_Manager manager)
+        public IA_InstantiateTimer timerInstantiation = default;
+
+        public override Entity Instantiation(IA_Manager manager)
         {
             int x = Random.Range(0, enemyDatas.Length);
 
-            manager.poolingManager.PoolEntity(enemyDatas[x].unitType.GetType(), manager.APgameManager.castle.transform.position);
+            return manager.poolingManager.PoolEntity(enemyDatas[x].unitType.GetType(), manager.APgameManager.castle.transform.position);
         }
     }
 }

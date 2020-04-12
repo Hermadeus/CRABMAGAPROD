@@ -246,7 +246,7 @@ namespace CrabMaga
 
         public void OnWin()
         {
-            winSound?.Play(audiosource);
+            SoundManager.instance.PlaySound(winSound, audiosource);
         }
 
         public void OnLose()

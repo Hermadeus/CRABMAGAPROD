@@ -116,12 +116,10 @@ namespace CrabMaga
                 case StateToken.UNIT:
                     if (isSelected)
                     {
-                        rectTransform.anchoredPosition = pos;
-                        isSelected = false;
-
                         if (Vector2.Distance(rectTransform.anchoredPosition, mbackground.anchoredPosition) < 200)
                         {
-                            Debug.Log("Retour Du Token");
+                            rectTransform.anchoredPosition = pos;
+                            isSelected = false;
                             return;
                         }
 
@@ -129,6 +127,8 @@ namespace CrabMaga
 
                         GetComponent<Image>().sprite = ultiSprite;
                         stateToken = StateToken.ULTI;
+                        rectTransform.anchoredPosition = pos;
+                        isSelected = false;
                     }
                     break;
                 case StateToken.ULTI:

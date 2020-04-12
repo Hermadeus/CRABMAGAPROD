@@ -11,7 +11,7 @@ namespace CrabMaga
         public AP_GameManager AP_GameManager = default;
 
         public Slider healthSlider = default;
-
+        
         private void Awake()
         {
             healthSlider.value = AP_GameManager.levelData.scoreToReach;

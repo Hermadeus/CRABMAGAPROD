@@ -39,6 +39,17 @@ namespace CrabMaga
                 //scorePanel.UpdateScore();
                 castle.healthSlider.value = value;
 
+                Debug.Log("CURRENT SCORE = " + value);
+
+                if (value == Mathf.CeilToInt(levelData.scoreToReach / 2))
+                    IA_Manager.onCastleReachMiddlePV.Invoke(IA_Manager);
+
+                if (value == Mathf.CeilToInt(levelData.scoreToReach - (levelData.scoreToReach / 4)))
+                {
+                    IA_Manager.onCastleReachMiddlePV.Invoke(IA_Manager);
+                    Debug.Log("IL RESTE UN QUART DES PV");
+                }
+
                 if (value >= levelData.scoreToReach)
                     Win();
             }
@@ -55,6 +66,8 @@ namespace CrabMaga
         public GuardHouseManager guardHouseManager = default;
         [BoxGroup("References")]
         public CameraSlider cameraSlider = default;
+        [BoxGroup("References")]
+        public IA_Manager IA_Manager = default;
 
         private int currentUnitCountInt;
         public int CurrentUnitCountInt
@@ -65,9 +78,11 @@ namespace CrabMaga
                 currentUnitCountInt = value;
                 currentUnitCount.SetText(value.ToString());
 
-                if (value > levelData.maxCrabInSameTime - 1)
+                if (value < levelData.maxCrabInSameTime - 2)
+                    currentUnitCount.color = Color.white;
+                else if (value == levelData.maxCrabInSameTime - 1)
                     currentUnitCount.color = new Color(255, 165, 0);
-                if (value == levelData.maxCrabInSameTime)
+                else if (value == levelData.maxCrabInSameTime)
                     currentUnitCount.color = Color.red;
             }
         }
@@ -81,10 +96,12 @@ namespace CrabMaga
                 totalUnitCountInt = value;
                 totalUnitCount.SetText(value.ToString());
 
-                if (value > levelData.maxCrab - 1)
-                    currentUnitCount.color = new Color(255, 165, 0);
-                if (value == levelData.maxCrab)
-                    currentUnitCount.color = Color.red;
+                if (value < levelData.maxCrab - 2)
+                    totalUnitCount.color = Color.white;
+                else if (value == levelData.maxCrab - 1)
+                    totalUnitCount.color = new Color(255, 165, 0);
+                else if (value == levelData.maxCrab)
+                    totalUnitCount.color = Color.red;
             }
         }
 
@@ -152,7 +169,6 @@ namespace CrabMaga
 
             OnLoseEvent.AddListener(OnLose);
             OnWinEvent.AddListener(OnWin);
-
         }
 
         private void Update()

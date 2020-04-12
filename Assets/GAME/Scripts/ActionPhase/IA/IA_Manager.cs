@@ -27,8 +27,10 @@ namespace CrabMaga
         [BoxGroup("Events")]
         public float timerOnGameStart = 5f;
         [BoxGroup("Events")]
-        public IAEvent 
-            onGameStart = new IAEvent();
+        public IAEvent
+            onGameStart = new IAEvent(),
+            onCastleReachMiddlePV = new IAEvent(),
+            onCastleReachQuartPV = new IAEvent();
 
         private void Awake()
         {
@@ -48,6 +50,12 @@ namespace CrabMaga
             for (int i = 0; i < behaviours.Count; i++)
             {
                 if (behaviours[i].CallMoment == CallMoment.ON_GAME_START)
+                    onGameStart.AddListener(behaviours[i].CallEvent);
+
+                if (behaviours[i].CallMoment == CallMoment.ON_CASTLE_REACH_MIDLE_PV)
+                    onGameStart.AddListener(behaviours[i].CallEvent);
+
+                if (behaviours[i].CallMoment == CallMoment.ON_CASTLE_REACH_QUART_PV)
                     onGameStart.AddListener(behaviours[i].CallEvent);
             }
         }

@@ -9,6 +9,6 @@ namespace CrabMaga
 {
     public abstract class IA_InstantationRules : SerializedScriptableObject
     {
-        public abstract void Instantiation(IA_Manager manager);
+        public abstract Entity Instantiation(IA_Manager manager);
     }
 }

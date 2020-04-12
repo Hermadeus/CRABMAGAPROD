@@ -21,7 +21,7 @@ namespace CrabMaga
 
         public virtual void Effect(Unit _unit, IAttackReceiver _receiver)
         {
-            _unit.attackSound?.Play(_unit.audiosource);
+            SoundManager.instance.PlaySound(_unit.attackSound, _unit.audiosource);
         }
     }
 }

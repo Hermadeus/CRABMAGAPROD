@@ -10,7 +10,7 @@ namespace CrabMaga
     {
         public EnemyData[] enemyDatas = default;
 
-        public override void Instantiation(IA_Manager manager)
+        public override Entity Instantiation(IA_Manager manager)
         {
             int x = Random.Range(0, enemyDatas.Length);
 
@@ -18,6 +18,8 @@ namespace CrabMaga
 
             if (e.gameManager.guardHouseManager.GetGuardHouseLineWithHighterUnits() != null)
                 e.Destination = e.gameManager.guardHouseManager.GetGuardHouseLineWithHighterUnits();
+
+            return e;
         }
     }
 }

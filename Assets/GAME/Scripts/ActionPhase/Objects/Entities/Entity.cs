@@ -133,7 +133,7 @@ namespace CrabMaga
             movementBehaviour?.Move(this);
 
             audiosource = GetComponent<AudioSource>();
-            assaultSound?.Play(audiosource);
+            SoundManager.instance.PlaySound(assaultSound, audiosource);
 
             InitButton();
         }
@@ -156,9 +156,9 @@ namespace CrabMaga
 
             poolingManager.Push(this);
 
-            deathSound?.Play(audiosource);
+            SoundManager.instance.PlaySound(deathSound, audiosource);
 
-            Debug.Log(name + " DEATH");
+            //Debug.Log(name + " DEATH");
         }
 
         public Unit lastHitUnitReceive;
