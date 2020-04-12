@@ -8,6 +8,7 @@ using UnityEngine.Events;
 using Sirenix.OdinInspector;
 
 using QRTools.Audio;
+using QRTools.Inputs;
 
 using TMPro;
 
@@ -72,6 +73,8 @@ namespace CrabMaga
         public CameraSlider cameraSlider = default;
         [BoxGroup("References")]
         public IA_Manager IA_Manager = default;
+        [BoxGroup("References")]
+        public InputTouch inputWheel = default;
 
         private int currentUnitCountInt;
         public int CurrentUnitCountInt
@@ -116,6 +119,8 @@ namespace CrabMaga
         public TextMeshProUGUI currentUnitCount = default;
         [BoxGroup("References")]
         public TextMeshProUGUI totalUnitCount = default;
+
+        public RappelInput rappelInput = default;
 
         public UnityEvent
             OnWinEvent = new UnityEvent(),
@@ -176,6 +181,10 @@ namespace CrabMaga
 
             OnLoseEvent.AddListener(OnLose);
             OnWinEvent.AddListener(OnWin);
+
+            StartCoroutine(RappelInputCor());
+
+            inputWheel.onLongTapEnd.AddListener(StopRappelInput);
         }
 
         private void Update()
@@ -250,6 +259,20 @@ namespace CrabMaga
                 enemiesOnBattle[i].OnWin();
 
             loseSound.Play(audioSource);
+        }
+
+        IEnumerator RappelInputCor()
+        {
+            yield return new WaitForSeconds(15);
+            rappelInput.Rapelle();
+            yield break;
+        }
+
+        public void StopRappelInput()
+        {
+            rappelInput.asStop = true;
+            rappelInput.anim.SetTrigger("end");
+            StopCoroutine(RappelInputCor());
         }
     }
 }
