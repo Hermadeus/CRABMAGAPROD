@@ -7,6 +7,9 @@ namespace CrabMaga
     [CreateAssetMenu(menuName = "CRAB MAGA/Data/LeaderData")]
     public class LeaderData : EntityData
     {
-        
+        public Sprite thumbnailToken = default;
+        public Sprite thumbnailTokenUlt = default;
+        public Sprite thumbnailTokenInUlt = default;
+        public Sprite thumbnailTokenNone = default;
     }
 }

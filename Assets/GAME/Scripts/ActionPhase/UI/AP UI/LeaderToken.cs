@@ -7,12 +7,13 @@ using UnityEngine.UI;
 
 using QRTools.UI;
 using QRTools.Inputs;
-using QRTools.Variables;
 
 namespace CrabMaga
 {
     public class LeaderToken : UIElement
     {
+        public PlayerData playerData = default;
+
         public bool isSelected = false;
         public InputTouch inputTouchToken = default;
         public LeaderEffectEvent leaderEffectEvent = default;
@@ -34,6 +35,8 @@ namespace CrabMaga
 
         Vector2 pos = new Vector2();
 
+        public Image thumbnail = default;
+
         public override void Init()
         {
             base.Init();
@@ -48,6 +51,8 @@ namespace CrabMaga
             m_EventSystem = GetComponent<EventSystem>();
 
             pos = rectTransform.anchoredPosition;
+
+            thumbnail.sprite = playerData.leader_slot?.thumbnailToken;
         }
 
         public void OnInput()
@@ -84,6 +89,7 @@ namespace CrabMaga
                 {
                     GetComponent<Image>().sprite = noneSprite;
                     gameManager.leaderOnBattle.UsePassif();
+                    StartCoroutine(CloseToken());
                     stateToken = StateToken.NONE;
                     isSelected = false;
                 }
@@ -124,6 +130,7 @@ namespace CrabMaga
                         }
 
                         poolingManager.InvokeLeader(new Vector3(inputTouchToken.RayPoint.x, 0, gameManager.CurrentInstantiationZone.transform.position.z));
+                        thumbnail.sprite = playerData.leader_slot?.thumbnailTokenUlt;
 
                         GetComponent<Image>().sprite = ultiSprite;
                         stateToken = StateToken.ULTI;
@@ -136,8 +143,15 @@ namespace CrabMaga
                     break;
                 case StateToken.NONE:
                     break;
-            }
-            
+            }            
+        }
+
+        IEnumerator CloseToken()
+        {
+            thumbnail.sprite = playerData.leader_slot?.thumbnailTokenUlt;
+            yield return new WaitForSeconds(4f);
+            thumbnail.sprite = playerData.leader_slot?.thumbnailTokenNone;
+            yield break;
         }
     }
 }

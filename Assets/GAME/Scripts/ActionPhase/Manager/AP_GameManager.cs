@@ -42,11 +42,15 @@ namespace CrabMaga
                 Debug.Log("CURRENT SCORE = " + value);
 
                 if (value == Mathf.CeilToInt(levelData.scoreToReach / 2))
+                {
                     IA_Manager.onCastleReachMiddlePV.Invoke(IA_Manager);
+                    castle.onMiddlePV.Invoke();
+                }
 
                 if (value == Mathf.CeilToInt(levelData.scoreToReach - (levelData.scoreToReach / 4)))
                 {
                     IA_Manager.onCastleReachMiddlePV.Invoke(IA_Manager);
+                    castle.onQuartPV.Invoke();
                     Debug.Log("IL RESTE UN QUART DES PV");
                 }
 
@@ -101,7 +105,10 @@ namespace CrabMaga
                 else if (value == levelData.maxCrab - 1)
                     totalUnitCount.color = new Color(255, 165, 0);
                 else if (value == levelData.maxCrab)
+                {
                     totalUnitCount.color = Color.red;
+                    OnLoseEvent.Invoke();
+                }
             }
         }
 

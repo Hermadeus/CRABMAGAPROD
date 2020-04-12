@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 namespace CrabMaga
 {
@@ -11,6 +12,9 @@ namespace CrabMaga
         public AP_GameManager AP_GameManager = default;
 
         public Slider healthSlider = default;
+
+        public UnityEvent onMiddlePV = new UnityEvent();
+        public UnityEvent onQuartPV = new UnityEvent();
         
         private void Awake()
         {

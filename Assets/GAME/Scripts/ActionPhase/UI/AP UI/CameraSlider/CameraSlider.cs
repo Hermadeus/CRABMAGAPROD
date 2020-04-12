@@ -30,6 +30,9 @@ namespace CrabMaga
         public Pastille[] pastilles = default;
         [HideInInspector] public float tailleMap;
 
+        public Image castleImage;
+        public Sprite castleSpr, castleInConquere, castleConquere;
+
         public override void Init()
         {
             base.Init();
@@ -124,11 +127,28 @@ namespace CrabMaga
             if (spr != null && pastille != null && pastille != null)
                 pastille.background.sprite = spr;
 
+            pastille.outline.effectDistance = Vector2.zero;
+
             float _coef = tailleMap / height;
 
             pastille.rectTransform.anchoredPosition = new Vector3(0, rectTransform.sizeDelta.y / _coef, 0);
 
             return pastille;
+        }
+
+        public void SetCastleSprite()
+        {
+            castleImage.sprite = castleSpr;
+        }
+
+        public void SetCastleInConquere()
+        {
+            castleImage.sprite = castleInConquere;
+        }
+
+        public void SetCastleConquere()
+        {
+            castleImage.sprite = castleConquere;
         }
     }
 }

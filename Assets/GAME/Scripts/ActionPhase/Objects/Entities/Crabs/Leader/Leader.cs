@@ -14,6 +14,8 @@ namespace CrabMaga
 
         public Slider sliderHealth = default;
 
+        public float castlePosZ = 0;
+
         public override float Health
         {
             get => base.Health;
@@ -30,12 +32,32 @@ namespace CrabMaga
 
             sliderHealth.maxValue = entityData.startHealth;
             sliderHealth.value = sliderHealth.maxValue;
+
+            castlePosZ = gameManager.castle.transform.position.z;
         }
 
         protected override void OnUnitRangeDetectionReachZero()
         {
             base.OnUnitRangeDetectionReachZero();
             MovementBehaviourEnum = MovementBehaviourEnum.JOIN_CASTLE_MOVEMENT;
+        }
+
+        public override void UpdateComportement()
+        {
+            base.UpdateComportement();
+            CheckReachCastle();
+        }
+
+        void CheckReachCastle()
+        {
+            if (transform.position.z >= castlePosZ)
+                ReachCastle();
+        }
+
+        public void ReachCastle()
+        {
+            poolingManager.Push(this);
+            gameManager.CurrentScore++;
         }
 
         public void UsePassif()

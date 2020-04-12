@@ -14,17 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   behaviourSystem: {fileID: 11400000, guid: 65fa9772d44e2ec47bab627a75c1152e, type: 2}
   entityName: Crab'pitaine
+  description: 
   unitType: {fileID: 3863057427669080910, guid: 1b832dc4cb6da84438eb08863085738d,
     type: 3}
   startMovementBehaviour: 4
   startHealth: 1
-  baseSpeed: 0.4
   speedEnum: 2
+  baseSpeed: 0.4
   rotationSpeed: 0.5
-  acceleration: 2
   accelerationEnum: 2
+  acceleration: 2
   damage: 5
   attackSpeed: 1.5
+  DamagePerSeconds: 3.3333333
   detectionRange: 0
   detectionBehaviour: 0
   entityType: 1
@@ -34,10 +36,13 @@ MonoBehaviour:
     m_Bits: 512
   attackType: 1
   havePastille: 1
-  pastilleSprite: {fileID: 21300000, guid: b73eba6116660f047bedccdaabd628cc, type: 3}
-  pastilleCombatSprite: {fileID: 21300000, guid: 15da0ef48f41a5949a8a5f3c5b0ad178,
+  pastilleSprite: {fileID: 21300000, guid: ef2ff5cd237492e48a5e2201f916bc9d, type: 3}
+  pastilleCombatSprite: {fileID: 21300000, guid: ef2ff5cd237492e48a5e2201f916bc9d,
     type: 3}
   passifBehaviour: 3
   passifEvent: 1
   type: 2
   wheelThumbnail: {fileID: 21300000, guid: 9b9587b102f088247a3d14c37ce05cae, type: 3}
+  formationX: 3
+  formationY: 3
+  density: 1
