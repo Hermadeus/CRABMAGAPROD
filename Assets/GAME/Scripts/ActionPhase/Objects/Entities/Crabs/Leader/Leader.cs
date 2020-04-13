@@ -65,6 +65,8 @@ namespace CrabMaga
             if (asUsePassif)
                 return;
 
+            animator.SetTrigger("onUlt");
+
             asUsePassif = true;
 
             passifBehaviour?.PassifEffect(this);

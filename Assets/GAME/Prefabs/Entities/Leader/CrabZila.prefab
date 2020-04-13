@@ -538,6 +538,7 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   poolingManager: {fileID: 0}
   parentPoolingQueue: {fileID: 0}
+  animator: {fileID: 0}
   onInit:
     m_PersistentCalls:
       m_Calls: []
@@ -575,6 +576,7 @@ MonoBehaviour:
   isStatic: 0
   asUsePassif: 0
   sliderHealth: {fileID: 103980936812731678}
+  castlePosZ: 0
   laserDamage: 50
   startPos: {fileID: 2811359904305940714}
   endPos: {fileID: 1877335950}
@@ -675,7 +677,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: a0cf49fb48550af40bcbdc1a146845e2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1

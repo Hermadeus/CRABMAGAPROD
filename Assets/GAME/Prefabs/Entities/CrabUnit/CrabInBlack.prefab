@@ -83,6 +83,7 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   poolingManager: {fileID: 0}
   parentPoolingQueue: {fileID: 0}
+  animator: {fileID: 2204155246304032299}
   onInit:
     m_PersistentCalls:
       m_Calls: []
@@ -229,6 +230,7 @@ GameObject:
   - component: {fileID: 950087591553008021}
   - component: {fileID: 950087591553008042}
   - component: {fileID: 2204155246304032299}
+  - component: {fileID: 7370270702239696542}
   m_Layer: 10
   m_Name: CrabInBlackGraph
   m_TagString: Untagged
@@ -316,6 +318,33 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7370270702239696542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950087591553008041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 235656944f7fc6049a302eb8946dc387, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  evnt:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6934997261248455762}
+        m_MethodName: PushAfterDie
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  FX_Attack: []
 --- !u!1 &950087591576137867
 GameObject:
   m_ObjectHideFlags: 0

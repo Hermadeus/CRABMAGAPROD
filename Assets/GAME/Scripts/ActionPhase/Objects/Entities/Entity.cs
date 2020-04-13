@@ -79,6 +79,8 @@ namespace CrabMaga
         public PoolingManager poolingManager = default;
         [FoldoutGroup("References")]
         [SerializeField] Transform parentPoolingQueue = default;
+        [FoldoutGroup("References")]
+        public Animator animator = default;
 
         [FoldoutGroup("Events")]
         public EntityEvent
@@ -154,7 +156,10 @@ namespace CrabMaga
 
             onDie?.Invoke(this);
 
-            poolingManager.Push(this);
+            PushAfterDie(); // A RETIRER QUAND LES ANIMS SONT INTEGREES
+
+            if(animator != null)
+                animator?.SetTrigger("onDie");
 
             SoundManager.instance.PlaySound(deathSound, audiosource);
 
@@ -210,6 +215,11 @@ namespace CrabMaga
             gameManager = FindObjectOfType<AP_GameManager>();
             poolingManager = FindObjectOfType<PoolingManager>();
             parentPoolingQueue = transform.parent;
+        }
+
+        public void PushAfterDie()
+        {
+            poolingManager.Push(this);
         }
     }
 

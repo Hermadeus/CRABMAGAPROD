@@ -9,7 +9,7 @@ namespace CrabMaga
     {
         public override void Effect(Unit _unit, IAttackReceiver _receiver)
         {
-            base.Effect(_unit, _receiver);
+            //base.Effect(_unit, _receiver);
 
             Enemy e = _unit as Enemy;
 
@@ -17,8 +17,8 @@ namespace CrabMaga
             {
                 if (e.hitColliders[i].GetComponentInParent<Unit>() is IAttackReceiver)
                 {
-                    IAttackReceiver attackReceiver = e.hitColliders[i].GetComponentInParent<Unit>() as IAttackReceiver;
-                    base.Effect(_unit, attackReceiver);
+                    base.Effect(_unit, e.hitColliders[i].GetComponentInParent<Unit>() as IAttackReceiver);
+                    Debug.Log(_unit.name + " ATTACK COLLIDER -> " + e.hitColliders[i].GetComponentInParent<Unit>().name);
                 }
             }
         }

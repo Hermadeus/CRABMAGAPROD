@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2798862485076715168}
   - component: {fileID: 1632407611570215572}
   - component: {fileID: 2945091192874504208}
+  - component: {fileID: 6580786050505780893}
   m_Layer: 10
   m_Name: Sphere
   m_TagString: Untagged
@@ -99,6 +100,33 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6580786050505780893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2827369121639170418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 235656944f7fc6049a302eb8946dc387, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  evnt:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 927077584071638290}
+        m_MethodName: PushAfterDie
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  FX_Attack: []
 --- !u!1 &5891268611655955279
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,6 +255,7 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   poolingManager: {fileID: 0}
   parentPoolingQueue: {fileID: 0}
+  animator: {fileID: 2945091192874504208}
   onInit:
     m_PersistentCalls:
       m_Calls: []
