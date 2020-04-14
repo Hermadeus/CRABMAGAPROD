@@ -17,6 +17,7 @@ namespace QRTools.Inputs
         [SerializeField, BoxGroup("References")] private CameraVariable camera = default;
         [BoxGroup("Ray")] public bool useRaycast = false;
         [ShowIf("@this.useRaycast == true"), BoxGroup("Ray")] public LayerMask mask;
+        [ShowIf("@this.useRaycast == true"), BoxGroup("Ray")] public bool useInteraction = false;
         [ReadOnly, BoxGroup("Ray")] public Collider objectHit = null;
         private Ray ray;
         private RaycastHit hit;
@@ -238,6 +239,13 @@ namespace QRTools.Inputs
                 {
                     asRayEnter = false;
                     onRayExit?.Invoke(objectHit);
+
+                    if (useInteraction)
+                    {
+                        var interactable = objectHit.GetComponents<Iinteractable>();
+                        for (int i = 0; i < interactable.Length; i++)
+                            interactable[i].Select();
+                    }
                 }
 
                 if (!asRayEnter)
@@ -265,5 +273,12 @@ namespace QRTools.Inputs
         public void DebugDirection() => Debug.Log(string.Format("Direction = {0}", Direction));
         public void DebugSpeed() => Debug.Log(string.Format("Speed = {0}", TouchSpeed));
         #endregion
+    }
+
+    public interface Iinteractable
+    {
+        void Select();
+
+        void Deselect();
     }
 }

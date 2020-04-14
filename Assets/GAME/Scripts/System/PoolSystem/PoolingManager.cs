@@ -66,7 +66,7 @@ namespace CrabMaga
             CrabFormation _crabFormation = Pool<CrabFormation>(Vector3.zero) as CrabFormation;
             APgameManager.crabFormationOnBattle.Add(_crabFormation);
 
-            playerData.money -= nbrCrabX * nbrCrabY;
+            playerData.crabMoney -= nbrCrabX * nbrCrabY;
             crabCount.UpdateText();
 
             for (int i = 0; i < nbrCrabX; i++)

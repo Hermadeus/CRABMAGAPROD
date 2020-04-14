@@ -24,7 +24,7 @@ namespace CrabMaga
 
         public void UpdateText()
         {
-            crabQuantiteText.text = playerData.money.ToString();
+            crabQuantiteText.text = playerData.crabMoney.ToString();
         }
     }
 }

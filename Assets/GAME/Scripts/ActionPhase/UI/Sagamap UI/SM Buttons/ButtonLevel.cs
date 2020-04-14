@@ -8,15 +8,8 @@ using QRTools.UI;
 
 namespace CrabMaga
 {
-    public class ButtonLevel : UIButton
+    public class ButtonLevel : UIElement
     {
-        public LevelData levelData = default;
-
-        public override void OnClickButton()
-        {
-            base.OnClickButton();
-
-            SceneManager.LoadScene(levelData.sceneLevel);
-        }
+        
     }
 }

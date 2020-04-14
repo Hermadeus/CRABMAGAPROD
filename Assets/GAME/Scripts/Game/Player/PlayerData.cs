@@ -17,7 +17,11 @@ namespace CrabMaga
         public bool rightHand = true;        
 
         [BoxGroup("Economy datas")]
-        public int money = 0;
+        public int crabMoney = 0;
+        [BoxGroup("Economy datas")]
+        public int shellMoney = 0;
+        [BoxGroup("Economy datas")]
+        public int pearlMoney = 0;
 
         [BoxGroup("Gameplay datas")]
         public CrabUnitData
@@ -35,7 +39,7 @@ namespace CrabMaga
         [Button]
         public void ResetObject()
         {
-            money = 0;
+            crabMoney = 0;
         }
 
         [Button]
@@ -60,7 +64,9 @@ namespace CrabMaga
         [Button]
         void TRICHE()
         {
-            money = 500000;
+            crabMoney = 500000;
+            shellMoney = 500000;
+            pearlMoney = 500000;
         }
     }
 }

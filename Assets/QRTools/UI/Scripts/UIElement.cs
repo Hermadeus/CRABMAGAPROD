@@ -58,6 +58,7 @@ namespace QRTools.UI
             show.Kill();
             
             hide = DOTween.To(() => element.alpha, x => element.alpha = x, 0, timerDesappear).SetEase(Ease.Linear);
+            element.blocksRaycasts = false;
             element.interactable = false;
         }
 
@@ -66,8 +67,8 @@ namespace QRTools.UI
             hide.Kill();
             
             show = DOTween.To(() => element.alpha, x => element.alpha = x, 1, timerAppear).SetEase(Ease.Linear);
-            element.interactable = true;
-            
+            element.blocksRaycasts = true;
+            element.interactable = true;            
         }
 
         public void ShowElementWithoutInteractable(float timer = 0f)
