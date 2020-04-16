@@ -12,6 +12,8 @@ namespace CrabMaga
 {
     public class Pastille : UIElement
     {
+        public Image icon = default;
+
         public CameraSlider CameraSlider = default;
         public Outline outline = default;
 
@@ -39,7 +41,6 @@ namespace CrabMaga
             base.Init();
 
             rectTransform = GetComponent<RectTransform>();
-            outline = GetComponent<Outline>();
 
             outline.effectDistance = Vector2.zero;
         }
@@ -54,7 +55,7 @@ namespace CrabMaga
 
         public void SetBackgroundPastille(Sprite spr)
         {
-            background.sprite = spr;
+            icon.sprite = spr;
 
             StartCoroutine(SetEffectOutline());
         }

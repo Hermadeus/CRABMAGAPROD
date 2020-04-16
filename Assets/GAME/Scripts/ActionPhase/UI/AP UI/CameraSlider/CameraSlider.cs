@@ -125,7 +125,7 @@ namespace CrabMaga
             }
 
             if (spr != null && pastille != null && pastille != null)
-                pastille.background.sprite = spr;
+                pastille.icon.sprite = spr;
 
             pastille.outline.effectDistance = Vector2.zero;
 

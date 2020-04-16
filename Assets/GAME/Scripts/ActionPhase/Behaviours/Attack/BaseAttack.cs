@@ -13,7 +13,7 @@ namespace CrabMaga
             if (_unit.attackCor != null)
                 _unit.StopCoroutine(_unit.attackCor);
 
-            _unit.transform.DOLookAt(((Entity)_receiver).transform.position, .5f);
+            //_unit.transform.DOLookAt(((Entity)_receiver).transform.position, .5f);
 
             _unit.attackCor = _unit.StartCoroutine(AttackCor(_unit, _receiver));
         }
