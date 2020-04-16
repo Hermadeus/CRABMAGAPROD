@@ -15,7 +15,11 @@ namespace CrabMaga
     {
         public InputTouch movingInput = default;
 
-        public FloatVariable camRot = default;
+        public FloatVariable mapRot = default;
+
+        public Transform map = default;
+
+        public MapCharger mapCharger = default;
 
         [BoxGroup("Parameters"), SerializeField]
         float
@@ -24,28 +28,32 @@ namespace CrabMaga
         [BoxGroup("Parameters"), SerializeField]
         Vector2 bornes = new Vector2();
 
-        [SerializeField] Camera camera = default;
+        [SerializeField] Camera cam = default;
         [SerializeField] LayerMask mask;
         Ray ray;
         RaycastHit hit;
+
+        [ReadOnly] public Vector3 currentRotation;
 
         private void Awake()
         {
             movingInput.onSwipeDown.AddListener(OnSwipeDown);
             movingInput.onSwipeUp.AddListener(OnSwipeUp);
 
-            transform.eulerAngles = new Vector3(camRot.Value, 0, 0);
+            currentRotation = new Vector3(mapRot.Value, 0, -90);
+            mapCharger.ChunkIndex = Mathf.Abs(Mathf.RoundToInt(mapRot.Value) / 180);
         }
 
         private void Update()
         {
-            ray.origin = camera.transform.position;
+            currentRotation = new Vector3(currentRotation.x % 360f, currentRotation.y % 360f, currentRotation.z % 360f);
+            map.transform.eulerAngles = currentRotation;
+
+            ray.origin = cam.transform.position;
             ray.direction = Vector3.forward;
 
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, mask))
             {
-                Debug.Log(hit.collider.gameObject);
-
                 for (int i = 0; i < SagamapManager.instance.castles.Count; i++)
                     SagamapManager.instance.castles[i].Deselect();
                 hit.transform.GetComponent<CastleSagamap>().Select();
@@ -54,30 +62,29 @@ namespace CrabMaga
 
         public void OnSwipeUp()
         {
-            if ((transform.eulerAngles.x % 360) + moveOffset > bornes.y)
+            if (currentRotation.x + moveOffset > 15)
                 return;
 
-            camRot.Value = (transform.eulerAngles.x % 360) + moveOffset;
+            mapRot.Value = currentRotation.x + moveOffset;
+            mapCharger.ChunkIndex = Mathf.Abs(Mathf.RoundToInt(mapRot.Value) / 180);
 
             DOTween.To(
-                () => transform.eulerAngles,
-                (x) => transform.eulerAngles = x,
-                new Vector3(transform.eulerAngles.x + moveOffset, 0, 0),
+                () => currentRotation,
+                (x) => currentRotation = x,
+                new Vector3(currentRotation.x + moveOffset, (currentRotation.y), (currentRotation.z)),
                 moveSpeed
                 );
         }
 
         public void OnSwipeDown()
         {
-            if ((transform.eulerAngles.x % 360) - moveOffset < bornes.x)
-                return;
-
-            camRot.Value = (transform.eulerAngles.x % 360) - moveOffset;
+            mapRot.Value = currentRotation.x - moveOffset;
+            mapCharger.ChunkIndex =Mathf.Abs(Mathf.RoundToInt(mapRot.Value) / 180);
 
             DOTween.To(
-                () => transform.eulerAngles,
-                (x) => transform.eulerAngles = x,
-                new Vector3(transform.eulerAngles.x - moveOffset, 0, 0),
+                () => currentRotation,
+                (x) => currentRotation = x,
+                new Vector3(currentRotation.x - moveOffset, (currentRotation.y), (currentRotation.z)),
                 moveSpeed
                 );
         }
