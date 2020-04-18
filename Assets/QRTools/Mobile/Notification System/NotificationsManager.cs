@@ -29,9 +29,9 @@ namespace QRTools.Mobile
             notification.Text = "REVIENS JOUER VITE A CRAB MAGA OMGGGG";
             notification.LargeIcon = "game_icon";
 
-            MonoBehaviour m = FindObjectOfType<MonoBehaviour>();
+            //MonoBehaviour m = FindObjectOfType<MonoBehaviour>();
 
-            yield return m.StartCoroutine(internetRequest.getTime());
+            //yield return m.StartCoroutine(internetRequest.getTime());
 
             //DateTime dt = DateTime.Parse(internetRequest.getCurrentTimeNow());
             DateTime dt = DateTime.Now;
@@ -39,6 +39,7 @@ namespace QRTools.Mobile
             notification.FireTime = dt.AddHours(4);
 
             AndroidNotificationCenter.SendNotification(notification, "channel_id");
+            yield break;
         }
     }
 }
