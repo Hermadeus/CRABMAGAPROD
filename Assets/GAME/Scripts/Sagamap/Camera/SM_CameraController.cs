@@ -60,31 +60,31 @@ namespace CrabMaga
             }
         }
 
-        public void OnSwipeUp()
+        public void OnSwipeUp(float force)
         {
             if (currentRotation.x + moveOffset > 15)
                 return;
 
-            mapRot.Value = currentRotation.x + moveOffset;
+            mapRot.Value = currentRotation.x + (moveOffset + force / 10);
             mapCharger.ChunkIndex = Mathf.Abs(Mathf.RoundToInt(mapRot.Value) / 180);
 
             DOTween.To(
                 () => currentRotation,
                 (x) => currentRotation = x,
-                new Vector3(currentRotation.x + moveOffset, (currentRotation.y), (currentRotation.z)),
+                new Vector3(currentRotation.x + (moveOffset + force / 10), (currentRotation.y), (currentRotation.z)),
                 moveSpeed
                 );
         }
 
-        public void OnSwipeDown()
+        public void OnSwipeDown(float force)
         {
-            mapRot.Value = currentRotation.x - moveOffset;
+            mapRot.Value = currentRotation.x - (moveOffset + force / 10);
             mapCharger.ChunkIndex =Mathf.Abs(Mathf.RoundToInt(mapRot.Value) / 180);
 
             DOTween.To(
                 () => currentRotation,
                 (x) => currentRotation = x,
-                new Vector3(currentRotation.x - moveOffset, (currentRotation.y), (currentRotation.z)),
+                new Vector3(currentRotation.x - (moveOffset + force / 10), (currentRotation.y), (currentRotation.z)),
                 moveSpeed
                 );
         }

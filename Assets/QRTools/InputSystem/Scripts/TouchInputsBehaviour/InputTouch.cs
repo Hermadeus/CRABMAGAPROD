@@ -126,6 +126,7 @@ namespace QRTools.Inputs
         #region Events
         [System.Serializable] public class OnPinch : UnityEvent<float> { }
         [System.Serializable] public class OnLongTap : UnityEvent<float> { }
+        [System.Serializable] public class OnSwipe : UnityEvent<float> { }
         [System.Serializable] public class OnRayEvent : UnityEvent<Collider> { }
 
         [FoldoutGroup("Events"), Title("Current Events")]
@@ -139,13 +140,13 @@ namespace QRTools.Inputs
         [ShowIf("@this.touchType is DoubleTap"), FoldoutGroup("Events"), Title("DoubleTap Events")]
         public UnityEvent onDoubleTap = new UnityEvent();
         [ShowIf("@this.touchType is Swipe"), FoldoutGroup("Events"), Title("Swipe Events")]
-        public UnityEvent onSwipeUp = new UnityEvent();
+        public OnSwipe onSwipeUp = new OnSwipe();
         [ShowIf("@this.touchType is Swipe"), FoldoutGroup("Events")]
-        public UnityEvent onSwipeDown = new UnityEvent();
+        public OnSwipe onSwipeDown = new OnSwipe();
         [ShowIf("@this.touchType is Swipe"), FoldoutGroup("Events")]
-        public UnityEvent onSwipeRight = new UnityEvent();
+        public OnSwipe onSwipeRight = new OnSwipe();
         [ShowIf("@this.touchType is Swipe"), FoldoutGroup("Events")]
-        public UnityEvent onSwipeLeft = new UnityEvent();
+        public OnSwipe onSwipeLeft = new OnSwipe();
         [ShowIf("@this.touchType is Pinch"), FoldoutGroup("Events"), Title("Pinch Events")]
         public OnPinch onPinch = new OnPinch();
         [ShowIf("@this.touchType is LongTap"), FoldoutGroup("Events"), Title("LongTap Events")]

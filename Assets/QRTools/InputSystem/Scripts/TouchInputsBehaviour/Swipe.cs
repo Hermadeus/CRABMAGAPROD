@@ -49,12 +49,12 @@ namespace QRTools.Inputs
                 //Debug.Log("Vertical");
                 if (inputTouch.fingerDown.y - inputTouch.fingerUp.y > 0)//up swipe
                 {
-                    inputTouch.onSwipeUp?.Invoke();
+                    inputTouch.onSwipeUp?.Invoke(Mathf.Abs(inputTouch.fingerDown.y - inputTouch.fingerUp.y));
                     inputTouch.asSwipe = true;
                 }
                 else if (inputTouch.fingerDown.y - inputTouch.fingerUp.y < 0)//Down swipe
                 {
-                    inputTouch.onSwipeDown?.Invoke();
+                    inputTouch.onSwipeDown?.Invoke(Mathf.Abs(inputTouch.fingerDown.y - inputTouch.fingerUp.y));
                     inputTouch.asSwipe = true;
                 }
                 inputTouch.fingerUp = inputTouch.fingerDown;
@@ -66,12 +66,12 @@ namespace QRTools.Inputs
                 //Debug.Log("Horizontal");
                 if (inputTouch.fingerDown.x - inputTouch.fingerUp.x > 0)//Right swipe
                 {
-                    inputTouch.onSwipeRight?.Invoke();
+                    inputTouch.onSwipeRight?.Invoke(Mathf.Abs(inputTouch.fingerDown.x - inputTouch.fingerUp.x));
                     inputTouch.asSwipe = true;
                 }
                 else if (inputTouch.fingerDown.x - inputTouch.fingerUp.x < 0)//Left swipe
                 {
-                    inputTouch.onSwipeLeft?.Invoke();
+                    inputTouch.onSwipeLeft?.Invoke(Mathf.Abs(inputTouch.fingerDown.x - inputTouch.fingerUp.x));
                     inputTouch.asSwipe = true;
                 }
                 inputTouch.fingerUp = inputTouch.fingerDown;
