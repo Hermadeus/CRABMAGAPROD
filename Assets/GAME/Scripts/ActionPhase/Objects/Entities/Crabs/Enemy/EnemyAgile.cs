@@ -18,7 +18,8 @@ namespace CrabMaga
 
         public override void FixedUpdateComportement()
         {
-            hitColliders = Col();
+            if(attackBehaviour is AttackCollider )
+                hitColliders = Col();
 
             base.FixedUpdateComportement();
         }

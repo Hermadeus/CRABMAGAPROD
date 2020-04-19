@@ -38,8 +38,19 @@ namespace CrabMaga
         [SerializeField] Collider[] laserTarget;
         public Collider[] LaserTarget { get => laserTarget; set => laserTarget = value; }
 
+        bool isAttackLaser = false;
+
         public void StartLaser()
         {
+            isAttackLaser = true;
+
+            MovementBehaviourEnum = MovementBehaviourEnum.NULL_MOVEMENT;
+            IsStatic = true;
+
+            rotationSpeed = 0f;
+
+            rotationTween.Kill();
+
             DOTween.To(() => LineRendererLaser.startWidth, x => LineRendererLaser.startWidth = x, LaserSize, 1f).SetEase(Ease.InOutElastic);
             DOTween.To(() => LineRendererLaser.endWidth, x => LineRendererLaser.endWidth = x, LaserSize, 1f).SetEase(Ease.InOutElastic);
         }
@@ -49,7 +60,24 @@ namespace CrabMaga
             DOTween.To(() => LineRendererLaser.startWidth, x => LineRendererLaser.startWidth = x, 0, 1f).SetEase(Ease.Linear);
             DOTween.To(() => LineRendererLaser.endWidth, x => LineRendererLaser.endWidth = x, 0, 1f).SetEase(Ease.Linear);
 
+            rotationSpeed = entityData.rotationSpeed;
+
+            StartCoroutine(StopLaserCor());
+        }
+
+        IEnumerator StopLaserCor()
+        {
+            yield return new WaitForSeconds(1f);
             IsStatic = false;
+            isAttackLaser = true;
+            MovementBehaviourEnum = MovementBehaviourEnum.JOIN_CASTLE_MOVEMENT;
+            IsStatic = false;
+            yield break;
+        }
+
+        public override void UpdateComportement()
+        {
+            base.UpdateComportement();
         }
 
         public void ChargeLaser()

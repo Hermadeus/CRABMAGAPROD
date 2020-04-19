@@ -25,9 +25,9 @@ namespace CrabMaga
 
         public virtual void Effect(Unit _unit, IAttackReceiver _receiver)
         {
-            Debug.Log(_unit.name +  " ATTACK -> " + ((Entity)_receiver).name);
+            //Debug.Log(_unit.name +  " ATTACK -> " + ((Entity)_receiver).name);
 
-            _unit.transform.DOLookAt(((Entity)_receiver).transform.position, .5f);
+            _unit.rotationTween = _unit.transform.DOLookAt(((Entity)_receiver).transform.position, _unit.rotationSpeed);
 
             if(_unit.animator != null)
                 _unit.animator?.SetTrigger("onAttack");

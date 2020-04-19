@@ -110,7 +110,7 @@ namespace CrabMaga
                 else if (value == levelData.maxCrab)
                 {
                     totalUnitCount.color = Color.red;
-                    OnLoseEvent.Invoke();
+                    Lose();
                 }
             }
         }

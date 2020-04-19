@@ -17,7 +17,7 @@ namespace CrabMaga
 
             if (!rotationAndMove)
             {
-                _entity.transform.DOLookAt(destinationPoint, _entity.rotationSpeed);
+                if(!_entity.IsStatic) _entity.rotationTween = _entity.transform.DOLookAt(destinationPoint, _entity.rotationSpeed);
                 _entity.movementTween = _entity.transform.DOMove(destinationPoint, GetTimeMovement(_entity, destinationPoint));
             }
             else
@@ -51,7 +51,7 @@ namespace CrabMaga
                         yield return null;
 
                     d = Vector3.Distance(_entity.transform.position, _destinationPoint);
-                    _entity.transform.DOLookAt(_destinationPoint, _entity.rotationSpeed);
+                    if(!_entity.IsStatic) _entity.rotationTween = _entity.transform.DOLookAt(_destinationPoint, _entity.rotationSpeed);
 
                     _entity.transform.position = Vector3.MoveTowards(_entity.transform.position, _destinationPoint, _entity.Speed * Time.deltaTime);
 

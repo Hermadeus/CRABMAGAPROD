@@ -46,6 +46,7 @@ namespace CrabMaga
     public interface IStuntAttacker
     {
         float StuntTime { get; set; }
+        bool AsStunt { get; set; }
     }
 
     public interface IStuntable

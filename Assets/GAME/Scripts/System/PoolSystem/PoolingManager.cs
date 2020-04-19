@@ -66,8 +66,6 @@ namespace CrabMaga
             CrabFormation _crabFormation = Pool<CrabFormation>(Vector3.zero) as CrabFormation;
             APgameManager.crabFormationOnBattle.Add(_crabFormation);
 
-            playerData.crabMoney -= nbrCrabX * nbrCrabY;
-            crabCount.UpdateText();
 
             for (int i = 0; i < nbrCrabX; i++)
             {
@@ -79,10 +77,15 @@ namespace CrabMaga
                         poolingParent
                         ) as CrabUnit;
 
+                    crabUnit.name = crabUnit.entityData.entityName + " ID: " + i + " " + y;
+
                     _crabFormation.CrabUnits.Add(crabUnit);
                     crabUnit.crabFormationReference = _crabFormation;
                 }
             }
+
+            playerData.crabMoney -= ((CrabUnitData)_crabFormation.CrabUnits[0].entityData).costUnit;
+            crabCount.UpdateText();
 
             _crabFormation.name = _crabFormation.CrabUnits[0].name.ToString() + " Formation";
 
@@ -135,8 +138,9 @@ namespace CrabMaga
             if(entity is Unit)
             {
                 Unit u = entity as Unit;
-                if(u.entityData.havePastille && u != null)
-                    u.SetPastille();
+                if(u != null)
+                    if(u.entityData.havePastille)
+                        u.SetPastille();
             }
 
             if (entity is CrabUnit)

@@ -17,7 +17,7 @@ namespace CrabMaga
         public CameraSlider CameraSlider = default;
         public Outline outline = default;
 
-        private bool isUsed = false;
+        [SerializeField] private bool isUsed = false;
 
         public Vector2 outlineSize = new Vector2(8f, 8f);
 

@@ -33,6 +33,7 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 3895
+  useInteraction: 0
   objectHit: {fileID: 0}
   onTouchEnter:
     m_PersistentCalls:
@@ -124,5 +125,5 @@ MonoBehaviour:
   touchOnePrevPos: {x: 0, y: 0}
   prevMagnitude: 0
   currentMagnitude: 0
-  longTapTimer: 0.35
+  longTapTimer: 0.2
   longTapChargement: 0

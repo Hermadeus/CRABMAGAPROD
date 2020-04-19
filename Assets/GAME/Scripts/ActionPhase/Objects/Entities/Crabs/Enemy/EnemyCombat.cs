@@ -16,7 +16,9 @@ namespace CrabMaga
         public override void FixedUpdateComportement()
         {
             base.FixedUpdateComportement();
-            hitColliders = CircleCollider(offset.position, radius, layerMaskTarget);
+
+            if (attackBehaviour is AttackCollider)
+                hitColliders = CircleCollider(offset.position, radius, layerMaskTarget);
         }
 
         void OnDrawGizmos()

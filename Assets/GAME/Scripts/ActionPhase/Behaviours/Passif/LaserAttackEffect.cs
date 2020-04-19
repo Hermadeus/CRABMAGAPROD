@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 namespace CrabMaga
 {
@@ -20,7 +21,6 @@ namespace CrabMaga
 
             if (unit is ILaserAttacker)
             {
-
                 laserAttacker.ChargeLaser();
 
                 yield return new WaitForSeconds(laserAttacker.LaserChargeTime);
@@ -33,48 +33,32 @@ namespace CrabMaga
                 {
                     normalizedTime += Time.deltaTime / duration;
 
-                    #region CASSE
-                    //Vector3 to = unit.Target.transform.position * 10;
+                    unit.MovementBehaviourEnum = MovementBehaviourEnum.NULL_MOVEMENT;
 
-                    ////Vector3 mMidPosition = laserAttacker.Source.position + ((unit.Target.transform.position - laserAttacker.Source.position) * 0.5F);
-                    //Vector3 mMidPosition = (to - laserAttacker.Source.position).normalized / 2f;
-                    //Vector3 mDirection = (unit.Target.transform.position - laserAttacker.Source.position).normalized;
-
-
-                    //laserAttacker.Mid.position = mMidPosition;
-                    //laserAttacker.Mid.rotation = Quaternion.LookRotation(mDirection, Vector3.up);
-
-                    //laserAttacker.Laser.transform.position = mMidPosition;
-                    //laserAttacker.Laser.transform.rotation = Quaternion.LookRotation(mDirection, Vector3.right) * Quaternion.Euler(90, 0, 0);
-                    //laserAttacker.Laser.transform.localScale = new Vector3(
-                    //    laserAttacker.LaserSize,
-                    //    ((to - laserAttacker.Source.position) * .5F).magnitude,
-                    //    laserAttacker.LaserSize
-                    //    );
-                    #endregion
-
+                    unit.rotationTween.Kill();
+                    unit.transform.DOLookAt(new Vector3(unit.transform.position.x, 0, 1000), .5f);
 
                     c.LaserTarget = Physics.OverlapCapsule(laserAttacker.StartPos.position, laserAttacker.EndPos.position, laserAttacker.LaserSize, unit.layerMaskTarget);
 
-                    if (normalizedTime > 0 && !firstHit)
+                    if (normalizedTime > .2f && !firstHit)
                     {
                         InfligeDamage(laserAttacker);
                         firstHit = true;
                     }
 
-                    if (normalizedTime > .25f && !secondHit)
+                    if (normalizedTime > .4f && !secondHit)
                     {
                         InfligeDamage(laserAttacker);
                         secondHit = true;
                     }
 
-                    if (normalizedTime > .5f && !thirdHit)
+                    if (normalizedTime > .6f && !thirdHit)
                     {
                         InfligeDamage(laserAttacker);
                         thirdHit = true;
                     }
 
-                    if (normalizedTime > .75f && !quadHit)
+                    if (normalizedTime > .8f && !quadHit)
                     {
                         InfligeDamage(laserAttacker);
                         quadHit = true;

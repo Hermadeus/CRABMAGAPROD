@@ -100,10 +100,28 @@ namespace CrabMaga
         public PassifEvent passifEvent;
 
         [SerializeField] bool isStunt = false;
-        public bool IsStunt { get => isStunt; set => isStunt = value; }
+        public bool IsStunt
+        {
+            get => isStunt;
+            set
+            {
+                isStunt = value;
 
-        [SerializeField] bool isStatic = false;
-        public bool IsStatic { get => isStatic; set => isStatic = value; }
+                if(value == true)
+                {
+                    if(attackCor != null)
+                        StopCoroutine(attackCor);
+                }
+                else
+                {
+                    if (attackCor != null)
+                        StopCoroutine(attackCor);
+
+                    if (Target != null)
+                        Attack(this, Target);
+                }
+            }
+        }
 
         public override void Init()
         {
@@ -127,7 +145,7 @@ namespace CrabMaga
 
             detectionBehaviour?.Detect(this);
 
-            if (IsStunt || IsStatic)
+            if (IsStatic || IsStunt)
                 return;
 
             base.UpdateComportement();
@@ -142,7 +160,7 @@ namespace CrabMaga
 
         public void Attack(Unit _unit, IAttackReceiver _target)
         {
-            if (IsStunt || IsStatic)
+            if (IsStatic || IsStunt)
                 return;
 
             ///Effect
@@ -192,6 +210,7 @@ namespace CrabMaga
         public void HaveReachTarget()
         {
             MovementBehaviourEnum = MovementBehaviourEnum.NULL_MOVEMENT;
+            Attack(this, Target); //JE COMMENCE L'ATTAQUE
         }
 
         protected virtual void OnUnitRangeDetectionReachZero()
@@ -231,7 +250,7 @@ namespace CrabMaga
 
         public void Stunt()
         {
-            
+            Debug.Log("stunt");
         }
 
         public virtual void WinCombat()

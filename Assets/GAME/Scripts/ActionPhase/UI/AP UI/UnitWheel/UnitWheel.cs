@@ -54,7 +54,18 @@ namespace CrabMaga
             }
         }
 
-        public LeaderToken leaderToken = default;
+
+        private bool isBlocked = false;
+        public bool IsBlocked
+        {
+            get => isBlocked;
+            set
+            {
+                isBlocked = value;
+                if(value)
+                    Hide();
+            }
+        }
 
         GraphicRaycaster m_Raycaster;
         PointerEventData m_PointerEventData;
@@ -77,7 +88,7 @@ namespace CrabMaga
 
         public override void Show()
         {
-            if (leaderToken.isSelected)
+            if (IsBlocked)
                 return;
 
             base.Show();
@@ -191,5 +202,7 @@ namespace CrabMaga
                 rectTransform.localScale = new Vector3(-1, rectTransform.localScale.y, rectTransform.localScale.z);
             }
         }
+
+        public void Blocked(bool state) => IsBlocked = state;
     }
 }

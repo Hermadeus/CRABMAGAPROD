@@ -72,6 +72,8 @@ namespace CrabMaga
         public Tween movementTween;
         [HideInInspector]
         public Coroutine movementCor;
+        [HideInInspector]
+        public Tween rotationTween;
 
         [FoldoutGroup("References")]
         public AP_GameManager gameManager = default;
@@ -101,6 +103,11 @@ namespace CrabMaga
         }
 
         [FoldoutGroup("Debug"), SerializeField] bool initALaMano = false;
+
+
+
+        [SerializeField] bool isStatic = false;
+        public bool IsStatic { get => isStatic; set => isStatic = value; }
 
         [FoldoutGroup("Audio")]
         public AudioSource audiosource;
@@ -137,6 +144,8 @@ namespace CrabMaga
             audiosource = GetComponent<AudioSource>();
             SoundManager.instance.PlaySound(assaultSound, audiosource);
 
+            animator.SetTrigger("onSpawn");
+
             InitButton();
         }
 
@@ -170,6 +179,8 @@ namespace CrabMaga
 
         public void ReceiveAttack(Unit attaquant, float _damage)
         {
+            //Debug.Log(attaquant.name + " / damage = " + _damage);
+
             lastHitUnitReceive = attaquant;
             Health -= _damage;
         }
@@ -191,8 +202,6 @@ namespace CrabMaga
 
         public virtual void ResetObject()
         {
-            entityData = null;
-
             movementTween.Kill();
             movementTween = null;
 

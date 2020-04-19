@@ -12,5 +12,15 @@ namespace CrabMaga
         [FoldoutGroup("Passif Attribute")]
         [SerializeField] float stuntTimer = 1f;
         public float StuntTime { get => stuntTimer; set => stuntTimer = value; }
+
+        [SerializeField] bool asStunt = false;
+        public bool AsStunt { get => asStunt; set => asStunt = value; }
+
+
+        public override void ResetObject()
+        {
+            base.ResetObject();
+            AsStunt = false;
+        }
     }
 }

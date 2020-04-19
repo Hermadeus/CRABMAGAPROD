@@ -51,7 +51,13 @@ namespace CrabMaga
             sliderHealth.value = sliderHealth.maxValue;
         }
 
-        
+        public override void UpdateComportement()
+        {
+            base.UpdateComportement();
+
+            if (IsStunt)
+                Debug.Log("JE SUIS STUNT");
+        }
 
         protected override void OnUnitRangeDetectionReachZero()
         {

@@ -13,6 +13,9 @@ namespace CrabMaga
         [FoldoutGroup("Unit attribute")]
         public CrabUnitType type;
 
+        [FoldoutGroup("Unit attribute")]
+        public int costUnit = 5;
+
         [BoxGroup("Entity attribute")]
         public Sprite wheelThumbnail = default;
 

@@ -20,6 +20,10 @@ namespace CrabMaga
                 {
                     IStuntAttacker stuntAttacker = unit as IStuntAttacker;
 
+                    if (stuntAttacker.AsStunt)
+                        yield break;
+
+                    stuntAttacker.AsStunt = true;
                     target.IsStunt = true;
                     target.Stunt();
                     //Debug.Log("stunt" + stuntAttacker.StuntTime);

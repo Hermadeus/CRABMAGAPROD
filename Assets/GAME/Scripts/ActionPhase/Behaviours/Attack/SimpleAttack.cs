@@ -33,6 +33,8 @@ namespace CrabMaga
         {
             base.Effect(_unit, _receiver);
 
+            //Debug.Log(((Entity)_receiver).name + " RECOIT ATTAQUE DE " + _unit.name);
+
             _receiver?.ReceiveAttack(_unit, _unit.Damage);
         }
     }

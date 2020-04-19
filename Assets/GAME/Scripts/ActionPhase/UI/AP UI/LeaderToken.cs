@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 using QRTools.UI;
@@ -23,6 +24,8 @@ namespace CrabMaga
         public Sprite ultiSprite = default;
         public Sprite noneSprite = default;
         public RectTransform mbackground = default;
+
+        public UnityEvent onRelease = new UnityEvent();
 
         enum StateToken { UNIT, ULTI, NONE}
         StateToken stateToken = StateToken.UNIT;
@@ -92,6 +95,7 @@ namespace CrabMaga
                     StartCoroutine(CloseToken());
                     stateToken = StateToken.NONE;
                     isSelected = false;
+                    onRelease.Invoke();
                 }
             }
         }
@@ -143,7 +147,10 @@ namespace CrabMaga
                     break;
                 case StateToken.NONE:
                     break;
-            }            
+            }
+
+            onRelease.Invoke();
+
         }
 
         IEnumerator CloseToken()

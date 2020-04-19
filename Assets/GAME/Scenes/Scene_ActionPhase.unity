@@ -5899,6 +5899,32 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1136756174}
+          m_MethodName: Blocked
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1136756174}
+          m_MethodName: Blocked
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &156735017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5931,6 +5957,20 @@ MonoBehaviour:
   ultiSprite: {fileID: 21300000, guid: e1f34dcc4f3b8dc499a28cddca581240, type: 3}
   noneSprite: {fileID: 21300000, guid: 48ab569f96f9e414194631e1179b3a31, type: 3}
   mbackground: {fileID: 291039052}
+  onRelease:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1136756174}
+        m_MethodName: Blocked
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   thumbnail: {fileID: 1263672070}
 --- !u!225 &156735018
 CanvasGroup:
@@ -9276,7 +9316,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -35240,6 +35280,18 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!114 &1136756174 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8242655335553908991, guid: 44f1009fe5c6b504ba2ada53ff1b9042,
+    type: 3}
+  m_PrefabInstance: {fileID: 8242655336082435876}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ca5ca7e5a7cad840a8939253679b31d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1138817397
 PrefabInstance:
   m_ObjectHideFlags: 0

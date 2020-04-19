@@ -39,7 +39,7 @@ namespace CrabMaga
                     if (_unit.Target != null)
                     {
                         d = Vector3.Distance(_entity.transform.position, _unit.Target.transform.position);
-                        _entity.transform.DOLookAt(_unit.Target.transform.position, _entity.rotationSpeed);
+                        if(!_entity.IsStatic) _entity.rotationTween = _entity.transform.DOLookAt(_unit.Target.transform.position, _entity.rotationSpeed);
 
                         _entity.transform.position = Vector3.MoveTowards(_entity.transform.position, _unit.Target.transform.position, _entity.Speed * Time.deltaTime);
                     }
@@ -48,7 +48,6 @@ namespace CrabMaga
 
                 //Debug.Log(1 + _entity.name + " Reach " + _unit.Target);
                 _unit.HaveReachTarget();
-                _unit.Attack(_unit, _unit.Target); //JE COMMENCE L'ATTAQUE
             }
 
             yield break;
