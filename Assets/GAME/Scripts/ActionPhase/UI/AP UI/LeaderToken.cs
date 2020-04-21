@@ -136,6 +136,8 @@ namespace CrabMaga
                         poolingManager.InvokeLeader(new Vector3(inputTouchToken.RayPoint.x, 0, gameManager.CurrentInstantiationZone.transform.position.z));
                         thumbnail.sprite = playerData.leader_slot?.thumbnailTokenUlt;
 
+                        Debug.Log("release");
+
                         GetComponent<Image>().sprite = ultiSprite;
                         stateToken = StateToken.ULTI;
                         rectTransform.anchoredPosition = pos;

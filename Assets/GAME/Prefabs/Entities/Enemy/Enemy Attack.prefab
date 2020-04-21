@@ -20148,7 +20148,7 @@ Animator:
   m_GameObject: {fileID: 4869864305720242318}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9e74c9e3d80a00649be23e85bde54ab0, type: 2}
+  m_Controller: {fileID: 22100000, guid: f44852834dffbf745b3c87f53236c683, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -20299,6 +20299,9 @@ MonoBehaviour:
     - Name: movementCor
       Entry: 6
       Data: 
+    - Name: rotationTween
+      Entry: 6
+      Data: 
     - Name: detectionBehaviour
       Entry: 6
       Data: 
@@ -20334,6 +20337,7 @@ MonoBehaviour:
       m_Calls: []
   destination: {fileID: 0}
   initALaMano: 0
+  isStatic: 0
   audiosource: {fileID: 0}
   assaultSound: {fileID: 0}
   deathSound: {fileID: 0}
@@ -20354,7 +20358,6 @@ MonoBehaviour:
   pastilleRef: {fileID: 0}
   passifEvent: 0
   isStunt: 0
-  isStatic: 0
   sliderHealth: {fileID: 806852615}
   hitColliders: []
   guardHouseManager: {fileID: 0}

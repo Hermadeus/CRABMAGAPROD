@@ -10754,7 +10754,7 @@ Animator:
   m_GameObject: {fileID: 4938889763408132791}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: dd74232472523624d860770fedea321e, type: 2}
+  m_Controller: {fileID: 22100000, guid: 54a739661fb791748b3fe9bd693ade60, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -10830,7 +10830,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4938889763506876348}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.656, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3559245632260310749}
@@ -10869,6 +10869,9 @@ MonoBehaviour:
     - Name: movementCor
       Entry: 6
       Data: 
+    - Name: rotationTween
+      Entry: 6
+      Data: 
     - Name: detectionBehaviour
       Entry: 6
       Data: 
@@ -10904,6 +10907,7 @@ MonoBehaviour:
       m_Calls: []
   destination: {fileID: 0}
   initALaMano: 0
+  isStatic: 0
   audiosource: {fileID: 0}
   assaultSound: {fileID: 0}
   deathSound: {fileID: 0}
@@ -10924,7 +10928,6 @@ MonoBehaviour:
   pastilleRef: {fileID: 0}
   passifEvent: 0
   isStunt: 0
-  isStatic: 0
   sliderHealth: {fileID: 6809022242609852106}
   hitColliders: []
   guardHouseManager: {fileID: 0}

@@ -149,6 +149,7 @@ namespace CrabMaga
                 if (result.gameObject.GetComponent<UnitWheelSlot>())
                 {
                     CurrentSelectedSlot = result.gameObject.GetComponent<UnitWheelSlot>();
+
                     if (!CurrentSelectedSlot.IsSelected)
                         CurrentSelectedSlot.IsSelected = true;
                 }
