@@ -66,6 +66,7 @@ namespace CrabMaga
         ON_LEADER_KILL,
         ON_CASTLE_REACH_MIDLE_PV,
         ON_CASTLE_REACH_QUART_PV,
-        ON_UNIT_INSTANTIATION
+        ON_UNIT_INSTANTIATION,
+        ON_GENERAL_INVOKE
     }
 }

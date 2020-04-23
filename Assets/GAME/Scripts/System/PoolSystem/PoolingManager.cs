@@ -118,11 +118,15 @@ namespace CrabMaga
         {
             if (APgameManager.leaderOnBattle == null && playerData.leader_slot != null)
             {
-                APgameManager.leaderOnBattle = PoolEntity(
+                Leader l = PoolEntity(
                     playerData.leader_slot.unitType.GetType(),
                     pos,
                     poolingParent
                     ) as Leader;
+                APgameManager.leaderOnBattle = l;
+
+                latestUnitInstiate = l;
+                APgameManager.IA_Manager.onGeneralInvoke.Invoke(APgameManager.IA_Manager);
             }
         }
 
@@ -218,7 +222,8 @@ namespace CrabMaga
                 }
 
             throw new System.Exception(string.Format(
-                "Impossible de trouver le type de Poolable que tu recherches dans la liste de poolable."
+                "Impossible de trouver le type de Poolable que tu recherches dans la liste de poolable, name = {0}.",
+                typeToResearch.ToString()
                 ));
         }
 

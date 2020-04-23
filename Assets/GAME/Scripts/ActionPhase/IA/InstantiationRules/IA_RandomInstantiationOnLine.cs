@@ -30,5 +30,29 @@ namespace CrabMaga
 
             return e;
         }
+
+        public Entity RandomInstantionOnLine(IA_Manager manager, int line)
+        {
+            int x = Random.Range(0, enemyDatas.Length);
+
+            Entity e = manager.poolingManager.PoolEntity(
+                enemyDatas[x].unitType.GetType(),
+                new Vector3(
+                    manager.APgameManager.castle.transform.position.x,
+                    manager.APgameManager.castle.transform.position.y,
+                    manager.APgameManager.castle.transform.position.z)
+                );
+
+            e.transform.position = new Vector3(line, e.transform.position.y, e.transform.position.z);
+
+            GuardHouse gh = e.gameManager.guardHouseManager.GetGuardHouseOnThisLine(line);
+
+            if (gh != null)
+            {
+                e.Destination = gh;
+            }
+
+            return e;
+        }
     }
 }

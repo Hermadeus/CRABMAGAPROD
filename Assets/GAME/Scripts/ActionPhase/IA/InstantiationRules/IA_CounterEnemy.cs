@@ -13,7 +13,7 @@ namespace CrabMaga
         public override Entity Instantiation(IA_Manager manager)
         {
             return manager.poolingManager.PoolEntity(
-                matrice.GetCounter(manager.poolingManager.latestUnitInstiate.entityData).unitType.GetType(),
+                matrice.GetBestCounter(manager.poolingManager.latestUnitInstiate.entityData).unitType.GetType(),
                 manager.APgameManager.castle.transform.position,
                 manager.poolingManager.poolingParent
                 );

@@ -12,7 +12,7 @@ namespace CrabMaga
         public override Entity Instantiation(IA_Manager manager)
         {
             Enemy e = manager.poolingManager.PoolEntity(
-                matrice.GetCounter(manager.poolingManager.latestUnitInstiate.entityData).unitType.GetType(),
+                matrice.GetBestCounter(manager.poolingManager.latestUnitInstiate.entityData).unitType.GetType(),
                 manager.APgameManager.castle.transform.position,
                 manager.poolingManager.poolingParent
                 ) as Enemy;
@@ -28,6 +28,28 @@ namespace CrabMaga
 
                 e.transform.position = new Vector3(e.Destination.transform.position.x, e.transform.position.y, e.transform.position.z);
             }
+
+            return e;
+        }
+
+        public Entity CounterInstantionOnLine(IA_Manager manager, int line)
+        {
+            Enemy e = manager.poolingManager.PoolEntity(
+                matrice.GetBestCounter(manager.poolingManager.latestUnitInstiate.entityData).unitType.GetType(),
+                manager.APgameManager.castle.transform.position,
+                manager.poolingManager.poolingParent
+                ) as Enemy;
+
+            GuardHouse gh = e.gameManager.guardHouseManager.GetGuardHouseOnThisLine(line);
+                       
+            e.transform.position = new Vector3(line, e.transform.position.y, e.transform.position.z);
+
+            if (gh != null)
+            {
+                e.Destination = gh;
+            }
+            else
+                e.Destination = e.gameManager.guardHouseManager.GetNextEmptyGuardHouse();
 
             return e;
         }

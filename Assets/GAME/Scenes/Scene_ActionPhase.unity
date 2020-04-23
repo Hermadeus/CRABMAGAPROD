@@ -40630,7 +40630,6 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 1769361345}
     - {fileID: 42852}
     - {fileID: 1333750}
     - {fileID: 3371620}
@@ -40877,6 +40876,7 @@ MonoBehaviour:
     - {fileID: 1750509904}
     - {fileID: 1760405682}
     - {fileID: 1767309601}
+    - {fileID: 1769361345}
     - {fileID: 1774387364}
     - {fileID: 1783175473}
     - {fileID: 1784127199}
@@ -47049,7 +47049,7 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 11400000, guid: 621f2539d9f69444393918d9d04a3132, type: 2}
+    - {fileID: 11400000, guid: 1b3141d1f040bbb4d889b6369b913107, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -47086,6 +47086,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onUnitInstantiation:
+    m_PersistentCalls:
+      m_Calls: []
+  onGeneralInvoke:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1001 &1516690285

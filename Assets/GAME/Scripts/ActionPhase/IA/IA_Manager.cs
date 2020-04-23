@@ -31,7 +31,8 @@ namespace CrabMaga
             onGameStart = new IAEvent(),
             onCastleReachMiddlePV = new IAEvent(),
             onCastleReachQuartPV = new IAEvent(),
-            onUnitInstantiation = new IAEvent();
+            onUnitInstantiation = new IAEvent(),
+            onGeneralInvoke = new IAEvent();
 
         private void Awake()
         {
@@ -61,6 +62,9 @@ namespace CrabMaga
 
                 if (behaviours[i].CallMoment == CallMoment.ON_UNIT_INSTANTIATION)
                     onUnitInstantiation.AddListener(behaviours[i].Play);
+
+                if (behaviours[i].CallMoment == CallMoment.ON_GENERAL_INVOKE)
+                    onGeneralInvoke.AddListener(behaviours[i].Play);
             }
         }
         
