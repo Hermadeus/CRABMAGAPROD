@@ -19,8 +19,19 @@ namespace CrabMaga
 
         [SerializeField] protected IA_InstantationRules instantiationRule = default;
 
+        public float Ratio = 0;
+
+        public void Play(IA_Manager manager)
+        {
+            if (TestCondition(manager))
+            {
+                CallEvent(manager);
+            }
+        }
+
         public virtual void CallEvent(IA_Manager manager)
         {
+            Debug.Log("IA EVENT : " + name + " est invoké");
         }
 
         public bool TestCondition(IA_Manager manager)
@@ -31,7 +42,6 @@ namespace CrabMaga
                     return false;
             }
 
-            CallEvent(manager);
             return true;
         }
     }
@@ -43,6 +53,7 @@ namespace CrabMaga
 
         bool TestCondition(IA_Manager manager);
         void CallEvent(IA_Manager manager);
+        void Play(IA_Manager manager);
     }
 
     public enum CallMoment
@@ -54,6 +65,7 @@ namespace CrabMaga
         ON_CRAB_KILL,
         ON_LEADER_KILL,
         ON_CASTLE_REACH_MIDLE_PV,
-        ON_CASTLE_REACH_QUART_PV
+        ON_CASTLE_REACH_QUART_PV,
+        ON_UNIT_INSTANTIATION
     }
 }

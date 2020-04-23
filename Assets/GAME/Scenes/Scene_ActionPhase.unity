@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -41879,6 +41879,7 @@ MonoBehaviour:
   doubleTouch: {fileID: 11400000, guid: ab690a375e8eae34e816f97dcdc39dfa, type: 2}
   poolingParent: {fileID: 1582549012}
   crabCount: {fileID: 133060904}
+  latestUnitInstiate: {fileID: 0}
 --- !u!114 &1289812270 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 927077584071638290, guid: ae28138ff32ab4d449c13d64eeaa78ed,
@@ -47048,8 +47049,7 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 11400000, guid: afb975e9a9afc22438def56613c35641, type: 2}
-    - {fileID: 11400000, guid: 3d9677d2829981048a4b076440821125, type: 2}
+    - {fileID: 11400000, guid: 621f2539d9f69444393918d9d04a3132, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -47061,13 +47061,10 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 1
     - Name: 
       Entry: 10
       Data: 0
-    - Name: 
-      Entry: 10
-      Data: 1
     - Name: 
       Entry: 13
       Data: 
@@ -47087,18 +47084,10 @@ MonoBehaviour:
       m_Calls: []
   onCastleReachQuartPV:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 3c5e4ae3504759e478212e17dc1b2c16, type: 2}
-        m_MethodName: OnDebug
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Quart PV
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  onUnitInstantiation:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1516690285
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72085,6 +72074,16 @@ PrefabInstance:
       propertyPath: leaderToken
       value: 
       objectReference: {fileID: 156735017}
+    - target: {fileID: 8242655335553908991, guid: 44f1009fe5c6b504ba2ada53ff1b9042,
+        type: 3}
+      propertyPath: timerAppear
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242655335553908991, guid: 44f1009fe5c6b504ba2ada53ff1b9042,
+        type: 3}
+      propertyPath: timerDesappear
+      value: 0.05
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44f1009fe5c6b504ba2ada53ff1b9042, type: 3}
 --- !u!1001 &8470095109318037115

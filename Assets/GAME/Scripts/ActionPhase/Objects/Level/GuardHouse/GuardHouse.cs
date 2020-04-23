@@ -9,6 +9,11 @@ namespace CrabMaga
         public bool isOccupy = false;
         public int lineIndex = 0;
 
+        private void Awake()
+        {
+            InitLineIndex();
+        }
+
         void InitLineIndex()
         {
             lineIndex = Mathf.RoundToInt(transform.position.x);

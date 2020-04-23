@@ -34,6 +34,8 @@ namespace CrabMaga
         [BoxGroup("References")]
         public CrabCount crabCount = default;
 
+        public Entity latestUnitInstiate = default;
+
         //public void CreateCrabFormation(CrabUnitData data, Vector3 _position)
         //{
         //    if (APgameManager.crabFormationOnBattle.Count >= APgameManager.levelData.maxCrab)
@@ -81,6 +83,8 @@ namespace CrabMaga
 
                     _crabFormation.CrabUnits.Add(crabUnit);
                     crabUnit.crabFormationReference = _crabFormation;
+
+                    latestUnitInstiate = crabUnit; ;
                 }
             }
 
@@ -91,6 +95,7 @@ namespace CrabMaga
 
             APgameManager.CurrentUnitCountInt++;
             APgameManager.TotalUnitCountInt++;
+            APgameManager.IA_Manager.onUnitInstantiation?.Invoke(APgameManager.IA_Manager);
         }
 
         public void InvokeLeader()
