@@ -7,6 +7,8 @@ namespace CrabMaga
     [CreateAssetMenu(menuName = "CRAB MAGA/Behaviour/Passif/Stunt Effect")]
     public class StuntEffect : BasePassifEffect
     {
+        public float stuntEffect = 1f;
+
         public override void PassifEffect(Unit unit)
         {
             unit.StartCoroutine(Effect(unit, unit.Target));
@@ -28,7 +30,7 @@ namespace CrabMaga
                     target.Stunt();
                     //Debug.Log("stunt" + stuntAttacker.StuntTime);
 
-                    yield return new WaitForSeconds(stuntAttacker.StuntTime);
+                    yield return new WaitForSeconds(stuntEffect);
 
                     //Debug.Log("end stunt");
 

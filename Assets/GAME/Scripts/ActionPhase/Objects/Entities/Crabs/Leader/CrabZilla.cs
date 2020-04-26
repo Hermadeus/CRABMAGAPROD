@@ -40,9 +40,13 @@ namespace CrabMaga
 
         bool isAttackLaser = false;
 
+        public Animator laserAnimator = default;
+
         public void StartLaser()
         {
             isAttackLaser = true;
+
+            laserAnimator.SetTrigger("enter");
 
             MovementBehaviourEnum = MovementBehaviourEnum.NULL_MOVEMENT;
             IsStatic = true;
@@ -51,14 +55,16 @@ namespace CrabMaga
 
             rotationTween.Kill();
 
-            DOTween.To(() => LineRendererLaser.startWidth, x => LineRendererLaser.startWidth = x, LaserSize, 1f).SetEase(Ease.InOutElastic);
-            DOTween.To(() => LineRendererLaser.endWidth, x => LineRendererLaser.endWidth = x, LaserSize, 1f).SetEase(Ease.InOutElastic);
+            //DOTween.To(() => LineRendererLaser.startWidth, x => LineRendererLaser.startWidth = x, LaserSize, 1f).SetEase(Ease.InOutElastic);
+            //DOTween.To(() => LineRendererLaser.endWidth, x => LineRendererLaser.endWidth = x, LaserSize, 1f).SetEase(Ease.InOutElastic);
         }
 
         public void StopLaser()
         {
-            DOTween.To(() => LineRendererLaser.startWidth, x => LineRendererLaser.startWidth = x, 0, 1f).SetEase(Ease.Linear);
-            DOTween.To(() => LineRendererLaser.endWidth, x => LineRendererLaser.endWidth = x, 0, 1f).SetEase(Ease.Linear);
+            //DOTween.To(() => LineRendererLaser.startWidth, x => LineRendererLaser.startWidth = x, 0, 1f).SetEase(Ease.Linear);
+            //DOTween.To(() => LineRendererLaser.endWidth, x => LineRendererLaser.endWidth = x, 0, 1f).SetEase(Ease.Linear);
+
+            laserAnimator.SetTrigger("exit");
 
             rotationSpeed = entityData.rotationSpeed;
 
