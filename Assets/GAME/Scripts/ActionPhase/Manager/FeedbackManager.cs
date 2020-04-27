@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 
 using QRTools.UI;
+using QRTools.Inputs;
 
 using Sirenix.OdinInspector;
 
@@ -17,6 +18,8 @@ namespace CrabMaga
 
         [BoxGroup("References")]
         public AP_GameManager gameManager = default;
+        [BoxGroup("References")]
+        public InputActionBatch apbatch = default;
 
         [BoxGroup("Level Text")]
         public UIElement levelText = default;
@@ -37,6 +40,7 @@ namespace CrabMaga
         {
             onAwake?.Invoke();
             StartCoroutine(ShowLevelText());
+            //apbatch.isActive = false;
         }
 
         IEnumerator ShowLevelText()

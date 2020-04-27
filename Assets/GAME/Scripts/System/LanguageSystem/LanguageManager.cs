@@ -23,6 +23,7 @@ namespace CrabMaga
         public void ChangeLanguage(LanguageEnum _languageEnum)
         {
             LanguageEnum = _languageEnum;
+            UpdateObservable();
         }
 
 #if UNITY_EDITOR

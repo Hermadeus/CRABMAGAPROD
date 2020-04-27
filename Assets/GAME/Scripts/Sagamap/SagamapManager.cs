@@ -14,6 +14,8 @@ namespace CrabMaga
         public NotificationsManager notificationsManager = default;
         public InternetRequest InternetRequest = default;
 
+        public LanguageManager languageManager = default;
+
         public static SagamapManager instance;
 
         private void Awake()
@@ -26,6 +28,8 @@ namespace CrabMaga
 
             StartCoroutine(notificationsManager.TestNotif());
             //StartCoroutine(InternetRequest.getTime());
+
+            languageManager.UpdateObservable();
         }
     }
 }

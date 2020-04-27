@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 using QRTools.UI;
 using QRTools.Utilities.Observer;
+using QRTools.Inputs;
 
 using Sirenix.OdinInspector;
 using DG.Tweening;
@@ -32,6 +33,9 @@ namespace CrabMaga
 
         public Image castleImage;
         public Sprite castleSpr, castleInConquere, castleConquere;
+
+        public InputTouch swipeAP;
+        public float moveSpeed = 2f, moveoffset = 5f;
 
         public override void Init()
         {
@@ -65,6 +69,9 @@ namespace CrabMaga
             cameraObj.transform.position = new Vector3(cameraObj.transform.position.x, cameraObj.transform.position.y, clampedValue.y - OFFSET);
 
             slider.onValueChanged.AddListener(OnSliderMove);
+
+            swipeAP.onSwipeDown.AddListener(SwipeDown);
+            swipeAP.onSwipeUp.AddListener(SwipeUp);
         }
 
         public void OnSliderMove(float value)
@@ -72,6 +79,32 @@ namespace CrabMaga
             pos.z = value - OFFSET;
 
             cameraObj.transform.position = pos;
+        }
+
+        public void SwipeUp(float power)
+        {
+            if (slider.value + moveoffset > slider.maxValue)
+                return;
+
+            DOTween.To(
+                () => slider.value, 
+                (x) => slider.value = x, 
+                slider.value + (moveoffset + power / 100),
+                moveSpeed)
+                .SetEase(Ease.InOutSine);
+        }
+
+        public void SwipeDown(float power)
+        {
+            if (slider.value - moveoffset < slider.minValue)
+                return;
+
+            DOTween.To(
+                () => slider.value,
+                (x) => slider.value = x,
+                slider.value - (moveoffset + power / 100),
+                moveSpeed)
+                .SetEase(Ease.InOutSine);
         }
 
         public void Add(IObserver observer)

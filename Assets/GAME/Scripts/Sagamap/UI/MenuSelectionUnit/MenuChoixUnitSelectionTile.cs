@@ -22,6 +22,7 @@ namespace CrabMaga
         public Transform parentNull;
         Transform parent;
 
+
         public override void Init()
         {
             base.Init();
@@ -34,9 +35,7 @@ namespace CrabMaga
         public override void OnBeginDrag(PointerEventData eventData)
         {
             base.OnBeginDrag(eventData);
-            x = 1000f;
-
-            
+            x = 1000f;            
         }
 
         public override void OnDrag(PointerEventData eventData)
@@ -54,7 +53,7 @@ namespace CrabMaga
                 {
                     slots[i].IsTarget = true;
                     targetSlot = slots[i];
-                    Debug.Log(targetSlot);
+                    //Debug.Log(targetSlot);
                 }
             }
         }
@@ -87,5 +86,19 @@ namespace CrabMaga
 
             base.OnEndDrag(eventData);
         }
+
+        public void Desolidarise()
+        {
+            transform.parent = parentNull;
+        }
+
+
+        public void Resolidarise()
+        {
+            transform.parent = parent;
+            transform.SetSiblingIndex(sibling);
+        }
+
+        
     }
 }

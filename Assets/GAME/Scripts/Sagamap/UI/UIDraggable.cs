@@ -30,23 +30,19 @@ namespace CrabMaga
 
         public virtual void OnBeginDrag(PointerEventData eventData)
         {
-            Debug.Log("dragstart");
+
             isDrag = true;
         }
 
         public virtual void OnDrag(PointerEventData eventData)
         {
-            Debug.Log("ondrag");
-            rectTransform.localPosition = new Vector2(
-                touch.InputCurrentPosition.x - (Screen.width / 2),
-                touch.InputCurrentPosition.y - (Screen.height) / 4);
+            transform.position = Input.mousePosition;
         }
 
         public virtual void OnEndDrag(PointerEventData eventData)
         {
-            Debug.Log("dragEnd");
             isDrag = false;
-            rectTransform.anchoredPosition = startPos;
+            //rectTransform.anchoredPosition = startPos;
         }
     }
 }
