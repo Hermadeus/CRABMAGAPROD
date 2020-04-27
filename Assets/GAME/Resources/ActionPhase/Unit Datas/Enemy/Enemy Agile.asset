@@ -13,10 +13,23 @@ MonoBehaviour:
   m_Name: Enemy Agile
   m_EditorClassIdentifier: 
   behaviourSystem: {fileID: 11400000, guid: 65fa9772d44e2ec47bab627a75c1152e, type: 2}
-  entityName: Enemy Agile
-  description: 
+  languageManager: {fileID: 11400000, guid: cc7173560c4531545a2a4dde441db5db, type: 2}
+  entityName:
+    textFrancais: 
+    textAnglais: 
+    textCrab: 
+  entityDescription:
+    textFrancais: 
+    textAnglais: 
+    textCrab: 
+  currentLevel: 1
+  passifDescription:
+    textFrancais: 
+    textAnglais: 
+    textCrab: 
   unitType: {fileID: 4938889763506876349, guid: b36b60d25f02744418e435dc10763ff0,
     type: 3}
+  entityicon: {fileID: 21300000, guid: b73eba6116660f047bedccdaabd628cc, type: 3}
   startMovementBehaviour: 0
   startHealth: 310
   speedEnum: 3
@@ -41,6 +54,7 @@ MonoBehaviour:
     type: 3}
   passifBehaviour: 0
   passifEvent: 0
+  currentPriceUpdate: 20
   type: 0
   costUnit: 5
   wheelThumbnail: {fileID: 0}

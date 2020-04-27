@@ -13,10 +13,23 @@ MonoBehaviour:
   m_Name: Enemy Resistant
   m_EditorClassIdentifier: 
   behaviourSystem: {fileID: 11400000, guid: 65fa9772d44e2ec47bab627a75c1152e, type: 2}
-  entityName: Enemy Resistant
-  description: 
+  languageManager: {fileID: 11400000, guid: cc7173560c4531545a2a4dde441db5db, type: 2}
+  entityName:
+    textFrancais: 
+    textAnglais: 
+    textCrab: 
+  entityDescription:
+    textFrancais: 
+    textAnglais: 
+    textCrab: 
+  currentLevel: 1
+  passifDescription:
+    textFrancais: 
+    textAnglais: 
+    textCrab: 
   unitType: {fileID: -9178628451549669157, guid: c92e45e304290bb429441ce3f99b1d78,
     type: 3}
+  entityicon: {fileID: 21300000, guid: 70c450702cc0b1e42bde6bdaaf19d257, type: 3}
   startMovementBehaviour: 0
   startHealth: 500
   speedEnum: 1
@@ -41,7 +54,9 @@ MonoBehaviour:
     type: 3}
   passifBehaviour: 0
   passifEvent: 0
+  currentPriceUpdate: 20
   type: 0
+  costUnit: 5
   wheelThumbnail: {fileID: 0}
   formationX: 3
   formationY: 3

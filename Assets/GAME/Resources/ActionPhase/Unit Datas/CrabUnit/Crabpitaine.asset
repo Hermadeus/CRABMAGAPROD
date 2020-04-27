@@ -13,10 +13,23 @@ MonoBehaviour:
   m_Name: Crabpitaine
   m_EditorClassIdentifier: 
   behaviourSystem: {fileID: 11400000, guid: 65fa9772d44e2ec47bab627a75c1152e, type: 2}
-  entityName: Crab'pitaine
-  description: 
+  languageManager: {fileID: 11400000, guid: cc7173560c4531545a2a4dde441db5db, type: 2}
+  entityName:
+    textFrancais: 
+    textAnglais: 
+    textCrab: 
+  entityDescription:
+    textFrancais: 
+    textAnglais: 
+    textCrab: 
+  currentLevel: 1
+  passifDescription:
+    textFrancais: 
+    textAnglais: 
+    textCrab: 
   unitType: {fileID: 3863057427669080910, guid: 1b832dc4cb6da84438eb08863085738d,
     type: 3}
+  entityicon: {fileID: 21300000, guid: ae2ea20143daad44e869c92d56e30e22, type: 3}
   startMovementBehaviour: 4
   startHealth: 1
   speedEnum: 2
@@ -41,6 +54,7 @@ MonoBehaviour:
     type: 3}
   passifBehaviour: 3
   passifEvent: 1
+  currentPriceUpdate: 20
   type: 2
   costUnit: 5
   wheelThumbnail: {fileID: 21300000, guid: ae2ea20143daad44e869c92d56e30e22, type: 3}

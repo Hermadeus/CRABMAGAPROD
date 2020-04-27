@@ -14,7 +14,7 @@ namespace CrabMaga
     public class PlayerData : ScriptableObject, IResetable, IObserver
     {
         [BoxGroup("Player Preference")]
-        public bool rightHand = true;        
+        [SerializeField] private bool rightHand = true;
 
         [BoxGroup("Economy datas")]
         public int crabMoney = 0;
@@ -36,19 +36,32 @@ namespace CrabMaga
         [SerializeField] List<IObservable> observables = new List<IObservable>();
         public List<IObservable> Observables { get => observables; set => observables = value; }
 
+
+        public bool RightHand { get => rightHand;
+            set
+            {
+                rightHand = value;
+                Debug.Log("MODE : " + value);
+                ChangeHand();
+            }
+        }
+
+        public bool sfxOn = true, musicOn = true;
+
         [Button]
         public void ResetObject()
         {
             crabMoney = 0;
         }
 
-        [Button]
-        public void ChangeHand(bool right)
+        public void ChangeHand()
         {
-            if (right)
-                rightHand = true;
-            else
-                rightHand = false;
+            //if (RightHand)
+            //    RightHand = true;
+            //else
+            //    RightHand = false;
+            PersistableSO.Instance.Save();
+
 
             UpdateObservable();
         }

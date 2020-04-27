@@ -18,6 +18,7 @@ namespace CrabMaga
 
         public static SagamapManager instance;
 
+
         private void Awake()
         {
             instance = this;
@@ -30,6 +31,7 @@ namespace CrabMaga
             //StartCoroutine(InternetRequest.getTime());
 
             languageManager.UpdateObservable();
+            Time.timeScale = 1;
         }
     }
 }

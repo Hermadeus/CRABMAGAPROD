@@ -70,8 +70,8 @@ namespace CrabMaga
 
             slider.onValueChanged.AddListener(OnSliderMove);
 
-            swipeAP.onSwipeDown.AddListener(SwipeDown);
-            swipeAP.onSwipeUp.AddListener(SwipeUp);
+            swipeAP.onSwipeUp.AddListener(SwipeDown);
+            swipeAP.onSwipeDown.AddListener(SwipeUp);
         }
 
         public void OnSliderMove(float value)
@@ -124,7 +124,7 @@ namespace CrabMaga
 
         void ChangeHand()
         {
-            if (playerData.rightHand)
+            if (playerData.RightHand)
             {
                 rectTransform.anchorMin = new Vector2(1, 0.5f);
                 rectTransform.anchorMax = new Vector2(1, 0.5f);

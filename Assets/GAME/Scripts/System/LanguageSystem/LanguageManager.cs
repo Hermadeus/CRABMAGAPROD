@@ -16,6 +16,7 @@ namespace CrabMaga
             set
             {
                 languageEnum = value;
+                Debug.Log(value);
                 UpdateObservable();
             }
         }
@@ -23,7 +24,10 @@ namespace CrabMaga
         public void ChangeLanguage(LanguageEnum _languageEnum)
         {
             LanguageEnum = _languageEnum;
+            PersistableSO.Instance.Save();
+
             UpdateObservable();
+
         }
 
 #if UNITY_EDITOR

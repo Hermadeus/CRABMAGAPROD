@@ -14,6 +14,8 @@ namespace CrabMaga
     {
         public Dictionary<string, SceneReference> sceneDic = new Dictionary<string, SceneReference>();
 
+        public LanguageManager languageManager;
+
         public SceneReference GetScene(string key)
         {
             SceneReference s;
@@ -25,11 +27,13 @@ namespace CrabMaga
 
         public void RestartScene()
         {
+            languageManager.Observables.Clear();
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         public void ReturnToSagaMap()
         {
+            languageManager.Observables.Clear();
             SceneManager.LoadScene(GetScene("sagamap"));
         }
     }

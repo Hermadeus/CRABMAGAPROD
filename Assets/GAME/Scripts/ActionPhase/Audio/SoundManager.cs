@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Audio;
 
 using QRTools.Audio;
 
@@ -18,6 +19,8 @@ namespace CrabMaga
         public int soundPlay;
         public float resetTimer = 1f;
 
+        public AudioMixerGroup SFXGroup, musicGroup;
+
         public void PlaySound(AudioEvent audioEvent, AudioSource source)
         {
             if (soundPlay == maxSoundPlay)
@@ -33,6 +36,34 @@ namespace CrabMaga
             yield return new WaitForSeconds(resetTimer);
             soundPlay--;
             yield break;
+        }
+
+        public void MuteSFX()
+        {
+            SFXGroup.audioMixer.SetFloat("Volume", -80f);
+            PersistableSO.Instance.Save();
+
+        }
+
+        public void SFXOn()
+        {
+            SFXGroup.audioMixer.SetFloat("Volume", 0f);
+            PersistableSO.Instance.Save();
+
+        }
+
+        public void MuteMusic()
+        {
+            musicGroup.audioMixer.SetFloat("Volume", -80f);
+            PersistableSO.Instance.Save();
+
+        }
+
+        public void MusicOn()
+        {
+            musicGroup.audioMixer.SetFloat("Volume", 0f);
+            PersistableSO.Instance.Save();
+
         }
     }
 }

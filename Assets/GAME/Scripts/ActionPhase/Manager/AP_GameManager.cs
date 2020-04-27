@@ -75,6 +75,7 @@ namespace CrabMaga
         public IA_Manager IA_Manager = default;
         [BoxGroup("References")]
         public InputTouch inputWheel = default;
+        
 
         private int currentUnitCountInt;
         public int CurrentUnitCountInt
@@ -185,6 +186,8 @@ namespace CrabMaga
             StartCoroutine(RappelInputCor());
 
             inputWheel.onLongTapEnd.AddListener(StopRappelInput);
+
+            Time.timeScale = 1;
         }
 
         private void Update()

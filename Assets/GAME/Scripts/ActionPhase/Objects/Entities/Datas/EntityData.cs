@@ -14,18 +14,29 @@ namespace CrabMaga
     {
         [FoldoutGroup("References")]
         public BehavioursSystem behaviourSystem = default;
+        [FoldoutGroup("References")]
+        public LanguageManager languageManager = default;
 
         #region Attribute
         [BoxGroup("Entity attribute")]
         [Tooltip("Nom de l'entité.")]
-        public string entityName = "";
+        public StringLanguage entityName;
+
+        [BoxGroup("Entity attribute")]
+        public TextLanguage entityDescription = default;
+
+        [BoxGroup("Entity attribute")]
+        public int currentLevel = 1;
 
         [FoldoutGroup("Passif attribute"), TextArea(3, 5)]
-        public string description = default;
+        public TextLanguage passifDescription = default;
 
         [BoxGroup("Entity attribute")]
         [Tooltip("Référence au préfab.")]
         public Unit unitType = default;
+
+        [BoxGroup("Entity attribute")]
+        public Sprite entityicon;
 
         [BoxGroup("Entity attribute")]
         [Tooltip("Mouvement au départ de l'AP.")]
@@ -106,9 +117,11 @@ namespace CrabMaga
         [FoldoutGroup("Passif attribute")]
         public PassifEvent passifEvent = PassifEvent.NEVER;
 
+        public int currentPriceUpdate = 20;
+
         public virtual void Init(Entity entity)
         {
-            entity.name = entityName;
+            entity.name = entityName.GetCurrentText(languageManager.LanguageEnum);
 
             baseSpeed = behaviourSystem.GetSpeed(speedEnum);
             acceleration = behaviourSystem.GetAcceleration(accelerationEnum);
@@ -141,6 +154,17 @@ namespace CrabMaga
                 unit.passifBehaviour = behaviourSystem.GetPassifBehaviour(passifBehaviour);
                 unit.passifEvent = passifEvent;
             }
+        }
+
+        public void UpgradeEntity()
+        {
+            Debug.Log("UPDATE " + entityName.textAnglais);
+
+
+            currentLevel++;
+
+            PersistableSO.Instance.Save();
+
         }
     }
 }

@@ -75,7 +75,7 @@ namespace CrabMaga
         {
             base.Init();
 
-            if (!playerData.rightHand)
+            if (!playerData.RightHand)
                 rectTransform.localScale = new Vector3(rectTransform.localScale.x * -1, rectTransform.localScale.y, rectTransform.localScale.z);
 
             InitSlots();
@@ -194,7 +194,7 @@ namespace CrabMaga
 
         void ChangeHand()
         {
-            if (playerData.rightHand)
+            if (playerData.RightHand)
             {
                 rectTransform.localScale = new Vector3(1, rectTransform.localScale.y, rectTransform.localScale.z);
             }

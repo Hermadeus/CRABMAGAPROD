@@ -13,9 +13,22 @@ MonoBehaviour:
   m_Name: Crablinde
   m_EditorClassIdentifier: 
   behaviourSystem: {fileID: 11400000, guid: 65fa9772d44e2ec47bab627a75c1152e, type: 2}
-  entityName: Crablinde
-  description: "Attire toute les unit\xE9s proches de lui."
+  languageManager: {fileID: 11400000, guid: cc7173560c4531545a2a4dde441db5db, type: 2}
+  entityName:
+    textFrancais: 
+    textAnglais: 
+    textCrab: 
+  entityDescription:
+    textFrancais: 
+    textAnglais: 
+    textCrab: 
+  currentLevel: 1
+  passifDescription:
+    textFrancais: 
+    textAnglais: 
+    textCrab: 
   unitType: {fileID: 927077584071638290, guid: ae28138ff32ab4d449c13d64eeaa78ed, type: 3}
+  entityicon: {fileID: 21300000, guid: 341d937fe41b8f84ca97dcb1635777c0, type: 3}
   startMovementBehaviour: 4
   startHealth: 1
   speedEnum: 1
@@ -40,7 +53,9 @@ MonoBehaviour:
     type: 3}
   passifBehaviour: 0
   passifEvent: 0
+  currentPriceUpdate: 20
   type: 3
+  costUnit: 5
   wheelThumbnail: {fileID: 21300000, guid: 341d937fe41b8f84ca97dcb1635777c0, type: 3}
   formationX: 3
   formationY: 3
