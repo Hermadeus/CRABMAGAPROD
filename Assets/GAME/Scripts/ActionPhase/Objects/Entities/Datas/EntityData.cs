@@ -36,6 +36,9 @@ namespace CrabMaga
         public Unit unitType = default;
 
         [BoxGroup("Entity attribute")]
+        public Triforce Triforce;
+
+        [BoxGroup("Entity attribute")]
         public Sprite entityicon;
 
         [BoxGroup("Entity attribute")]
@@ -70,10 +73,12 @@ namespace CrabMaga
 
         [BoxGroup("Entity attribute")]
         [Tooltip("Force d'attaque de l'unité.")]
+        [OnValueChanged("CalculateDPS")]
         public float damage = 0f;
 
         [BoxGroup("Entity attribute")]
         [Tooltip("Vitesse d'attaque de l'unité.")]
+        [OnValueChanged("CalculateDPS")]
         public float attackSpeed = 0f;
 
         [ReadOnly, BoxGroup("Entity attribute")]
@@ -163,11 +168,7 @@ namespace CrabMaga
 
         public void Load()
         {
-            currentLevel = PlayerPrefs.GetInt(entityName.textAnglais);
-
-            UpdateAttackSpeed();
-            UpdateDamage();
-            UpdateHealth();
+            currentLevel = PlayerPrefs.GetInt(entityName.textAnglais);            
         }
 
         public void Save()
@@ -179,8 +180,7 @@ namespace CrabMaga
         public virtual void UpgradeEntity()
         {
             Debug.Log("UPDATE " + entityName.textAnglais);
-
-
+            
             currentLevel++;
 
             UpdateAttackSpeed();
@@ -190,25 +190,32 @@ namespace CrabMaga
             PersistableSO.Instance.Save();
         }
 
-        public float UpdateAttackSpeed()
+        public virtual float UpdateAttackSpeed()
         {
-            attackSpeed += currentLevel; 
+            //attackSpeed *= 1.025f; 
 
             return attackSpeed;
         }
 
-        public float UpdateHealth()
+        public virtual float UpdateHealth()
         {
-            startHealth += currentLevel;
+            //startHealth += currentLevel;
 
             return startHealth;
         }
 
-        public float UpdateDamage()
+        public virtual float UpdateDamage()
         {
-            damage += currentLevel;
+            //damage *= 1.025f;
 
             return damage;
         }
+    }
+
+    public enum Triforce
+    {
+        AGILE,
+        FORCE,
+        RESISTANT
     }
 }

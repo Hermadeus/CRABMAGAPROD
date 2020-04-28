@@ -15,7 +15,7 @@ namespace CrabMaga
         public List<UITileArmy> tilesLeader = new List<UITileArmy>();
         public List<UITileArmy> tilesEnemies = new List<UITileArmy>();
 
-        public TextMeshProUGUI entityname, entityLevel, description, speed, pv, dps, actif, price;
+        public TextMeshProUGUI entityname, entityLevel, description, speed, effectif, cost, dps, actif, price;
         public Image thumbnail;
         public GameObject buttonUpdate;
 
@@ -56,6 +56,8 @@ namespace CrabMaga
             entityLevel.gameObject.SetActive(true);
             actif.gameObject.SetActive(true);
             price.gameObject.SetActive(true);
+            effectif.gameObject.SetActive(true);
+            cost.gameObject.SetActive(true);
 
             UpdateInfo(tile);
             UpdateInfoUnitAndLeader(tile);
@@ -67,6 +69,8 @@ namespace CrabMaga
             entityLevel.gameObject.SetActive(true);
             actif.gameObject.SetActive(true);
             price.gameObject.SetActive(true);
+            effectif.gameObject.SetActive(false);
+            cost.gameObject.SetActive(true);
 
             UpdateInfo(tile);
             UpdateInfoUnitAndLeader(tile);
@@ -78,6 +82,8 @@ namespace CrabMaga
             entityLevel.gameObject.SetActive(false);
             actif.gameObject.SetActive(false);
             price.gameObject.SetActive(false);
+            effectif.gameObject.SetActive(false);
+            cost.gameObject.SetActive(false);
 
             UpdateInfo(tile);
         }
@@ -86,14 +92,20 @@ namespace CrabMaga
         {
             entityname.text = tile.entityData.entityName.GetCurrentText(languageManager.LanguageEnum);
             description.text = tile.entityData.entityDescription.GetCurrentText(languageManager.LanguageEnum);
-            speed.text = "Speed :" + tile.entityData.speedEnum.ToString();
-            pv.text ="PV :" + tile.entityData.startHealth.ToString();
-            dps.text = "DPS :" + tile.entityData.DamagePerSeconds.ToString();
+            speed.text = tile.entityData.speedEnum.ToString();            
+            dps.text = tile.entityData.damage.ToString();
             thumbnail.sprite = tile.thumbnail.sprite;
         }
 
         void UpdateInfoUnitAndLeader(UITileArmy tile)
         {
+            if(tile.entityData is CrabUnitData)
+            {
+                CrabUnitData d = tile.entityData  as CrabUnitData;
+                effectif.text = (d.formationX + d.formationY).ToString();
+                cost.text = d.costUnit.ToString();
+            }
+
             entityLevel.text = tile.entityData.currentLevel.ToString();
             actif.text = tile.entityData.passifDescription.GetCurrentText(languageManager.LanguageEnum);
             price.text = tile.entityData.currentPriceUpdate.ToString();

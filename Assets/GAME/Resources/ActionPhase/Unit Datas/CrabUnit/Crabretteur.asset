@@ -10,37 +10,38 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 14332260acdbe514dbcbeaf69e3a39bd, type: 3}
-  m_Name: Crab In Black
+  m_Name: Crabretteur
   m_EditorClassIdentifier: 
   behaviourSystem: {fileID: 11400000, guid: 65fa9772d44e2ec47bab627a75c1152e, type: 2}
   languageManager: {fileID: 11400000, guid: cc7173560c4531545a2a4dde441db5db, type: 2}
   entityName:
-    textFrancais: Crab In Black fr
-    textAnglais: Crab In Black ang
-    textCrab: Crab In Black Crab
+    textFrancais: Crabretteur
+    textAnglais: Crabretteur ang
+    textCrab: crabcrab
   entityDescription:
-    textFrancais: adzada fr
-    textAnglais: afafa ang
+    textFrancais: FR - NaN
+    textAnglais: ANG - NaN
     textCrab: adfa a crab
-  currentLevel: 17
+  currentLevel: 1
   passifDescription:
-    textFrancais: dada fr
-    textAnglais: fafa ang
+    textFrancais: "Les crabes de cette unit\xE9 \xE9tourdissent l'ennemi qu'ils affrontent
+      lorsqu'ils meurent."
+    textAnglais: This unit's crab stun the enemy they're fighting when they die.
     textCrab: a dad crab
   unitType: {fileID: 6934997261248455762, guid: 56a85da14dd426d4f9d0651a3b155ef8,
     type: 3}
-  entityicon: {fileID: 21300000, guid: 41058896a8aea0744b49be9f0c018fa0, type: 3}
+  entityicon: {fileID: 21300000, guid: ffe563c25259fd54eb6af14f9f9075a2, type: 3}
   startMovementBehaviour: 4
-  startHealth: 157
+  startHealth: 1
   speedEnum: 3
   baseSpeed: 0.6
   rotationSpeed: 0.5
   accelerationEnum: 2
   acceleration: 2
-  damage: 157
-  attackSpeed: 157
-  DamagePerSeconds: 1
-  detectionRange: 0
+  damage: 5.2531247
+  attackSpeed: 0.5253125
+  DamagePerSeconds: 10
+  detectionRange: 1
   detectionBehaviour: 0
   entityType: 1
   favoriteTarget: 2
@@ -49,15 +50,15 @@ MonoBehaviour:
     m_Bits: 512
   attackType: 1
   havePastille: 1
-  pastilleSprite: {fileID: 21300000, guid: ce3a10c71055d9346a8c5f0b5103a433, type: 3}
-  pastilleCombatSprite: {fileID: 21300000, guid: ce3a10c71055d9346a8c5f0b5103a433,
+  pastilleSprite: {fileID: 21300000, guid: fbe34af8863627c42a24f85011d17f6e, type: 3}
+  pastilleCombatSprite: {fileID: 21300000, guid: fbe34af8863627c42a24f85011d17f6e,
     type: 3}
   passifBehaviour: 1
   passifEvent: 2
-  currentPriceUpdate: 20
+  currentPriceUpdate: 15
   type: 1
-  costUnit: 5
+  costUnit: 22
   wheelThumbnail: {fileID: 21300000, guid: ffe563c25259fd54eb6af14f9f9075a2, type: 3}
   formationX: 2
   formationY: 3
-  density: 1
+  density: 0.6

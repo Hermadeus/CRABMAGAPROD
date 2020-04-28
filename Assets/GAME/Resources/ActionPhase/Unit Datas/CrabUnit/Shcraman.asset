@@ -10,36 +10,38 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 14332260acdbe514dbcbeaf69e3a39bd, type: 3}
-  m_Name: Crabpitaine
+  m_Name: Shcraman
   m_EditorClassIdentifier: 
   behaviourSystem: {fileID: 11400000, guid: 65fa9772d44e2ec47bab627a75c1152e, type: 2}
   languageManager: {fileID: 11400000, guid: cc7173560c4531545a2a4dde441db5db, type: 2}
   entityName:
-    textFrancais: 
-    textAnglais: 
+    textFrancais: Chcraman
+    textAnglais: Shcraman
     textCrab: 
   entityDescription:
-    textFrancais: 
-    textAnglais: 
+    textFrancais: FR-NAN
+    textAnglais: ANG-NAN
     textCrab: 
   currentLevel: 1
   passifDescription:
-    textFrancais: 
-    textAnglais: 
+    textFrancais: "Augmente temporairement les d\xE9g\xE2ts de toutes les autres
+      unit\xE9s lorsqu'elle est form\xE9e."
+    textAnglais: Temporarily increase all other units' damage when it's formed.
     textCrab: 
   unitType: {fileID: 3863057427669080910, guid: 1b832dc4cb6da84438eb08863085738d,
     type: 3}
-  entityicon: {fileID: 21300000, guid: b95ead2ab90d7b748a99572a38e3d772, type: 3}
+  Triforce: 1
+  entityicon: {fileID: 21300000, guid: ae2ea20143daad44e869c92d56e30e22, type: 3}
   startMovementBehaviour: 4
   startHealth: 1
-  speedEnum: 2
-  baseSpeed: 0.4
+  speedEnum: 1
+  baseSpeed: 0.2
   rotationSpeed: 0.5
   accelerationEnum: 2
   acceleration: 2
-  damage: 5
-  attackSpeed: 1.5
-  DamagePerSeconds: 3.3333333
+  damage: 5.248345
+  attackSpeed: 0.86597705
+  DamagePerSeconds: 6.0606055
   detectionRange: 0
   detectionBehaviour: 0
   entityType: 1
@@ -54,10 +56,10 @@ MonoBehaviour:
     type: 3}
   passifBehaviour: 3
   passifEvent: 1
-  currentPriceUpdate: 20
+  currentPriceUpdate: 15
   type: 2
-  costUnit: 5
-  wheelThumbnail: {fileID: 21300000, guid: 341d937fe41b8f84ca97dcb1635777c0, type: 3}
-  formationX: 4
-  formationY: 4
-  density: 1
+  costUnit: 16
+  wheelThumbnail: {fileID: 21300000, guid: ae2ea20143daad44e869c92d56e30e22, type: 3}
+  formationX: 2
+  formationY: 2
+  density: 0.8

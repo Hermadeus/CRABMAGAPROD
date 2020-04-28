@@ -26,10 +26,11 @@ namespace CrabMaga
 
     public enum CrabUnitType
     {
-        DOUBLE_EFFECTIF, //Double ses effectifs quand elle tue un ennemis
-        CRAB_IN_BLACK, //Aveugle une unité 3 secondes après sa mort
-        CRABPITAINE, // Augmente de 50% la vitesse d'attaque des autres unités 3 secondes après sa formation
-        CRABLINDE, // Attire les ennemis sur lui
+        COELACRAB,
+        CRABRATTER, 
+        CHRAMAN,
+        CRABOUFFON,
+        CRABERSERK
     }
 
     public enum LeaderType

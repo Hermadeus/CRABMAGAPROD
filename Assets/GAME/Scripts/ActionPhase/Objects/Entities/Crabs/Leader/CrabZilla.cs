@@ -42,6 +42,13 @@ namespace CrabMaga
 
         public Animator laserAnimator = default;
 
+        public override void Init()
+        {
+            base.Init();
+
+            LaserDamage = damage * 2f;
+        }
+
         public void StartLaser()
         {
             isAttackLaser = true;

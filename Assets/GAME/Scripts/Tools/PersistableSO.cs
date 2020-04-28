@@ -16,6 +16,16 @@ namespace CrabMaga
         [Header("Scriptable Objects")]
         public List<ISavable> objectsToPersist = new List<ISavable>();
 
+        private void OnEnable()
+        {
+            Load();
+        }
+
+        private void OnDisable()
+        {
+            Save();
+        }
+
         public void Load()
         {
             for (int i = 0; i < objectsToPersist.Count; i++)

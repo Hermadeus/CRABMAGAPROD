@@ -10,25 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 14332260acdbe514dbcbeaf69e3a39bd, type: 3}
-  m_Name: Crablinde
+  m_Name: Crabouffon
   m_EditorClassIdentifier: 
   behaviourSystem: {fileID: 11400000, guid: 65fa9772d44e2ec47bab627a75c1152e, type: 2}
   languageManager: {fileID: 11400000, guid: cc7173560c4531545a2a4dde441db5db, type: 2}
   entityName:
-    textFrancais: 
-    textAnglais: 
-    textCrab: 
+    textFrancais: Crabouffon
+    textAnglais: Crabuffoon
+    textCrab: dzdz
   entityDescription:
-    textFrancais: 
-    textAnglais: 
-    textCrab: 
+    textFrancais: FR - NAN
+    textAnglais: ANG - NAN
+    textCrab: deaezda
   currentLevel: 1
   passifDescription:
-    textFrancais: 
-    textAnglais: 
-    textCrab: 
+    textFrancais: "Force les ennemis proches \xE0 l'attaquer."
+    textAnglais: Force nearby enemies to attack it.
+    textCrab: dzzdz
   unitType: {fileID: 927077584071638290, guid: ae28138ff32ab4d449c13d64eeaa78ed, type: 3}
-  entityicon: {fileID: 21300000, guid: b73eba6116660f047bedccdaabd628cc, type: 3}
+  Triforce: 2
+  entityicon: {fileID: 21300000, guid: 341d937fe41b8f84ca97dcb1635777c0, type: 3}
   startMovementBehaviour: 4
   startHealth: 1
   speedEnum: 1
@@ -36,10 +37,10 @@ MonoBehaviour:
   rotationSpeed: 0.5
   accelerationEnum: 2
   acceleration: 2
-  damage: 5
-  attackSpeed: 0.5
-  DamagePerSeconds: 10
-  detectionRange: 0
+  damage: 2.6241724
+  attackSpeed: 0.86597705
+  DamagePerSeconds: 3.030303
+  detectionRange: 1
   detectionBehaviour: 0
   entityType: 1
   favoriteTarget: 2
@@ -48,15 +49,15 @@ MonoBehaviour:
     m_Bits: 512
   attackType: 1
   havePastille: 1
-  pastilleSprite: {fileID: 21300000, guid: 30ef687a788473f48b22693bb7f41ba0, type: 3}
-  pastilleCombatSprite: {fileID: 21300000, guid: 30ef687a788473f48b22693bb7f41ba0,
+  pastilleSprite: {fileID: 21300000, guid: 678bb3c293805c2479978c951e0c9a56, type: 3}
+  pastilleCombatSprite: {fileID: 21300000, guid: 678bb3c293805c2479978c951e0c9a56,
     type: 3}
   passifBehaviour: 0
   passifEvent: 0
-  currentPriceUpdate: 20
+  currentPriceUpdate: 15
   type: 3
-  costUnit: 5
-  wheelThumbnail: {fileID: 21300000, guid: ae2ea20143daad44e869c92d56e30e22, type: 3}
+  costUnit: 16
+  wheelThumbnail: {fileID: 21300000, guid: 341d937fe41b8f84ca97dcb1635777c0, type: 3}
   formationX: 3
   formationY: 3
-  density: 1
+  density: 0.5

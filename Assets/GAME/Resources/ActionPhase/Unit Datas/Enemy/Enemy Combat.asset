@@ -15,12 +15,14 @@ MonoBehaviour:
   behaviourSystem: {fileID: 11400000, guid: 65fa9772d44e2ec47bab627a75c1152e, type: 2}
   languageManager: {fileID: 11400000, guid: cc7173560c4531545a2a4dde441db5db, type: 2}
   entityName:
-    textFrancais: 
-    textAnglais: 
+    textFrancais: Enemy Force
+    textAnglais: Enemy Force
     textCrab: 
   entityDescription:
-    textFrancais: 
-    textAnglais: 
+    textFrancais: "Ce bernard-l'hermite cruel balaye tout sur son passage, et prend
+      un grand plaisir \xE0 faucher des rangs entiers de crabes."
+    textAnglais: This cruel hermit crab wipes everything out in its path and particularly
+      enjoys slaughtering entire rows of crabs.
     textCrab: 
   currentLevel: 1
   passifDescription:
@@ -29,18 +31,19 @@ MonoBehaviour:
     textCrab: 
   unitType: {fileID: 5471222624432554914, guid: 6984ee21412973c4693be1fb3982f7be,
     type: 3}
+  Triforce: 1
   entityicon: {fileID: 21300000, guid: b73eba6116660f047bedccdaabd628cc, type: 3}
   startMovementBehaviour: 0
-  startHealth: 350
-  speedEnum: 2
-  baseSpeed: 0.4
+  startHealth: 80
+  speedEnum: 1
+  baseSpeed: 0.2
   rotationSpeed: 0.5
   accelerationEnum: 2
   acceleration: 2
-  damage: 25
-  attackSpeed: 2
-  DamagePerSeconds: 12.5
-  detectionRange: 1
+  damage: 1
+  attackSpeed: 1
+  DamagePerSeconds: 1
+  detectionRange: 0
   detectionBehaviour: 0
   entityType: 2
   favoriteTarget: 1
