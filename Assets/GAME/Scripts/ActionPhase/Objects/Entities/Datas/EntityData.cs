@@ -10,7 +10,7 @@ using Sirenix.OdinInspector;
 namespace CrabMaga
 {
     [CreateAssetMenu(menuName = "CRAB MAGA/Data/EntityData")]
-    public class EntityData : ScriptableObject
+    public class EntityData : ScriptableObject, ISavable
     {
         [FoldoutGroup("References")]
         public BehavioursSystem behaviourSystem = default;
@@ -134,7 +134,7 @@ namespace CrabMaga
 
             entity.movementBehaviour = behaviourSystem.GetMovementBehaviour(startMovementBehaviour);
 
-            DamagePerSeconds = damage / attackSpeed;
+            CalculateDPS();
 
             if(entity is Unit)
             {
@@ -156,15 +156,59 @@ namespace CrabMaga
             }
         }
 
-        public void UpgradeEntity()
+        void CalculateDPS()
+        {
+            DamagePerSeconds = damage / attackSpeed;
+        }
+
+        public void Load()
+        {
+            currentLevel = PlayerPrefs.GetInt(entityName.textAnglais);
+
+            UpdateAttackSpeed();
+            UpdateDamage();
+            UpdateHealth();
+        }
+
+        public void Save()
+        {
+            PlayerPrefs.SetInt(entityName.textAnglais, currentLevel);
+        }
+
+        [Button]
+        public virtual void UpgradeEntity()
         {
             Debug.Log("UPDATE " + entityName.textAnglais);
 
 
             currentLevel++;
 
-            PersistableSO.Instance.Save();
+            UpdateAttackSpeed();
+            UpdateDamage();
+            UpdateHealth();
 
+            PersistableSO.Instance.Save();
+        }
+
+        public float UpdateAttackSpeed()
+        {
+            attackSpeed += currentLevel; 
+
+            return attackSpeed;
+        }
+
+        public float UpdateHealth()
+        {
+            startHealth += currentLevel;
+
+            return startHealth;
+        }
+
+        public float UpdateDamage()
+        {
+            damage += currentLevel;
+
+            return damage;
         }
     }
 }

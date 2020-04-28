@@ -29,7 +29,7 @@ MonoBehaviour:
     textCrab: 
   unitType: {fileID: 1244175487599082764, guid: cb5b489f79437ee47aed97122e1f3bb3,
     type: 3}
-  entityicon: {fileID: 21300000, guid: b14cc167db8ee56419c62195aad31583, type: 3}
+  entityicon: {fileID: 21300000, guid: 0f0e1cb2b12894a48832dd852207ab72, type: 3}
   startMovementBehaviour: 4
   startHealth: 480
   speedEnum: 1
@@ -49,8 +49,9 @@ MonoBehaviour:
     m_Bits: 512
   attackType: 1
   havePastille: 0
-  pastilleSprite: {fileID: 0}
-  pastilleCombatSprite: {fileID: 0}
+  pastilleSprite: {fileID: 21300000, guid: 0f0e1cb2b12894a48832dd852207ab72, type: 3}
+  pastilleCombatSprite: {fileID: 21300000, guid: 0f0e1cb2b12894a48832dd852207ab72,
+    type: 3}
   passifBehaviour: 4
   passifEvent: 5
   currentPriceUpdate: 20

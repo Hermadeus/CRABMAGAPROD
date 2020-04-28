@@ -125,7 +125,8 @@ namespace CrabMaga
 
         public UnityEvent
             OnWinEvent = new UnityEvent(),
-            OnLoseEvent = new UnityEvent();
+            OnLoseEvent = new UnityEvent(),
+            OnEndEvent = new UnityEvent();
 
         bool inPause = false;
         public bool InPause
@@ -216,6 +217,8 @@ namespace CrabMaga
             AsFinish = true;
             AsWin = true;
 
+            OnEndEvent.Invoke();
+            OnEnd();
             OnWinEvent.Invoke();
         }
 
@@ -224,7 +227,14 @@ namespace CrabMaga
             AsFinish = true;
             AsWin = false;
 
+            OnEndEvent.Invoke();
+            OnEnd();
             OnLoseEvent.Invoke();
+        }
+
+        void OnEnd()
+        {
+            Debug.Log("PARTIE FINIE");
         }
 
         public CrabFormation GetFormationWithHighterCrabs()

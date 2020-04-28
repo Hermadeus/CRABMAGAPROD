@@ -4,6 +4,7 @@ using System.Linq;
 using System;
 
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 using Sirenix.OdinInspector;
 
@@ -33,6 +34,8 @@ namespace CrabMaga
         public Transform poolingParent = default;
         [BoxGroup("References")]
         public CrabCount crabCount = default;
+        [BoxGroup("References")]
+        public HeaderMoney headerMoney = default;
 
         public Entity latestUnitInstiate = default;
 
@@ -75,7 +78,7 @@ namespace CrabMaga
                 {
                     CrabUnit crabUnit = PoolEntity(
                         crabType,
-                        new Vector3(_position.x + (i * density), 0, _position.z + (y * density)),
+                        new Vector3(_position.x + (i * density) + Random.Range(-.2f,.2f), 0, _position.z + (y * density) + Random.Range(-.2f, .2f)),
                         poolingParent
                         ) as CrabUnit;
 
@@ -90,6 +93,7 @@ namespace CrabMaga
 
             playerData.crabMoney -= ((CrabUnitData)_crabFormation.CrabUnits[0].entityData).costUnit;
             crabCount.UpdateText();
+            headerMoney.UpdateMoney();
 
             _crabFormation.name = _crabFormation.CrabUnits[0].name.ToString() + " Formation";
 

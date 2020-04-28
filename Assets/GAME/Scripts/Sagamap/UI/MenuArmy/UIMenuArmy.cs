@@ -58,7 +58,7 @@ namespace CrabMaga
             price.gameObject.SetActive(true);
 
             UpdateInfo(tile);
-            UpdateInfoUnitGeneral(tile);
+            UpdateInfoUnitAndLeader(tile);
         }
 
         public void UpdateInfoLeader(UITileArmy tile)
@@ -69,7 +69,7 @@ namespace CrabMaga
             price.gameObject.SetActive(true);
 
             UpdateInfo(tile);
-            UpdateInfoUnitGeneral(tile);
+            UpdateInfoUnitAndLeader(tile);
         }
 
         public void UpdateInfoEnemies(UITileArmy tile)
@@ -88,10 +88,11 @@ namespace CrabMaga
             description.text = tile.entityData.entityDescription.GetCurrentText(languageManager.LanguageEnum);
             speed.text = "Speed :" + tile.entityData.speedEnum.ToString();
             pv.text ="PV :" + tile.entityData.startHealth.ToString();
-            dps.text = "DPS :" + tile.entityData.DamagePerSeconds.ToString();            
+            dps.text = "DPS :" + tile.entityData.DamagePerSeconds.ToString();
+            thumbnail.sprite = tile.thumbnail.sprite;
         }
 
-        void UpdateInfoUnitGeneral(UITileArmy tile)
+        void UpdateInfoUnitAndLeader(UITileArmy tile)
         {
             entityLevel.text = tile.entityData.currentLevel.ToString();
             actif.text = tile.entityData.passifDescription.GetCurrentText(languageManager.LanguageEnum);

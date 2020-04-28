@@ -23,7 +23,14 @@ namespace CrabMaga
         {
             base.Init();
 
+            StartCoroutine(T());
+        }
+
+        IEnumerator T()
+        {
+            yield return new WaitForSeconds(.1f);
             UpdateToggle();
+            yield break;
         }
 
         public void OnClick()

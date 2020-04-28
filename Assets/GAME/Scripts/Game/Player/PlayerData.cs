@@ -11,7 +11,7 @@ using QRTools.Utilities.Observer;
 namespace CrabMaga
 {
     [CreateAssetMenu(menuName = "CRAB MAGA/Data/Player Data")]
-    public class PlayerData : ScriptableObject, IResetable, IObserver
+    public class PlayerData : ScriptableObject, IResetable, IObserver, ISavable
     {
         [BoxGroup("Player Preference")]
         [SerializeField] private bool rightHand = true;
@@ -55,14 +55,8 @@ namespace CrabMaga
         }
 
         public void ChangeHand()
-        {
-            //if (RightHand)
-            //    RightHand = true;
-            //else
-            //    RightHand = false;
+        {            
             PersistableSO.Instance.Save();
-
-
             UpdateObservable();
         }
 
@@ -80,6 +74,24 @@ namespace CrabMaga
             crabMoney = 500000;
             shellMoney = 500000;
             pearlMoney = 500000;
+        }
+
+        public void Save()
+        {
+            PlayerPrefExt.SetBool("hand", RightHand);
+
+            PlayerPrefs.SetInt("crabMoney", crabMoney);
+            PlayerPrefs.SetInt("shellMoney", shellMoney);
+            PlayerPrefs.SetInt("pearlMoney", pearlMoney);
+        }
+
+        public void Load()
+        {
+            RightHand = PlayerPrefExt.GetBool("hand");
+
+            crabMoney = PlayerPrefs.GetInt("crabMoney");
+            shellMoney = PlayerPrefs.GetInt("shellMoney");
+            pearlMoney = PlayerPrefs.GetInt("pearlMoney");
         }
     }
 }

@@ -19,8 +19,14 @@ namespace CrabMaga
         public override void Init()
         {
             base.Init();
+            StartCoroutine(T());
+        }
 
+        IEnumerator T()
+        {
+            yield return new WaitForSeconds(.1f);
             Close();
+            yield break;
         }
 
         public void EnglishMode()

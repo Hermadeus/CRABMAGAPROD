@@ -414,7 +414,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9025283045222081072}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -435,9 +435,9 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9025283045222081072}
   m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!114 &9025283045222081074
 MonoBehaviour:
@@ -1310,7 +1310,7 @@ MonoBehaviour:
   onHide:
     m_PersistentCalls:
       m_Calls: []
-  btnSwitch: {fileID: 9025283046680083230}
+  btnSwitch: {fileID: 0}
   image: {fileID: 9025283045824101996}
   btnOn: {fileID: 21300000, guid: 7b62c300dae2f3a45b8049a581f0988c, type: 3}
   btnOff: {fileID: 21300000, guid: c75b0a066271db7469eb372e1ce8aebd, type: 3}
@@ -2805,7 +2805,7 @@ GameObject:
   - component: {fileID: 9025283046680083231}
   - component: {fileID: 9025283046680083232}
   - component: {fileID: 9025283046680083233}
-  - component: {fileID: 9025283046680083230}
+  - component: {fileID: 5278492808258399650}
   m_Layer: 5
   m_Name: Droitier
   m_TagString: Untagged
@@ -2870,7 +2870,7 @@ MonoBehaviour:
   m_FillOrigin: 1
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1.39
---- !u!114 &9025283046680083230
+--- !u!114 &5278492808258399650
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2879,7 +2879,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9025283046680083228}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 966f73c78e4930d4da933e4b89c9b234, type: 3}
+  m_Script: {fileID: 11500000, guid: fabc241d6dafd8a4fb1045f9995f49d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rectTransform: {fileID: 0}
@@ -2893,10 +2893,8 @@ MonoBehaviour:
   onHide:
     m_PersistentCalls:
       m_Calls: []
-  switchs:
-  - {fileID: 9025283046868186177}
-  - {fileID: 9025283045824101997}
-  languageManager: {fileID: 11400000, guid: cc7173560c4531545a2a4dde441db5db, type: 2}
+  switchs: []
+  playerData: {fileID: 0}
 --- !u!1 &9025283046824508465
 GameObject:
   m_ObjectHideFlags: 0
@@ -3069,7 +3067,7 @@ MonoBehaviour:
   onHide:
     m_PersistentCalls:
       m_Calls: []
-  btnSwitch: {fileID: 9025283046680083230}
+  btnSwitch: {fileID: 0}
   image: {fileID: 9025283046868186176}
   btnOn: {fileID: 21300000, guid: 7b62c300dae2f3a45b8049a581f0988c, type: 3}
   btnOff: {fileID: 21300000, guid: c75b0a066271db7469eb372e1ce8aebd, type: 3}

@@ -11,7 +11,7 @@ using QRTools.Utilities;
 namespace CrabMaga
 {
     [CreateAssetMenu(menuName = "CRAB MAGA/Data/Level Data")]
-    public class LevelData : ScriptableObject, IResetable
+    public class LevelData : ScriptableObject, IResetable, ISavable
     {
         [BoxGroup("Level Information")]
         public TextLanguage levelName;
@@ -27,10 +27,20 @@ namespace CrabMaga
         [BoxGroup("Player Achievements")]
         public int bestScore = 0;
 
+        public void Load()
+        {
+            bestScore = PlayerPrefs.GetInt(levelName + "score");
+        }
+
         [Button]
         public void ResetObject()
         {
             bestScore = 0;
+        }
+
+        public void Save()
+        {
+            PlayerPrefs.SetInt(levelName + "score", bestScore);
         }
     }
 }

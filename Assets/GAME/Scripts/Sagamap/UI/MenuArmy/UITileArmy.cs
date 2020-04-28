@@ -94,7 +94,7 @@ namespace CrabMaga
 
         public void Select()
         {
-            Debug.Log("select " + name);
+            //Debug.Log("select " + name);
 
             menuArmy.currentTileSelected = this;
 
@@ -112,8 +112,7 @@ namespace CrabMaga
             }
 
             IsSelected = true;
-        }
-
-        
+            menuArmy.UpdateMenu(this);
+        }        
     }
 }

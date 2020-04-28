@@ -7,7 +7,7 @@ using Sirenix.OdinInspector;
 namespace CrabMaga
 {
     [CreateAssetMenu(menuName = "CRAB MAGA/Managers/LanguageSystem")]
-    public class LanguageManager : ObserverScriptableObject
+    public class LanguageManager : ObserverScriptableObject, ISavable
     {        
         [SerializeField, EnumPaging] private LanguageEnum languageEnum = LanguageEnum.Francais;
         public LanguageEnum LanguageEnum
@@ -28,6 +28,16 @@ namespace CrabMaga
 
             UpdateObservable();
 
+        }
+
+        public void Load()
+        {
+            LanguageEnum = (LanguageEnum)System.Enum.Parse(typeof(LanguageEnum), PlayerPrefs.GetString("LanguageEnum"));
+        }
+
+        public void Save()
+        {
+            PlayerPrefs.SetString("LanguageEnum", LanguageEnum.ToString());
         }
 
 #if UNITY_EDITOR
