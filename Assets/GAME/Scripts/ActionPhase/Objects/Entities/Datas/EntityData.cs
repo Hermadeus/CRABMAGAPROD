@@ -200,12 +200,13 @@ namespace CrabMaga
         {
             string[,] s = ParseCSV();
 
-            s[0, 1].Replace(s[0, 1].ToCharArray()[0], '\0');
-            s[0, 1].Replace(s[0, 1].ToCharArray()[1], '\0');
+            //string n = s[1, 1].Replace(';', ',');
 
-            Debug.Log(s[0, 1]); 
-            Debug.Log(s[0, 2]);
-            Debug.Log(s[0, 3]);
+            string[] c1 = s[0, 1].Split(';');
+
+            Debug.Log("Niveau : " + c1[0]);
+            Debug.Log("Damage : " + c1[1]);
+
 
 #if UNITY_EDITOR
             EditorUtility.SetDirty(this);
@@ -221,7 +222,7 @@ namespace CrabMaga
             int totalColumns = 0;
             for (int i = 0; i < lines.Length; i++)
             {
-                string[] row = lines[i].Split(',');
+                string[] row = lines[i].Split(';');
                 totalColumns = Mathf.Max(totalColumns, row.Length);
             }
 

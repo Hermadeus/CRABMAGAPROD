@@ -212,6 +212,7 @@ namespace CrabMaga
             totalUnitCount.text = 0.ToString();
         }
 
+        [Button]
         public void Win()
         {
             AsFinish = true;
@@ -222,6 +223,7 @@ namespace CrabMaga
             OnWinEvent.Invoke();
         }
 
+        [Button]
         public void Lose()
         {
             AsFinish = true;

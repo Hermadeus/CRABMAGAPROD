@@ -14,7 +14,7 @@ namespace CrabMaga
         public GameObject[] headers = default;
         public GameObject[] pages = default;
 
-        public Sprite Spr_UnselectedHeader, Spr_SelectedHeader;
+        public Sprite[] Spr_UnselectedHeader, Spr_SelectedHeader;
 
         public void OpenPage(int index)
         {
@@ -23,12 +23,12 @@ namespace CrabMaga
                 if(i == index)
                 {
                     pages[i].SetActive(true);
-                    headers[i].GetComponent<Image>().sprite = Spr_SelectedHeader;
+                    headers[i].GetComponent<Image>().sprite = Spr_SelectedHeader[i];
                 }
                 else
                 {
                     pages[i].SetActive(false);
-                    headers[i].GetComponent<Image>().sprite = Spr_UnselectedHeader;
+                    headers[i].GetComponent<Image>().sprite = Spr_UnselectedHeader[i];
                 }
             }
         }

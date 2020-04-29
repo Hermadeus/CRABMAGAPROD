@@ -72,22 +72,41 @@ namespace CrabMaga
                 );
         }
 
+        public Image defText;
+        public Sprite VictoireFR, VictoireAng, DefaiteFR, DefaiteAng;
+
         void UpdateVictoryText(bool win)
         {
             if (win)
             {
-                unitTextLocalisation.text.textFrancais = "Victoire !";
-                unitTextLocalisation.text.textAnglais = "Victory !";
-                unitTextLocalisation.text.textCrab = "Crabyyyy !";
+                switch (languageManager.LanguageEnum)
+                {
+                    case LanguageEnum.Francais:
+                        defText.sprite = VictoireFR;
+                        break;
+                    case LanguageEnum.Anglais:
+                        defText.sprite = VictoireAng;
+
+                        break;
+                    case LanguageEnum.Crab:
+                        break;
+                }
             }
             else
             {
-                unitTextLocalisation.text.textFrancais = "Défaite.";
-                unitTextLocalisation.text.textAnglais = "Lost.";
-                unitTextLocalisation.text.textCrab = "Crablose.";
-            }
+                switch (languageManager.LanguageEnum)
+                {
+                    case LanguageEnum.Francais:
+                        defText.sprite = DefaiteFR;
+                        break;
+                    case LanguageEnum.Anglais:
+                        defText.sprite = DefaiteAng;
 
-            unitTextLocalisation.Notify();
+                        break;
+                    case LanguageEnum.Crab:
+                        break;
+                }
+            }
         }
 
         void UpdateImage(bool win)
