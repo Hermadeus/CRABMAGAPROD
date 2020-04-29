@@ -27,5 +27,16 @@ namespace CrabMaga
 
         [BoxGroup("Entity Formation")]
         public float density = 1f;
+
+        public override void UpgradeEntity()
+        {
+            base.UpgradeEntity();
+
+            costUnit = upgradeTabs[currentLevel].costformation;
+            formationX = upgradeTabs[currentLevel].formationX;
+            formationY = upgradeTabs[currentLevel].formationY;
+
+            PersistableSO.Instance.Save();
+        }
     }
 }

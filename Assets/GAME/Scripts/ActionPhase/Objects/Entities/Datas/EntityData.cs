@@ -124,6 +124,9 @@ namespace CrabMaga
 
         public int currentPriceUpdate = 20;
 
+        [FoldoutGroup("Upgrade tab")]
+        public UpgradeTab[] upgradeTabs = default;
+
         public virtual void Init(Entity entity)
         {
             entity.name = entityName.GetCurrentText(languageManager.LanguageEnum);
@@ -183,32 +186,33 @@ namespace CrabMaga
             
             currentLevel++;
 
-            UpdateAttackSpeed();
-            UpdateDamage();
-            UpdateHealth();
+            attackSpeed = upgradeTabs[currentLevel].attackSpeed;
+            startHealth = upgradeTabs[currentLevel].health;
+            currentPriceUpdate = upgradeTabs[currentPriceUpdate].upgradeCost;
 
             PersistableSO.Instance.Save();
         }
 
-        public virtual float UpdateAttackSpeed()
+        [Button]
+        public virtual void InitUpgradeTab()
         {
-            //attackSpeed *= 1.025f; 
+            upgradeTabs[1].attackSpeed = upgradeTabs[0].attackSpeed;
+            upgradeTabs[1].upgradeCost = upgradeTabs[0].upgradeCost;
+            upgradeTabs[1].costformation = upgradeTabs[0].costformation;
 
-            return attackSpeed;
-        }
+            for (int i = 2; i < 300; i++)
+            {
+                upgradeTabs[i].attackSpeed = upgradeTabs[i - 1].attackSpeed * 1.025f;
+                upgradeTabs[i].upgradeCost = upgradeTabs[i - 1].upgradeCost + 1;
+            }
 
-        public virtual float UpdateHealth()
-        {
-            //startHealth += currentLevel;
-
-            return startHealth;
-        }
-
-        public virtual float UpdateDamage()
-        {
-            //damage *= 1.025f;
-
-            return damage;
+            for (int i = 2; i < 300; i++)
+            {
+                if (i % 5 == 0)
+                {
+                    upgradeTabs[i].costformation++;
+                }
+            }
         }
     }
 
@@ -217,5 +221,17 @@ namespace CrabMaga
         AGILE,
         FORCE,
         RESISTANT
+    }
+
+    [System.Serializable]
+    public class UpgradeTab
+    {
+        public float attackSpeed;
+        public float health = 1;
+        public int formationX;
+        public int formationY;
+        public int costformation;
+        public int upgradeCost;
+        
     }
 }
