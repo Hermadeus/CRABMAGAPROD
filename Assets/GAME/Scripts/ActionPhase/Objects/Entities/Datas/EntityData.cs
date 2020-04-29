@@ -193,26 +193,50 @@ namespace CrabMaga
             PersistableSO.Instance.Save();
         }
 
+        public TextAsset csvFile;
+
         [Button]
         public virtual void InitUpgradeTab()
         {
-            upgradeTabs[1].attackSpeed = upgradeTabs[0].attackSpeed;
-            upgradeTabs[1].upgradeCost = upgradeTabs[0].upgradeCost;
-            upgradeTabs[1].costformation = upgradeTabs[0].costformation;
+            string[,] s = ParseCSV();
 
-            for (int i = 2; i < 300; i++)
+            s[0, 1].Replace(s[0, 1].ToCharArray()[0], '\0');
+            s[0, 1].Replace(s[0, 1].ToCharArray()[1], '\0');
+
+            Debug.Log(s[0, 1]); 
+            Debug.Log(s[0, 2]);
+            Debug.Log(s[0, 3]);
+
+#if UNITY_EDITOR
+            EditorUtility.SetDirty(this);
+#endif
+        }
+
+        public string[,] ParseCSV()
+        {
+            //split the data on split line character
+            string[] lines = csvFile.text.Split("\n"[0]);
+
+            // find the max number of columns
+            int totalColumns = 0;
+            for (int i = 0; i < lines.Length; i++)
             {
-                upgradeTabs[i].attackSpeed = upgradeTabs[i - 1].attackSpeed * 1.025f;
-                upgradeTabs[i].upgradeCost = upgradeTabs[i - 1].upgradeCost + 1;
+                string[] row = lines[i].Split(',');
+                totalColumns = Mathf.Max(totalColumns, row.Length);
             }
 
-            for (int i = 2; i < 300; i++)
+            // creates new 2D string grid to output to
+            string[,] outputGrid = new string[totalColumns + 1, lines.Length + 1];
+            for (int y = 0; y < lines.Length; y++)
             {
-                if (i % 5 == 0)
+                string[] row = lines[y].Split(',');
+                for (int x = 0; x < row.Length; x++)
                 {
-                    upgradeTabs[i].costformation++;
+                    outputGrid[x, y] = row[x];
                 }
             }
+
+            return outputGrid;
         }
     }
 
@@ -226,12 +250,18 @@ namespace CrabMaga
     [System.Serializable]
     public class UpgradeTab
     {
+        //attributes
         public float attackSpeed;
-        public float health = 1;
-        public int formationX;
-        public int formationY;
+        public float damage;
+
+        public float health;
+
+        //couts
         public int costformation;
         public int upgradeCost;
-        
+
+        //effectif
+        public int formationX;
+        public int formationY;
     }
 }

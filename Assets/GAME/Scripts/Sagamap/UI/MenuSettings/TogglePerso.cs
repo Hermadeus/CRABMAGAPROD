@@ -15,7 +15,7 @@ namespace CrabMaga
         public BoolVariable state = default;
 
         public Sprite backgroundTrue, backgroundFalse;
-        public Sprite insideTrue, insideFalse;
+        //public Sprite insideTrue, insideFalse;
 
         public UnityEvent ontrue, onfalse;
 
@@ -44,13 +44,13 @@ namespace CrabMaga
             if (state.Value)
             {
                 background.sprite = backgroundTrue;
-                inside.sprite = insideTrue;
+                //inside.sprite = insideTrue;
                 ontrue.Invoke();
             }
             else
             {
                 background.sprite = backgroundFalse;
-                inside.sprite = insideFalse;
+                //inside.sprite = insideFalse;
                 onfalse.Invoke();
             }
         }

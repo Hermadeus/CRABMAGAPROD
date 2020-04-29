@@ -71,12 +71,12 @@ namespace CrabMaga
                 1f,
                 .2f);
 
-            DOTween.To(
-                () => rectTransform.sizeDelta,
-                (x) => rectTransform.sizeDelta = x,
-                sizeDeltaOnSelect,
-                .2f
-                );
+            //DOTween.To(
+            //    () => rectTransform.sizeDelta,
+            //    (x) => rectTransform.sizeDelta = x,
+            //    sizeDeltaOnSelect,
+            //    .2f
+            //    );
         }
 
         public void IsDeselect()
@@ -87,12 +87,12 @@ namespace CrabMaga
                 .5f,
                 .2f);
 
-            DOTween.To(
-                () => rectTransform.sizeDelta,
-                (x) => rectTransform.sizeDelta = x,
-                sizeDeltaBase,
-                .2f
-                );
+            //DOTween.To(
+            //    () => rectTransform.sizeDelta,
+            //    (x) => rectTransform.sizeDelta = x,
+            //    sizeDeltaBase,
+            //    .2f
+            //    );
         }
     }
 }
