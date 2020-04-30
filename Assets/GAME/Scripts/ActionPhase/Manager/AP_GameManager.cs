@@ -104,11 +104,11 @@ namespace CrabMaga
                 totalUnitCountInt = value;
                 totalUnitCount.SetText(value.ToString());
 
-                if (value < levelData.maxCrab - 2)
+                if (value > 3 && value < levelData.maxCrab)
                     totalUnitCount.color = Color.white;
-                else if (value == levelData.maxCrab - 1)
+                else if (value > 0 && value < 3)
                     totalUnitCount.color = new Color(255, 165, 0);
-                else if (value == levelData.maxCrab)
+                else if (value == 0)
                 {
                     totalUnitCount.color = Color.red;
                     Lose();
@@ -208,8 +208,8 @@ namespace CrabMaga
             Application.targetFrameRate = 60;
             Time.timeScale = 1f;
 
-            currentUnitCount.text = 0.ToString();
-            totalUnitCount.text = 0.ToString();
+            currentUnitCountInt = 0;
+            totalUnitCountInt = levelData.maxCrab;
         }
 
         [Button]

@@ -22,7 +22,7 @@ MonoBehaviour:
     textFrancais: FR-NAN
     textAnglais: ANG-NAN
     textCrab: 
-  currentLevel: 1
+  currentLevel: 6
   passifDescription:
     textFrancais: "Augmente temporairement les d\xE9g\xE2ts de toutes les autres
       unit\xE9s lorsqu'elle est form\xE9e."
@@ -41,7 +41,7 @@ MonoBehaviour:
   acceleration: 2
   damage: 5.248345
   attackSpeed: 0.86597705
-  DamagePerSeconds: 6.0606055
+  DamagePerSeconds: 6.060605
   detectionRange: 0
   detectionBehaviour: 0
   entityType: 1
@@ -57,6 +57,2108 @@ MonoBehaviour:
   passifBehaviour: 3
   passifEvent: 1
   currentPriceUpdate: 15
+  upgradeTabs:
+  - attackSpeed: 0
+    damage: 0
+    health: 0
+    costformation: 0
+    upgradeCost: 0
+    formationX: 0
+    formationY: 0
+  - attackSpeed: 1
+    damage: 4
+    health: 1
+    costformation: 0
+    upgradeCost: 0
+    formationX: 2
+    formationY: 2
+  - attackSpeed: 1
+    damage: 4
+    health: 1
+    costformation: 3
+    upgradeCost: 12
+    formationX: 2
+    formationY: 2
+  - attackSpeed: 1
+    damage: 4
+    health: 1
+    costformation: 3
+    upgradeCost: 39
+    formationX: 2
+    formationY: 2
+  - attackSpeed: 1
+    damage: 4
+    health: 1
+    costformation: 5
+    upgradeCost: 78
+    formationX: 2
+    formationY: 2
+  - attackSpeed: 1
+    damage: 4
+    health: 1
+    costformation: 5
+    upgradeCost: 127
+    formationX: 3
+    formationY: 2
+  - attackSpeed: 1
+    damage: 4
+    health: 1
+    costformation: 5
+    upgradeCost: 186
+    formationX: 3
+    formationY: 2
+  - attackSpeed: 1
+    damage: 4
+    health: 1
+    costformation: 8
+    upgradeCost: 253
+    formationX: 3
+    formationY: 2
+  - attackSpeed: 1
+    damage: 4
+    health: 1
+    costformation: 8
+    upgradeCost: 328
+    formationX: 3
+    formationY: 2
+  - attackSpeed: 1
+    damage: 4
+    health: 1
+    costformation: 10
+    upgradeCost: 412
+    formationX: 3
+    formationY: 2
+  - attackSpeed: 1
+    damage: 4
+    health: 1
+    costformation: 10
+    upgradeCost: 502
+    formationX: 3
+    formationY: 2
+  - attackSpeed: 1
+    damage: 4
+    health: 1
+    costformation: 10
+    upgradeCost: 601
+    formationX: 3
+    formationY: 2
+  - attackSpeed: 1
+    damage: 4
+    health: 1
+    costformation: 13
+    upgradeCost: 706
+    formationX: 3
+    formationY: 2
+  - attackSpeed: 1
+    damage: 4
+    health: 1
+    costformation: 13
+    upgradeCost: 818
+    formationX: 3
+    formationY: 2
+  - attackSpeed: 1
+    damage: 4
+    health: 1
+    costformation: 16
+    upgradeCost: 936
+    formationX: 3
+    formationY: 2
+  - attackSpeed: 1
+    damage: 4
+    health: 1
+    costformation: 16
+    upgradeCost: 1061
+    formationX: 3
+    formationY: 2
+  - attackSpeed: 1
+    damage: 4
+    health: 1
+    costformation: 16
+    upgradeCost: 1193
+    formationX: 3
+    formationY: 2
+  - attackSpeed: 1
+    damage: 4
+    health: 1
+    costformation: 19
+    upgradeCost: 1331
+    formationX: 3
+    formationY: 2
+  - attackSpeed: 1
+    damage: 4
+    health: 1
+    costformation: 19
+    upgradeCost: 1474
+    formationX: 3
+    formationY: 2
+  - attackSpeed: 1
+    damage: 4
+    health: 1
+    costformation: 22
+    upgradeCost: 1624
+    formationX: 3
+    formationY: 2
+  - attackSpeed: 1
+    damage: 4
+    health: 1
+    costformation: 22
+    upgradeCost: 1780
+    formationX: 3
+    formationY: 2
+  - attackSpeed: 1
+    damage: 4
+    health: 1
+    costformation: 22
+    upgradeCost: 1941
+    formationX: 3
+    formationY: 2
+  - attackSpeed: 1
+    damage: 4
+    health: 1
+    costformation: 25
+    upgradeCost: 2108
+    formationX: 3
+    formationY: 2
+  - attackSpeed: 1
+    damage: 5
+    health: 1
+    costformation: 25
+    upgradeCost: 2281
+    formationX: 3
+    formationY: 2
+  - attackSpeed: 1
+    damage: 5
+    health: 1
+    costformation: 28
+    upgradeCost: 2459
+    formationX: 3
+    formationY: 2
+  - attackSpeed: 1
+    damage: 5
+    health: 1
+    costformation: 28
+    upgradeCost: 2643
+    formationX: 3
+    formationY: 2
+  - attackSpeed: 1
+    damage: 5
+    health: 1
+    costformation: 28
+    upgradeCost: 2832
+    formationX: 3
+    formationY: 2
+  - attackSpeed: 1
+    damage: 5
+    health: 1
+    costformation: 31
+    upgradeCost: 3026
+    formationX: 3
+    formationY: 2
+  - attackSpeed: 1
+    damage: 5
+    health: 1
+    costformation: 31
+    upgradeCost: 3226
+    formationX: 3
+    formationY: 2
+  - attackSpeed: 1
+    damage: 5
+    health: 1
+    costformation: 34
+    upgradeCost: 3431
+    formationX: 3
+    formationY: 2
+  - attackSpeed: 1
+    damage: 5
+    health: 1
+    costformation: 34
+    upgradeCost: 3641
+    formationX: 3
+    formationY: 2
+  - attackSpeed: 1
+    damage: 5
+    health: 1
+    costformation: 34
+    upgradeCost: 3856
+    formationX: 3
+    formationY: 2
+  - attackSpeed: 1
+    damage: 5
+    health: 1
+    costformation: 38
+    upgradeCost: 4076
+    formationX: 3
+    formationY: 2
+  - attackSpeed: 1
+    damage: 5
+    health: 1
+    costformation: 38
+    upgradeCost: 4301
+    formationX: 3
+    formationY: 2
+  - attackSpeed: 1
+    damage: 5
+    health: 1
+    costformation: 41
+    upgradeCost: 4531
+    formationX: 3
+    formationY: 2
+  - attackSpeed: 1
+    damage: 5
+    health: 1
+    costformation: 41
+    upgradeCost: 4765
+    formationX: 3
+    formationY: 2
+  - attackSpeed: 1
+    damage: 5
+    health: 1
+    costformation: 41
+    upgradeCost: 5005
+    formationX: 3
+    formationY: 2
+  - attackSpeed: 1
+    damage: 5
+    health: 1
+    costformation: 45
+    upgradeCost: 5249
+    formationX: 3
+    formationY: 2
+  - attackSpeed: 1
+    damage: 5
+    health: 1
+    costformation: 45
+    upgradeCost: 5499
+    formationX: 3
+    formationY: 2
+  - attackSpeed: 1
+    damage: 5
+    health: 1
+    costformation: 48
+    upgradeCost: 5753
+    formationX: 3
+    formationY: 2
+  - attackSpeed: 1
+    damage: 5
+    health: 1
+    costformation: 48
+    upgradeCost: 6011
+    formationX: 3
+    formationY: 2
+  - attackSpeed: 1
+    damage: 5
+    health: 1
+    costformation: 48
+    upgradeCost: 6274
+    formationX: 3
+    formationY: 2
+  - attackSpeed: 1
+    damage: 5
+    health: 1
+    costformation: 52
+    upgradeCost: 6542
+    formationX: 3
+    formationY: 2
+  - attackSpeed: 1
+    damage: 6
+    health: 1
+    costformation: 52
+    upgradeCost: 6814
+    formationX: 3
+    formationY: 2
+  - attackSpeed: 1
+    damage: 6
+    health: 1
+    costformation: 56
+    upgradeCost: 7091
+    formationX: 3
+    formationY: 2
+  - attackSpeed: 1
+    damage: 6
+    health: 1
+    costformation: 56
+    upgradeCost: 7373
+    formationX: 3
+    formationY: 3
+  - attackSpeed: 1
+    damage: 6
+    health: 1
+    costformation: 56
+    upgradeCost: 7658
+    formationX: 3
+    formationY: 3
+  - attackSpeed: 1
+    damage: 6
+    health: 1
+    costformation: 60
+    upgradeCost: 7949
+    formationX: 3
+    formationY: 3
+  - attackSpeed: 1
+    damage: 6
+    health: 1
+    costformation: 60
+    upgradeCost: 8243
+    formationX: 3
+    formationY: 3
+  - attackSpeed: 1
+    damage: 6
+    health: 1
+    costformation: 64
+    upgradeCost: 8542
+    formationX: 3
+    formationY: 3
+  - attackSpeed: 1
+    damage: 6
+    health: 1
+    costformation: 64
+    upgradeCost: 8846
+    formationX: 3
+    formationY: 3
+  - attackSpeed: 1
+    damage: 6
+    health: 1
+    costformation: 64
+    upgradeCost: 9153
+    formationX: 3
+    formationY: 3
+  - attackSpeed: 1
+    damage: 6
+    health: 1
+    costformation: 68
+    upgradeCost: 9465
+    formationX: 3
+    formationY: 3
+  - attackSpeed: 1
+    damage: 6
+    health: 1
+    costformation: 68
+    upgradeCost: 9782
+    formationX: 3
+    formationY: 3
+  - attackSpeed: 1
+    damage: 6
+    health: 1
+    costformation: 72
+    upgradeCost: 10102
+    formationX: 3
+    formationY: 3
+  - attackSpeed: 1
+    damage: 6
+    health: 1
+    costformation: 72
+    upgradeCost: 10427
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 1
+    damage: 6
+    health: 1
+    costformation: 72
+    upgradeCost: 10756
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 1
+    damage: 6
+    health: 1
+    costformation: 76
+    upgradeCost: 11089
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 1
+    damage: 7
+    health: 1
+    costformation: 76
+    upgradeCost: 11426
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 1
+    damage: 7
+    health: 1
+    costformation: 81
+    upgradeCost: 11767
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 1
+    damage: 7
+    health: 1
+    costformation: 81
+    upgradeCost: 12113
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 1
+    damage: 7
+    health: 1
+    costformation: 81
+    upgradeCost: 12462
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 1
+    damage: 7
+    health: 1
+    costformation: 85
+    upgradeCost: 12816
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 1
+    damage: 7
+    health: 1
+    costformation: 85
+    upgradeCost: 13173
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 1
+    damage: 7
+    health: 1
+    costformation: 90
+    upgradeCost: 13535
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 1
+    damage: 7
+    health: 1
+    costformation: 90
+    upgradeCost: 13901
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 1
+    damage: 7
+    health: 1
+    costformation: 90
+    upgradeCost: 14270
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 1
+    damage: 7
+    health: 1
+    costformation: 95
+    upgradeCost: 14644
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 1
+    damage: 7
+    health: 1
+    costformation: 95
+    upgradeCost: 15021
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 2
+    damage: 7
+    health: 1
+    costformation: 0
+    upgradeCost: 15403
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 2
+    damage: 7
+    health: 1
+    costformation: 0
+    upgradeCost: 15788
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 2
+    damage: 7
+    health: 1
+    costformation: 0
+    upgradeCost: 16177
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 2
+    damage: 7
+    health: 1
+    costformation: 5
+    upgradeCost: 16570
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 2
+    damage: 8
+    health: 1
+    costformation: 5
+    upgradeCost: 16967
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 2
+    damage: 8
+    health: 1
+    costformation: 10
+    upgradeCost: 17368
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 2
+    damage: 8
+    health: 1
+    costformation: 10
+    upgradeCost: 17773
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 2
+    damage: 8
+    health: 1
+    costformation: 10
+    upgradeCost: 18181
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 2
+    damage: 8
+    health: 1
+    costformation: 15
+    upgradeCost: 18593
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 2
+    damage: 8
+    health: 1
+    costformation: 15
+    upgradeCost: 19009
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 2
+    damage: 8
+    health: 1
+    costformation: 20
+    upgradeCost: 19429
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 2
+    damage: 8
+    health: 1
+    costformation: 20
+    upgradeCost: 19852
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 2
+    damage: 8
+    health: 1
+    costformation: 20
+    upgradeCost: 20279
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 2
+    damage: 8
+    health: 1
+    costformation: 26
+    upgradeCost: 20710
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 2
+    damage: 9
+    health: 1
+    costformation: 26
+    upgradeCost: 21145
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 2
+    damage: 9
+    health: 1
+    costformation: 32
+    upgradeCost: 21583
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 2
+    damage: 9
+    health: 1
+    costformation: 32
+    upgradeCost: 22025
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 2
+    damage: 9
+    health: 1
+    costformation: 32
+    upgradeCost: 22471
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 2
+    damage: 9
+    health: 1
+    costformation: 37
+    upgradeCost: 22920
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 2
+    damage: 9
+    health: 1
+    costformation: 37
+    upgradeCost: 23373
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 2
+    damage: 9
+    health: 1
+    costformation: 43
+    upgradeCost: 23829
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 2
+    damage: 9
+    health: 1
+    costformation: 43
+    upgradeCost: 24289
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 2
+    damage: 9
+    health: 1
+    costformation: 43
+    upgradeCost: 24753
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 2
+    damage: 9
+    health: 1
+    costformation: 49
+    upgradeCost: 25220
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 2
+    damage: 9
+    health: 1
+    costformation: 49
+    upgradeCost: 25691
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 2
+    damage: 9
+    health: 1
+    costformation: 56
+    upgradeCost: 26166
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 2
+    damage: 9
+    health: 1
+    costformation: 56
+    upgradeCost: 26644
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 2
+    damage: 10
+    health: 1
+    costformation: 56
+    upgradeCost: 27125
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 2
+    damage: 10
+    health: 1
+    costformation: 62
+    upgradeCost: 27610
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 2
+    damage: 10
+    health: 1
+    costformation: 62
+    upgradeCost: 28099
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 2
+    damage: 10
+    health: 1
+    costformation: 69
+    upgradeCost: 28591
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 2
+    damage: 10
+    health: 1
+    costformation: 69
+    upgradeCost: 29086
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 2
+    damage: 10
+    health: 1
+    costformation: 69
+    upgradeCost: 29585
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 2
+    damage: 10
+    health: 1
+    costformation: 75
+    upgradeCost: 30088
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 2
+    damage: 11
+    health: 1
+    costformation: 75
+    upgradeCost: 30594
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 2
+    damage: 11
+    health: 1
+    costformation: 82
+    upgradeCost: 31103
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 2
+    damage: 11
+    health: 1
+    costformation: 82
+    upgradeCost: 31616
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 2
+    damage: 11
+    health: 1
+    costformation: 89
+    upgradeCost: 32132
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 2
+    damage: 11
+    health: 1
+    costformation: 89
+    upgradeCost: 32652
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 2
+    damage: 11
+    health: 1
+    costformation: 96
+    upgradeCost: 33175
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 2
+    damage: 11
+    health: 1
+    costformation: 96
+    upgradeCost: 33701
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 2
+    damage: 11
+    health: 1
+    costformation: 96
+    upgradeCost: 34231
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 3
+    damage: 11
+    health: 1
+    costformation: 4
+    upgradeCost: 34764
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 3
+    damage: 12
+    health: 1
+    costformation: 4
+    upgradeCost: 35301
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 3
+    damage: 12
+    health: 1
+    costformation: 11
+    upgradeCost: 35841
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 3
+    damage: 12
+    health: 1
+    costformation: 11
+    upgradeCost: 36384
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 3
+    damage: 12
+    health: 1
+    costformation: 19
+    upgradeCost: 36931
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 3
+    damage: 12
+    health: 1
+    costformation: 19
+    upgradeCost: 37481
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 3
+    damage: 12
+    health: 1
+    costformation: 27
+    upgradeCost: 38034
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 3
+    damage: 13
+    health: 1
+    costformation: 27
+    upgradeCost: 38590
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 3
+    damage: 13
+    health: 1
+    costformation: 35
+    upgradeCost: 39150
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 3
+    damage: 13
+    health: 1
+    costformation: 35
+    upgradeCost: 39714
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 3
+    damage: 13
+    health: 1
+    costformation: 35
+    upgradeCost: 40280
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 3
+    damage: 13
+    health: 1
+    costformation: 44
+    upgradeCost: 40850
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 3
+    damage: 13
+    health: 1
+    costformation: 44
+    upgradeCost: 41423
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 3
+    damage: 13
+    health: 1
+    costformation: 52
+    upgradeCost: 41999
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 3
+    damage: 14
+    health: 1
+    costformation: 52
+    upgradeCost: 42579
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 3
+    damage: 14
+    health: 1
+    costformation: 61
+    upgradeCost: 43161
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 3
+    damage: 14
+    health: 1
+    costformation: 61
+    upgradeCost: 43747
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 3
+    damage: 14
+    health: 1
+    costformation: 70
+    upgradeCost: 44337
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 3
+    damage: 14
+    health: 1
+    costformation: 70
+    upgradeCost: 44929
+    formationX: 4
+    formationY: 3
+  - attackSpeed: 3
+    damage: 14
+    health: 1
+    costformation: 70
+    upgradeCost: 45525
+    formationX: 4
+    formationY: 4
+  - attackSpeed: 3
+    damage: 14
+    health: 1
+    costformation: 79
+    upgradeCost: 46124
+    formationX: 4
+    formationY: 4
+  - attackSpeed: 3
+    damage: 15
+    health: 1
+    costformation: 79
+    upgradeCost: 46726
+    formationX: 4
+    formationY: 4
+  - attackSpeed: 3
+    damage: 15
+    health: 1
+    costformation: 89
+    upgradeCost: 47331
+    formationX: 4
+    formationY: 4
+  - attackSpeed: 3
+    damage: 15
+    health: 1
+    costformation: 89
+    upgradeCost: 47940
+    formationX: 4
+    formationY: 4
+  - attackSpeed: 3
+    damage: 15
+    health: 1
+    costformation: 99
+    upgradeCost: 48551
+    formationX: 4
+    formationY: 4
+  - attackSpeed: 3
+    damage: 15
+    health: 1
+    costformation: 99
+    upgradeCost: 49166
+    formationX: 4
+    formationY: 4
+  - attackSpeed: 4
+    damage: 15
+    health: 1
+    costformation: 9
+    upgradeCost: 49784
+    formationX: 4
+    formationY: 4
+  - attackSpeed: 4
+    damage: 16
+    health: 1
+    costformation: 9
+    upgradeCost: 50405
+    formationX: 4
+    formationY: 4
+  - attackSpeed: 4
+    damage: 16
+    health: 1
+    costformation: 19
+    upgradeCost: 51029
+    formationX: 4
+    formationY: 4
+  - attackSpeed: 4
+    damage: 16
+    health: 1
+    costformation: 19
+    upgradeCost: 51657
+    formationX: 4
+    formationY: 4
+  - attackSpeed: 4
+    damage: 16
+    health: 1
+    costformation: 19
+    upgradeCost: 52287
+    formationX: 4
+    formationY: 4
+  - attackSpeed: 4
+    damage: 16
+    health: 1
+    costformation: 29
+    upgradeCost: 52921
+    formationX: 4
+    formationY: 4
+  - attackSpeed: 4
+    damage: 17
+    health: 1
+    costformation: 29
+    upgradeCost: 53558
+    formationX: 4
+    formationY: 4
+  - attackSpeed: 4
+    damage: 17
+    health: 1
+    costformation: 40
+    upgradeCost: 54198
+    formationX: 4
+    formationY: 4
+  - attackSpeed: 4
+    damage: 17
+    health: 1
+    costformation: 40
+    upgradeCost: 54841
+    formationX: 4
+    formationY: 4
+  - attackSpeed: 4
+    damage: 17
+    health: 1
+    costformation: 51
+    upgradeCost: 55487
+    formationX: 4
+    formationY: 4
+  - attackSpeed: 4
+    damage: 18
+    health: 1
+    costformation: 51
+    upgradeCost: 56136
+    formationX: 4
+    formationY: 4
+  - attackSpeed: 4
+    damage: 18
+    health: 1
+    costformation: 62
+    upgradeCost: 56788
+    formationX: 4
+    formationY: 4
+  - attackSpeed: 4
+    damage: 18
+    health: 1
+    costformation: 62
+    upgradeCost: 57444
+    formationX: 4
+    formationY: 4
+  - attackSpeed: 4
+    damage: 18
+    health: 1
+    costformation: 62
+    upgradeCost: 58102
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 4
+    damage: 18
+    health: 1
+    costformation: 74
+    upgradeCost: 58764
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 4
+    damage: 18
+    health: 1
+    costformation: 74
+    upgradeCost: 59428
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 4
+    damage: 18
+    health: 1
+    costformation: 86
+    upgradeCost: 60096
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 4
+    damage: 19
+    health: 1
+    costformation: 86
+    upgradeCost: 60767
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 4
+    damage: 19
+    health: 1
+    costformation: 98
+    upgradeCost: 61440
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 4
+    damage: 19
+    health: 1
+    costformation: 98
+    upgradeCost: 62117
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 5
+    damage: 19
+    health: 1
+    costformation: 10
+    upgradeCost: 62797
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 5
+    damage: 20
+    health: 1
+    costformation: 10
+    upgradeCost: 63480
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 5
+    damage: 20
+    health: 1
+    costformation: 23
+    upgradeCost: 64166
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 5
+    damage: 20
+    health: 1
+    costformation: 23
+    upgradeCost: 64854
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 5
+    damage: 20
+    health: 1
+    costformation: 23
+    upgradeCost: 65546
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 5
+    damage: 20
+    health: 1
+    costformation: 36
+    upgradeCost: 66241
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 5
+    damage: 21
+    health: 1
+    costformation: 36
+    upgradeCost: 66939
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 5
+    damage: 21
+    health: 1
+    costformation: 49
+    upgradeCost: 67640
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 5
+    damage: 21
+    health: 1
+    costformation: 49
+    upgradeCost: 68344
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 5
+    damage: 21
+    health: 1
+    costformation: 63
+    upgradeCost: 69050
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 5
+    damage: 22
+    health: 1
+    costformation: 63
+    upgradeCost: 69760
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 5
+    damage: 22
+    health: 1
+    costformation: 77
+    upgradeCost: 70473
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 5
+    damage: 23
+    health: 1
+    costformation: 77
+    upgradeCost: 71189
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 5
+    damage: 23
+    health: 1
+    costformation: 77
+    upgradeCost: 71907
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 5
+    damage: 23
+    health: 1
+    costformation: 92
+    upgradeCost: 72629
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 5
+    damage: 23
+    health: 1
+    costformation: 92
+    upgradeCost: 73354
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 6
+    damage: 23
+    health: 1
+    costformation: 7
+    upgradeCost: 74081
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 6
+    damage: 24
+    health: 1
+    costformation: 7
+    upgradeCost: 74811
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 6
+    damage: 24
+    health: 1
+    costformation: 22
+    upgradeCost: 75545
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 6
+    damage: 24
+    health: 1
+    costformation: 22
+    upgradeCost: 76281
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 6
+    damage: 24
+    health: 1
+    costformation: 37
+    upgradeCost: 77020
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 6
+    damage: 25
+    health: 1
+    costformation: 37
+    upgradeCost: 77762
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 6
+    damage: 25
+    health: 1
+    costformation: 53
+    upgradeCost: 78507
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 6
+    damage: 25
+    health: 1
+    costformation: 53
+    upgradeCost: 79255
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 6
+    damage: 26
+    health: 1
+    costformation: 53
+    upgradeCost: 80006
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 6
+    damage: 26
+    health: 1
+    costformation: 69
+    upgradeCost: 80760
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 6
+    damage: 26
+    health: 1
+    costformation: 69
+    upgradeCost: 81517
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 6
+    damage: 26
+    health: 1
+    costformation: 86
+    upgradeCost: 82276
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 6
+    damage: 27
+    health: 1
+    costformation: 86
+    upgradeCost: 83038
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 7
+    damage: 27
+    health: 1
+    costformation: 3
+    upgradeCost: 83804
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 7
+    damage: 28
+    health: 1
+    costformation: 3
+    upgradeCost: 84572
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 7
+    damage: 28
+    health: 1
+    costformation: 21
+    upgradeCost: 85343
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 7
+    damage: 28
+    health: 1
+    costformation: 21
+    upgradeCost: 86117
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 7
+    damage: 28
+    health: 1
+    costformation: 21
+    upgradeCost: 86893
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 7
+    damage: 28
+    health: 1
+    costformation: 39
+    upgradeCost: 87673
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 7
+    damage: 29
+    health: 1
+    costformation: 39
+    upgradeCost: 88455
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 7
+    damage: 29
+    health: 1
+    costformation: 57
+    upgradeCost: 89241
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 7
+    damage: 30
+    health: 1
+    costformation: 57
+    upgradeCost: 90029
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 7
+    damage: 30
+    health: 1
+    costformation: 76
+    upgradeCost: 90820
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 7
+    damage: 31
+    health: 1
+    costformation: 76
+    upgradeCost: 91613
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 7
+    damage: 31
+    health: 1
+    costformation: 96
+    upgradeCost: 92410
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 7
+    damage: 31
+    health: 1
+    costformation: 96
+    upgradeCost: 93209
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 8
+    damage: 31
+    health: 1
+    costformation: 16
+    upgradeCost: 94011
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 8
+    damage: 31
+    health: 1
+    costformation: 16
+    upgradeCost: 94816
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 8
+    damage: 32
+    health: 1
+    costformation: 16
+    upgradeCost: 95624
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 8
+    damage: 32
+    health: 1
+    costformation: 36
+    upgradeCost: 96435
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 8
+    damage: 33
+    health: 1
+    costformation: 36
+    upgradeCost: 97248
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 8
+    damage: 33
+    health: 1
+    costformation: 57
+    upgradeCost: 98065
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 8
+    damage: 34
+    health: 1
+    costformation: 57
+    upgradeCost: 98884
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 8
+    damage: 34
+    health: 1
+    costformation: 78
+    upgradeCost: 99705
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 8
+    damage: 35
+    health: 1
+    costformation: 78
+    upgradeCost: 100530
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 9
+    damage: 35
+    health: 1
+    costformation: 0
+    upgradeCost: 101357
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 9
+    damage: 36
+    health: 1
+    costformation: 0
+    upgradeCost: 102187
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 9
+    damage: 36
+    health: 1
+    costformation: 23
+    upgradeCost: 103020
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 9
+    damage: 36
+    health: 1
+    costformation: 23
+    upgradeCost: 103856
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 9
+    damage: 36
+    health: 1
+    costformation: 46
+    upgradeCost: 104694
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 9
+    damage: 37
+    health: 1
+    costformation: 46
+    upgradeCost: 105535
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 9
+    damage: 37
+    health: 1
+    costformation: 70
+    upgradeCost: 106379
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 9
+    damage: 37
+    health: 1
+    costformation: 70
+    upgradeCost: 107226
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 9
+    damage: 38
+    health: 1
+    costformation: 70
+    upgradeCost: 108075
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 9
+    damage: 38
+    health: 1
+    costformation: 94
+    upgradeCost: 108928
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 9
+    damage: 39
+    health: 1
+    costformation: 94
+    upgradeCost: 109782
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 10
+    damage: 39
+    health: 1
+    costformation: 19
+    upgradeCost: 110640
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 10
+    damage: 40
+    health: 1
+    costformation: 19
+    upgradeCost: 111500
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 10
+    damage: 40
+    health: 1
+    costformation: 44
+    upgradeCost: 112364
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 10
+    damage: 41
+    health: 1
+    costformation: 44
+    upgradeCost: 113229
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 10
+    damage: 41
+    health: 1
+    costformation: 70
+    upgradeCost: 114098
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 10
+    damage: 42
+    health: 1
+    costformation: 70
+    upgradeCost: 114969
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 10
+    damage: 42
+    health: 1
+    costformation: 97
+    upgradeCost: 115843
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 10
+    damage: 43
+    health: 1
+    costformation: 97
+    upgradeCost: 116720
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 11
+    damage: 43
+    health: 1
+    costformation: 24
+    upgradeCost: 117599
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 11
+    damage: 44
+    health: 1
+    costformation: 24
+    upgradeCost: 118481
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 11
+    damage: 44
+    health: 1
+    costformation: 53
+    upgradeCost: 119366
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 11
+    damage: 44
+    health: 1
+    costformation: 53
+    upgradeCost: 120253
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 11
+    damage: 46
+    health: 1
+    costformation: 53
+    upgradeCost: 121143
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 11
+    damage: 46
+    health: 1
+    costformation: 81
+    upgradeCost: 122036
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 11
+    damage: 47
+    health: 1
+    costformation: 81
+    upgradeCost: 122932
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 12
+    damage: 47
+    health: 1
+    costformation: 11
+    upgradeCost: 123830
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 12
+    damage: 48
+    health: 1
+    costformation: 11
+    upgradeCost: 124731
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 12
+    damage: 48
+    health: 1
+    costformation: 41
+    upgradeCost: 125634
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 12
+    damage: 49
+    health: 1
+    costformation: 41
+    upgradeCost: 126540
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 12
+    damage: 49
+    health: 1
+    costformation: 72
+    upgradeCost: 127449
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 12
+    damage: 50
+    health: 1
+    costformation: 72
+    upgradeCost: 128361
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 13
+    damage: 50
+    health: 1
+    costformation: 4
+    upgradeCost: 129275
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 13
+    damage: 52
+    health: 1
+    costformation: 4
+    upgradeCost: 130191
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 13
+    damage: 52
+    health: 1
+    costformation: 37
+    upgradeCost: 131111
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 13
+    damage: 53
+    health: 1
+    costformation: 37
+    upgradeCost: 132033
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 13
+    damage: 53
+    health: 1
+    costformation: 70
+    upgradeCost: 132958
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 13
+    damage: 53
+    health: 1
+    costformation: 70
+    upgradeCost: 133885
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 13
+    damage: 54
+    health: 1
+    costformation: 70
+    upgradeCost: 134815
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 14
+    damage: 54
+    health: 1
+    costformation: 4
+    upgradeCost: 135748
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 14
+    damage: 56
+    health: 1
+    costformation: 4
+    upgradeCost: 136683
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 14
+    damage: 56
+    health: 1
+    costformation: 39
+    upgradeCost: 137621
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 14
+    damage: 57
+    health: 1
+    costformation: 39
+    upgradeCost: 138561
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 14
+    damage: 57
+    health: 1
+    costformation: 75
+    upgradeCost: 139505
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 14
+    damage: 59
+    health: 1
+    costformation: 75
+    upgradeCost: 140450
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 15
+    damage: 59
+    health: 1
+    costformation: 12
+    upgradeCost: 141399
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 15
+    damage: 60
+    health: 1
+    costformation: 12
+    upgradeCost: 142350
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 15
+    damage: 60
+    health: 1
+    costformation: 50
+    upgradeCost: 143303
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 15
+    damage: 62
+    health: 1
+    costformation: 50
+    upgradeCost: 144259
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 15
+    damage: 62
+    health: 1
+    costformation: 89
+    upgradeCost: 145218
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 15
+    damage: 63
+    health: 1
+    costformation: 89
+    upgradeCost: 146180
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 16
+    damage: 63
+    health: 1
+    costformation: 29
+    upgradeCost: 147144
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 16
+    damage: 63
+    health: 1
+    costformation: 29
+    upgradeCost: 148110
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 16
+    damage: 65
+    health: 1
+    costformation: 29
+    upgradeCost: 149079
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 16
+    damage: 65
+    health: 1
+    costformation: 69
+    upgradeCost: 150051
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 16
+    damage: 66
+    health: 1
+    costformation: 69
+    upgradeCost: 151025
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 17
+    damage: 66
+    health: 1
+    costformation: 11
+    upgradeCost: 152002
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 17
+    damage: 68
+    health: 1
+    costformation: 11
+    upgradeCost: 152982
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 17
+    damage: 68
+    health: 1
+    costformation: 54
+    upgradeCost: 153964
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 17
+    damage: 70
+    health: 1
+    costformation: 54
+    upgradeCost: 154948
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 17
+    damage: 70
+    health: 1
+    costformation: 98
+    upgradeCost: 155936
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 17
+    damage: 71
+    health: 1
+    costformation: 98
+    upgradeCost: 156925
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 18
+    damage: 71
+    health: 1
+    costformation: 43
+    upgradeCost: 157918
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 18
+    damage: 73
+    health: 1
+    costformation: 43
+    upgradeCost: 158913
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 18
+    damage: 73
+    health: 1
+    costformation: 89
+    upgradeCost: 159910
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 18
+    damage: 75
+    health: 1
+    costformation: 89
+    upgradeCost: 160910
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 19
+    damage: 75
+    health: 1
+    costformation: 36
+    upgradeCost: 161912
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 19
+    damage: 75
+    health: 1
+    costformation: 36
+    upgradeCost: 162918
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 19
+    damage: 77
+    health: 1
+    costformation: 36
+    upgradeCost: 163925
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 19
+    damage: 77
+    health: 1
+    costformation: 84
+    upgradeCost: 164935
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 19
+    damage: 79
+    health: 1
+    costformation: 84
+    upgradeCost: 165948
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 20
+    damage: 79
+    health: 1
+    costformation: 34
+    upgradeCost: 166963
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 20
+    damage: 81
+    health: 1
+    costformation: 34
+    upgradeCost: 167981
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 20
+    damage: 81
+    health: 1
+    costformation: 85
+    upgradeCost: 169001
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 20
+    damage: 83
+    health: 1
+    costformation: 85
+    upgradeCost: 170024
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 21
+    damage: 83
+    health: 1
+    costformation: 37
+    upgradeCost: 171049
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 21
+    damage: 85
+    health: 1
+    costformation: 37
+    upgradeCost: 172077
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 21
+    damage: 85
+    health: 1
+    costformation: 90
+    upgradeCost: 173108
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 21
+    damage: 87
+    health: 1
+    costformation: 90
+    upgradeCost: 174141
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 22
+    damage: 87
+    health: 1
+    costformation: 45
+    upgradeCost: 175176
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 22
+    damage: 89
+    health: 1
+    costformation: 45
+    upgradeCost: 176214
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 23
+    damage: 89
+    health: 1
+    costformation: 1
+    upgradeCost: 177254
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 23
+    damage: 89
+    health: 1
+    costformation: 1
+    upgradeCost: 178297
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 23
+    damage: 92
+    health: 1
+    costformation: 1
+    upgradeCost: 179343
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 23
+    damage: 92
+    health: 1
+    costformation: 59
+    upgradeCost: 180391
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 23
+    damage: 94
+    health: 1
+    costformation: 59
+    upgradeCost: 181441
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 24
+    damage: 94
+    health: 1
+    costformation: 18
+    upgradeCost: 182494
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 24
+    damage: 96
+    health: 1
+    costformation: 18
+    upgradeCost: 183549
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 24
+    damage: 96
+    health: 1
+    costformation: 78
+    upgradeCost: 184607
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 24
+    damage: 99
+    health: 1
+    costformation: 78
+    upgradeCost: 185668
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 25
+    damage: 99
+    health: 1
+    costformation: 40
+    upgradeCost: 186730
+    formationX: 5
+    formationY: 4
+  - attackSpeed: 25
+    damage: 101
+    health: 1
+    costformation: 40
+    upgradeCost: 187796
+    formationX: 5
+    formationY: 4
+  csvFile: {fileID: 4900000, guid: 4477b49476087774e8f3872c8c32fabb, type: 3}
   type: 2
   costUnit: 16
   wheelThumbnail: {fileID: 21300000, guid: ae2ea20143daad44e869c92d56e30e22, type: 3}

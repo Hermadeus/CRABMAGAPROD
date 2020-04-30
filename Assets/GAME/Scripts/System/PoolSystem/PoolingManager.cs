@@ -98,7 +98,7 @@ namespace CrabMaga
             _crabFormation.name = _crabFormation.CrabUnits[0].name.ToString() + " Formation";
 
             APgameManager.CurrentUnitCountInt++;
-            APgameManager.TotalUnitCountInt++;
+            APgameManager.TotalUnitCountInt--;
             APgameManager.IA_Manager.onUnitInstantiation?.Invoke(APgameManager.IA_Manager);
         }
 
@@ -113,9 +113,8 @@ namespace CrabMaga
                     ) as Leader;
 
                 APgameManager.CurrentUnitCountInt++;
-                APgameManager.TotalUnitCountInt++;
+                APgameManager.TotalUnitCountInt--;
             }
-
         }
 
         public void InvokeLeader(Vector3 pos)

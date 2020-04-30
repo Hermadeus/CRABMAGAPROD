@@ -186,11 +186,18 @@ namespace CrabMaga
             
             currentLevel++;
 
+            damage = upgradeTabs[currentLevel].damage;
             attackSpeed = upgradeTabs[currentLevel].attackSpeed;
+            CalculateDPS();
+
             startHealth = upgradeTabs[currentLevel].health;
-            currentPriceUpdate = upgradeTabs[currentPriceUpdate].upgradeCost;
+            currentPriceUpdate = upgradeTabs[currentLevel].upgradeCost;            
 
             PersistableSO.Instance.Save();
+
+#if UNITY_EDITOR
+            EditorUtility.SetDirty(this);
+#endif
         }
 
         public TextAsset csvFile;
@@ -198,14 +205,44 @@ namespace CrabMaga
         [Button]
         public virtual void InitUpgradeTab()
         {
+            int sz = 300;
+
+            //upgradeTabs = new UpgradeTab[sz];
+
             string[,] s = ParseCSV();
 
             //string n = s[1, 1].Replace(';', ',');
 
-            string[] c1 = s[0, 1].Split(';');
 
-            Debug.Log("Niveau : " + c1[0]);
-            Debug.Log("Damage : " + c1[1]);
+            for (int i = 1; i < sz; i++)
+            {
+                string[] c1 = s[0, i].Split(';');
+                int dmg = int.Parse(c1[1]);
+                upgradeTabs[i].damage = dmg;
+
+                string[] c2 = s[1, i].Split(';');
+                int atkSpd = int.Parse(c2[1]);
+                upgradeTabs[i].attackSpeed = atkSpd;
+
+                string[] c3 = s[2, i].Split(';');
+                int costF = int.Parse(c3[0]);
+                upgradeTabs[i].costformation = costF;
+
+                int eff = int.Parse(c3[1]);
+                upgradeTabs[i].formationX = Mathf.CeilToInt(Mathf.Sqrt(eff));
+                upgradeTabs[i].formationY = Mathf.FloorToInt(Mathf.Sqrt(eff));
+
+                int costU = int.Parse(c3[3]);
+                upgradeTabs[i].upgradeCost = costU;
+
+                upgradeTabs[i].health = 1;
+
+            }
+
+            //Debug.Log(s.Length);
+
+            //Debug.Log("Niveau : " + c1[0]);
+            //Debug.Log("Damage : " + c1[1]);
 
 
 #if UNITY_EDITOR

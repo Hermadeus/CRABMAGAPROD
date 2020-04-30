@@ -38,7 +38,11 @@ namespace CrabMaga
             formationY = upgradeTabs[currentLevel].formationY;
 
             PersistableSO.Instance.Save();
+
+#if UNITY_EDITOR
+            EditorUtility.SetDirty(this);
+#endif
         }
-        
+
     }
 }
