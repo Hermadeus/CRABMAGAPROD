@@ -9,6 +9,7 @@ using Sirenix.OdinInspector;
 
 using QRTools.Audio;
 using QRTools.Inputs;
+using QRTools.Variables;
 
 using TMPro;
 
@@ -19,6 +20,7 @@ namespace CrabMaga
         public LevelData levelData = default;
         public PlayerData playerData;
         public HeaderMoney headerMoney;
+        public Vector2IntVariable XP;
 
         [BoxGroup("AP Informations"), ReadOnly] 
         public List<CrabFormation> crabFormationOnBattle = new List<CrabFormation>();
@@ -168,7 +170,6 @@ namespace CrabMaga
             }
         }
 
-
         public InstantiationZone CurrentInstantiationZone = default;
 
         [BoxGroup("Audio")]
@@ -271,6 +272,8 @@ namespace CrabMaga
 
             levelData.TestStars(this);
             StartCoroutine(StarsAnim());
+
+            WinCrab(300);
         }
 
         IEnumerator StarsAnim()
@@ -280,6 +283,7 @@ namespace CrabMaga
             if (levelData.star01 == true)
             {
                 starsAnimator[0].SetTrigger("enter");
+                XP.SetValueX(XP.GetValueX() + 1);
             }
 
             yield return new WaitForSeconds(1f);
@@ -287,6 +291,7 @@ namespace CrabMaga
             if (levelData.star02 == true)
             {
                 starsAnimator[1].SetTrigger("enter");
+                XP.SetValueX(XP.GetValueX() + 1);
             }
 
             yield return new WaitForSeconds(1f);
@@ -294,6 +299,7 @@ namespace CrabMaga
             if (levelData.star03 == true)
             {
                 starsAnimator[2].SetTrigger("enter");
+                XP.SetValueX(XP.GetValueX() + 1);
             }
 
             yield break;

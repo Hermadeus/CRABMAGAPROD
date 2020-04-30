@@ -19,10 +19,10 @@ namespace QRTools.Variables
 
         #region Public Methods
         public Vector2Int SetValueX(int value) => Value = new Vector2Int(value, Value.y);
-        public float GetValueX() => Value.x;
+        public int GetValueX() => Value.x;
 
         public Vector2Int SetValueY(int value) => Value = new Vector2Int(Value.x, value);
-        public float GetValueY() => Value.y;
+        public int GetValueY() => Value.y;
         #endregion
     }
 }

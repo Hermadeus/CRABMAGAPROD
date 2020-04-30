@@ -39,7 +39,7 @@ namespace CrabMaga
         {
             int diff = currentXP.Value.x - currentXP.Value.y;
 
-            if(slider.value + diff > slider.maxValue)
+            if(slider.value + diff >= slider.maxValue)
             {
                 DOTween.To(
                 () => slider.value,
@@ -63,7 +63,10 @@ namespace CrabMaga
             for (int i = 0; i < currentXP.Value.x; i++)
             {
                 if (!palliers[i].isWin)
+                {
                     AddRecompense(palliers[i]);
+                    palliers[i].isWin = true;
+                }
             }
 
             currentXP.SetValueY(currentXP.Value.x);
