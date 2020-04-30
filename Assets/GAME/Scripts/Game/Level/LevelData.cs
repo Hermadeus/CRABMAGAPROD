@@ -18,6 +18,8 @@ namespace CrabMaga
         [BoxGroup("Level Information")]
         public SceneReference sceneLevel = default;
 
+        public int LevelIndex = 1;
+
         [BoxGroup("Level Rules")]
         public int 
             maxCrabInSameTime = 3,

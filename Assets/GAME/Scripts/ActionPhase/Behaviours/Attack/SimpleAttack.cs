@@ -7,6 +7,8 @@ namespace CrabMaga
     [CreateAssetMenu(menuName = "CRAB MAGA/Behaviour/Attack/Simple Attack")]
     public class SimpleAttack : BaseAttack
     {
+        public float pourcentagePos = 1, pourcentageNeg = 1;
+
         public override void Attack(Unit _unit, IAttackReceiver _receiver)
         {
             base.Attack(_unit, _receiver);
@@ -34,8 +36,63 @@ namespace CrabMaga
             base.Effect(_unit, _receiver);
 
             //Debug.Log(((Entity)_receiver).name + " RECOIT ATTAQUE DE " + _unit.name);
+            
+            Unit r = _receiver as Unit;
 
-            _receiver?.ReceiveAttack(_unit, _unit.Damage);
+            switch (_unit.entityData.Triforce)
+            {
+                case Triforce.AGILE:
+                    switch (r.entityData.Triforce)
+                    {
+                        case Triforce.AGILE:
+                            _receiver?.ReceiveAttack(_unit, _unit.Damage);
+
+                            break;
+                        case Triforce.FORCE:
+                            _receiver?.ReceiveAttack(_unit, _unit.Damage);
+
+                            break;
+                        case Triforce.RESISTANT:
+                            _receiver?.ReceiveAttack(_unit, _unit.Damage);
+
+                            break;
+                    }
+                    break;
+                case Triforce.FORCE:
+                    switch (r.entityData.Triforce)
+                    {
+                        case Triforce.AGILE:
+                            _receiver?.ReceiveAttack(_unit, _unit.Damage);
+
+                            break;
+                        case Triforce.FORCE:
+                            _receiver?.ReceiveAttack(_unit, _unit.Damage);
+
+                            break;
+                        case Triforce.RESISTANT:
+                            _receiver?.ReceiveAttack(_unit, _unit.Damage);
+
+                            break;
+                    }
+                    break;
+                case Triforce.RESISTANT:
+                    switch (r.entityData.Triforce)
+                    {
+                        case Triforce.AGILE:
+                            _receiver?.ReceiveAttack(_unit, _unit.Damage);
+
+                            break;
+                        case Triforce.FORCE:
+                            _receiver?.ReceiveAttack(_unit, _unit.Damage);
+
+                            break;
+                        case Triforce.RESISTANT:
+                            _receiver?.ReceiveAttack(_unit, _unit.Damage);
+
+                            break;
+                    }
+                    break;
+            }
         }
     }
 }

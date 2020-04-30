@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using QRTools.UI;
 using QRTools.Variables;
 using DG.Tweening;
+using Sirenix.OdinInspector;
 
 namespace CrabMaga
 {
@@ -25,7 +26,7 @@ namespace CrabMaga
             base.Init();
 
             slider.maxValue = maxSliderValue;
-            slider.value = currentXP.Value.y;
+            slider.value = currentXP.Value.y % maxSliderValue;
 
             UpdateXP();
         }
@@ -39,7 +40,9 @@ namespace CrabMaga
         {
             int diff = currentXP.Value.x - currentXP.Value.y;
 
-            if(slider.value + diff >= slider.maxValue)
+            Debug.Log(diff);
+
+            if (slider.value + diff > slider.maxValue)
             {
                 DOTween.To(
                 () => slider.value,
@@ -71,7 +74,6 @@ namespace CrabMaga
 
             currentXP.SetValueY(currentXP.Value.x);
 
-
             yield break;
         }
 
@@ -96,6 +98,21 @@ namespace CrabMaga
             headerMoney.UpdateMoney();
 
             p.isWin = true;
+        }
+
+        [Button]
+        public void AddXP()
+        {
+            currentXP.SetValueX(currentXP.GetValueX() + 1);
+            Init();
+        }
+
+        [Button]
+        public void ResetXP()
+        {
+            currentXP.SetValueX(0);
+            currentXP.SetValueY(0);
+            Init();
         }
     }
 
