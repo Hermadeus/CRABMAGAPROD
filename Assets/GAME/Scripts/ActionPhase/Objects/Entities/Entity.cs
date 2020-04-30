@@ -89,7 +89,8 @@ namespace CrabMaga
             onInit = new EntityEvent(),
             onDie = new EntityEvent(),
             onWin = new EntityEvent(),
-            onAttack = new EntityEvent();
+            onAttack = new EntityEvent(),
+            onOtherUnitDie = new EntityEvent();
 
         [FoldoutGroup("Gameplay References")]
         [SerializeField] GuardHouse destination = default;

@@ -54,22 +54,15 @@ MonoBehaviour:
     type: 3}
   passifBehaviour: 0
   passifEvent: 0
-  currentPriceUpdate: 18181
+  currentPriceUpdate: 12
   upgradeTabs:
   - attackSpeed: 0
     damage: 2
     health: 0
-    costformation: 0
+    costformation: 50
     upgradeCost: 0
     formationX: 0
     formationY: 0
-  - attackSpeed: 1
-    damage: 2
-    health: 1
-    costformation: 50
-    upgradeCost: 0
-    formationX: 3
-    formationY: 3
   - attackSpeed: 1
     damage: 2
     health: 1
@@ -96,7 +89,7 @@ MonoBehaviour:
     health: 1
     costformation: 58
     upgradeCost: 127
-    formationX: 4
+    formationX: 3
     formationY: 3
   - attackSpeed: 1
     damage: 2
@@ -259,7 +252,7 @@ MonoBehaviour:
     upgradeCost: 3226
     formationX: 4
     formationY: 3
-  - attackSpeed: 2
+  - attackSpeed: 1
     damage: 2
     health: 1
     costformation: 2
@@ -358,7 +351,7 @@ MonoBehaviour:
     formationX: 4
     formationY: 3
   - attackSpeed: 2
-    damage: 3
+    damage: 2
     health: 1
     costformation: 28
     upgradeCost: 6814
@@ -517,7 +510,7 @@ MonoBehaviour:
     costformation: 85
     upgradeCost: 13901
     formationX: 4
-    formationY: 4
+    formationY: 3
   - attackSpeed: 2
     damage: 3
     health: 1
@@ -560,7 +553,7 @@ MonoBehaviour:
     upgradeCost: 16177
     formationX: 4
     formationY: 4
-  - attackSpeed: 3
+  - attackSpeed: 2
     damage: 3
     health: 1
     costformation: 7
@@ -568,7 +561,7 @@ MonoBehaviour:
     formationX: 4
     formationY: 4
   - attackSpeed: 3
-    damage: 4
+    damage: 3
     health: 1
     costformation: 7
     upgradeCost: 16967
@@ -586,7 +579,7 @@ MonoBehaviour:
     health: 1
     costformation: 15
     upgradeCost: 17773
-    formationX: 5
+    formationX: 4
     formationY: 4
   - attackSpeed: 3
     damage: 4
@@ -729,7 +722,7 @@ MonoBehaviour:
     formationX: 5
     formationY: 4
   - attackSpeed: 3
-    damage: 5
+    damage: 4
     health: 1
     costformation: 83
     upgradeCost: 27125
@@ -749,7 +742,7 @@ MonoBehaviour:
     upgradeCost: 28099
     formationX: 5
     formationY: 4
-  - attackSpeed: 4
+  - attackSpeed: 3
     damage: 5
     health: 1
     costformation: 3
@@ -841,7 +834,7 @@ MonoBehaviour:
     formationX: 5
     formationY: 4
   - attackSpeed: 4
-    damage: 6
+    damage: 5
     health: 1
     costformation: 56
     upgradeCost: 35301
@@ -889,7 +882,7 @@ MonoBehaviour:
     upgradeCost: 38590
     formationX: 5
     formationY: 4
-  - attackSpeed: 5
+  - attackSpeed: 4
     damage: 6
     health: 1
     costformation: 3
@@ -932,7 +925,7 @@ MonoBehaviour:
     formationX: 5
     formationY: 4
   - attackSpeed: 5
-    damage: 7
+    damage: 6
     health: 1
     costformation: 28
     upgradeCost: 42579
@@ -1015,7 +1008,7 @@ MonoBehaviour:
     upgradeCost: 49166
     formationX: 5
     formationY: 4
-  - attackSpeed: 6
+  - attackSpeed: 5
     damage: 7
     health: 1
     costformation: 13
@@ -1023,7 +1016,7 @@ MonoBehaviour:
     formationX: 5
     formationY: 4
   - attackSpeed: 6
-    damage: 8
+    damage: 7
     health: 1
     costformation: 13
     upgradeCost: 50405
@@ -1086,7 +1079,7 @@ MonoBehaviour:
     formationX: 5
     formationY: 4
   - attackSpeed: 6
-    damage: 9
+    damage: 8
     health: 1
     costformation: 76
     upgradeCost: 56136
@@ -1113,7 +1106,7 @@ MonoBehaviour:
     upgradeCost: 58102
     formationX: 5
     formationY: 4
-  - attackSpeed: 7
+  - attackSpeed: 6
     damage: 9
     health: 1
     costformation: 11
@@ -1163,7 +1156,7 @@ MonoBehaviour:
     formationX: 5
     formationY: 4
   - attackSpeed: 7
-    damage: 10
+    damage: 9
     health: 1
     costformation: 65
     upgradeCost: 63480
@@ -1190,7 +1183,7 @@ MonoBehaviour:
     upgradeCost: 65546
     formationX: 5
     formationY: 4
-  - attackSpeed: 8
+  - attackSpeed: 7
     damage: 10
     health: 1
     costformation: 4
@@ -1226,7 +1219,7 @@ MonoBehaviour:
     formationX: 5
     formationY: 4
   - attackSpeed: 8
-    damage: 11
+    damage: 10
     health: 1
     costformation: 45
     upgradeCost: 69760
@@ -1267,7 +1260,7 @@ MonoBehaviour:
     upgradeCost: 73354
     formationX: 5
     formationY: 4
-  - attackSpeed: 9
+  - attackSpeed: 8
     damage: 11
     health: 1
     costformation: 10
@@ -1275,7 +1268,7 @@ MonoBehaviour:
     formationX: 5
     formationY: 4
   - attackSpeed: 9
-    damage: 12
+    damage: 11
     health: 1
     costformation: 10
     upgradeCost: 74811
@@ -1324,13 +1317,13 @@ MonoBehaviour:
     formationX: 5
     formationY: 4
   - attackSpeed: 9
-    damage: 13
+    damage: 12
     health: 1
     costformation: 80
     upgradeCost: 80006
     formationX: 5
     formationY: 4
-  - attackSpeed: 10
+  - attackSpeed: 9
     damage: 13
     health: 1
     costformation: 4
@@ -1366,7 +1359,7 @@ MonoBehaviour:
     formationX: 5
     formationY: 4
   - attackSpeed: 10
-    damage: 14
+    damage: 13
     health: 1
     costformation: 55
     upgradeCost: 84572
@@ -1393,7 +1386,7 @@ MonoBehaviour:
     upgradeCost: 86893
     formationX: 5
     formationY: 4
-  - attackSpeed: 11
+  - attackSpeed: 10
     damage: 14
     health: 1
     costformation: 8
@@ -1415,7 +1408,7 @@ MonoBehaviour:
     formationX: 5
     formationY: 4
   - attackSpeed: 11
-    damage: 15
+    damage: 14
     health: 1
     costformation: 36
     upgradeCost: 90029
@@ -1449,7 +1442,7 @@ MonoBehaviour:
     upgradeCost: 93209
     formationX: 5
     formationY: 4
-  - attackSpeed: 12
+  - attackSpeed: 11
     damage: 15
     health: 1
     costformation: 24
@@ -1464,7 +1457,7 @@ MonoBehaviour:
     formationX: 5
     formationY: 4
   - attackSpeed: 12
-    damage: 16
+    damage: 15
     health: 1
     costformation: 24
     upgradeCost: 95624
@@ -1492,13 +1485,13 @@ MonoBehaviour:
     formationX: 5
     formationY: 4
   - attackSpeed: 12
-    damage: 17
+    damage: 16
     health: 1
     costformation: 85
     upgradeCost: 98884
     formationX: 5
     formationY: 4
-  - attackSpeed: 13
+  - attackSpeed: 12
     damage: 17
     health: 1
     costformation: 18
@@ -1520,7 +1513,7 @@ MonoBehaviour:
     formationX: 5
     formationY: 4
   - attackSpeed: 13
-    damage: 18
+    damage: 17
     health: 1
     costformation: 51
     upgradeCost: 102187
@@ -1540,7 +1533,7 @@ MonoBehaviour:
     upgradeCost: 103856
     formationX: 5
     formationY: 4
-  - attackSpeed: 14
+  - attackSpeed: 13
     damage: 18
     health: 1
     costformation: 19
@@ -1567,9 +1560,9 @@ MonoBehaviour:
     costformation: 54
     upgradeCost: 107226
     formationX: 5
-    formationY: 5
+    formationY: 4
   - attackSpeed: 14
-    damage: 19
+    damage: 18
     health: 1
     costformation: 54
     upgradeCost: 108075
@@ -1589,7 +1582,7 @@ MonoBehaviour:
     upgradeCost: 109782
     formationX: 5
     formationY: 5
-  - attackSpeed: 15
+  - attackSpeed: 14
     damage: 19
     health: 1
     costformation: 28
@@ -1597,7 +1590,7 @@ MonoBehaviour:
     formationX: 5
     formationY: 5
   - attackSpeed: 15
-    damage: 20
+    damage: 19
     health: 1
     costformation: 28
     upgradeCost: 111500
@@ -1617,7 +1610,7 @@ MonoBehaviour:
     upgradeCost: 113229
     formationX: 5
     formationY: 5
-  - attackSpeed: 16
+  - attackSpeed: 15
     damage: 20
     health: 1
     costformation: 5
@@ -1625,7 +1618,7 @@ MonoBehaviour:
     formationX: 5
     formationY: 5
   - attackSpeed: 16
-    damage: 21
+    damage: 20
     health: 1
     costformation: 5
     upgradeCost: 114969
@@ -1653,13 +1646,13 @@ MonoBehaviour:
     formationX: 5
     formationY: 5
   - attackSpeed: 16
-    damage: 22
+    damage: 21
     health: 1
     costformation: 87
     upgradeCost: 118481
     formationX: 5
     formationY: 5
-  - attackSpeed: 17
+  - attackSpeed: 16
     damage: 22
     health: 1
     costformation: 29
@@ -1674,7 +1667,7 @@ MonoBehaviour:
     formationX: 5
     formationY: 5
   - attackSpeed: 17
-    damage: 23
+    damage: 22
     health: 1
     costformation: 29
     upgradeCost: 121143
@@ -1694,7 +1687,7 @@ MonoBehaviour:
     upgradeCost: 122932
     formationX: 5
     formationY: 5
-  - attackSpeed: 18
+  - attackSpeed: 17
     damage: 23
     health: 1
     costformation: 16
@@ -1702,7 +1695,7 @@ MonoBehaviour:
     formationX: 5
     formationY: 5
   - attackSpeed: 18
-    damage: 24
+    damage: 23
     health: 1
     costformation: 16
     upgradeCost: 124731
@@ -1722,7 +1715,7 @@ MonoBehaviour:
     upgradeCost: 126540
     formationX: 5
     formationY: 5
-  - attackSpeed: 19
+  - attackSpeed: 18
     damage: 24
     health: 1
     costformation: 8
@@ -1730,7 +1723,7 @@ MonoBehaviour:
     formationX: 5
     formationY: 5
   - attackSpeed: 19
-    damage: 25
+    damage: 24
     health: 1
     costformation: 8
     upgradeCost: 128361
@@ -1744,13 +1737,13 @@ MonoBehaviour:
     formationX: 5
     formationY: 5
   - attackSpeed: 19
-    damage: 26
+    damage: 25
     health: 1
     costformation: 56
     upgradeCost: 130191
     formationX: 5
     formationY: 5
-  - attackSpeed: 20
+  - attackSpeed: 19
     damage: 26
     health: 1
     costformation: 5
@@ -1776,16 +1769,16 @@ MonoBehaviour:
     health: 1
     costformation: 55
     upgradeCost: 133885
-    formationX: 6
+    formationX: 5
     formationY: 5
   - attackSpeed: 20
-    damage: 27
+    damage: 26
     health: 1
     costformation: 55
     upgradeCost: 134815
     formationX: 6
     formationY: 5
-  - attackSpeed: 21
+  - attackSpeed: 20
     damage: 27
     health: 1
     costformation: 6
@@ -1793,7 +1786,7 @@ MonoBehaviour:
     formationX: 6
     formationY: 5
   - attackSpeed: 21
-    damage: 28
+    damage: 27
     health: 1
     costformation: 6
     upgradeCost: 136683
@@ -1813,7 +1806,7 @@ MonoBehaviour:
     upgradeCost: 138561
     formationX: 6
     formationY: 5
-  - attackSpeed: 22
+  - attackSpeed: 21
     damage: 28
     health: 1
     costformation: 13
@@ -1821,7 +1814,7 @@ MonoBehaviour:
     formationX: 6
     formationY: 5
   - attackSpeed: 22
-    damage: 29
+    damage: 28
     health: 1
     costformation: 13
     upgradeCost: 140450
@@ -1835,13 +1828,13 @@ MonoBehaviour:
     formationX: 6
     formationY: 5
   - attackSpeed: 22
-    damage: 30
+    damage: 29
     health: 1
     costformation: 68
     upgradeCost: 142350
     formationX: 6
     formationY: 5
-  - attackSpeed: 23
+  - attackSpeed: 22
     damage: 30
     health: 1
     costformation: 25
@@ -1849,7 +1842,7 @@ MonoBehaviour:
     formationX: 6
     formationY: 5
   - attackSpeed: 23
-    damage: 31
+    damage: 30
     health: 1
     costformation: 25
     upgradeCost: 144259
@@ -1869,7 +1862,7 @@ MonoBehaviour:
     upgradeCost: 146180
     formationX: 6
     formationY: 5
-  - attackSpeed: 24
+  - attackSpeed: 23
     damage: 31
     health: 1
     costformation: 43
@@ -1884,13 +1877,13 @@ MonoBehaviour:
     formationX: 6
     formationY: 5
   - attackSpeed: 24
-    damage: 32
+    damage: 31
     health: 1
     costformation: 43
     upgradeCost: 149079
     formationX: 6
     formationY: 5
-  - attackSpeed: 25
+  - attackSpeed: 24
     damage: 32
     health: 1
     costformation: 4
@@ -1898,7 +1891,7 @@ MonoBehaviour:
     formationX: 6
     formationY: 5
   - attackSpeed: 25
-    damage: 33
+    damage: 32
     health: 1
     costformation: 4
     upgradeCost: 151025
@@ -1912,13 +1905,13 @@ MonoBehaviour:
     formationX: 6
     formationY: 5
   - attackSpeed: 25
-    damage: 34
+    damage: 33
     health: 1
     costformation: 66
     upgradeCost: 152982
     formationX: 6
     formationY: 5
-  - attackSpeed: 26
+  - attackSpeed: 25
     damage: 34
     health: 1
     costformation: 31
@@ -1926,7 +1919,7 @@ MonoBehaviour:
     formationX: 6
     formationY: 5
   - attackSpeed: 26
-    damage: 35
+    damage: 34
     health: 1
     costformation: 31
     upgradeCost: 154948
@@ -1946,7 +1939,7 @@ MonoBehaviour:
     upgradeCost: 156925
     formationX: 6
     formationY: 5
-  - attackSpeed: 27
+  - attackSpeed: 26
     damage: 35
     health: 1
     costformation: 64
@@ -1954,13 +1947,13 @@ MonoBehaviour:
     formationX: 6
     formationY: 5
   - attackSpeed: 27
-    damage: 36
+    damage: 35
     health: 1
     costformation: 64
     upgradeCost: 158913
     formationX: 6
     formationY: 5
-  - attackSpeed: 28
+  - attackSpeed: 27
     damage: 36
     health: 1
     costformation: 33
@@ -1968,13 +1961,13 @@ MonoBehaviour:
     formationX: 6
     formationY: 5
   - attackSpeed: 28
-    damage: 37
+    damage: 36
     health: 1
     costformation: 33
     upgradeCost: 160910
     formationX: 6
     formationY: 5
-  - attackSpeed: 29
+  - attackSpeed: 28
     damage: 37
     health: 1
     costformation: 4
@@ -1989,7 +1982,7 @@ MonoBehaviour:
     formationX: 6
     formationY: 5
   - attackSpeed: 29
-    damage: 38
+    damage: 37
     health: 1
     costformation: 4
     upgradeCost: 163925
@@ -2003,13 +1996,13 @@ MonoBehaviour:
     formationX: 6
     formationY: 5
   - attackSpeed: 29
-    damage: 39
+    damage: 38
     health: 1
     costformation: 76
     upgradeCost: 165948
     formationX: 6
     formationY: 5
-  - attackSpeed: 30
+  - attackSpeed: 29
     damage: 39
     health: 1
     costformation: 51
@@ -2017,13 +2010,13 @@ MonoBehaviour:
     formationX: 6
     formationY: 5
   - attackSpeed: 30
-    damage: 40
+    damage: 39
     health: 1
     costformation: 51
     upgradeCost: 167981
     formationX: 6
     formationY: 5
-  - attackSpeed: 31
+  - attackSpeed: 30
     damage: 40
     health: 1
     costformation: 27
@@ -2031,13 +2024,13 @@ MonoBehaviour:
     formationX: 6
     formationY: 5
   - attackSpeed: 31
-    damage: 41
+    damage: 40
     health: 1
     costformation: 27
     upgradeCost: 170024
     formationX: 6
     formationY: 5
-  - attackSpeed: 32
+  - attackSpeed: 31
     damage: 41
     health: 1
     costformation: 5
@@ -2045,7 +2038,7 @@ MonoBehaviour:
     formationX: 6
     formationY: 5
   - attackSpeed: 32
-    damage: 42
+    damage: 41
     health: 1
     costformation: 5
     upgradeCost: 172077
@@ -2059,13 +2052,13 @@ MonoBehaviour:
     formationX: 6
     formationY: 5
   - attackSpeed: 32
-    damage: 43
+    damage: 42
     health: 1
     costformation: 85
     upgradeCost: 174141
     formationX: 6
     formationY: 5
-  - attackSpeed: 33
+  - attackSpeed: 32
     damage: 43
     health: 1
     costformation: 67
@@ -2073,13 +2066,13 @@ MonoBehaviour:
     formationX: 6
     formationY: 5
   - attackSpeed: 33
-    damage: 44
+    damage: 43
     health: 1
     costformation: 67
     upgradeCost: 176214
     formationX: 6
     formationY: 5
-  - attackSpeed: 34
+  - attackSpeed: 33
     damage: 44
     health: 1
     costformation: 52
@@ -2094,13 +2087,13 @@ MonoBehaviour:
     formationX: 6
     formationY: 5
   - attackSpeed: 34
-    damage: 46
+    damage: 44
     health: 1
     costformation: 52
     upgradeCost: 179343
     formationX: 6
     formationY: 5
-  - attackSpeed: 35
+  - attackSpeed: 34
     damage: 46
     health: 1
     costformation: 38
@@ -2108,13 +2101,13 @@ MonoBehaviour:
     formationX: 6
     formationY: 5
   - attackSpeed: 35
-    damage: 47
+    damage: 46
     health: 1
     costformation: 38
     upgradeCost: 181441
     formationX: 6
     formationY: 5
-  - attackSpeed: 36
+  - attackSpeed: 35
     damage: 47
     health: 1
     costformation: 26
@@ -2122,13 +2115,13 @@ MonoBehaviour:
     formationX: 6
     formationY: 5
   - attackSpeed: 36
-    damage: 48
+    damage: 47
     health: 1
     costformation: 26
     upgradeCost: 183549
     formationX: 6
     formationY: 5
-  - attackSpeed: 37
+  - attackSpeed: 36
     damage: 48
     health: 1
     costformation: 17
@@ -2136,17 +2129,24 @@ MonoBehaviour:
     formationX: 6
     formationY: 5
   - attackSpeed: 37
-    damage: 49
+    damage: 48
     health: 1
     costformation: 17
     upgradeCost: 185668
+    formationX: 6
+    formationY: 5
+  - attackSpeed: 37
+    damage: 49
+    health: 1
+    costformation: 10
+    upgradeCost: 186730
     formationX: 6
     formationY: 5
   - attackSpeed: 38
     damage: 49
     health: 1
     costformation: 10
-    upgradeCost: 186730
+    upgradeCost: 187796
     formationX: 6
     formationY: 5
   - attackSpeed: 38

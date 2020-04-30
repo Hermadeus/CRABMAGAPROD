@@ -238,7 +238,13 @@ namespace CrabMaga
                     break;
                 case PassifEvent.ON_ATTACK:
                     onAttack.AddListener(PlayPassif);
+                    break;
 
+                case PassifEvent.ON_CLICK:
+                    break;
+
+                case PassifEvent.ON_OTHER_UNIT_DIE:
+                    onOtherUnitDie.AddListener(PlayPassif);
                     break;
             }
         }

@@ -226,14 +226,14 @@ namespace CrabMaga
 
                 string[] c3 = s[2, i].Split(';');
                 int costF = int.Parse(c3[0]);
-                upgradeTabs[i].costformation = costF;
+                upgradeTabs[i - 1].costformation = costF;
 
                 int eff = int.Parse(c3[1]);
                 upgradeTabs[i].formationX = Mathf.CeilToInt(Mathf.Sqrt(eff));
                 upgradeTabs[i].formationY = Mathf.FloorToInt(Mathf.Sqrt(eff));
 
                 int costU = int.Parse(c3[3]);
-                upgradeTabs[i].upgradeCost = costU;
+                upgradeTabs[i - 1].upgradeCost = costU;
 
                 upgradeTabs[i].health = 1;
 

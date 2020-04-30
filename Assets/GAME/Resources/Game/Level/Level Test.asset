@@ -12,6 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 560211e26f48db942b26e93687940c31, type: 3}
   m_Name: Level Test
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   levelName:
     textFrancais: Level francais
     textAnglais: Level Anglais
@@ -23,3 +32,9 @@ MonoBehaviour:
   maxCrab: 20
   scoreToReach: 9
   bestScore: 0
+  cond01: {fileID: 11400000, guid: 5a5959a477f2a99448840fcf3a973e67, type: 2}
+  cond02: {fileID: 11400000, guid: 5a5959a477f2a99448840fcf3a973e67, type: 2}
+  cond03: {fileID: 11400000, guid: 5a5959a477f2a99448840fcf3a973e67, type: 2}
+  star01: 0
+  star02: 0
+  star03: 0

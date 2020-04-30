@@ -74,5 +74,15 @@ namespace CrabMaga
         {
             base.InitButton();
         }
+
+        protected override void Death()
+        {
+            base.Death();
+
+            for (int i = 0; i < gameManager.crabUnitOnBattle.Count; i++)
+            {
+                gameManager.crabUnitOnBattle[i].onOtherUnitDie?.Invoke(gameManager.crabUnitOnBattle[i]);
+            }
+        }
     }
 }

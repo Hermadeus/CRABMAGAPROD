@@ -17,6 +17,8 @@ namespace CrabMaga
     public class AP_GameManager : MonoBehaviour
     {
         public LevelData levelData = default;
+        public PlayerData playerData;
+        public HeaderMoney headerMoney;
 
         [BoxGroup("AP Informations"), ReadOnly] 
         public List<CrabFormation> crabFormationOnBattle = new List<CrabFormation>();
@@ -76,7 +78,6 @@ namespace CrabMaga
         [BoxGroup("References")]
         public InputTouch inputWheel = default;
         
-
         private int currentUnitCountInt;
         public int CurrentUnitCountInt
         {
@@ -177,6 +178,8 @@ namespace CrabMaga
         [BoxGroup("Audio")]
         public SimpleAudioEvent loseSound = default;
 
+        public Animator[] starsAnimator;
+
         private void Awake()
         {
             Init();
@@ -261,8 +264,39 @@ namespace CrabMaga
 
             for (int i = 0; i < enemiesOnBattle.Count; i++)
                 enemiesOnBattle[i].OnLose();
-
+            
             winSound.Play(audioSource);
+
+            levelData.asWin = true;
+
+            levelData.TestStars(this);
+            StartCoroutine(StarsAnim());
+        }
+
+        IEnumerator StarsAnim()
+        {
+            yield return new WaitForSeconds(1f);
+
+            if (levelData.star01 == true)
+            {
+                starsAnimator[0].SetTrigger("enter");
+            }
+
+            yield return new WaitForSeconds(1f);
+
+            if (levelData.star02 == true)
+            {
+                starsAnimator[1].SetTrigger("enter");
+            }
+
+            yield return new WaitForSeconds(1f);
+
+            if (levelData.star03 == true)
+            {
+                starsAnimator[2].SetTrigger("enter");
+            }
+
+            yield break;
         }
 
         public void OnLose()
@@ -288,6 +322,15 @@ namespace CrabMaga
             rappelInput.asStop = true;
             rappelInput.anim.SetTrigger("end");
             StopCoroutine(RappelInputCor());
+        }
+
+        public void WinCrab(int x)
+        {
+            if (!levelData.asWin)
+            {
+                playerData.crabMoney += 200;
+                headerMoney.UpdateMoney();
+            }
         }
     }
 }
