@@ -78,11 +78,11 @@ namespace CrabMaga
             {
                 case TypeTileArmy.UNIT:
                     levelGO.SetActive(true);
-                    level.text = entityData.currentLevel.ToString();
+                    level.text = "LVL " + entityData.currentLevel.ToString();
                     break;
                 case TypeTileArmy.LEADER:
                     levelGO.SetActive(true);
-                    level.text = entityData.currentLevel.ToString();
+                    level.text = "LVL " + entityData.currentLevel.ToString();
                     break;
                 case TypeTileArmy.ENEMY:
                     levelGO.SetActive(false);

@@ -72,5 +72,60 @@ namespace CrabMaga
 
             yield break;
         }
+
+        Coroutine a;
+
+        public void AnimationOnDeath()
+        {
+
+        }
+
+        public void AnimationOnDetection()
+        {
+
+        }
+
+        public void AnimationOnReachCastle()
+        {
+
+        }
+
+        public void AnimateOnInstantiation()
+        {
+
+        }
+
+        public void AnimateOnAttack()
+        {
+
+        }
+
+        public void OnLosePV() //Pour le général
+        {
+
+        }
+
+        public void Animate(Sprite defaultSpr, float speed, params Sprite[] spr)
+        {
+            if(a != null)
+            {
+                StopCoroutine(a);
+                icon.sprite = defaultSpr;
+            }
+
+            StartCoroutine(A(speed, spr));
+        }
+
+        IEnumerator A(float speed, params Sprite[] spr)
+        {
+            for (int i = 0; i < spr.Length; i++)
+            {
+                icon.sprite = spr[i];
+                yield return new WaitForSeconds(speed);
+            }
+
+            a = null;
+            yield break;
+        }
     }
 }

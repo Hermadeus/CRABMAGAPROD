@@ -49,6 +49,11 @@ namespace CrabMaga
             levelNameText.text = APGameManager.levelData.levelName.GetCurrentText(languageManager.LanguageEnum);
         }
 
+        public void Chargement()
+        {
+            FindObjectOfType<EcranChargement>().Show();
+        }
+
         public void UpdateInfos()
         {
             timerText.text = UpdateTimerText();

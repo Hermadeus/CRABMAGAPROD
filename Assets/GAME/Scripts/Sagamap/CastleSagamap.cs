@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 using QRTools.Inputs;
+using UnityEngine.UI;
 
 namespace CrabMaga
 {
@@ -16,9 +17,13 @@ namespace CrabMaga
 
         public PlayButtonSG playButtonSG = default;
 
+        public Image s1, s2, s3;
+        public Sprite star01, star02, star03;
+
         private void Awake()
         {
             playButtonSG = FindObjectOfType<PlayButtonSG>();
+            SetStars();
         }
 
         public void ChargeLevel()
@@ -29,8 +34,15 @@ namespace CrabMaga
 
         public void LoadLevel()
         {
+            StartCoroutine(LL());
+        }
+
+        IEnumerator LL()
+        {
+            yield return new WaitForSeconds(2f);
             SceneManager.LoadScene(levelData.sceneLevel);
 
+            yield break;
         }
 
         public void Deselect()
@@ -41,6 +53,24 @@ namespace CrabMaga
         public void Select()
         {
             buttonLevel.Show();
+        }
+
+        public void SetStars()
+        {
+            if (levelData.star01)
+            {
+                s1.sprite = star01;
+            }
+
+            if (levelData.star02)
+            {
+                s2.sprite = star02;
+            }
+
+            if (levelData.star03)
+            {
+                s3.sprite = star03;
+            }
         }
     }
 }
