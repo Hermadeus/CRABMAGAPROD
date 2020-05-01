@@ -19,6 +19,7 @@ namespace CrabMaga
 
         public Image s1, s2, s3;
         public Sprite star01, star02, star03;
+        public GameObject[] elementsAnnexes = default;
 
         private void Awake()
         {
