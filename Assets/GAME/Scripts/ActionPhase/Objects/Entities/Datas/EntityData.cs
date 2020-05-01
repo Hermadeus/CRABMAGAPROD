@@ -211,7 +211,6 @@ namespace CrabMaga
 
             string[,] s = ParseCSV();
 
-            //string n = s[1, 1].Replace(';', ',');
 
 
             for (int i = 1; i < sz; i++)

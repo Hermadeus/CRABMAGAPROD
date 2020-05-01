@@ -49,11 +49,11 @@ namespace CrabMaga
 
                             break;
                         case Triforce.FORCE:
-                            _receiver?.ReceiveAttack(_unit, _unit.Damage);
+                            _receiver?.ReceiveAttack(_unit, _unit.Damage * pourcentagePos);
 
                             break;
                         case Triforce.RESISTANT:
-                            _receiver?.ReceiveAttack(_unit, _unit.Damage);
+                            _receiver?.ReceiveAttack(_unit, _unit.Damage * pourcentageNeg);
 
                             break;
                     }
@@ -62,7 +62,7 @@ namespace CrabMaga
                     switch (r.entityData.Triforce)
                     {
                         case Triforce.AGILE:
-                            _receiver?.ReceiveAttack(_unit, _unit.Damage);
+                            _receiver?.ReceiveAttack(_unit, _unit.Damage * pourcentageNeg);
 
                             break;
                         case Triforce.FORCE:
@@ -70,7 +70,7 @@ namespace CrabMaga
 
                             break;
                         case Triforce.RESISTANT:
-                            _receiver?.ReceiveAttack(_unit, _unit.Damage);
+                            _receiver?.ReceiveAttack(_unit, _unit.Damage * pourcentagePos);
 
                             break;
                     }
@@ -79,11 +79,11 @@ namespace CrabMaga
                     switch (r.entityData.Triforce)
                     {
                         case Triforce.AGILE:
-                            _receiver?.ReceiveAttack(_unit, _unit.Damage);
+                            _receiver?.ReceiveAttack(_unit, _unit.Damage * pourcentagePos);
 
                             break;
                         case Triforce.FORCE:
-                            _receiver?.ReceiveAttack(_unit, _unit.Damage);
+                            _receiver?.ReceiveAttack(_unit, _unit.Damage * pourcentageNeg);
 
                             break;
                         case Triforce.RESISTANT:

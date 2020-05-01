@@ -37,6 +37,9 @@ namespace CrabMaga
         public InputTouch swipeAP;
         public float moveSpeed = 2f, moveoffset = 5f;
 
+        public bool isSliding = false;
+        public UnitWheel unitWheel;
+
         public override void Init()
         {
             base.Init();
@@ -52,7 +55,6 @@ namespace CrabMaga
 
             InitSlider();
         }
-
 
         void InitSlider()
         {
@@ -74,6 +76,8 @@ namespace CrabMaga
             swipeAP.onSwipeDown.AddListener(SwipeUp);
         }
 
+        public void SetSliding(bool state) => isSliding = state;
+
         public void OnSliderMove(float value)
         {
             pos.z = value - OFFSET;
@@ -81,30 +85,64 @@ namespace CrabMaga
             cameraObj.transform.position = pos;
         }
 
+        public Tween t;
+
         public void SwipeUp(float power)
         {
-            if (slider.value + moveoffset > slider.maxValue)
-                return;
+            StartCoroutine(SU(power));
+        }
 
-            DOTween.To(
-                () => slider.value, 
-                (x) => slider.value = x, 
+        IEnumerator SU(float power)
+        {
+            yield return new WaitForEndOfFrame();
+            yield return new WaitForEndOfFrame();
+            yield return new WaitForEndOfFrame();
+            yield return new WaitForEndOfFrame();
+            yield return new WaitForEndOfFrame();
+
+            if (isSliding)
+                yield break;
+
+            if (slider.value + moveoffset > slider.maxValue)
+                yield break;
+
+            t = DOTween.To(
+                () => slider.value,
+                (x) => slider.value = x,
                 slider.value + (moveoffset + power / 100),
                 moveSpeed)
                 .SetEase(Ease.InOutSine);
+
+            yield break;
         }
 
         public void SwipeDown(float power)
         {
-            if (slider.value - moveoffset < slider.minValue)
-                return;
+            StartCoroutine(SD(power));
+        }
 
-            DOTween.To(
+        IEnumerator SD(float power)
+        {
+            yield return new WaitForEndOfFrame();
+            yield return new WaitForEndOfFrame();
+            yield return new WaitForEndOfFrame();
+            yield return new WaitForEndOfFrame();
+            yield return new WaitForEndOfFrame();
+
+            if (isSliding)
+                yield break;
+
+            if (slider.value - moveoffset < slider.minValue)
+                yield break;
+
+            t = DOTween.To(
                 () => slider.value,
                 (x) => slider.value = x,
                 slider.value - (moveoffset + power / 100),
                 moveSpeed)
                 .SetEase(Ease.InOutSine);
+
+            yield break;
         }
 
         public void Add(IObserver observer)

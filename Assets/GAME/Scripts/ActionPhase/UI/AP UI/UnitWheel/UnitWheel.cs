@@ -71,6 +71,9 @@ namespace CrabMaga
         PointerEventData m_PointerEventData;
         EventSystem m_EventSystem;
 
+        public LineSystem lineSystem;
+        int line;
+
         public override void Init()
         {
             base.Init();
@@ -84,17 +87,32 @@ namespace CrabMaga
             m_EventSystem = GetComponent<EventSystem>();
 
             Add(playerData);
+
+            UnitWheelInput.onTouchEnter.AddListener(FindLine);
+            UnitWheelInput.onTouchEnd.AddListener(Unlock);
         }
+
+        public void FindLine()
+        {
+            if (IsBlocked)
+                return;
+
+            line = Mathf.RoundToInt(UnitWheelInput.RayPoint.x);
+        }
+
+        public void Unlock() => IsBlocked = false;
 
         public override void Show()
         {
             if (IsBlocked)
                 return;
 
+
             base.Show();
             rectTransform.localPosition = new Vector2(
                 UnitWheelInput.InputCurrentPosition.x - (Screen.width / 2),
                 UnitWheelInput.InputCurrentPosition.y - (Screen.height / 2));
+
         }
 
         public override void Hide()
@@ -108,6 +126,8 @@ namespace CrabMaga
                 CurrentSelectedSlot.IsSelected = false;
                 CurrentSelectedSlot = null;
             }
+
+            lineSystem.DeselectAll();
         }
 
         public void InitSlots()
@@ -123,7 +143,7 @@ namespace CrabMaga
             if (slot01.IsSelected == false && slot02.IsSelected == false && slot03.IsSelected == false && slot04.IsSelected == false)
             {
                 CurrentSelectedSlot = null;
-            }
+            }                        
         }
 
         public void CheckSlot()
@@ -138,7 +158,13 @@ namespace CrabMaga
 
             m_Raycaster.Raycast(m_PointerEventData, results);
 
-            if(results.Count == 0)
+            if (UnitWheelInput.Touches.Length > 0)
+            {
+                if(!IsBlocked)
+                    lineSystem.SelectLine(line);
+            }
+
+            if (results.Count == 0)
             {
                 SetSelectAllSlot(false);
                 return;

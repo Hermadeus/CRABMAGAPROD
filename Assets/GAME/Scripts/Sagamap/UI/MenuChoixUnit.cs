@@ -11,16 +11,16 @@ namespace CrabMaga
 
         public CanvasGroup unitTab, leaderTab;
         public Image btnTabUnit, btnTabLeader;
-        public Sprite selectedSprite, unselectedSprite;
+        public Sprite selectedSpriteL, selectedSpriteU, unSelectedSpriteU, unSselectedSpriteL;
 
         public void LeaderSelection()
         {
-            btnTabUnit.GetComponent<Image>().sprite = unselectedSprite;
+            btnTabUnit.GetComponent<Image>().sprite = unSelectedSpriteU;
             unitTab.alpha = 0;
             unitTab.interactable = false;
             unitTab.blocksRaycasts = false;
 
-            btnTabLeader.GetComponent<Image>().sprite = selectedSprite;
+            btnTabLeader.GetComponent<Image>().sprite = selectedSpriteL;
             leaderTab.alpha = 1;
             leaderTab.interactable = true;
             leaderTab.blocksRaycasts = true;
@@ -28,12 +28,12 @@ namespace CrabMaga
 
         public void UnitsSelection()
         {
-            btnTabLeader.GetComponent<Image>().sprite = unselectedSprite;
+            btnTabLeader.GetComponent<Image>().sprite = unSselectedSpriteL;
             leaderTab.alpha = 0;
             leaderTab.interactable = false;
             leaderTab.blocksRaycasts = false;
 
-            btnTabUnit.GetComponent<Image>().sprite = selectedSprite;
+            btnTabUnit.GetComponent<Image>().sprite = selectedSpriteU;
             unitTab.alpha = 1;
             unitTab.interactable = true;
             unitTab.blocksRaycasts = true;

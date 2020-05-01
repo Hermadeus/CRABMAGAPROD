@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace CrabMaga
 {
-    [CreateAssetMenu(menuName = "CRAB MAGA/Stars conditions/timer")]
+    [CreateAssetMenu(menuName = "CRAB MAGA/Stars conditions/Timer Star Condition")]
 
     public class TimerCondition : StarWinCondition
     {
