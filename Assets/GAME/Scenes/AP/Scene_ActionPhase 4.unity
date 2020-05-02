@@ -13725,6 +13725,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8109069033539136725, guid: d48b019f2a603bf4eb26500b1caf000f,
         type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109069033539136725, guid: d48b019f2a603bf4eb26500b1caf000f,
+        type: 3}
+      propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109069033539136725, guid: d48b019f2a603bf4eb26500b1caf000f,
+        type: 3}
       propertyPath: guardHouseManager
       value: 
       objectReference: {fileID: 992409522}
@@ -13734,6 +13744,33 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8109069033539136725, guid: d48b019f2a603bf4eb26500b1caf000f,
         type: 3}
+    - target: {fileID: 8109069033539136725, guid: d48b019f2a603bf4eb26500b1caf000f,
+        type: 3}
+      propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 621f2539d9f69444393918d9d04a3132,
+        type: 2}
+    - target: {fileID: 8109069033539136725, guid: d48b019f2a603bf4eb26500b1caf000f,
+        type: 3}
+      propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: cdef019bcd851d84aba15a091efeb726,
+        type: 2}
+    - target: {fileID: 8109069033539136725, guid: d48b019f2a603bf4eb26500b1caf000f,
+        type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[0]
+      value: '"path":"behaviours","length":4'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109069033539136725, guid: d48b019f2a603bf4eb26500b1caf000f,
+        type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[1]
+      value: '"path":"behaviours.[2]","value":$eref:0'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109069033539136725, guid: d48b019f2a603bf4eb26500b1caf000f,
+        type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[2]
+      value: '"path":"behaviours.[3]","value":$eref:1'
+      objectReference: {fileID: 0}
     - target: {fileID: 8109069033546107695, guid: d48b019f2a603bf4eb26500b1caf000f,
         type: 3}
       propertyPath: m_AnchorMax.x

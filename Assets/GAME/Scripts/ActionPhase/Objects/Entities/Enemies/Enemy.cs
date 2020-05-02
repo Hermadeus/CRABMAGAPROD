@@ -47,7 +47,7 @@ namespace CrabMaga
 
             base.Init();
 
-            //AttackSpeed = AttackSpeed * (gameManager.levelData.LevelIndex / 100);
+            //AttackSpeed = AttackSpeed ;
             Health = Health + gameManager.levelData.LevelIndex;
 
             sliderHealth.maxValue = entityData.startHealth;
@@ -58,8 +58,8 @@ namespace CrabMaga
         {
             base.UpdateComportement();
 
-            //if (IsStunt)
-            //    Debug.Log("JE SUIS STUNT");
+            if (IsStunt)
+                Debug.Log("JE SUIS STUNT");
         }
 
         protected override void OnUnitRangeDetectionReachZero()
