@@ -30,7 +30,10 @@ namespace CrabMaga
                 for (int i = 0; i < crabUnit.gameManager.crabUnitOnBattle.Count; i++)
                 {
                     if(crabUnit.gameManager.crabUnitOnBattle[i] != null)
+                    {
                         crabUnit.gameManager.crabUnitOnBattle[i].AttackSpeed /= boostSpeedAttackOnOther.AttackSpeedMultiplier;
+                        crabUnit.OnBoostAS();
+                    }
                 }
 
                 yield return new WaitForSeconds(boostSpeedAttackOnOther.AttackSpeedBoostTimer);

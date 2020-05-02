@@ -34,6 +34,11 @@ namespace CrabMaga
                 }
 
                 _unit.Target = _unit.UnitInRangeOfView[_index].GetComponentInParent<Unit>();
+                               
+                if (_unit.pastilleRef != null)
+                {
+                    _unit.pastilleRef.AnimationOnDetection( _unit.entityData);
+                }
             }
         }
     }

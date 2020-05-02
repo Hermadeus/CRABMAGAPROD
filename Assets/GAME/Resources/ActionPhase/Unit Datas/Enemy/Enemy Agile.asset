@@ -31,11 +31,12 @@ MonoBehaviour:
     textCrab: 
   unitType: {fileID: 4938889763506876349, guid: b36b60d25f02744418e435dc10763ff0,
     type: 3}
-  entityicon: {fileID: 21300000, guid: b73eba6116660f047bedccdaabd628cc, type: 3}
+  Triforce: 0
+  entityicon: {fileID: 21300000, guid: 8fb0e1fadd634d245ad02cf423f3f27a, type: 3}
   startMovementBehaviour: 0
   startHealth: 100
   speedEnum: 1
-  baseSpeed: 0.6
+  baseSpeed: 0.2
   rotationSpeed: 0.5
   accelerationEnum: 3
   acceleration: 3
@@ -51,12 +52,73 @@ MonoBehaviour:
     m_Bits: 1024
   attackType: 2
   havePastille: 1
-  pastilleSprite: {fileID: 21300000, guid: ef2ff5cd237492e48a5e2201f916bc9d, type: 3}
+  pastilleSprite: {fileID: 21300000, guid: a1b3540cdb98d5949b9fef0439c71d98, type: 3}
   pastilleCombatSprite: {fileID: 21300000, guid: ef2ff5cd237492e48a5e2201f916bc9d,
     type: 3}
   passifBehaviour: 0
   passifEvent: 0
   currentPriceUpdate: 20
+  upgradeTabs: []
+  pastilleDetection:
+  - {fileID: 21300000, guid: 5351e8036c9e078489cb304eb90ff690, type: 3}
+  - {fileID: 21300000, guid: 37adee37ad4014d42af7527f732b430a, type: 3}
+  - {fileID: 21300000, guid: c4d835acdc2af6b4f91016b190eaff09, type: 3}
+  - {fileID: 21300000, guid: e0ccceaa217e2b84aa74de09d1fa56e7, type: 3}
+  - {fileID: 21300000, guid: 65d056891cf5373459438f15321f0768, type: 3}
+  - {fileID: 21300000, guid: 35191810e0592554eac6364056adb81a, type: 3}
+  - {fileID: 21300000, guid: 2a73219f58e0fd94ebc3cd075e83ec7f, type: 3}
+  - {fileID: 21300000, guid: 5c0afdcd09213c7418a3a5637077a4ed, type: 3}
+  - {fileID: 21300000, guid: a503749984b276b4ca2d419229c133cf, type: 3}
+  - {fileID: 21300000, guid: 5e724082e76ca2347913f064773f99dd, type: 3}
+  - {fileID: 21300000, guid: 7803b00edbe1bc147843f028cd1feb3d, type: 3}
+  - {fileID: 21300000, guid: 686ac55022bd45a458019a3a634e5096, type: 3}
+  - {fileID: 21300000, guid: 995a0c98025f42f4e8103561c39196e7, type: 3}
+  - {fileID: 21300000, guid: eb17f8aa93893354d8b8f85593b35e91, type: 3}
+  - {fileID: 21300000, guid: c6c9c1704f5a98644acbdecfb522c5a7, type: 3}
+  - {fileID: 21300000, guid: 5756635bb02674640a9fd780c0f09dcf, type: 3}
+  - {fileID: 21300000, guid: 4ca79c5bd7086d24eb60853cd46725a2, type: 3}
+  - {fileID: 21300000, guid: 12468dfbad913a24c9a9989346c7216f, type: 3}
+  pastilleDeath:
+  - {fileID: 21300000, guid: 7728705c45ea8114c8b1b7ff8848b938, type: 3}
+  - {fileID: 21300000, guid: 30de1a5cbd69b294f8562930f2b9259c, type: 3}
+  - {fileID: 21300000, guid: c4d97df73173cc54ebbd69d4284dea73, type: 3}
+  - {fileID: 21300000, guid: 312283d58eeb0144395d58920ba347d7, type: 3}
+  - {fileID: 21300000, guid: 4474fe0988e7a5a4ab5e5020537f03cc, type: 3}
+  - {fileID: 21300000, guid: 85297069fce0e5948a808bfa55c45144, type: 3}
+  - {fileID: 21300000, guid: 5ed316753b52f4f46b9b575e86530801, type: 3}
+  - {fileID: 21300000, guid: 0fd2bcb20adac1c4c9424da77cafe7f4, type: 3}
+  - {fileID: 21300000, guid: 536baf97bfe9b22409cc17a75a0f7801, type: 3}
+  - {fileID: 21300000, guid: 4ee2a07eed14d0647b1c64a4cdc2f257, type: 3}
+  - {fileID: 21300000, guid: 27c5107b99a58df4ca1bdeb80a66c2af, type: 3}
+  - {fileID: 21300000, guid: db26b24feaa20b843a70df205810d45f, type: 3}
+  - {fileID: 21300000, guid: 613b82141f759864183df8570d5c2088, type: 3}
+  - {fileID: 21300000, guid: c46fcce15d2cb6942a1ce62cf8461dec, type: 3}
+  - {fileID: 21300000, guid: 4e84b63213a574449b77d6ebc5c37de1, type: 3}
+  - {fileID: 21300000, guid: 07f9e75875abb6742b5b16f8dbd47525, type: 3}
+  - {fileID: 21300000, guid: a2380d8bea4afee49bc5dfbf7c2459d6, type: 3}
+  - {fileID: 21300000, guid: 1e44f39a0925e5e4e99f2afd919251ae, type: 3}
+  pastilleOnInstantiation:
+  - {fileID: 21300000, guid: f7c4d84a560d4b841bc9e2825465410e, type: 3}
+  - {fileID: 21300000, guid: 383806c2fa2ab824386a2ade6dae40ac, type: 3}
+  - {fileID: 21300000, guid: 35c47d315a361b14daa4795f83f22974, type: 3}
+  - {fileID: 21300000, guid: 4367c1f94cccd1547b056058ec71b2fb, type: 3}
+  - {fileID: 21300000, guid: 2e1db3854a5a5dd40aadc6ee656add53, type: 3}
+  - {fileID: 21300000, guid: d402ddba121ea54459a08f18c9053081, type: 3}
+  - {fileID: 21300000, guid: 1fb22c21a5fd2f249ad7c7788edee9ae, type: 3}
+  - {fileID: 21300000, guid: 0c062a8be89e5ea44a1d63034a54189e, type: 3}
+  - {fileID: 21300000, guid: 81865dda532dedf42b052baab21cafcc, type: 3}
+  - {fileID: 21300000, guid: 068f3f838a5f7e546a501b6b0619b4ff, type: 3}
+  - {fileID: 21300000, guid: d9aca790250ebb74caeccc8f17983030, type: 3}
+  - {fileID: 21300000, guid: 96174a5776e49bb4bab128be98ab9ea8, type: 3}
+  - {fileID: 21300000, guid: 7c5bbe34f3d849c41b1e924c97dcb3f0, type: 3}
+  - {fileID: 21300000, guid: deda949212962bb44ad98c44050f0078, type: 3}
+  - {fileID: 21300000, guid: 5b0180e8ab79fe346b28cd555946cfd0, type: 3}
+  - {fileID: 21300000, guid: 8098c933a728f894183550501643cff4, type: 3}
+  - {fileID: 21300000, guid: a1b3540cdb98d5949b9fef0439c71d98, type: 3}
+  pastilleOnReachCastle: []
+  pastilleAttack: []
+  pastilleOnLosePV: []
+  csvFile: {fileID: 0}
   type: 0
   costUnit: 5
   wheelThumbnail: {fileID: 0}

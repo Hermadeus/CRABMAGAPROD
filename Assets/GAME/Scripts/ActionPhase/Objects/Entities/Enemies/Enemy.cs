@@ -47,7 +47,7 @@ namespace CrabMaga
 
             base.Init();
 
-            AttackSpeed = AttackSpeed * (gameManager.levelData.LevelIndex / 100);
+            //AttackSpeed = AttackSpeed * (gameManager.levelData.LevelIndex / 100);
             Health = Health + gameManager.levelData.LevelIndex;
 
             sliderHealth.maxValue = entityData.startHealth;

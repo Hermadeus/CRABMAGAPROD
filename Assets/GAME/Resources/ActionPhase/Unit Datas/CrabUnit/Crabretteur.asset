@@ -22,7 +22,7 @@ MonoBehaviour:
     textFrancais: FR - NaN
     textAnglais: ANG - NaN
     textCrab: adfa a crab
-  currentLevel: 5
+  currentLevel: 1
   passifDescription:
     textFrancais: "Les crabes de cette unit\xE9 \xE9tourdissent l'ennemi qu'ils affrontent
       lorsqu'ils meurent."
@@ -51,7 +51,7 @@ MonoBehaviour:
     m_Bits: 512
   attackType: 1
   havePastille: 1
-  pastilleSprite: {fileID: 21300000, guid: fbe34af8863627c42a24f85011d17f6e, type: 3}
+  pastilleSprite: {fileID: 21300000, guid: 7f777c0dd2c5a1a4da6149bac3c4cad2, type: 3}
   pastilleCombatSprite: {fileID: 21300000, guid: fbe34af8863627c42a24f85011d17f6e,
     type: 3}
   passifBehaviour: 1
@@ -2158,6 +2158,65 @@ MonoBehaviour:
     upgradeCost: 187796
     formationX: 5
     formationY: 5
+  pastilleDetection:
+  - {fileID: 21300000, guid: 6f4d44bcc090e6c4bb0275af6fb01d99, type: 3}
+  - {fileID: 21300000, guid: 8b48c7d3e86c10144abd08774e87fc85, type: 3}
+  - {fileID: 21300000, guid: 1d927a4b30b09a9499d5092a2f91cbed, type: 3}
+  - {fileID: 21300000, guid: 7927911eabcfbd74486e5f63622c1e9a, type: 3}
+  - {fileID: 21300000, guid: d99bb0ffac9bf6b479e9b7b01baec181, type: 3}
+  - {fileID: 21300000, guid: 417d01dbcf963f5479950d7b8f842bf3, type: 3}
+  - {fileID: 21300000, guid: 7036225bac95cc14fa275808529818db, type: 3}
+  - {fileID: 21300000, guid: 4431abf28100b1f47a36b8c0bfeaaf2a, type: 3}
+  - {fileID: 21300000, guid: bba79f2025f12194d88b6004bad70e51, type: 3}
+  - {fileID: 21300000, guid: 98cf95433c66d4d46b3b0fb82755e76b, type: 3}
+  - {fileID: 21300000, guid: dee3a62e265f5b542a90d785bffa402b, type: 3}
+  - {fileID: 21300000, guid: a75e6458f84bb3c47994a0bc87621eb7, type: 3}
+  - {fileID: 21300000, guid: 6d7cfc63894a49b41832da7f9b908a1e, type: 3}
+  - {fileID: 21300000, guid: 2afe376fae1b5d64493bc5766717be4b, type: 3}
+  - {fileID: 21300000, guid: a7519a66a76b89e45a5deca68049ad77, type: 3}
+  - {fileID: 21300000, guid: e7753de1b37f2934c871a6878eea713d, type: 3}
+  - {fileID: 21300000, guid: 62d7f3d8315674b4bb452ae27c0d0dbb, type: 3}
+  - {fileID: 21300000, guid: b6f8cce6f3e540a48ba9e2d83c4bc5e1, type: 3}
+  pastilleDeath:
+  - {fileID: 21300000, guid: 0a39eee3fd02fcf4baeb1ffd2e5165c2, type: 3}
+  - {fileID: 21300000, guid: c1faadec06177674cbe21c42737753f9, type: 3}
+  - {fileID: 21300000, guid: f334635c811a3234fa691d706a9eaef0, type: 3}
+  - {fileID: 21300000, guid: 6a06b69a6eaa67b4282cc15b12d8bbe3, type: 3}
+  - {fileID: 21300000, guid: 992f189b5804b0346831e8ba439dcc48, type: 3}
+  - {fileID: 21300000, guid: 1ae90921c09c35c4a915ca5dfcdbed18, type: 3}
+  - {fileID: 21300000, guid: e490833c118b25549a2f265aa7b18dc3, type: 3}
+  - {fileID: 21300000, guid: f1c4cd4021c0e01498bee83d1f4ef433, type: 3}
+  - {fileID: 21300000, guid: ab93d83611510e04bbfab4d4070e97f4, type: 3}
+  - {fileID: 21300000, guid: e7dff35ae258a584ba9248a197f4d22b, type: 3}
+  - {fileID: 21300000, guid: fcaff19b28bb58747b62c77c3e1e4a3d, type: 3}
+  - {fileID: 21300000, guid: e9b7df4c43cc62d44824731951160478, type: 3}
+  - {fileID: 21300000, guid: 93b0359232d2b6043b0e9c72185cd309, type: 3}
+  - {fileID: 21300000, guid: 1c2fc9de1c19e524fa5df2facaf6bc45, type: 3}
+  - {fileID: 21300000, guid: 70f662af2fd37f94eaba7eedcbbf6164, type: 3}
+  - {fileID: 21300000, guid: 01a96c0f880de0e4aa2fea6b91e37186, type: 3}
+  - {fileID: 21300000, guid: 76fe5166a5c6e3a4db50cb882f99d4bc, type: 3}
+  - {fileID: 21300000, guid: fe65c445391ed0b4085dcfcca650e4b5, type: 3}
+  pastilleOnInstantiation:
+  - {fileID: 21300000, guid: f874a6cc7dd9fe04a831b10f85b80339, type: 3}
+  - {fileID: 21300000, guid: 4eba242da29c3ab46a84ebfd346344f0, type: 3}
+  - {fileID: 21300000, guid: 1e847dbc4cba5a94f9a92673ba6b14a2, type: 3}
+  - {fileID: 21300000, guid: b2fd9aa9e4074614bb44e15c963de987, type: 3}
+  - {fileID: 21300000, guid: 925601754d4161547be4583615b33a60, type: 3}
+  - {fileID: 21300000, guid: a5b67deb22cd9754e8cd93e9c1031496, type: 3}
+  - {fileID: 21300000, guid: b5d6597ed9d96824b8a2902395fa7a1b, type: 3}
+  - {fileID: 21300000, guid: 490a86e5d2cda5a44ba9d903474dd18e, type: 3}
+  - {fileID: 21300000, guid: c6daf89c59d37ce45a77dec6e38e63bc, type: 3}
+  - {fileID: 21300000, guid: c89c66b6c2cd79a479ee1fdf81cfe1da, type: 3}
+  - {fileID: 21300000, guid: 62231f32a2d20f045abe5803d45a657b, type: 3}
+  - {fileID: 21300000, guid: 664697dfe10b7614c9405990cb99802d, type: 3}
+  - {fileID: 21300000, guid: ed53f1fc87c581e4eb2e1840e9ec89f7, type: 3}
+  - {fileID: 21300000, guid: d04bf216fe1e2e945835a100172374c5, type: 3}
+  - {fileID: 21300000, guid: 14acef841a9511040960609656c70e77, type: 3}
+  - {fileID: 21300000, guid: 6632a75acead9444fa2b9a5a917234ea, type: 3}
+  - {fileID: 21300000, guid: 7f777c0dd2c5a1a4da6149bac3c4cad2, type: 3}
+  pastilleOnReachCastle: []
+  pastilleAttack: []
+  pastilleOnLosePV: []
   csvFile: {fileID: 4900000, guid: 3016cae74104ace40bfab9113ac6fb1a, type: 3}
   type: 1
   costUnit: 10

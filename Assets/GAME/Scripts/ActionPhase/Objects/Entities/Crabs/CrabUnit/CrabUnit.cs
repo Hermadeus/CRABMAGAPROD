@@ -84,5 +84,12 @@ namespace CrabMaga
                 gameManager.crabUnitOnBattle[i].onOtherUnitDie?.Invoke(gameManager.crabUnitOnBattle[i]);
             }
         }
+
+        public SpriteRenderer ASFeedback;
+
+        public void OnBoostAS()
+        {
+            ClignotementAlphaFeedback(ASFeedback);
+        }
     }
 }

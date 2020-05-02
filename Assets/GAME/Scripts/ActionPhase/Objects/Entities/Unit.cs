@@ -6,6 +6,8 @@ using UnityEngine.Events;
 
 using Sirenix.OdinInspector;
 
+using DG.Tweening;
+
 namespace CrabMaga
 {
     [SelectionBase]
@@ -129,6 +131,12 @@ namespace CrabMaga
             InitPassif();
 
             StartCoroutine(InvokeInitEvent());
+            
+
+            if (pastilleRef != null)
+            {
+                pastilleRef.AnimateOnInstantiation(entityData);
+            }
         }
 
         protected IEnumerator InvokeInitEvent()
@@ -169,7 +177,7 @@ namespace CrabMaga
 
             if (pastilleRef != null)
             {
-                StartCoroutine(BattlePastille());
+                pastilleRef.AnimateOnAttack(entityData);
             }
         }
 
@@ -252,6 +260,7 @@ namespace CrabMaga
         void PlayPassif(Entity entity)
         {
             passifBehaviour.PassifEffect(this);
+            OnPassifFeedback();
         }
 
         public void Stunt()
@@ -277,6 +286,21 @@ namespace CrabMaga
         public void OnLose()
         {
             ReceiveAttack(this, 1000f);
+        }
+
+
+        //FEEDBACKS
+        [Button]
+        public virtual void OnPassifFeedback()
+        {
+
+        }
+
+        public void ClignotementAlphaFeedback(SpriteRenderer sr)
+        {
+            sr.DOFade(1f, .5f).OnComplete(
+                delegate { sr.DOFade(0f, .5f); }
+                );
         }
     }
 }

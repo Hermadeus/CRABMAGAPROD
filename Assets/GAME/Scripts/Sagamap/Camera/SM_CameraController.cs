@@ -35,6 +35,8 @@ namespace CrabMaga
 
         [ReadOnly] public Vector3 currentRotation;
 
+        public Transform ciel;
+
         private void Awake()
         {
             movingInput.onSwipeDown.AddListener(OnSwipeDown);
@@ -62,8 +64,24 @@ namespace CrabMaga
 
         public void OnSwipeUp(float force)
         {
-            if (currentRotation.x + moveOffset > 15)
+            if (blockSwipe) return;
+
+            if (currentRotation.x + moveOffset > bornes.x)
+            {
+                float v = currentRotation.x;
+
+                mapRot.Value = bornes.x;
+                mapCharger.ChunkIndex = Mathf.Abs(Mathf.RoundToInt(mapRot.Value) / 180);
+
+                DOTween.To(
+                    () => currentRotation,
+                    (x) => currentRotation = x,
+                    new Vector3(bornes.x, (currentRotation.y), (currentRotation.z)),
+                    moveSpeed
+                    );
+
                 return;
+            }
 
             mapRot.Value = currentRotation.x + (moveOffset + force / 10);
             mapCharger.ChunkIndex = Mathf.Abs(Mathf.RoundToInt(mapRot.Value) / 180);
@@ -74,10 +92,18 @@ namespace CrabMaga
                 new Vector3(currentRotation.x + (moveOffset + force / 10), (currentRotation.y), (currentRotation.z)),
                 moveSpeed
                 );
+
+            ciel.transform.DOLocalMoveY(ciel.transform.position.y - 30f, moveSpeed);
+
         }
 
         public void OnSwipeDown(float force)
         {
+            if (blockSwipe) return;
+
+            if (currentRotation.x - moveOffset < bornes.y)
+                return;
+
             mapRot.Value = currentRotation.x - (moveOffset + force / 10);
             mapCharger.ChunkIndex =Mathf.Abs(Mathf.RoundToInt(mapRot.Value) / 180);
 
@@ -87,6 +113,11 @@ namespace CrabMaga
                 new Vector3(currentRotation.x - (moveOffset + force / 10), (currentRotation.y), (currentRotation.z)),
                 moveSpeed
                 );
+
+            ciel.transform.DOLocalMoveY(ciel.transform.position.y + 30f, moveSpeed);
         }
+
+        public bool blockSwipe = false;
+        public void BlockSwipe(bool value) => blockSwipe = value;
     }
 }

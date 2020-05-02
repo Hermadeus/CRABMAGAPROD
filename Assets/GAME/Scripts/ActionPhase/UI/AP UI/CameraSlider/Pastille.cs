@@ -75,33 +75,38 @@ namespace CrabMaga
 
         Coroutine a;
 
-        public void AnimationOnDeath()
+        public void AnimationOnDeath(EntityData data)
         {
+            Animate(data.pastilleSprite, .08f, data.pastilleDeath);
+        }
+
+        public void AnimationOnDetection(EntityData data)
+        {
+            Animate(data.pastilleSprite, .08f, data.pastilleDetection);
 
         }
 
-        public void AnimationOnDetection()
+        public void AnimationOnReachCastle(EntityData data)
         {
+            Animate(data.pastilleSprite, .08f, data.pastilleOnReachCastle);
 
         }
 
-        public void AnimationOnReachCastle()
+        public void AnimateOnInstantiation(EntityData data)
         {
+            Animate(data.pastilleSprite, .08f, data.pastilleOnInstantiation);
 
         }
 
-        public void AnimateOnInstantiation()
+        public void AnimateOnAttack(EntityData data)
         {
+            Animate(data.pastilleSprite, .08f, data.pastilleAttack);
 
         }
 
-        public void AnimateOnAttack()
+        public void OnLosePV(EntityData data) //Pour le général
         {
-
-        }
-
-        public void OnLosePV() //Pour le général
-        {
+            Animate(data.pastilleSprite, .08f, data.pastilleOnLosePV);
 
         }
 

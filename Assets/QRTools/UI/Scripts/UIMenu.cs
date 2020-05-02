@@ -118,22 +118,22 @@ namespace QRTools.UI
 
         void RightDesappear()
         {
-            rectTransform.DOAnchorPos(new Vector2(Camera.main.pixelWidth * 1.5f, 0), animSpeed).SetEase(ease).OnComplete(OnHide.Invoke);
+            rectTransform.DOAnchorPos(new Vector2(Camera.main.pixelWidth * 2f, 0), animSpeed).SetEase(ease).OnComplete(OnHide.Invoke);
         }
 
         void LeftDesappear()
         {
-            rectTransform.DOAnchorPos(new Vector2(-Camera.main.pixelWidth * 1.5f, 0), animSpeed).SetEase(ease).OnComplete(OnHide.Invoke);
+            rectTransform.DOAnchorPos(new Vector2(-Camera.main.pixelWidth * 2f, 0), animSpeed).SetEase(ease).OnComplete(OnHide.Invoke);
         }
 
         void DownDesappear()
         {
-            rectTransform.DOAnchorPos(new Vector2(0, -Camera.main.pixelHeight * 1.5f), animSpeed).SetEase(ease).OnComplete(OnHide.Invoke);
+            rectTransform.DOAnchorPos(new Vector2(0, -Camera.main.pixelHeight * 2f), animSpeed).SetEase(ease).OnComplete(OnHide.Invoke);
         }
 
         void UpDesappear()
         {
-            rectTransform.DOAnchorPos(new Vector2(0, Camera.main.pixelHeight * 1.5f), animSpeed).SetEase(ease).OnComplete(OnHide.Invoke);
+            rectTransform.DOAnchorPos(new Vector2(0, Camera.main.pixelHeight * 2f), animSpeed).SetEase(ease).OnComplete(OnHide.Invoke);
         }
 
         void PinchAppear()

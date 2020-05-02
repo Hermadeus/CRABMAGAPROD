@@ -25,6 +25,21 @@ namespace CrabMaga
         {
             playButtonSG = FindObjectOfType<PlayButtonSG>();
             SetStars();
+
+            if (levelData.asWin)
+            {
+                for (int i = 0; i < elementsAnnexes.Length; i++)
+                {
+                    elementsAnnexes[i].SetActive(true);
+                }
+            }
+            else
+            {
+                for (int i = 0; i < elementsAnnexes.Length; i++)
+                {
+                    elementsAnnexes[i].SetActive(false);
+                }
+            }
         }
 
         public void ChargeLevel()

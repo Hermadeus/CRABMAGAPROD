@@ -127,6 +127,8 @@ namespace CrabMaga
         [FoldoutGroup("Upgrade tab")]
         public UpgradeTab[] upgradeTabs = default;
 
+        public Sprite[] pastilleDetection, pastilleDeath, pastilleOnInstantiation, pastilleOnReachCastle, pastilleAttack, pastilleOnLosePV;
+
         public virtual void Init(Entity entity)
         {
             entity.name = entityName.GetCurrentText(languageManager.LanguageEnum);

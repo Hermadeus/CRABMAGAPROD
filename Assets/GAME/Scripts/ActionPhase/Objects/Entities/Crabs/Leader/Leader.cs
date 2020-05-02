@@ -23,6 +23,8 @@ namespace CrabMaga
             {
                 base.Health = value;
                 sliderHealth.value = value;
+                if(pastilleRef!= null)
+                    pastilleRef.OnLosePV(entityData);
             }
         }
 
