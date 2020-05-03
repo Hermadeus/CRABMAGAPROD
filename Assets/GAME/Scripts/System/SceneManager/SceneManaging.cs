@@ -68,5 +68,14 @@ namespace CrabMaga
                 }
             }
         }
+
+        public LevelData GetNextLevelData(AP_GameManager gm)
+        {
+            int index = gm.levelData.LevelIndex;
+
+            leveldatas[index + 1].isLock = false;
+
+            return null;
+        }
     }
 }

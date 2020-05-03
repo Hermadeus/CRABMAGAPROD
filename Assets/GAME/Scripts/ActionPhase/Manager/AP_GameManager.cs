@@ -181,6 +181,8 @@ namespace CrabMaga
 
         public Animator[] starsAnimator;
 
+        public SceneManaging sceneManaging;
+
         private void Awake()
         {
             Init();
@@ -225,6 +227,9 @@ namespace CrabMaga
             OnEndEvent.Invoke();
             OnEnd();
             OnWinEvent.Invoke();
+
+            sceneManaging.GetNextLevelData(this).isLock = false;
+            Debug.Log(sceneManaging.GetNextLevelData(this).levelName.textAnglais);
         }
 
         [Button]

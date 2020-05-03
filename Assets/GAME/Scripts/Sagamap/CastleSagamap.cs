@@ -40,6 +40,8 @@ namespace CrabMaga
                     elementsAnnexes[i].SetActive(false);
                 }
             }
+
+            buttonLevel.isLock = levelData.isLock;
         }
 
         public void ChargeLevel()

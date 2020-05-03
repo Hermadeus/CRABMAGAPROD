@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+#if UNITY_ANDROID
 using Unity.Notifications.Android;
+#endif
 using UnityEngine;
 using UnityEngine.Android;
 using QRTools.Mobile;
@@ -11,10 +13,13 @@ namespace QRTools.Mobile
     [CreateAssetMenu(menuName = "QRTools/Mobile/NotificationsManager")]
     public class NotificationsManager : ScriptableObject
     {
+#if UNITY_ANDROID
         public InternetRequest internetRequest = default;
+#endif
 
         public IEnumerator TestNotif()
         {
+#if UNITY_ANDROID
             var c = new AndroidNotificationChannel()
             {
                 Id = "channel_id",
@@ -39,6 +44,7 @@ namespace QRTools.Mobile
             notification.FireTime = dt.AddHours(4);
 
             AndroidNotificationCenter.SendNotification(notification, "channel_id");
+#endif
             yield break;
         }
     }

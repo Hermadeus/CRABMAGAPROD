@@ -34,6 +34,8 @@ namespace CrabMaga
 
         public bool asWin = false;
 
+        public bool isLock = true;
+
         public void Load()
         {
             bestScore = PlayerPrefs.GetInt(levelName + "score");
