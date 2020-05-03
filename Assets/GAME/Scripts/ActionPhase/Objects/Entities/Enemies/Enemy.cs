@@ -31,12 +31,19 @@ namespace CrabMaga
             }
         }
 
+        protected override void Death()
+        {
+            base.Death();
+            Debug.Log("death enemy");
+        }
+
         public Collider[] hitColliders;
 
         public GuardHouseManager guardHouseManager = default;
 
         public override void Init()
         {
+            guardHouseManager = FindObjectOfType<GuardHouseManager>();
             GuardHouse gh = guardHouseManager?.GetNextEmptyGuardHouse();
             if(gh == null)
             {

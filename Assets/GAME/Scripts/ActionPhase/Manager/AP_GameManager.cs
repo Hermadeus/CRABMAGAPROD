@@ -229,7 +229,7 @@ namespace CrabMaga
             OnWinEvent.Invoke();
 
             sceneManaging.GetNextLevelData(this).isLock = false;
-            Debug.Log(sceneManaging.GetNextLevelData(this).levelName.textAnglais);
+            //Debug.Log(sceneManaging.GetNextLevelData(this).levelName.textAnglais);
         }
 
         [Button]

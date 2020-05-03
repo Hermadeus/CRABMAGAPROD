@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Sirenix.OdinInspector;
 
 namespace CrabMaga
 {
@@ -9,17 +10,23 @@ namespace CrabMaga
     {
         public float timer = 5f;
 
+        [Button]
         public override void CallEvent(IA_Manager manager)
         {
             manager.StartCoroutine(TimerCor(manager));
+            Debug.Log("start timer");
         }
 
         public IEnumerator TimerCor(IA_Manager manager)
         {
             if (manager.guardHouseManager.allEmpty)
+            {
+                Debug.Log("all empty");
                 yield break;
+            }
 
             instantiationRule.Instantiation(manager);
+            Debug.Log("instantiate");
 
             yield return new WaitForSeconds(timer);
 

@@ -73,7 +73,7 @@ namespace CrabMaga
         {
             int index = gm.levelData.LevelIndex;
 
-            leveldatas[index + 1].isLock = false;
+            leveldatas[index].isLock = false;
 
             return null;
         }
