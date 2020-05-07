@@ -59,7 +59,8 @@ namespace CrabMaga
 
         public void ReachCastle()
         {
-            Health -= 1000;
+            Health = 0;
+            gameManager.castle.LosePV(1);
             gameManager.CurrentScore++;
         }
 

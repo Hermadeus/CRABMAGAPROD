@@ -17,7 +17,14 @@ namespace CrabMaga
 
             Debug.Log(manager.APgameManager.castle.transform.position);
 
-            return manager.poolingManager.PoolEntity(enemyDatas[x].unitType.GetType(), manager.APgameManager.castle.transform.position);
+
+            return manager.poolingManager.PoolEntity(enemyDatas[x].unitType.GetType(),
+                new Vector3(
+                    manager.guardHouseManager.GetRandomLine(),
+                    manager.APgameManager.castle.transform.position.y,
+                    manager.APgameManager.castle.transform.position.z
+                    )
+                );
         }
     }
 }

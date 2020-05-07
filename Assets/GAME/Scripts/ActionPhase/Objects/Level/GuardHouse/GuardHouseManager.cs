@@ -18,6 +18,10 @@ namespace CrabMaga
         public AP_GameManager AP_GameManager = default;
 
         public bool allEmpty = false;
+
+        public Vector2Int linesMinMax = new Vector2Int();
+
+        public int GetRandomLine() => Random.Range(linesMinMax.x, linesMinMax.y + 1);
         
         public GuardHouse GetNextEmptyGuardHouse()
         {

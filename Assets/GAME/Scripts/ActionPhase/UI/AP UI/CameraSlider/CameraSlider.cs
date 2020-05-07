@@ -44,7 +44,7 @@ namespace CrabMaga
         {
             base.Init();
 
-            ShowElement();
+            //ShowElement();
 
             Add(playerData);
 
@@ -72,8 +72,8 @@ namespace CrabMaga
 
             slider.onValueChanged.AddListener(OnSliderMove);
 
-            swipeAP.onSwipeUp.AddListener(SwipeDown);
-            swipeAP.onSwipeDown.AddListener(SwipeUp);
+            //swipeAP.onSwipeUp.AddListener(SwipeDown);
+            //swipeAP.onSwipeDown.AddListener(SwipeUp);
         }
 
         public void SetSliding(bool state) => isSliding = state;

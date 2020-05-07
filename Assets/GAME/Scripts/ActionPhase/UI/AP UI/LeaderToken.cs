@@ -9,6 +9,9 @@ using UnityEngine.UI;
 using QRTools.UI;
 using QRTools.Inputs;
 
+using Sirenix.OdinInspector;
+using DG.Tweening;
+
 namespace CrabMaga
 {
     public class LeaderToken : UIElement
@@ -133,7 +136,12 @@ namespace CrabMaga
                             return;
                         }
 
-                        poolingManager.InvokeLeader(new Vector3(inputTouchToken.RayPoint.x, 0, gameManager.CurrentInstantiationZone.transform.position.z));
+                        poolingManager.InvokeLeader(
+                            new Vector3(
+                                inputTouchToken.RayPoint.x,
+                                0,
+                                gameManager.castleToDefend.transform.position.z));
+
                         thumbnail.sprite = playerData.leader_slot?.thumbnailTokenUlt;
 
                         Debug.Log("release");
@@ -152,7 +160,6 @@ namespace CrabMaga
             }
 
             onRelease.Invoke();
-
         }
 
         IEnumerator CloseToken()
@@ -161,6 +168,36 @@ namespace CrabMaga
             yield return new WaitForSeconds(4f);
             thumbnail.sprite = playerData.leader_slot?.thumbnailTokenNone;
             yield break;
+        }
+
+        public float timer = 4;
+        public Image cooldown = default;
+
+        public IEnumerator CoolDown()
+        {
+            cooldown.gameObject.SetActive(true);
+            cooldown.fillAmount = 4;
+
+            DOTween.To(
+                () => cooldown.fillAmount,
+                (x) => cooldown.fillAmount = x,
+                0f,
+                4f
+                );
+
+            yield return new WaitForSeconds(timer);
+
+            ResetToken();
+
+            yield break;
+        }
+
+        [Button]
+        private void ResetToken()
+        {
+            cooldown.gameObject.SetActive(false);
+            thumbnail.sprite = playerData.leader_slot?.thumbnail;
+            stateToken = StateToken.UNIT;
         }
     }
 }

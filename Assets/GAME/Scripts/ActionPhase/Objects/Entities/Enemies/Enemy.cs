@@ -11,6 +11,8 @@ namespace CrabMaga
     {
         [SerializeField] private Slider sliderHealth = default;
 
+        public CastleToDefend CastleToDefend;
+
         public override Unit Target
         {
             get => base.Target;
@@ -59,6 +61,8 @@ namespace CrabMaga
 
             sliderHealth.maxValue = entityData.startHealth;
             sliderHealth.value = sliderHealth.maxValue;
+
+            CastleToDefend = CastleToDefend.Instance;
         }
 
         public override void UpdateComportement()
@@ -67,6 +71,19 @@ namespace CrabMaga
 
             if (IsStunt)
                 Debug.Log("JE SUIS STUNT");
+
+            if(CastleToDefend != null)
+                if(transform.position.z < CastleToDefend.transform.position.z)
+                {
+                    ReachCastle();
+                }
+        }
+
+        public void ReachCastle()
+        {
+            Debug.Log("reach castle !");
+            Health = 0;
+            CastleToDefend.LosePV(1);
         }
 
         protected override void OnUnitRangeDetectionReachZero()

@@ -28,6 +28,13 @@ namespace CrabMaga
             }
         }
 
+        protected override void Death()
+        {
+            base.Death();
+
+            StartCoroutine(FindObjectOfType<LeaderToken>().CoolDown());
+        }
+
         public override void Init()
         {
             base.Init();

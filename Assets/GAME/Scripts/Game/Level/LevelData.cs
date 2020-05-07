@@ -21,10 +21,11 @@ namespace CrabMaga
         public int LevelIndex = 1;
 
         [BoxGroup("Level Rules")]
-        public int 
+        public int
             maxCrabInSameTime = 3,
             maxCrab = 10,
-            scoreToReach = 9;
+            scoreToReach = 9,
+            castleAllyHealth;
 
         [BoxGroup("Player Achievements")]
         public int bestScore = 0;

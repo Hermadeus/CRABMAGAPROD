@@ -14,12 +14,16 @@ namespace CrabMaga
         {
             base.Move(_entity);
 
-            if (_entity.Destination != null)
-                MovementFunctions.GoTo(_entity, _entity.Destination.transform.position, _entity.Speed, null, 2f);
-            else
-                throw new System.Exception(
-                    string.Format("{0} n'a pas de destination.", _entity.gameObject.name)
-                    );
+            //if (_entity.Destination != null)
+            //    MovementFunctions.GoTo(_entity, _entity.Destination.transform.position, _entity.Speed, null, 2f);
+            //else
+            //    throw new System.Exception(
+            //        string.Format("{0} n'a pas de destination.", _entity.gameObject.name)
+            //        );
+
+            MovementFunctions.GoTo(_entity,
+                new Vector3(_entity.transform.position.x, 0, -1000),
+                _entity.Speed, null);
         }
     }
 }

@@ -17,6 +17,8 @@ namespace CrabMaga
 {
     public class AP_GameManager : MonoBehaviour
     {
+        public static AP_GameManager Instance;
+
         public LevelData levelData = default;
         public PlayerData playerData;
         public HeaderMoney headerMoney;
@@ -69,6 +71,8 @@ namespace CrabMaga
 
         [BoxGroup("References")]
         public Castle castle = default;
+        [BoxGroup("References")]
+        public CastleToDefend castleToDefend;
         //[BoxGroup("References")]
         //public ScorePanel scorePanel = default;
         [BoxGroup("References")]
@@ -185,6 +189,8 @@ namespace CrabMaga
 
         private void Awake()
         {
+            Instance = this;
+
             Init();
 
             OnLoseEvent.AddListener(OnLose);
@@ -195,6 +201,8 @@ namespace CrabMaga
             inputWheel.onLongTapEnd.AddListener(StopRappelInput);
 
             Time.timeScale = 1;
+
+            castleToDefend = CastleToDefend.Instance;
         }
 
         private void Update()

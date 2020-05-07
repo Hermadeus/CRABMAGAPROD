@@ -78,7 +78,10 @@ namespace CrabMaga
                 {
                     CrabUnit crabUnit = PoolEntity(
                         crabType,
-                        new Vector3(_position.x + (i * density) + Random.Range(-.2f,.2f), 0, _position.z + (y * density) + Random.Range(-.2f, .2f)),
+                        new Vector3(
+                            _position.x + (i * density) + Random.Range(-.2f,.2f),
+                            0,
+                            APgameManager.castleToDefend.transform.position.z + (y * density) + Random.Range(-.2f, .2f)),
                         poolingParent
                         ) as CrabUnit;
 
@@ -119,7 +122,7 @@ namespace CrabMaga
 
         public void InvokeLeader(Vector3 pos)
         {
-            if (APgameManager.leaderOnBattle == null && playerData.leader_slot != null)
+            if (/*APgameManager.leaderOnBattle == null &&*/ playerData.leader_slot != null)
             {
                 Leader l = PoolEntity(
                     playerData.leader_slot.unitType.GetType(),
