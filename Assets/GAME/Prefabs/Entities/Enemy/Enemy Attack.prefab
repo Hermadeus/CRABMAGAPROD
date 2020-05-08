@@ -20086,7 +20086,7 @@ Transform:
   m_GameObject: {fileID: 4869864305720242318}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.1}
-  m_LocalScale: {x: 0.005, y: 0.005, z: 0.005}
+  m_LocalScale: {x: 0.003, y: 0.003, z: 0.003}
   m_Children: []
   m_Father: {fileID: 2384618000880824007}
   m_RootOrder: 1
@@ -20335,6 +20335,9 @@ MonoBehaviour:
   onAttack:
     m_PersistentCalls:
       m_Calls: []
+  onOtherUnitDie:
+    m_PersistentCalls:
+      m_Calls: []
   destination: {fileID: 0}
   initALaMano: 0
   isStatic: 0
@@ -20359,6 +20362,7 @@ MonoBehaviour:
   passifEvent: 0
   isStunt: 0
   sliderHealth: {fileID: 806852615}
+  CastleToDefend: {fileID: 0}
   hitColliders: []
   guardHouseManager: {fileID: 0}
   offset: {fileID: 1754218402}
