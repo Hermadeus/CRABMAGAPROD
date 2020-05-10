@@ -83,7 +83,7 @@ namespace CrabMaga
         {
             Debug.Log("reach castle !");
             Health = 0;
-            CastleToDefend.LosePV(1);
+            CastleToDefend.LosePV();
         }
 
         protected override void OnUnitRangeDetectionReachZero()

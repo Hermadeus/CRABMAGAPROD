@@ -12,7 +12,7 @@ namespace CrabMaga
 
         public override bool WinStar(AP_GameManager gm)
         {
-            if (gm.levelData.maxCrab - gm.TotalUnitCountInt < unitToReach)
+            if (gm.levelData.maxCrab - gm.crabUnitOnBattle.Count < unitToReach)
                 return true;
 
             return false;

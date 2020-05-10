@@ -34,12 +34,12 @@ namespace CrabMaga
         private void Awake()
         {
             healthSlider.maxValue = AP_GameManager.levelData.scoreToReach;
-            healthSlider.value = AP_GameManager.levelData.scoreToReach;
+            healthSlider.value = healthSlider.maxValue;
         }
 
-        public void LosePV(int value)
+        public void LosePV()
         {
-            healthSlider.value -= value;
+            health--;
         }
     }
 }

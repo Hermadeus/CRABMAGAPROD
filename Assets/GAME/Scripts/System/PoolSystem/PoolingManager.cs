@@ -63,10 +63,13 @@ namespace CrabMaga
 
         public void CreateCrabFormationWithType(Type crabType, Vector3 _position, int nbrCrabX, int nbrCrabY, float density)
         {
-            if (APgameManager.crabFormationOnBattle.Count >= APgameManager.levelData.maxCrabInSameTime)
-            {
+            //if (APgameManager.crabFormationOnBattle.Count >= APgameManager.levelData.maxCrabInSameTime)
+            //{
+            //    return;
+            //}
+
+            if (TokensUnit.Instance.CurrentTokenCount() <= 0)
                 return;
-            }
 
             CrabFormation _crabFormation = Pool<CrabFormation>(Vector3.zero) as CrabFormation;
             APgameManager.crabFormationOnBattle.Add(_crabFormation);
@@ -99,9 +102,10 @@ namespace CrabMaga
             headerMoney.UpdateMoney();
 
             _crabFormation.name = _crabFormation.CrabUnits[0].name.ToString() + " Formation";
+            
 
-            APgameManager.CurrentUnitCountInt++;
-            APgameManager.TotalUnitCountInt--;
+            TokensUnit.Instance.UseToken();
+
             APgameManager.IA_Manager.onUnitInstantiation?.Invoke(APgameManager.IA_Manager);
         }
 
@@ -114,9 +118,6 @@ namespace CrabMaga
                     new Vector3(doubleTouch.RayPoint.x, 0, doubleTouch.RayPoint.z),
                     poolingParent
                     ) as Leader;
-
-                APgameManager.CurrentUnitCountInt++;
-                APgameManager.TotalUnitCountInt--;
             }
         }
 
@@ -254,8 +255,12 @@ namespace CrabMaga
 
             for (int i = 0; i < _poolables.Length; i++)
             {
-                if (_poolables[i] is IPoolable)
+                if(_poolables[i] is IPoolable)
+                {
                     poolables.Add(_poolables[i] as IPoolable);
+                    MonoBehaviour mb = _poolables[i] as MonoBehaviour;
+                    mb.enabled = false;
+                }
             }
 
             Debug.Log(poolables.Count + " poolables found");

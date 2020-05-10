@@ -84,7 +84,6 @@ namespace CrabMaga
         public override void OnPush()
         {
             base.OnPush();
-            gameManager.CurrentUnitCountInt--;
         }
     }
 }

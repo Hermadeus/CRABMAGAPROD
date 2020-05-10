@@ -42,7 +42,6 @@ namespace CrabMaga
         {
             Debug.Log("formation death");
             AP_GameManager.crabFormationOnBattle.Remove(this);
-            AP_GameManager.CurrentUnitCountInt--;
             ResetObject();
         }
 

@@ -41,9 +41,9 @@ namespace CrabMaga
         {
         }
 
-        public void LosePV(int x)
+        public void LosePV()
         {
-            CurrentHealth -= x;
+            CurrentHealth--;
         }
     }
 }

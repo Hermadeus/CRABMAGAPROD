@@ -43,6 +43,8 @@ namespace CrabMaga
 
         public Image thumbnail = default;
 
+        public Sprite drag, btn;
+
         public override void Init()
         {
             base.Init();
@@ -143,6 +145,7 @@ namespace CrabMaga
                                 gameManager.castleToDefend.transform.position.z));
 
                         thumbnail.sprite = playerData.leader_slot?.thumbnailTokenUlt;
+                        background.sprite = btn;
 
                         Debug.Log("release");
 
@@ -198,6 +201,7 @@ namespace CrabMaga
             cooldown.gameObject.SetActive(false);
             thumbnail.sprite = playerData.leader_slot?.thumbnail;
             stateToken = StateToken.UNIT;
+            background.sprite = drag;
         }
     }
 }

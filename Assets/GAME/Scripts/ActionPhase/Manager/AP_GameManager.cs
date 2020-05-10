@@ -83,50 +83,6 @@ namespace CrabMaga
         public IA_Manager IA_Manager = default;
         [BoxGroup("References")]
         public InputTouch inputWheel = default;
-        
-        private int currentUnitCountInt;
-        public int CurrentUnitCountInt
-        {
-            get => currentUnitCountInt;
-            set
-            {
-                currentUnitCountInt = value;
-                currentUnitCount.SetText(value.ToString());
-
-                if (value < levelData.maxCrabInSameTime - 2)
-                    currentUnitCount.color = Color.white;
-                else if (value == levelData.maxCrabInSameTime - 1)
-                    currentUnitCount.color = new Color(255, 165, 0);
-                else if (value == levelData.maxCrabInSameTime)
-                    currentUnitCount.color = Color.red;
-            }
-        }
-
-        private int totalUnitCountInt;
-        public int TotalUnitCountInt
-        {
-            get => totalUnitCountInt;
-            set
-            {
-                totalUnitCountInt = value;
-                totalUnitCount.SetText(value.ToString());
-
-                if (value > 3 && value < levelData.maxCrab)
-                    totalUnitCount.color = Color.white;
-                else if (value > 0 && value < 3)
-                    totalUnitCount.color = new Color(255, 165, 0);
-                else if (value == 0)
-                {
-                    totalUnitCount.color = Color.red;
-                    Lose();
-                }
-            }
-        }
-
-        [BoxGroup("References")]
-        public TextMeshProUGUI currentUnitCount = default;
-        [BoxGroup("References")]
-        public TextMeshProUGUI totalUnitCount = default;
 
         public RappelInput rappelInput = default;
 
@@ -202,6 +158,10 @@ namespace CrabMaga
 
             Time.timeScale = 1;
 
+        }
+
+        private void Start()
+        {
             castleToDefend = CastleToDefend.Instance;
         }
 
@@ -221,9 +181,6 @@ namespace CrabMaga
         {
             Application.targetFrameRate = 60;
             Time.timeScale = 1f;
-
-            currentUnitCountInt = 0;
-            totalUnitCountInt = levelData.maxCrab;
         }
 
         [Button]
