@@ -124,7 +124,7 @@ namespace CrabMaga
 
         public int currentPriceUpdate = 20;
 
-        [FoldoutGroup("Upgrade tab")]
+        [FoldoutGroup("Upgrade tab"), TableList(ShowIndexLabels = true)]
         public UpgradeTab[] upgradeTabs = default;
 
         public Sprite[] pastilleDetection, pastilleDeath, pastilleOnInstantiation, pastilleOnReachCastle, pastilleAttack, pastilleOnLosePV;
@@ -195,7 +195,7 @@ namespace CrabMaga
             startHealth = upgradeTabs[currentLevel].health;
             currentPriceUpdate = upgradeTabs[currentLevel].upgradeCost;            
 
-            PersistableSO.Instance.Save();
+            //PersistableSO.Instance.Save();
 
 #if UNITY_EDITOR
             EditorUtility.SetDirty(this);
@@ -213,21 +213,21 @@ namespace CrabMaga
 
             string[,] s = ParseCSV();
 
-
-
             for (int i = 1; i < sz; i++)
             {
                 string[] c1 = s[0, i].Split(';');
-                int dmg = int.Parse(c1[1]);
+                //Debug.Log(float.Parse(c1[1] + "," + s[1, i][0] + s[1,i][1]));
+                float dmg = float.Parse(c1[1] + "," + s[1, i][0] + s[1, i][1]);
                 upgradeTabs[i].damage = dmg;
 
                 string[] c2 = s[1, i].Split(';');
-                int atkSpd = int.Parse(c2[1]);
+                float atkSpd = float.Parse(c2[1] + "," + s[2,i][0] + s[2,i][1]);
                 upgradeTabs[i].attackSpeed = atkSpd;
 
                 string[] c3 = s[2, i].Split(';');
-                int costF = int.Parse(c3[0]);
-                upgradeTabs[i - 1].costformation = costF;
+                Debug.Log("=> " + s[2, i][6] + s[2, i][7]);
+                int costF = int.Parse(s[2, i][6] + "" + s[2, i][7]);
+                upgradeTabs[i].costformation = costF;
 
                 int eff = int.Parse(c3[1]);
                 upgradeTabs[i].formationX = Mathf.CeilToInt(Mathf.Sqrt(eff));
@@ -274,6 +274,9 @@ namespace CrabMaga
                     outputGrid[x, y] = row[x];
                 }
             }
+
+            //Debug.Log("L = " + lines.Length);
+            //Debug.Log("C = " + totalColumns);
 
             return outputGrid;
         }

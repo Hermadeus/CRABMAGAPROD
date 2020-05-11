@@ -16,7 +16,7 @@ namespace CrabMaga
 
         public override IEnumerator AttackCor(Unit _unit, IAttackReceiver _receiver)
         {
-            yield return new WaitForSeconds(_unit.AttackSpeed);
+            yield return new WaitForSeconds(1 / _unit.AttackSpeed);
 
             if (_unit == null || _receiver == null)
                 yield break;

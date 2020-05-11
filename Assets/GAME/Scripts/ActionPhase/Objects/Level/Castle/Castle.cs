@@ -34,7 +34,7 @@ namespace CrabMaga
 
                 healthSlider.value = value;
 
-                healthBarIm.color = gradient.Evaluate(startHealth / value);
+                healthBarIm.color = gradient.Evaluate(1 / (startHealth / value));
 
                 pvText.text = value.ToString() + " HP";
 
@@ -45,10 +45,11 @@ namespace CrabMaga
         
         private void Awake()
         {
+            startHealth = AP_GameManager.levelData.scoreToReach;
+
             healthSlider.maxValue = AP_GameManager.levelData.scoreToReach;
             healthSlider.value = healthSlider.maxValue;
             Health = AP_GameManager.levelData.scoreToReach;
-            startHealth = AP_GameManager.levelData.scoreToReach;
             healthBarIm.color = gradient.Evaluate(1);
         }
 

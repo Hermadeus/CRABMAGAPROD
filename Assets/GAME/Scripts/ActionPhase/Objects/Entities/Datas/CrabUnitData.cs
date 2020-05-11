@@ -37,7 +37,7 @@ namespace CrabMaga
             formationX = upgradeTabs[currentLevel].formationX;
             formationY = upgradeTabs[currentLevel].formationY;
 
-            PersistableSO.Instance.Save();
+            //PersistableSO.Instance.Save();
 
 #if UNITY_EDITOR
             EditorUtility.SetDirty(this);

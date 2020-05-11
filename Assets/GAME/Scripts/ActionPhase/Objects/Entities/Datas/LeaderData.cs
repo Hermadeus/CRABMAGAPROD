@@ -28,11 +28,11 @@ namespace CrabMaga
             for (int i = 1; i < sz; i++)
             {
                 string[] c1 = s[0, i].Split(';');
-                int dmg = int.Parse(c1[1]);
+                float dmg = float.Parse(c1[1]);
                 upgradeTabs[i].damage = dmg;
 
                 string[] c2 = s[1, i].Split(';');
-                int atkSpd = int.Parse(c2[1]);
+                float atkSpd = float.Parse(c2[1]);
                 upgradeTabs[i].attackSpeed = atkSpd;
 
                 string[] c3 = s[2, i].Split(';');

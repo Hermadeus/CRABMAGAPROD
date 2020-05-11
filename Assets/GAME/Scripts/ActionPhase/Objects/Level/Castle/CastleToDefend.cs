@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 using TMPro;
+using Sirenix.OdinInspector;
 
 namespace CrabMaga
 {
@@ -28,10 +29,10 @@ namespace CrabMaga
             {
                 currentHealth = value;
                 healthBar.value = value;
-
-                healthBarIm.color = gradient.Evaluate(startHealth / value);
-
+                
                 pvText.text = value.ToString() + " HP";
+
+                healthBarIm.color = gradient.Evaluate(1 / (startHealth / value));
 
                 if (value <= 0)
                     gameManager.Lose();
@@ -43,18 +44,15 @@ namespace CrabMaga
         private void Awake()
         {
             Instance = this;
+            startHealth = gameManager.levelData.castleAllyHealth;
 
             CurrentHealth = gameManager.levelData.castleAllyHealth;
             healthBar.maxValue = CurrentHealth;
             healthBar.value = CurrentHealth;
-            startHealth = gameManager.levelData.castleAllyHealth;
             healthBarIm.color = gradient.Evaluate(1);
         }
 
-        private void Start()
-        {
-        }
-
+        [Button]
         public void LosePV()
         {
             CurrentHealth--;
