@@ -44,7 +44,7 @@ namespace CrabMaga
             {
                 currentScore = value;
                 //scorePanel.UpdateScore();
-                castle.healthSlider.value = value;
+                //castle.healthSlider.value = value;
 
                 Debug.Log("CURRENT SCORE = " + value);
 
@@ -135,9 +135,9 @@ namespace CrabMaga
         [BoxGroup("Audio")]
         public AudioSource audioSource = default;
         [BoxGroup("Audio")]
-        public SimpleAudioEvent winSound = default;
+        public AudioEvent winSound = default;
         [BoxGroup("Audio")]
-        public SimpleAudioEvent loseSound = default;
+        public AudioEvent loseSound = default;
 
         public Animator[] starsAnimator;
 

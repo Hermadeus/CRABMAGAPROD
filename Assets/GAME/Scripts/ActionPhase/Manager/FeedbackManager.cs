@@ -7,6 +7,7 @@ using UnityEngine.Events;
 
 using QRTools.UI;
 using QRTools.Inputs;
+using QRTools.Audio;
 
 using Sirenix.OdinInspector;
 
@@ -20,6 +21,8 @@ namespace CrabMaga
         public AP_GameManager gameManager = default;
         [BoxGroup("References")]
         public InputActionBatch apbatch = default;
+        [BoxGroup("References")]
+        public AudioSource source;
 
         [BoxGroup("Level Text")]
         public UIElement levelText = default;
@@ -30,6 +33,8 @@ namespace CrabMaga
         public UIElement attackText = default;
         [BoxGroup("Attack Text")]
         public float timerAttackText = 2f;
+        [BoxGroup("Attack Text")]
+        public AudioEvent startBattleSound;
 
         [BoxGroup("Camera Travelling")]
         public CameraSlider cameraSlider = default;
@@ -68,6 +73,7 @@ namespace CrabMaga
         IEnumerator ShowAttackText()
         {
             attackText.Show();
+            startBattleSound.Play(source);
             yield return new WaitForSeconds(timerAttackText);
             attackText.Hide();
 

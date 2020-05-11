@@ -15,7 +15,8 @@ namespace CrabMaga
         public List<UITileArmy> tilesLeader = new List<UITileArmy>();
         public List<UITileArmy> tilesEnemies = new List<UITileArmy>();
 
-        public TextMeshProUGUI entityname, entityLevel, description, speed, effectif, cost, dps, actif, price;
+        public TextMeshProUGUI entityname, entityLevel, description,  actif, price;
+        public UIMenuArmyStat dps, effectif, speed, cost; 
         public Image thumbnail;
         public GameObject buttonUpdate;
 
@@ -56,8 +57,6 @@ namespace CrabMaga
             entityLevel.gameObject.SetActive(true);
             actif.gameObject.SetActive(true);
             price.gameObject.SetActive(true);
-            effectif.gameObject.SetActive(true);
-            cost.gameObject.SetActive(true);
 
             UpdateInfo(tile);
             UpdateInfoUnitAndLeader(tile);
@@ -92,8 +91,37 @@ namespace CrabMaga
         {
             entityname.text = tile.entityData.entityName.GetCurrentText(languageManager.LanguageEnum);
             description.text = tile.entityData.entityDescription.GetCurrentText(languageManager.LanguageEnum);
-            speed.text = tile.entityData.speedEnum.ToString();            
-            dps.text = tile.entityData.damage.ToString();
+            speed.value.text = tile.entityData.speedEnum.ToString();  
+            
+            if(tile.entityData.upgradeTabs != null)
+            {
+                dps.value.text = tile.entityData.DamagePerSeconds.ToString();
+            }
+            else
+            {
+                dps.value.text = tile.entityData.DamagePerSeconds.ToString();
+            }
+
+            if (tile.entityData.upgradeTabs != null)
+            {
+                if (tile.entityData.upgradeTabs[tile.entityData.currentLevel].damage < tile.entityData.upgradeTabs[tile.entityData.currentLevel + 1].damage
+                    || tile.entityData.upgradeTabs[tile.entityData.currentLevel].attackSpeed < tile.entityData.upgradeTabs[tile.entityData.currentLevel + 1].attackSpeed)
+                    dps.upgradeIcon.SetActive(true);
+                else
+                    dps.upgradeIcon.SetActive(false);
+
+                if (tile.entityData.upgradeTabs[tile.entityData.currentLevel].costformation < tile.entityData.upgradeTabs[tile.entityData.currentLevel + 1].costformation)
+                    cost.upgradeIcon.SetActive(true);
+                else
+                    cost.upgradeIcon.SetActive(false);
+
+                if (tile.entityData.upgradeTabs[tile.entityData.currentLevel].formationX < tile.entityData.upgradeTabs[tile.entityData.currentLevel + 1].formationX
+                    || tile.entityData.upgradeTabs[tile.entityData.currentLevel].formationY < tile.entityData.upgradeTabs[tile.entityData.currentLevel + 1].formationY)
+                    effectif.upgradeIcon.SetActive(true);
+                else
+                    effectif.upgradeIcon.SetActive(false);
+            }
+
             thumbnail.sprite = tile.thumbnail.sprite;
         }
 
@@ -102,8 +130,8 @@ namespace CrabMaga
             if(tile.entityData is CrabUnitData)
             {
                 CrabUnitData d = tile.entityData  as CrabUnitData;
-                effectif.text = (d.formationX + d.formationY).ToString();
-                cost.text = d.costUnit.ToString();
+                effectif.value.text = (d.formationX + d.formationY).ToString();
+                cost.value.text = d.upgradeTabs[(d.currentLevel)].costformation.ToString();
             }
 
             entityLevel.text = tile.entityData.currentLevel.ToString();

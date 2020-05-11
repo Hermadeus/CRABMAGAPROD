@@ -22,7 +22,7 @@ MonoBehaviour:
     textFrancais: FR-NAN
     textAnglais: ANG-NAN
     textCrab: 
-  currentLevel: 1
+  currentLevel: 194
   passifDescription:
     textFrancais: "Augmente temporairement les d\xE9g\xE2ts de toutes les autres
       unit\xE9s lorsqu'elle est form\xE9e."
@@ -39,9 +39,9 @@ MonoBehaviour:
   rotationSpeed: 0.5
   accelerationEnum: 2
   acceleration: 2
-  damage: 4
-  attackSpeed: 1
-  DamagePerSeconds: 4
+  damage: 30
+  attackSpeed: 7
+  DamagePerSeconds: 4.285714
   detectionRange: 0
   detectionBehaviour: 0
   entityType: 1
@@ -56,7 +56,7 @@ MonoBehaviour:
     type: 3}
   passifBehaviour: 3
   passifEvent: 1
-  currentPriceUpdate: 12
+  currentPriceUpdate: 90820
   upgradeTabs:
   - attackSpeed: 0
     damage: 0
@@ -2219,8 +2219,8 @@ MonoBehaviour:
   pastilleOnLosePV: []
   csvFile: {fileID: 4900000, guid: 4477b49476087774e8f3872c8c32fabb, type: 3}
   type: 2
-  costUnit: 3
+  costUnit: 76
   wheelThumbnail: {fileID: 21300000, guid: 6087ae43d13b2e441b41d800154c15e6, type: 3}
-  formationX: 2
-  formationY: 2
+  formationX: 5
+  formationY: 4
   density: 0.8

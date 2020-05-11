@@ -94,8 +94,6 @@ namespace CrabMaga
 
         public void Select()
         {
-            //Debug.Log("select " + name);
-
             menuArmy.currentTileSelected = this;
 
             switch (tileArmy)
