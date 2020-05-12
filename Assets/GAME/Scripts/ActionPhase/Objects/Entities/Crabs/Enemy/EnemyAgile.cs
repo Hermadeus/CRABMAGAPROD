@@ -62,8 +62,10 @@ namespace CrabMaga
             //return cols.ToArray();
         }
 
-        private void OnDrawGizmos()
+        protected override void OnDrawGizmos()
         {
+            base.OnDrawGizmos();
+
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(offset.position, radius);
 

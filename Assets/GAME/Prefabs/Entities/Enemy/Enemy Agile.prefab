@@ -10920,7 +10920,7 @@ MonoBehaviour:
   lastHitUnitReceive: {fileID: 0}
   damage: 0
   attackSpeed: 0
-  detectionRange: 0
+  detectionRange: 1
   crabUnitType: 0
   target: {fileID: 0}
   entityType: 1
@@ -11295,7 +11295,7 @@ PrefabInstance:
     - target: {fileID: 3787874065185340463, guid: 4297301207ad19f4ebf6aba6bda6051c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.074
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3787874065185340463, guid: 4297301207ad19f4ebf6aba6bda6051c,
         type: 3}
@@ -11340,12 +11340,12 @@ PrefabInstance:
     - target: {fileID: 3787874065185340463, guid: 4297301207ad19f4ebf6aba6bda6051c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.007
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3787874065185340463, guid: 4297301207ad19f4ebf6aba6bda6051c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.124
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3787874065185340463, guid: 4297301207ad19f4ebf6aba6bda6051c,
         type: 3}
@@ -11386,6 +11386,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3787874065185340463, guid: 4297301207ad19f4ebf6aba6bda6051c,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.48028612
+      objectReference: {fileID: 0}
+    - target: {fileID: 3787874065185340463, guid: 4297301207ad19f4ebf6aba6bda6051c,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4802862
+      objectReference: {fileID: 0}
+    - target: {fileID: 3787874065185340463, guid: 4297301207ad19f4ebf6aba6bda6051c,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.4802862
+      objectReference: {fileID: 0}
+    - target: {fileID: 4896966604275314305, guid: 4297301207ad19f4ebf6aba6bda6051c,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.8509804
+      objectReference: {fileID: 0}
+    - target: {fileID: 4896966604275314305, guid: 4297301207ad19f4ebf6aba6bda6051c,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.26920074
+      objectReference: {fileID: 0}
+    - target: {fileID: 4896966604275314305, guid: 4297301207ad19f4ebf6aba6bda6051c,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.15686272
       objectReference: {fileID: 0}
     - target: {fileID: 8023339800245722934, guid: 4297301207ad19f4ebf6aba6bda6051c,
         type: 3}

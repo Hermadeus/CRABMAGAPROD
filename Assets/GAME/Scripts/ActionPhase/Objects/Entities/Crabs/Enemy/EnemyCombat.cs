@@ -21,8 +21,10 @@ namespace CrabMaga
                 hitColliders = CircleCollider(offset.position, radius, layerMaskTarget);
         }
 
-        void OnDrawGizmos()
+        protected override void OnDrawGizmos()
         {
+            base.OnDrawGizmos();
+
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(offset.position, radius);
         }

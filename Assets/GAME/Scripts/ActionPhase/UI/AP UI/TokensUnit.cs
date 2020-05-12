@@ -13,8 +13,6 @@ namespace CrabMaga
 
         public List<TokenUnit> tokens = new List<TokenUnit>();
 
-        public float timeRecharge = 3f;
-
         public int startTokens = 5;
 
         public Image charge;

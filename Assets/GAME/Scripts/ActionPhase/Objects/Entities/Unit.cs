@@ -160,10 +160,15 @@ namespace CrabMaga
             
         }
 
-        void OnDrawGizmosSelected()
+        protected virtual void OnDrawGizmos()
         {
             Gizmos.color = Color.white;
             Gizmos.DrawWireSphere(transform.position, DetectionRange);
+        }
+
+        void OnDrawGizmosSelected()
+        {
+            
         }
 
         public void Attack(Unit _unit, IAttackReceiver _target)

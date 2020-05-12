@@ -20350,7 +20350,7 @@ MonoBehaviour:
   lastHitUnitReceive: {fileID: 0}
   damage: 0
   attackSpeed: 0
-  detectionRange: 0
+  detectionRange: 1
   crabUnitType: 0
   target: {fileID: 0}
   entityType: 1
@@ -20388,7 +20388,7 @@ PrefabInstance:
     - target: {fileID: 3787874065185340463, guid: 4297301207ad19f4ebf6aba6bda6051c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.06954193
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3787874065185340463, guid: 4297301207ad19f4ebf6aba6bda6051c,
         type: 3}
@@ -20433,12 +20433,12 @@ PrefabInstance:
     - target: {fileID: 3787874065185340463, guid: 4297301207ad19f4ebf6aba6bda6051c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.0019073486
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3787874065185340463, guid: 4297301207ad19f4ebf6aba6bda6051c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.23
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3787874065185340463, guid: 4297301207ad19f4ebf6aba6bda6051c,
         type: 3}
@@ -20483,17 +20483,32 @@ PrefabInstance:
     - target: {fileID: 3787874065185340463, guid: 4297301207ad19f4ebf6aba6bda6051c,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.3310949
+      value: 0.47333327
       objectReference: {fileID: 0}
     - target: {fileID: 3787874065185340463, guid: 4297301207ad19f4ebf6aba6bda6051c,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.33109483
+      value: 0.47333318
       objectReference: {fileID: 0}
     - target: {fileID: 3787874065185340463, guid: 4297301207ad19f4ebf6aba6bda6051c,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.33109483
+      value: 0.47333318
+      objectReference: {fileID: 0}
+    - target: {fileID: 4896966604275314305, guid: 4297301207ad19f4ebf6aba6bda6051c,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.8509804
+      objectReference: {fileID: 0}
+    - target: {fileID: 4896966604275314305, guid: 4297301207ad19f4ebf6aba6bda6051c,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.27058825
+      objectReference: {fileID: 0}
+    - target: {fileID: 4896966604275314305, guid: 4297301207ad19f4ebf6aba6bda6051c,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.15686275
       objectReference: {fileID: 0}
     - target: {fileID: 8023339800245722934, guid: 4297301207ad19f4ebf6aba6bda6051c,
         type: 3}

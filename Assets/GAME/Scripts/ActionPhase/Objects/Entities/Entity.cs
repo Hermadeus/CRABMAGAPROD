@@ -152,7 +152,10 @@ namespace CrabMaga
 
         public virtual void UpdateComportement()
         {
-            
+            if (transform.position.x < -2.25f)
+                transform.position = new Vector3(-2.25f, transform.position.y, transform.position.z);
+            if (transform.position.x > 2.25f)
+                transform.position = new Vector3(2.25f, transform.position.y, transform.position.z);
         }
 
         public virtual void FixedUpdateComportement()

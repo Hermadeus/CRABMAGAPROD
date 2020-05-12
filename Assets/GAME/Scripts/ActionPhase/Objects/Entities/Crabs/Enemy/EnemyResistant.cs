@@ -23,8 +23,10 @@ namespace CrabMaga
             //    hitColliders = LineCollider(offset.position, dimension.x, dimension.y, rotation, layerMaskTarget);
         }
 
-        void OnDrawGizmos()
+        protected override void OnDrawGizmos()
         {
+            base.OnDrawGizmos();
+
             Gizmos.matrix = Matrix4x4.TRS(offset.position, Quaternion.Euler(transform.rotation.x, transform.rotation.y + rotation, transform.rotation.z), new Vector3(dimension.y, 1f, dimension.x));
             Gizmos.color = Color.red;
             Gizmos.DrawWireCube(Vector3.zero, new Vector3(dimension.y, 1f, dimension.x));

@@ -74,7 +74,6 @@ namespace CrabMaga
             CrabFormation _crabFormation = Pool<CrabFormation>(Vector3.zero) as CrabFormation;
             APgameManager.crabFormationOnBattle.Add(_crabFormation);
 
-
             for (int i = 0; i < nbrCrabX; i++)
             {
                 for (int y = 0; y < nbrCrabY; y++)
@@ -210,6 +209,7 @@ namespace CrabMaga
                         
                         Entity _obj = (Entity)poolables[i];
                         _obj.enabled = true;
+                        _obj.gameObject.SetActive(true);
 
                         _obj.transform.position = _position;
 
