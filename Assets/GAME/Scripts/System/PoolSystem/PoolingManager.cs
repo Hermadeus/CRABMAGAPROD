@@ -61,6 +61,15 @@ namespace CrabMaga
         //    }
         //}
 
+        private void Awake()
+        {
+            for (int i = 0; i < poolables.Count; i++)
+            {
+                if (poolables[i] is Entity)
+                    ((Entity)poolables[i]).graphics.SetActive(false);
+            }
+        }
+
         public void CreateCrabFormationWithType(Type crabType, Vector3 _position, int nbrCrabX, int nbrCrabY, float density)
         {
             //if (APgameManager.crabFormationOnBattle.Count >= APgameManager.levelData.maxCrabInSameTime)

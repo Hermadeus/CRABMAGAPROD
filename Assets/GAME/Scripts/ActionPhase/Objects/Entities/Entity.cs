@@ -83,6 +83,8 @@ namespace CrabMaga
         [SerializeField] Transform parentPoolingQueue = default;
         [FoldoutGroup("References")]
         public Animator animator = default;
+        [FoldoutGroup("References")]
+        public GameObject graphics = default;
 
         [FoldoutGroup("Events")]
         public EntityEvent
@@ -138,6 +140,8 @@ namespace CrabMaga
 
         public virtual void Init()
         {
+            graphics?.SetActive(true);
+
             entityData?.Init(this);
 
             movementBehaviour?.Move(this);
@@ -145,6 +149,7 @@ namespace CrabMaga
             audiosource = GetComponent<AudioSource>();
             SoundManager.instance.PlaySound(assaultSound, audiosource);
 
+            animator.enabled = true;
             animator.SetTrigger("onSpawn");
 
             InitButton();
@@ -202,6 +207,8 @@ namespace CrabMaga
             ResetObject();
 
             transform.parent = parentPoolingQueue;
+            animator.enabled = false;
+            graphics?.SetActive(false);
         }
 
         public virtual void ResetObject()

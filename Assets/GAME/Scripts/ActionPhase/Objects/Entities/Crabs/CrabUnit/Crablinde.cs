@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace CrabMaga
 {
-    public class Crablinde : CrabUnit, IAttire
+    public class Crablinde : CrabUnit
     {
-        
+
     }
 }

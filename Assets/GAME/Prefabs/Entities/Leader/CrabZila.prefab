@@ -542,7 +542,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5332809266625162919}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 22100000, guid: 9c5b4ac769e5ce6419c06eb7cbc47a94, type: 2}
   m_CullingMode: 0
@@ -671,6 +671,7 @@ MonoBehaviour:
   poolingManager: {fileID: 0}
   parentPoolingQueue: {fileID: 0}
   animator: {fileID: 493311150052842337}
+  graphics: {fileID: 5332809266625162919}
   onInit:
     m_PersistentCalls:
       m_Calls: []
