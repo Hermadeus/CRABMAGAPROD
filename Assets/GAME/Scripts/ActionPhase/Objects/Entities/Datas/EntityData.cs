@@ -124,7 +124,7 @@ namespace CrabMaga
 
         public int currentPriceUpdate = 20;
 
-        [FoldoutGroup("Upgrade tab"), TableList(ShowIndexLabels = true)]
+        [FoldoutGroup("Upgrade tab")]
         public UpgradeTab[] upgradeTabs = default;
 
         public Sprite[] pastilleDetection, pastilleDeath, pastilleOnInstantiation, pastilleOnReachCastle, pastilleAttack, pastilleOnLosePV;
@@ -215,36 +215,26 @@ namespace CrabMaga
 
             for (int i = 1; i < sz; i++)
             {
-                string[] c1 = s[0, i].Split(';');
-                //Debug.Log(float.Parse(c1[1] + "," + s[1, i][0] + s[1,i][1]));
-                float dmg = float.Parse(c1[1] + "," + s[1, i][0] + s[1, i][1]);
+                string[] c1 = s[1, i].Split(';');
+                float dmg = float.Parse(c1[0]);
                 upgradeTabs[i].damage = dmg;
 
-                string[] c2 = s[1, i].Split(';');
-                float atkSpd = float.Parse(c2[1] + "," + s[2,i][0] + s[2,i][1]);
-                upgradeTabs[i].attackSpeed = atkSpd;
-
-                string[] c3 = s[2, i].Split(';');
-                Debug.Log("=> " + s[2, i][6] + s[2, i][7]);
-                int costF = int.Parse(s[2, i][6] + "" + s[2, i][7]);
-                upgradeTabs[i].costformation = costF;
-
-                int eff = int.Parse(c3[1]);
+                string[] c2 = s[2, i].Split(';');
+                float eff = float.Parse(c2[0]);
                 upgradeTabs[i].formationX = Mathf.CeilToInt(Mathf.Sqrt(eff));
                 upgradeTabs[i].formationY = Mathf.FloorToInt(Mathf.Sqrt(eff));
 
-                int costU = int.Parse(c3[3]);
+                string[] c3 = s[3, i].Split(';');
+                int costF = int.Parse(c3[0]);
+                upgradeTabs[i].costformation = costF;
+
+                string[] c4 = s[4, i].Split(';');
+                int costU = int.Parse(c4[0]);
                 upgradeTabs[i - 1].upgradeCost = costU;
 
                 upgradeTabs[i].health = 1;
-
+                upgradeTabs[i].attackSpeed = attackSpeed;
             }
-
-            //Debug.Log(s.Length);
-
-            //Debug.Log("Niveau : " + c1[0]);
-            //Debug.Log("Damage : " + c1[1]);
-
 
 #if UNITY_EDITOR
             EditorUtility.SetDirty(this);
@@ -268,7 +258,7 @@ namespace CrabMaga
             string[,] outputGrid = new string[totalColumns + 1, lines.Length + 1];
             for (int y = 0; y < lines.Length; y++)
             {
-                string[] row = lines[y].Split(',');
+                string[] row = lines[y].Split(';');
                 for (int x = 0; x < row.Length; x++)
                 {
                     outputGrid[x, y] = row[x];
@@ -280,7 +270,15 @@ namespace CrabMaga
 
             return outputGrid;
         }
+
+        [Button]
+        void ResetLevelOne()
+        {
+            currentLevel = 0;
+            UpgradeEntity();
+        }
     }
+
 
     public enum Triforce
     {

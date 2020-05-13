@@ -23,30 +23,21 @@ namespace CrabMaga
 
             string[,] s = ParseCSV();
 
-
-
             for (int i = 1; i < sz; i++)
             {
-                string[] c1 = s[0, i].Split(';');
-                float dmg = float.Parse(c1[1]);
+                string[] c1 = s[1, i].Split(';');
+                float dmg = float.Parse(c1[0]);
                 upgradeTabs[i].damage = dmg;
 
-                string[] c2 = s[1, i].Split(';');
-                float atkSpd = float.Parse(c2[1]);
-                upgradeTabs[i].attackSpeed = atkSpd;
-
-                string[] c3 = s[2, i].Split(';');
-                int costF = int.Parse(c3[0]);
-                upgradeTabs[i - 1].costformation = costF;
-
-                upgradeTabs[i].attackSpeed = 2;
-                
-                int costU = int.Parse(c3[2]);
-                upgradeTabs[i - 1].upgradeCost = costU;
-
-                int h = int.Parse(c3[1]);
+                string[] c2 = s[2, i].Split(';');
+                float h = int.Parse(c2[0]);
                 upgradeTabs[i].health = h;
 
+                string[] c3 = s[3, i].Split(';');
+                int costU = int.Parse(c3[0]);
+                upgradeTabs[i - 1].upgradeCost = costU;
+
+                upgradeTabs[i].attackSpeed = attackSpeed;
             }
 
             //Debug.Log(s.Length);

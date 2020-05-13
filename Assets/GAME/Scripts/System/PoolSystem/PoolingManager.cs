@@ -100,8 +100,7 @@ namespace CrabMaga
             crabCount.UpdateText();
             headerMoney.UpdateMoney();
 
-            _crabFormation.name = _crabFormation.CrabUnits[0].name.ToString() + " Formation";
-            
+            _crabFormation.name = _crabFormation.CrabUnits[0].name.ToString() + " Formation";            
 
             TokensUnit.Instance.UseToken();
 

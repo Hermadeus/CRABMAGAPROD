@@ -30,7 +30,11 @@ namespace CrabMaga
         CRABRATTER, 
         CHRAMAN,
         CRABOUFFON,
-        CRABERSERK
+        CRABERSERK,
+        CRABLINDE,
+        NECRABANCIEN,
+        CRABARDE,
+        NINCRAB
     }
 
     public enum LeaderType
