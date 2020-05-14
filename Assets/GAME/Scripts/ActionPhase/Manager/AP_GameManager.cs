@@ -309,7 +309,6 @@ namespace CrabMaga
                 playerData.crabMoney += 200;
                 headerMoney.UpdateMoney();
             }
-        }
-
+        }        
     }
 }

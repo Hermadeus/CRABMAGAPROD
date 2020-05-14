@@ -48,13 +48,46 @@ namespace CrabMaga
         public void Init()
         {
             onInitEvent?.Invoke();
+
+
+            count = crabUnits.Count;
         }
+
+        int count;
 
         public void ResetObject()
         {
             onInitEvent.RemoveAllListeners();
             crabUnits.Clear();
             haveReceivePassif = false;
+
+            if(r != null)
+                StopCoroutine(r);
+            r = null;
         }
+
+        Coroutine r = null;
+        public Vector3 lastDeathPos = new Vector3();
+
+        public void Ressucite(float timer)
+        {
+            if (r != null)
+                StartCoroutine(RessuciteCor(timer));
+        }
+
+        public IEnumerator RessuciteCor(float timer)
+        {
+            yield return new WaitForSeconds(timer);
+
+            if(crabUnits.Count == count)
+                StartCoroutine(RessuciteCor(timer));
+
+            if (crabUnits.Count <= 0)
+                yield break;
+
+            poolingManager.Pool(lastDeathPos, crabUnits[0].entityData.unitType.GetType());
+            Debug.Log("ressucite");
+            StartCoroutine(RessuciteCor(timer));
+        } 
     }
 }

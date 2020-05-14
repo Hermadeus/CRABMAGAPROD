@@ -216,6 +216,9 @@ namespace CrabMaga
                         //Debug.Log("found");
                         
                         Entity _obj = (Entity)poolables[i];
+
+                        _obj.gameObject.SetActive(true);
+
                         _obj.enabled = true;
                         _obj.gameObject.SetActive(true);
 
@@ -248,10 +251,13 @@ namespace CrabMaga
                 poolables.Add(pushable as IPoolable);
 
             MonoBehaviour mb = pushable as MonoBehaviour;
+
             mb.transform.position = pushPos;
             pushable.OnPush();
             mb.enabled = false;
             mb.transform.parent = QueueObject;
+
+            mb.gameObject.SetActive(false);
         }
 
         [Button]
@@ -272,6 +278,15 @@ namespace CrabMaga
             }
 
             Debug.Log(poolables.Count + " poolables found");
+        }
+
+        [Button]
+        public void SetActiveAll(bool v)
+        {
+            for (int i = 0; i < poolables.Count; i++)
+            {
+                ((MonoBehaviour)poolables[i]).gameObject.SetActive(v);
+            }
         }
     }
 
