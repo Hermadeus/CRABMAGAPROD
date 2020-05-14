@@ -186,7 +186,7 @@ namespace CrabMaga
 
         public Unit lastHitUnitReceive;
 
-        public void ReceiveAttack(Unit attaquant, float _damage)
+        public virtual void ReceiveAttack(Unit attaquant, float _damage)
         {
             //Debug.Log(attaquant.name + " / damage = " + _damage);
 

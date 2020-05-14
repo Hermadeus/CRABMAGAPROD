@@ -143,6 +143,8 @@ namespace CrabMaga
 
         public SceneManaging sceneManaging;
 
+        public bool haveAlreadyBarde = false;
+
         private void Awake()
         {
             Instance = this;
@@ -308,5 +310,6 @@ namespace CrabMaga
                 headerMoney.UpdateMoney();
             }
         }
+
     }
 }

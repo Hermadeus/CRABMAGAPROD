@@ -19,6 +19,13 @@ namespace CrabMaga
             {
                 if (e.hitColliders[i].GetComponentInParent<Unit>() is IAttackReceiver)
                 {
+                    if(e.hitColliders[i].GetComponentInParent<Unit>() is Crablinde)
+                    {
+                        Debug.Log("Attaque sur crablinde");
+                        base.Effect(_unit, e.hitColliders[i].GetComponentInParent<Unit>() as IAttackReceiver);
+                        break;
+                    }
+
                     base.Effect(_unit, e.hitColliders[i].GetComponentInParent<Unit>() as IAttackReceiver);
                     Debug.Log(_unit.name + " ATTACK COLLIDER -> " + e.hitColliders[i].GetComponentInParent<Unit>().name);
                 }
