@@ -20,7 +20,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7951488144882345101
 Transform:
   m_ObjectHideFlags: 0
@@ -31,7 +31,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
-  m_Children: []
+  m_Children:
+  - {fileID: 121006292135197135}
   m_Father: {fileID: 5392105307437488006}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -172,7 +173,6 @@ Transform:
   m_Children:
   - {fileID: 7951488144882345101}
   - {fileID: 2650748934618204663}
-  - {fileID: 121006292135197135}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -454,7 +454,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 5392105307437488006}
+    m_TransformParent: {fileID: 7951488144882345101}
     m_Modifications:
     - target: {fileID: 2219129026225447909, guid: 5ae8cb1af1971c247a5e81559fb066c9,
         type: 3}
@@ -499,7 +499,7 @@ PrefabInstance:
     - target: {fileID: 4972665009567039740, guid: 5ae8cb1af1971c247a5e81559fb066c9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4972665009567039740, guid: 5ae8cb1af1971c247a5e81559fb066c9,
         type: 3}
@@ -569,17 +569,17 @@ PrefabInstance:
     - target: {fileID: 4972665009567039740, guid: 5ae8cb1af1971c247a5e81559fb066c9,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.1926
+      value: 0.963
       objectReference: {fileID: 0}
     - target: {fileID: 4972665009567039740, guid: 5ae8cb1af1971c247a5e81559fb066c9,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.1926
+      value: 0.963
       objectReference: {fileID: 0}
     - target: {fileID: 4972665009567039740, guid: 5ae8cb1af1971c247a5e81559fb066c9,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.05201627
+      value: 0.26008135
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ae8cb1af1971c247a5e81559fb066c9, type: 3}

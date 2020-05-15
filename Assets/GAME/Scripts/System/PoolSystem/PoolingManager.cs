@@ -39,6 +39,7 @@ namespace CrabMaga
 
         public Entity latestUnitInstiate = default;
 
+
         //public void CreateCrabFormation(CrabUnitData data, Vector3 _position)
         //{
         //    if (APgameManager.crabFormationOnBattle.Count >= APgameManager.levelData.maxCrab)
@@ -61,12 +62,91 @@ namespace CrabMaga
         //    }
         //}
 
+        public GameObject scramanTab, CrabetteurTab, CoelacrabTab, CrabouffonTab, CraberserkTab, CrablindeTab, CrabardeTab, NincrabTab, NecrabancienTab;
+
         private void Awake()
         {
             for (int i = 0; i < poolables.Count; i++)
             {
                 if (poolables[i] is Entity)
                     ((Entity)poolables[i]).graphics.SetActive(false);
+            }
+
+            if(playerData.entityData_slot01 != null)
+            {
+                ActiveTab(playerData.entityData_slot01);
+            }
+
+            if (playerData.entityData_slot02 != null)
+            {
+                ActiveTab(playerData.entityData_slot02);
+            }
+
+            if (playerData.entityData_slot03 != null)
+            {
+                ActiveTab(playerData.entityData_slot03);
+            }
+
+            if (playerData.entityData_slot04 != null)
+            {
+                ActiveTab(playerData.entityData_slot04);
+            }
+        }
+
+        void ActiveTab(EntityData data)
+        {
+            if (data.unitType is Crabpitaine)
+            {
+                scramanTab.SetActive(true);
+                AddPoolable(scramanTab.transform);
+            }
+            else if (data.unitType is CrabInBlack)
+            {
+                CrabetteurTab.SetActive(true);
+                AddPoolable(CrabetteurTab.transform);
+            }
+            else if (data.unitType is DoubleEffectif)
+            {
+                CoelacrabTab.SetActive(true);
+                AddPoolable(CoelacrabTab.transform);
+            }
+            else if (data.unitType is Crabouffon)
+            {
+                CrabouffonTab.SetActive(true);
+                AddPoolable(CrabouffonTab.transform);
+            }
+            else if (data.unitType is Craberserk)
+            {
+                CraberserkTab.SetActive(true);
+                AddPoolable(CraberserkTab.transform);
+            }
+            else if (data.unitType is Crablinde)
+            {
+                CrablindeTab.SetActive(true);
+                AddPoolable(CrablindeTab.transform);
+            }
+            else if (data.unitType is Crabarde)
+            {
+                CrabardeTab.SetActive(true);
+                AddPoolable(CrabardeTab.transform);
+            }
+            else if (data.unitType is Nincrab)
+            {
+                NincrabTab.SetActive(true);
+                AddPoolable(NincrabTab.transform);
+            }
+            else if (data.unitType is Necrabancien)
+            {
+                NecrabancienTab.SetActive(true);
+                AddPoolable(NecrabancienTab.transform);
+            }
+        }
+
+        void AddPoolable(Transform obj)
+        {
+            for (int i = 0; i < obj.childCount; i++)
+            {
+                poolables.Add(obj.GetChild(i).GetComponent<Entity>());
             }
         }
 
@@ -211,13 +291,42 @@ namespace CrabMaga
             if (poolables.Count > 0)
                 for (int i = 0; i < poolables.Count; i++)
                 {
+                    //if (poolables[i] == null)
+                    //{
+                    //    Debug.Log("pliplop");
+
+                    //    for (int y = 0; y < unitsData.Count; y++)
+                    //    {
+                    //        if (typeToResearch == unitsData[y].unitType.GetType())
+                    //        {
+                    //            Entity _obj = Instantiate(unitsData[y].unitType);
+
+                    //            _obj.enabled = true;
+                    //            _obj.gameObject.SetActive(true);
+
+                    //            _obj.transform.position = _position;
+
+                    //            if (parent == null)
+                    //                _obj.transform.parent = null;
+                    //            else
+                    //                _obj.transform.parent = parent;
+
+                    //            if (onPool)
+                    //                ((IPoolable)_obj).OnPool();
+
+                    //            IPoolable _poolable = poolables[i];
+                    //            poolables.RemoveAt(i);
+
+                    //            return _obj;
+                    //        }
+                    //    }
+                    //}
+
                     if (poolables[i].GetType() == typeToResearch)
                     {
                         //Debug.Log("found");
                         
                         Entity _obj = (Entity)poolables[i];
-
-                        _obj.gameObject.SetActive(true);
 
                         _obj.enabled = true;
                         _obj.gameObject.SetActive(true);
@@ -256,8 +365,6 @@ namespace CrabMaga
             pushable.OnPush();
             mb.enabled = false;
             mb.transform.parent = QueueObject;
-
-            mb.gameObject.SetActive(false);
         }
 
         [Button]
@@ -287,6 +394,12 @@ namespace CrabMaga
             {
                 ((MonoBehaviour)poolables[i]).gameObject.SetActive(v);
             }
+        }
+
+        [Button]
+        public void ClearTab()
+        {
+            poolables.Clear();
         }
     }
 

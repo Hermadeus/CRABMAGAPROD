@@ -15,8 +15,7 @@ namespace CrabMaga
         {
             int x = Random.Range(0, enemyDatas.Length);
 
-            Debug.Log(manager.APgameManager.castle.transform.position);
-
+            //Debug.Log(manager.APgameManager.castle.transform.position);
 
             return manager.poolingManager.PoolEntity(enemyDatas[x].unitType.GetType(),
                 new Vector3(

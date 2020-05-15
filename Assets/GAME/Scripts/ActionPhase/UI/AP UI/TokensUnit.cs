@@ -65,8 +65,6 @@ namespace CrabMaga
                 return;
 
             tokens[CurrentTokenCount() - 1].Close();
-
-            Debug.Log(CurrentTokenCount());
         }
 
         [Button]
