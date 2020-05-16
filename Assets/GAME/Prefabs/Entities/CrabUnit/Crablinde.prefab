@@ -115,7 +115,7 @@ MonoBehaviour:
   lastHitUnitReceive: {fileID: 0}
   damage: 0
   attackSpeed: 0
-  detectionRange: 0
+  detectionRange: 1
   crabUnitType: 5
   target: {fileID: 0}
   entityType: 1
@@ -129,6 +129,9 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  FOV_Obj: {fileID: 5730006767997084140}
+  FOV_Normal_Color: {r: 0.15619439, g: 0.77461183, b: 0.8490566, a: 0.25490198}
+  FOV_Detect_Color: {r: 0.8509804, g: 0.5447302, b: 0.15686272, a: 0.25490198}
   ASFeedback: {fileID: 1427393117918643567}
 --- !u!1 &1569817746028187297
 GameObject:
@@ -1060,23 +1063,29 @@ PrefabInstance:
     - target: {fileID: 4972665009567039740, guid: 5ae8cb1af1971c247a5e81559fb066c9,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.1871917
+      value: 2.435049
       objectReference: {fileID: 0}
     - target: {fileID: 4972665009567039740, guid: 5ae8cb1af1971c247a5e81559fb066c9,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.1871917
+      value: 2.435049
       objectReference: {fileID: 0}
     - target: {fileID: 4972665009567039740, guid: 5ae8cb1af1971c247a5e81559fb066c9,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.1871917
+      value: 2.435049
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ae8cb1af1971c247a5e81559fb066c9, type: 3}
 --- !u!224 &4098746806714921794 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4972665009567039740, guid: 5ae8cb1af1971c247a5e81559fb066c9,
+    type: 3}
+  m_PrefabInstance: {fileID: 9071332651108955070}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &5730006767997084140 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3631812457494516306, guid: 5ae8cb1af1971c247a5e81559fb066c9,
     type: 3}
   m_PrefabInstance: {fileID: 9071332651108955070}
   m_PrefabAsset: {fileID: 0}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level 1
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 2
+    SerializedFormat: 0
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -31,14 +31,19 @@ MonoBehaviour:
   LevelIndex: 1
   maxCrabInSameTime: 3
   maxCrab: 10
-  scoreToReach: 9
+  scoreToReach: 25
   castleAllyHealth: 10
   bestScore: 0
   cond01: {fileID: 11400000, guid: 5a5959a477f2a99448840fcf3a973e67, type: 2}
   cond02: {fileID: 11400000, guid: 8167352e3c8bf0344b6e82de079152b7, type: 2}
   cond03: {fileID: 11400000, guid: 4883adc00d23fc04b83439e8c7025888, type: 2}
-  star01: 0
-  star02: 0
-  star03: 0
-  asWin: 0
+  star01: 1
+  star02: 1
+  star03: 1
+  asWin: 1
   isLock: 0
+  levelTuto: 0
+  entity_unlock: {fileID: 0}
+  crabGain: 300
+  pearlGain: 0
+  shellGain: 300

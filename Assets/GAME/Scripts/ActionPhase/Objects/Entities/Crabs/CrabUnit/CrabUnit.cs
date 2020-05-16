@@ -5,6 +5,8 @@ using UnityEngine;
 
 using Sirenix.OdinInspector;
 
+using DG.Tweening;
+
 namespace CrabMaga
 {
     public class CrabUnit : Unit
@@ -12,7 +14,12 @@ namespace CrabMaga
         [FoldoutGroup("Gameplay References")]
         public CrabFormation crabFormationReference = default;
 
-        public float castlePosZ = 0; 
+        public float castlePosZ = 0;
+
+        public SpriteRenderer FOV_Obj;
+
+        public Color FOV_Normal_Color;
+        public Color FOV_Detect_Color;
 
         public override Unit Target
         {
@@ -26,6 +33,9 @@ namespace CrabMaga
         protected override void OnUnitRangeDetectionReachZero()
         {
             base.OnUnitRangeDetectionReachZero();
+
+            FOV_Obj.DOColor(FOV_Normal_Color, .5f);
+
             MovementBehaviourEnum = MovementBehaviourEnum.JOIN_CASTLE_MOVEMENT;
         }
 
@@ -91,6 +101,12 @@ namespace CrabMaga
         public void OnBoostAS()
         {
             ClignotementAlphaFeedback(ASFeedback);
+        }
+
+        public override void OnDetect()
+        {
+            base.OnDetect();
+            FOV_Obj.DOColor(FOV_Detect_Color, .5f);
         }
     }
 }

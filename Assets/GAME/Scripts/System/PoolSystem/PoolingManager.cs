@@ -322,7 +322,8 @@ namespace CrabMaga
                     //    }
                     //}
 
-                    if (poolables[i].GetType() == typeToResearch)
+                    if(poolables[i] != null)
+                        if (poolables[i].GetType() == typeToResearch)
                     {
                         //Debug.Log("found");
                         

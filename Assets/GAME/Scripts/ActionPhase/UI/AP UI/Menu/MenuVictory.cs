@@ -10,6 +10,8 @@ using QRTools.UI;
 
 using Sirenix.OdinInspector;
 
+using DG.Tweening;
+
 namespace CrabMaga
 {
     public class MenuVictory : UIMenu
@@ -32,10 +34,13 @@ namespace CrabMaga
         [FoldoutGroup("References")]
         [SerializeField] LanguageManager languageManager = default;
 
+        public RectTransform ShellIcon;
+
         public override void Init()
         {
             base.Init();
             InitLevelName();
+            ShellIcon.GetComponentInChildren<TextMeshProUGUI>().SetText("+ " + APGameManager.levelData.shellGain.ToString());
         }
 
         public override void Show()
@@ -56,8 +61,12 @@ namespace CrabMaga
 
         public void UpdateInfos()
         {
-            timerText.text = UpdateTimerText();
-            unitText.text = UpdateUnitCount();
+            //timerText.text = UpdateTimerText();
+            DOTween.To(() => timerText.text, (x) => timerText.text = x, UpdateTimerText(), 1f);
+
+            //unitText.text = UpdateUnitCount();
+            DOTween.To(() => unitText.text, (x) => unitText.text = x, UpdateUnitCount(), 1f);
+
             UpdateVictoryText(APGameManager.AsWin);
             UpdateImage(APGameManager.AsWin);
             UpdateButtons(APGameManager.AsWin);
@@ -136,6 +145,12 @@ namespace CrabMaga
                 buttonsLost.blocksRaycasts = true;
                 buttonsLost.interactable = true;
             }
+        }
+
+        public void GainShellAnim()
+        {
+            ShellIcon.DOMoveY(ShellIcon.position.y + 150f, 2f);
+            ShellIcon.GetComponent<CanvasGroup>().DOFade(0f, .5f);
         }
     }
 }

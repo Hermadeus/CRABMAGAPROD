@@ -145,6 +145,10 @@ namespace CrabMaga
 
         public bool haveAlreadyBarde = false;
 
+        public GameObject ecranChargement;
+
+        public MenuVictory menuVictory;
+
         private void Awake()
         {
             Instance = this;
@@ -160,6 +164,7 @@ namespace CrabMaga
 
             Time.timeScale = 1;
 
+            ecranChargement.SetActive(true);
         }
 
         private void Start()
@@ -195,8 +200,8 @@ namespace CrabMaga
             OnEnd();
             OnWinEvent.Invoke();
 
-            sceneManaging.GetNextLevelData(this).isLock = false;
-            //Debug.Log(sceneManaging.GetNextLevelData(this).levelName.textAnglais);
+            if(sceneManaging.GetNextLevelData(this) != null)
+                sceneManaging.GetNextLevelData(this).isLock = false;
         }
 
         [Button]
@@ -245,12 +250,18 @@ namespace CrabMaga
             levelData.TestStars(this);
             StartCoroutine(StarsAnim());
 
-            WinCrab(300);
+            if(levelData.entity_unlock != null)
+            {
+                levelData.entity_unlock.isLock = false;
+            }
         }
 
         IEnumerator StarsAnim()
         {
             yield return new WaitForSeconds(1f);
+
+            WinCrab(levelData.crabGain);
+            WinShell(levelData.shellGain);
 
             if (levelData.star01 == true)
             {
@@ -273,6 +284,9 @@ namespace CrabMaga
                 starsAnimator[2].SetTrigger("enter");
                 XP.SetValueX(XP.GetValueX() + 1);
             }
+
+            yield return new WaitForSeconds(5f);
+            menuVictory.GainShellAnim();
 
             yield break;
         }
@@ -304,11 +318,12 @@ namespace CrabMaga
 
         public void WinCrab(int x)
         {
-            if (!levelData.asWin)
-            {
-                playerData.crabMoney += 200;
-                headerMoney.UpdateMoney();
-            }
-        }        
+            headerMoney.AddCrab(x);
+        }
+
+        public void WinShell(int x)
+        {
+            headerMoney.AddShell(x);
+        }
     }
 }

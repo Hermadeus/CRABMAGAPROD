@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13a427a84d9fab64489c8a0c273fdabe, type: 3}
   m_Name: Enemy Agile
   m_EditorClassIdentifier: 
+  isLock: 1
   behaviourSystem: {fileID: 11400000, guid: 65fa9772d44e2ec47bab627a75c1152e, type: 2}
   languageManager: {fileID: 11400000, guid: cc7173560c4531545a2a4dde441db5db, type: 2}
   entityName:
@@ -34,7 +35,7 @@ MonoBehaviour:
   Triforce: 0
   entityicon: {fileID: 21300000, guid: 8fb0e1fadd634d245ad02cf423f3f27a, type: 3}
   startMovementBehaviour: 0
-  startHealth: 100
+  startHealth: 120
   speedEnum: 1
   baseSpeed: 0.3
   rotationSpeed: 0.5

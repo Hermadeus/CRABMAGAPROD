@@ -7,6 +7,8 @@ using Sirenix.OdinInspector;
 
 using DG.Tweening;
 
+using CrabMaga;
+
 namespace QRTools.UI
 {
     public class UIMenu : UIElement, IUIMenu
@@ -32,6 +34,8 @@ namespace QRTools.UI
 
         protected Tween anim;
 
+        public Canvas c;
+
         public override void Init()
         {
             base.Init();
@@ -40,6 +44,8 @@ namespace QRTools.UI
             
             if(apparitionMode == ApparitionMode.ANIMATION)
                 InitAnim();
+
+            c = FindObjectOfType<CanvasPrinc>()?.canvas;
         }
 
         [ButtonGroup("Debug")]
@@ -118,22 +124,22 @@ namespace QRTools.UI
 
         void RightDesappear()
         {
-            rectTransform.DOAnchorPos(new Vector2(Camera.main.pixelWidth * 2f, 0), animSpeed).SetEase(ease).OnComplete(OnHide.Invoke);
+            rectTransform.DOAnchorPos(new Vector2(3000, 0), animSpeed).SetEase(ease).OnComplete(OnHide.Invoke);
         }
 
         void LeftDesappear()
         {
-            rectTransform.DOAnchorPos(new Vector2(-Camera.main.pixelWidth * 2f, 0), animSpeed).SetEase(ease).OnComplete(OnHide.Invoke);
+            rectTransform.DOAnchorPos(new Vector2(-3000, 0), animSpeed).SetEase(ease).OnComplete(OnHide.Invoke);
         }
 
         void DownDesappear()
         {
-            rectTransform.DOAnchorPos(new Vector2(0, -Camera.main.pixelHeight * 2f), animSpeed).SetEase(ease).OnComplete(OnHide.Invoke);
+            rectTransform.DOAnchorPos(new Vector2(0, -3000), animSpeed).SetEase(ease).OnComplete(OnHide.Invoke);
         }
 
         void UpDesappear()
         {
-            rectTransform.DOAnchorPos(new Vector2(0, Camera.main.pixelHeight * 2f), animSpeed).SetEase(ease).OnComplete(OnHide.Invoke);
+            rectTransform.DOAnchorPos(new Vector2(0, 3000), animSpeed).SetEase(ease).OnComplete(OnHide.Invoke);
         }
 
         void PinchAppear()

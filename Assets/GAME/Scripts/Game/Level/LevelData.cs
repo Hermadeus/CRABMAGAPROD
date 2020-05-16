@@ -36,6 +36,11 @@ namespace CrabMaga
         public bool asWin = false;
 
         public bool isLock = true;
+        public bool levelTuto = true;
+
+        public EntityData entity_unlock = default;
+
+        public int crabGain, pearlGain, shellGain;
 
         public void Load()
         {

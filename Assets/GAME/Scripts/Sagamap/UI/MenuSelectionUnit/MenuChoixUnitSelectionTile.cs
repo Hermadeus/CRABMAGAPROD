@@ -30,6 +30,12 @@ namespace CrabMaga
             thumbnail.sprite = entitydata.wheelThumbnail;
             parent = transform.parent;
             sibling = transform.GetSiblingIndex();
+
+            if (entitydata.isLock)
+            {
+                gameObject.SetActive(false);
+                gameObject.transform.parent = null;
+            }
         }
 
         public override void OnBeginDrag(PointerEventData eventData)
@@ -40,9 +46,15 @@ namespace CrabMaga
 
         public override void OnDrag(PointerEventData eventData)
         {
-            base.OnDrag(eventData);
+            if (entitydata.isLock)
+            {
 
-            
+
+                return;
+            }
+
+
+            base.OnDrag(eventData);
 
             for (int i = 0; i < slots.Length; i++)
             {

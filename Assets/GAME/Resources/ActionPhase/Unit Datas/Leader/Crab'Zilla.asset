@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c038c25ddb7ea43aefbb7d3e2d9d7f, type: 3}
   m_Name: Crab'Zilla
   m_EditorClassIdentifier: 
+  isLock: 0
   behaviourSystem: {fileID: 11400000, guid: 65fa9772d44e2ec47bab627a75c1152e, type: 2}
   languageManager: {fileID: 11400000, guid: cc7173560c4531545a2a4dde441db5db, type: 2}
   entityName:
@@ -36,7 +37,7 @@ MonoBehaviour:
   startMovementBehaviour: 4
   startHealth: 6
   speedEnum: 1
-  baseSpeed: 0.2
+  baseSpeed: 0.3
   rotationSpeed: 0.5
   accelerationEnum: 1
   acceleration: 1
@@ -2237,8 +2238,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 884cc95a3f5662848870e523848749db, type: 3}
   csvFile: {fileID: 4900000, guid: 19c858d6fe4b4ec4e9d21da986045300, type: 3}
   thumbnail: {fileID: 21300000, guid: 0f0e1cb2b12894a48832dd852207ab72, type: 3}
-  thumbnailToken: {fileID: 21300000, guid: b14cc167db8ee56419c62195aad31583, type: 3}
-  thumbnailTokenUlt: {fileID: 21300000, guid: 49ddfb43e7848374caadcad608f370fc, type: 3}
-  thumbnailTokenInUlt: {fileID: 21300000, guid: d4c20ffec9d71bb458e747fd7ea1c779,
+  thumbnailToken: {fileID: 21300000, guid: 955dd8318e297f14abdc07b55cd93f46, type: 3}
+  thumbnailTokenUlt: {fileID: 21300000, guid: 3a8ef8e6c0ed0af42907174af9f25bc2, type: 3}
+  thumbnailTokenInUlt: {fileID: 21300000, guid: 955dd8318e297f14abdc07b55cd93f46,
     type: 3}
-  thumbnailTokenNone: {fileID: 21300000, guid: 468cf272eeb1299428dfd75ab5779ae2, type: 3}
+  thumbnailTokenNone: {fileID: 21300000, guid: 955dd8318e297f14abdc07b55cd93f46, type: 3}

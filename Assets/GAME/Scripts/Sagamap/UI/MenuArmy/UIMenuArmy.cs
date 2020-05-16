@@ -21,12 +21,15 @@ namespace CrabMaga
         public UIMenuArmyStat dps, effectif, speed, cost, health; 
         public Image thumbnail;
         public GameObject buttonUpdate;
+        public AmeliorationButton ameliorationButton;
 
         public CanvasGroup unitmenu, leadermenu, enemiesmenu;
 
         public UIMenuArmyButtonSelection[] tabsButton;
 
         public UITileArmy currentTileSelected;
+
+        public Image lockObj = default;
 
         public override void Init()
         {

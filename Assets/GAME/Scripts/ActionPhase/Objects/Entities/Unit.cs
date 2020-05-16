@@ -91,6 +91,11 @@ namespace CrabMaga
                 if (value.Length != unitInRangeOfView.Length)
                     OnUnitRangeDetectionReachZero();
 
+                if(value.Length > 0)
+                {
+                    OnDetect();
+                }
+
                 unitInRangeOfView = value;
             }
         }
@@ -130,8 +135,7 @@ namespace CrabMaga
             base.Init();
             InitPassif();
 
-            StartCoroutine(InvokeInitEvent());
-            
+            StartCoroutine(InvokeInitEvent());            
 
             if (pastilleRef != null)
             {
@@ -306,6 +310,11 @@ namespace CrabMaga
             sr.DOFade(1f, .5f).OnComplete(
                 delegate { sr.DOFade(0f, .5f); }
                 );
+        }
+
+        public virtual void OnDetect()
+        {
+            
         }
     }
 }

@@ -12,6 +12,8 @@ namespace CrabMaga
     [CreateAssetMenu(menuName = "CRAB MAGA/Data/EntityData")]
     public class EntityData : ScriptableObject, ISavable
     {
+        public bool isLock = true;
+
         [FoldoutGroup("References")]
         public BehavioursSystem behaviourSystem = default;
         [FoldoutGroup("References")]

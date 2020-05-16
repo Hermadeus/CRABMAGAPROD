@@ -51,7 +51,13 @@ namespace CrabMaga
         [Button]
         public void ResetObject()
         {
-            crabMoney = 0;
+            crabMoney = 10000;
+            shellMoney = 600;
+            pearlMoney = 0;
+
+            rightHand = true;
+            sfxOn = true;
+            musicOn = true;
         }
 
         public void ChangeHand()

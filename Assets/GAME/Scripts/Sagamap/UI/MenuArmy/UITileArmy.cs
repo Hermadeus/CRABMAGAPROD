@@ -48,6 +48,8 @@ namespace CrabMaga
             }
         }
 
+        public GameObject cadenas;
+
         public enum TypeTileArmy { UNIT, LEADER, ENEMY}
         public TypeTileArmy tileArmy = TypeTileArmy.UNIT;
 
@@ -90,6 +92,12 @@ namespace CrabMaga
             }
 
             thumbnail.sprite = entityData.entityicon;
+
+            if (entityData.isLock)
+            {
+                if(cadenas != null)
+                    cadenas.SetActive(true);
+            }
         }
 
         public void Select()
@@ -111,6 +119,15 @@ namespace CrabMaga
 
             IsSelected = true;
             menuArmy.UpdateMenu(this);
+
+            if (entityData.isLock)
+            {
+                menuArmy.ameliorationButton.Islock = true;
+            }
+            else
+            {
+                menuArmy.ameliorationButton.Islock = false;
+            }
         }        
     }
 }

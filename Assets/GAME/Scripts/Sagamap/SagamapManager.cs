@@ -18,6 +18,7 @@ namespace CrabMaga
 
         public static SagamapManager instance;
 
+        public GameObject ecranchargement;
 
         private void Awake()
         {
@@ -32,6 +33,7 @@ namespace CrabMaga
 
             languageManager.UpdateObservable();
             Time.timeScale = 1;
+            ecranchargement.SetActive(true);
         }
     }
 }

@@ -571,10 +571,10 @@ RectTransform:
   m_Father: {fileID: 9025283045160018206}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.108, y: 0.081}
+  m_AnchorMax: {x: 0.9054181, y: 0.8361317}
+  m_AnchoredPosition: {x: -0.052490234, y: -0.75201416}
+  m_SizeDelta: {x: 7.2900085, y: 6.700012}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &9025283045108082265
 MonoBehaviour:
@@ -592,9 +592,9 @@ MonoBehaviour:
     m_Left: 0
     m_Right: 0
     m_Top: 0
-    m_Bottom: -143
+    m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: -550.86
+  m_Spacing: -164.27
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -722,7 +722,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9025283045222081072}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -755,6 +755,7 @@ MonoBehaviour:
   ease: 1
   animationMode: 2
   animSpeed: 1
+  c: {fileID: 0}
   menuPos: 0
   languageManager: {fileID: 11400000, guid: cc7173560c4531545a2a4dde441db5db, type: 2}
   playerData: {fileID: 11400000, guid: 45d34bd26e670e2408b22d5402be7708, type: 2}
@@ -3366,10 +3367,10 @@ RectTransform:
   m_Father: {fileID: 9025283045160018206}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 9, y: -78.5}
-  m_SizeDelta: {x: 1050.9, y: 1423.2}
+  m_AnchorMin: {x: 0.5, y: 0.081}
+  m_AnchorMax: {x: 0.9054181, y: 0.8361317}
+  m_AnchoredPosition: {x: -256.5, y: -1}
+  m_SizeDelta: {x: 519.9, y: 6.199951}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2109625276658716934
 CanvasRenderer:

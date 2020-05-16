@@ -257,7 +257,7 @@ MonoBehaviour:
   lastHitUnitReceive: {fileID: 0}
   damage: 0
   attackSpeed: 0
-  detectionRange: 0.7
+  detectionRange: 1
   crabUnitType: 3
   target: {fileID: 0}
   entityType: 1
@@ -271,6 +271,9 @@ MonoBehaviour:
   isStunt: 0
   crabFormationReference: {fileID: 0}
   castlePosZ: 0
+  FOV_Obj: {fileID: 1063482319524366078}
+  FOV_Normal_Color: {r: 0.15619439, g: 0.77461183, b: 0.8490566, a: 0.25490198}
+  FOV_Detect_Color: {r: 0.8509804, g: 0.5447302, b: 0.15686272, a: 0.25490198}
   ASFeedback: {fileID: 1985345195451847152}
 --- !u!82 &761684222036939242
 AudioSource:
@@ -584,23 +587,29 @@ PrefabInstance:
     - target: {fileID: 4972665009567039740, guid: 5ae8cb1af1971c247a5e81559fb066c9,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.664859
+      value: 2.3780847
       objectReference: {fileID: 0}
     - target: {fileID: 4972665009567039740, guid: 5ae8cb1af1971c247a5e81559fb066c9,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.664859
+      value: 2.3780847
       objectReference: {fileID: 0}
     - target: {fileID: 4972665009567039740, guid: 5ae8cb1af1971c247a5e81559fb066c9,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.6648592
+      value: 2.378085
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ae8cb1af1971c247a5e81559fb066c9, type: 3}
 --- !u!224 &8765836395914073168 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4972665009567039740, guid: 5ae8cb1af1971c247a5e81559fb066c9,
+    type: 3}
+  m_PrefabInstance: {fileID: 4369887712902386860}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1063482319524366078 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3631812457494516306, guid: 5ae8cb1af1971c247a5e81559fb066c9,
     type: 3}
   m_PrefabInstance: {fileID: 4369887712902386860}
   m_PrefabAsset: {fileID: 0}

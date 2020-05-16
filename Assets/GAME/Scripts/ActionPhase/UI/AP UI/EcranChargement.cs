@@ -10,8 +10,6 @@ namespace CrabMaga
 
         public override void Init()
         {
-            gameObject.SetActive(true);
-
             base.Init();
             gameObject.SetActive(true);
             Hide();

@@ -43,7 +43,10 @@ namespace CrabMaga
 
         public Image thumbnail = default;
 
-        public Sprite drag, btn;
+        public Sprite dragBck, btnBck;
+
+        public Image feedbackImage = default;
+        public float timerbeforeFeedback = 5f;
 
         public override void Init()
         {
@@ -60,7 +63,15 @@ namespace CrabMaga
 
             pos = rectTransform.anchoredPosition;
 
-            thumbnail.sprite = playerData.leader_slot?.thumbnailToken;
+            thumbnail.sprite = playerData.leader_slot?.thumbnailToken;            
+        }
+
+        private void Start()
+        {
+            if (AP_GameManager.Instance.levelData.levelTuto == true)
+            {
+                StartCoroutine(FeedbackImage());
+            }
         }
 
         public void OnInput()
@@ -82,6 +93,12 @@ namespace CrabMaga
                 if (result.gameObject.GetComponent<LeaderToken>())
                 {
                     isSelected = true;
+                    StopCoroutine(FeedbackImage());
+
+                    feedbackImage.DOColor(
+                        new Color(feedbackImage.color.r, feedbackImage.color.g, feedbackImage.color.b, 0f),
+                        1f
+                        );
 
                     if (stateToken == StateToken.ULTI)
                         havntUseUlt = true;
@@ -145,7 +162,7 @@ namespace CrabMaga
                                 gameManager.castleToDefend.transform.position.z));
 
                         thumbnail.sprite = playerData.leader_slot?.thumbnailTokenUlt;
-                        background.sprite = btn;
+                        background.sprite = btnBck;
 
                         Debug.Log("release");
 
@@ -195,13 +212,25 @@ namespace CrabMaga
             yield break;
         }
 
+        IEnumerator FeedbackImage()
+        {
+            yield return new WaitForSeconds(timerbeforeFeedback);
+
+            feedbackImage.DOColor(
+                new Color(feedbackImage.color.r, feedbackImage.color.g, feedbackImage.color.b, 1f),
+                1f
+                );
+
+            yield break;
+        }
+
         [Button]
         private void ResetToken()
         {
             cooldown.gameObject.SetActive(false);
             thumbnail.sprite = playerData.leader_slot?.thumbnail;
             stateToken = StateToken.UNIT;
-            background.sprite = drag;
+            background.sprite = dragBck;
         }
     }
 }
