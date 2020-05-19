@@ -33,6 +33,9 @@ namespace CrabMaga
             slot03,
             slot04;
 
+        public UnitWheelGeneralSlot
+            slotGeneral;
+
         UnitWheelSlot previousSelectedSlot;
         [SerializeField, ReadOnly] UnitWheelSlot currentSelectedSlot;
         public UnitWheelSlot CurrentSelectedSlot
@@ -73,6 +76,8 @@ namespace CrabMaga
 
         public LineSystem lineSystem;
         int line;
+
+        public LeaderToken token;
 
         public override void Init()
         {
@@ -121,7 +126,18 @@ namespace CrabMaga
 
             if (CurrentSelectedSlot != null)
             {
-                InstantiateFormation();
+                if(CurrentSelectedSlot is UnitWheelGeneralSlot)
+                {
+                    poolingManager.InvokeLeader(new Vector3(UnitWheelInput.RayPoint.x,
+                            0,
+                            AP_GameManager.CurrentInstantiationZone.transform.position.z)
+                            );
+
+                    ((UnitWheelGeneralSlot)CurrentSelectedSlot).Desactive();
+                    token.Show();
+                }else
+                    InstantiateFormation();
+
                 CurrentSelectedSlot.OnSelect();
                 CurrentSelectedSlot.IsSelected = false;
                 CurrentSelectedSlot = null;
@@ -136,11 +152,13 @@ namespace CrabMaga
             slot02.InitSlot(playerData.entityData_slot02);
             slot03.InitSlot(playerData.entityData_slot03);
             slot04.InitSlot(playerData.entityData_slot04);
+
+            slotGeneral.InitSlot(playerData.leader_slot);
         }
 
         private void Update()
         {
-            if (slot01.IsSelected == false && slot02.IsSelected == false && slot03.IsSelected == false && slot04.IsSelected == false)
+            if (slot01.IsSelected == false && slot02.IsSelected == false && slot03.IsSelected == false && slot04.IsSelected == false && slotGeneral.IsSelected == false)
             {
                 CurrentSelectedSlot = null;
             }                        
@@ -172,7 +190,7 @@ namespace CrabMaga
 
             foreach (RaycastResult result in results)
             {
-                if (result.gameObject.GetComponent<UnitWheelSlot>())
+                if (result.gameObject.GetComponent<UnitWheelSlot>() || result.gameObject.GetComponent<UnitWheelSlot>())
                 {
                     CurrentSelectedSlot = result.gameObject.GetComponent<UnitWheelSlot>();
 
@@ -201,6 +219,7 @@ namespace CrabMaga
             slot02.IsSelected = state;
             slot03.IsSelected = state;
             slot04.IsSelected = state;
+            slotGeneral.IsSelected = state;
         }
 
         public void Add(IObserver observer)

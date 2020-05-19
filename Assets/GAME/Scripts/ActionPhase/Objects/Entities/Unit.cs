@@ -269,6 +269,7 @@ namespace CrabMaga
         void PlayPassif(Entity entity)
         {
             passifBehaviour.PassifEffect(this);
+            animator.SetTrigger("onUlt");
             OnPassifFeedback();
         }
 
@@ -299,7 +300,6 @@ namespace CrabMaga
 
 
         //FEEDBACKS
-        [Button]
         public virtual void OnPassifFeedback()
         {
 

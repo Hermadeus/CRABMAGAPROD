@@ -48,147 +48,158 @@ namespace CrabMaga
         public Image feedbackImage = default;
         public float timerbeforeFeedback = 5f;
 
-        public override void Init()
+
+        bool canUseUlt = true;
+        public void LeaderUlt()
         {
-            base.Init();
-
-            inputTouchToken.onTouchEnter.AddListener(OnInput);
-            inputTouchToken.onTouchMoving.AddListener(IsSelected);
-            inputTouchToken.onTouchEnd.AddListener(OnRelease);
-
-            rectTransform = GetComponent<RectTransform>();
-
-            m_Raycaster = GetComponent<GraphicRaycaster>();
-            m_EventSystem = GetComponent<EventSystem>();
-
-            pos = rectTransform.anchoredPosition;
-
-            thumbnail.sprite = playerData.leader_slot?.thumbnailToken;            
-        }
-
-        private void Start()
-        {
-            if (AP_GameManager.Instance.levelData.levelTuto == true)
+            if (canUseUlt)
             {
-                StartCoroutine(FeedbackImage());
-            }
+                gameManager.leaderOnBattle.UsePassif();
+                StartCoroutine(CoolDown());
+            }                
         }
 
-        public void OnInput()
-        {
-            m_PointerEventData = new PointerEventData(m_EventSystem);
-            m_PointerEventData.position = Input.mousePosition;
+        //public override void Init()
+        //{
+        //    base.Init();
 
-            List<RaycastResult> results = new List<RaycastResult>();
+        //    inputTouchToken.onTouchEnter.AddListener(OnInput);
+        //    inputTouchToken.onTouchMoving.AddListener(IsSelected);
+        //    inputTouchToken.onTouchEnd.AddListener(OnRelease);
 
-            m_Raycaster.Raycast(m_PointerEventData, results);
+        //    rectTransform = GetComponent<RectTransform>();
 
-            if (results.Count == 0)
-            {
-                return;
-            }
+        //    m_Raycaster = GetComponent<GraphicRaycaster>();
+        //    m_EventSystem = GetComponent<EventSystem>();
 
-            foreach (RaycastResult result in results)
-            {
-                if (result.gameObject.GetComponent<LeaderToken>())
-                {
-                    isSelected = true;
-                    StopCoroutine(FeedbackImage());
+        //    pos = rectTransform.anchoredPosition;
 
-                    feedbackImage.DOColor(
-                        new Color(feedbackImage.color.r, feedbackImage.color.g, feedbackImage.color.b, 0f),
-                        1f
-                        );
+        //    thumbnail.sprite = playerData.leader_slot?.thumbnailToken;
+        //}
 
-                    if (stateToken == StateToken.ULTI)
-                        havntUseUlt = true;
-                }
-            }            
-        }
+        //private void Start()
+        //{
+        //    if (AP_GameManager.Instance.levelData.levelTuto == true)
+        //    {
+        //        StartCoroutine(FeedbackImage());
+        //    }
+        //}
 
-        public void UseUlt()
-        {
-            if (stateToken == StateToken.ULTI)
-            {
-                if (havntUseUlt)
-                {
-                    GetComponent<Image>().sprite = noneSprite;
-                    gameManager.leaderOnBattle.UsePassif();
-                    StartCoroutine(CloseToken());
-                    stateToken = StateToken.NONE;
-                    isSelected = false;
-                    onRelease.Invoke();
-                }
-            }
-        }
+        //public void OnInput()
+        //{
+        //    m_PointerEventData = new PointerEventData(m_EventSystem);
+        //    m_PointerEventData.position = Input.mousePosition;
 
-        public void IsSelected()
-        {
-            switch (stateToken)
-            {
-                case StateToken.UNIT:
-                    if (isSelected)
-                    {
-                        rectTransform.localPosition = new Vector2(
-                                inputTouchToken.InputCurrentPosition.x - Screen.width,
-                                inputTouchToken.InputCurrentPosition.y);
-                    }
-                    break;
-                case StateToken.ULTI:
-                    break;
-                case StateToken.NONE:
-                    break;
-            }            
-        }
+        //    List<RaycastResult> results = new List<RaycastResult>();
 
-        public void OnRelease()
-        {
-            switch (stateToken)
-            {
-                case StateToken.UNIT:
-                    if (isSelected)
-                    {
-                        if (Vector2.Distance(rectTransform.anchoredPosition, mbackground.anchoredPosition) < 200)
-                        {
-                            rectTransform.anchoredPosition = pos;
-                            isSelected = false;
-                            return;
-                        }
+        //    m_Raycaster.Raycast(m_PointerEventData, results);
 
-                        poolingManager.InvokeLeader(
-                            new Vector3(
-                                inputTouchToken.RayPoint.x,
-                                0,
-                                gameManager.castleToDefend.transform.position.z));
+        //    if (results.Count == 0)
+        //    {
+        //        return;
+        //    }
 
-                        thumbnail.sprite = playerData.leader_slot?.thumbnailTokenUlt;
-                        background.sprite = btnBck;
+        //    foreach (RaycastResult result in results)
+        //    {
+        //        if (result.gameObject.GetComponent<LeaderToken>())
+        //        {
+        //            isSelected = true;
+        //            StopCoroutine(FeedbackImage());
 
-                        Debug.Log("release");
+        //            feedbackImage.DOColor(
+        //                new Color(feedbackImage.color.r, feedbackImage.color.g, feedbackImage.color.b, 0f),
+        //                1f
+        //                );
 
-                        GetComponent<Image>().sprite = ultiSprite;
-                        stateToken = StateToken.ULTI;
-                        rectTransform.anchoredPosition = pos;
-                        isSelected = false;
-                    }
-                    break;
-                case StateToken.ULTI:
+        //            if (stateToken == StateToken.ULTI)
+        //                havntUseUlt = true;
+        //        }
+        //    }
+        //}
 
-                    break;
-                case StateToken.NONE:
-                    break;
-            }
+        //public void UseUlt()
+        //{
+        //    if (stateToken == StateToken.ULTI)
+        //    {
+        //        if (havntUseUlt)
+        //        {
+        //            GetComponent<Image>().sprite = noneSprite;
+        //            gameManager.leaderOnBattle.UsePassif();
+        //            StartCoroutine(CloseToken());
+        //            stateToken = StateToken.NONE;
+        //            isSelected = false;
+        //            onRelease.Invoke();
+        //        }
+        //    }
+        //}
 
-            onRelease.Invoke();
-        }
+        //public void IsSelected()
+        //{
+        //    switch (stateToken)
+        //    {
+        //        case StateToken.UNIT:
+        //            if (isSelected)
+        //            {
+        //                rectTransform.localPosition = new Vector2(
+        //                        inputTouchToken.InputCurrentPosition.x - Screen.width,
+        //                        inputTouchToken.InputCurrentPosition.y);
+        //            }
+        //            break;
+        //        case StateToken.ULTI:
+        //            break;
+        //        case StateToken.NONE:
+        //            break;
+        //    }
+        //}
 
-        IEnumerator CloseToken()
-        {
-            thumbnail.sprite = playerData.leader_slot?.thumbnailTokenUlt;
-            yield return new WaitForSeconds(4f);
-            thumbnail.sprite = playerData.leader_slot?.thumbnailTokenNone;
-            yield break;
-        }
+        //public void OnRelease()
+        //{
+        //    switch (stateToken)
+        //    {
+        //        case StateToken.UNIT:
+        //            if (isSelected)
+        //            {
+        //                if (Vector2.Distance(rectTransform.anchoredPosition, mbackground.anchoredPosition) < 200)
+        //                {
+        //                    rectTransform.anchoredPosition = pos;
+        //                    isSelected = false;
+        //                    return;
+        //                }
+
+        //                poolingManager.InvokeLeader(
+        //                    new Vector3(
+        //                        inputTouchToken.RayPoint.x,
+        //                        0,
+        //                        gameManager.castleToDefend.transform.position.z));
+
+        //                thumbnail.sprite = playerData.leader_slot?.thumbnailTokenUlt;
+        //                background.sprite = btnBck;
+
+        //                Debug.Log("release");
+
+        //                GetComponent<Image>().sprite = ultiSprite;
+        //                stateToken = StateToken.ULTI;
+        //                rectTransform.anchoredPosition = pos;
+        //                isSelected = false;
+        //            }
+        //            break;
+        //        case StateToken.ULTI:
+
+        //            break;
+        //        case StateToken.NONE:
+        //            break;
+        //    }
+
+        //    onRelease.Invoke();
+        //}
+
+        //IEnumerator CloseToken()
+        //{
+        //    thumbnail.sprite = playerData.leader_slot?.thumbnailTokenUlt;
+        //    yield return new WaitForSeconds(4f);
+        //    thumbnail.sprite = playerData.leader_slot?.thumbnailTokenNone;
+        //    yield break;
+        //}
 
         public float timer = 4;
         public Image cooldown = default;
@@ -196,41 +207,43 @@ namespace CrabMaga
         public IEnumerator CoolDown()
         {
             cooldown.gameObject.SetActive(true);
-            cooldown.fillAmount = 4;
+            cooldown.fillAmount = 1;
+            canUseUlt = false;
 
             DOTween.To(
                 () => cooldown.fillAmount,
                 (x) => cooldown.fillAmount = x,
                 0f,
-                4f
+                timer
                 );
 
             yield return new WaitForSeconds(timer);
 
-            ResetToken();
+            canUseUlt = true;
+            //ResetToken();
 
             yield break;
         }
 
-        IEnumerator FeedbackImage()
-        {
-            yield return new WaitForSeconds(timerbeforeFeedback);
+        //IEnumerator FeedbackImage()
+        //{
+        //    yield return new WaitForSeconds(timerbeforeFeedback);
 
-            feedbackImage.DOColor(
-                new Color(feedbackImage.color.r, feedbackImage.color.g, feedbackImage.color.b, 1f),
-                1f
-                );
+        //    feedbackImage.DOColor(
+        //        new Color(feedbackImage.color.r, feedbackImage.color.g, feedbackImage.color.b, 1f),
+        //        1f
+        //        );
 
-            yield break;
-        }
+        //    yield break;
+        //}
 
-        [Button]
-        private void ResetToken()
-        {
-            cooldown.gameObject.SetActive(false);
-            thumbnail.sprite = playerData.leader_slot?.thumbnail;
-            stateToken = StateToken.UNIT;
-            background.sprite = dragBck;
-        }
+        //[Button]
+        //private void ResetToken()
+        //{
+        //    cooldown.gameObject.SetActive(false);
+        //    thumbnail.sprite = playerData.leader_slot?.thumbnail;
+        //    stateToken = StateToken.UNIT;
+        //    background.sprite = dragBck;
+        //}
     }
 }

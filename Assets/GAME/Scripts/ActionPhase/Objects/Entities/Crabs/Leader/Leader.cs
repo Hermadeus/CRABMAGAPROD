@@ -33,6 +33,7 @@ namespace CrabMaga
             base.Death();
 
             StartCoroutine(FindObjectOfType<LeaderToken>().CoolDown());
+            FindObjectOfType<LeaderToken>().Hide();
         }
 
         public override void Init()
@@ -71,9 +72,6 @@ namespace CrabMaga
 
         public void UsePassif()
         {
-            if (asUsePassif)
-                return;
-
             animator.SetTrigger("onUlt");
 
             asUsePassif = true;

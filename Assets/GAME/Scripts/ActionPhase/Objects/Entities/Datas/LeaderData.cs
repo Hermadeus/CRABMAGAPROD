@@ -15,6 +15,8 @@ namespace CrabMaga
         public Sprite thumbnailTokenInUlt = default;
         public Sprite thumbnailTokenNone = default;
 
+        public Sprite wheelThumbnail;
+
         public override void InitUpgradeTab()
         {
             int sz = 300;
