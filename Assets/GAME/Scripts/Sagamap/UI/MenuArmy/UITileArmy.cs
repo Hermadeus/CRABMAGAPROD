@@ -13,12 +13,11 @@ namespace CrabMaga
         public UIMenuArmy menuArmy;
 
         public Image thumbnail;
-        public Outline outline;
 
         public GameObject levelGO;
         public TextMeshProUGUI level;
 
-        bool isSelected = false;
+        [SerializeField] bool isSelected = false;
         public bool IsSelected
         {
             get => isSelected;
@@ -27,7 +26,7 @@ namespace CrabMaga
                 isSelected = value;
                 if (value)
                 {
-                    outline.effectColor = new Color(outline.effectColor.r, outline.effectColor.g, outline.effectColor.b, 1);
+                    outline.SetActive(true);
                     switch (tileArmy)
                     {
                         case TypeTileArmy.UNIT:
@@ -43,16 +42,19 @@ namespace CrabMaga
                 }
                 else
                 {
-                    outline.effectColor = new Color(outline.effectColor.r, outline.effectColor.g, outline.effectColor.b, 0);
+                    outline.SetActive(false);
                 }
             }
         }
+
+        public CodeColor codeColor;
+        public Image lvlBack;
 
         public GameObject cadenas;
 
         public enum TypeTileArmy { UNIT, LEADER, ENEMY}
         public TypeTileArmy tileArmy = TypeTileArmy.UNIT;
-
+        public GameObject outline;
 
         public override void Init()
         {
@@ -98,22 +100,25 @@ namespace CrabMaga
                 if(cadenas != null)
                     cadenas.SetActive(true);
             }
+
+            lvlBack.color = codeColor.GetColor(entityData.Triforce);
         }
 
         public void Select()
         {
             menuArmy.currentTileSelected = this;
 
+            menuArmy.DeselectAllUnit();
+            menuArmy.DeselectAllLeader();
+            menuArmy.DeselectAllEnemies();
+
             switch (tileArmy)
             {
                 case TypeTileArmy.UNIT:
-                    menuArmy.DeselectAllUnit();
                     break;
                 case TypeTileArmy.LEADER:
-                    menuArmy.DeselectAllLeader();
                     break;
                 case TypeTileArmy.ENEMY:
-                    menuArmy.DeselectAllUnit();
                     break;
             }
 

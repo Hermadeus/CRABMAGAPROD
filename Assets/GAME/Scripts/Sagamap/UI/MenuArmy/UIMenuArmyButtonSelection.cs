@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using QRTools.UI;
+using TMPro;
 
 namespace CrabMaga
 {
@@ -11,9 +12,13 @@ namespace CrabMaga
         public Image back;
         public Sprite selectedSprite, unselectedSprite;
 
+        public string panelName;
+        public TextMeshProUGUI title;
+
         public void Select()
         {
             back.sprite = selectedSprite;
+            title.SetText(panelName);
         }
 
         public void UnSelect()

@@ -31,6 +31,9 @@ namespace CrabMaga
 
         public Image lockObj = default;
 
+        public Image backgroundFondFenetreDesc;
+        public Sprite backgroundForce, backgroundAgile, backgroundRes;
+
         public override void Init()
         {
             base.Init();
@@ -42,6 +45,19 @@ namespace CrabMaga
 
         public void UpdateMenu(UITileArmy tile)
         {
+            for (int i = 0; i < tilesUnits.Count; i++)
+            {
+                tilesUnits[i].UpdateTile();
+            }
+            for (int i = 0; i < tilesLeader.Count; i++)
+            {
+                tilesLeader[i].UpdateTile();
+            }
+            for (int i = 0; i < tilesEnemies.Count; i++)
+            {
+                tilesEnemies[i].UpdateTile();
+            }
+
             switch (tile.tileArmy)
             {
                 case UITileArmy.TypeTileArmy.UNIT:
@@ -49,9 +65,29 @@ namespace CrabMaga
                     break;
                 case UITileArmy.TypeTileArmy.LEADER:
                     UpdateInfoLeader(tile);
+                    DeselectAllUnit();
                     break;
                 case UITileArmy.TypeTileArmy.ENEMY:
                     UpdateInfoEnemies(tile);
+                    DeselectAllUnit();
+                    break;
+            }
+
+            UpdateBackGround(tile);
+        }
+
+        private void UpdateBackGround(UITileArmy tile)
+        {
+            switch (tile.entityData.Triforce)
+            {
+                case Triforce.AGILE:
+                    backgroundFondFenetreDesc.sprite = backgroundAgile;
+                    break;
+                case Triforce.FORCE:
+                    backgroundFondFenetreDesc.sprite = backgroundForce;
+                    break;
+                case Triforce.RESISTANT:
+                    backgroundFondFenetreDesc.sprite = backgroundRes;
                     break;
             }
         }
