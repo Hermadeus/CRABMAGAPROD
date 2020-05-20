@@ -629,7 +629,7 @@ MonoBehaviour:
   text:
     textFrancais: 'Vie :'
     textAnglais: 'Health :'
-    textCrab: 
+    textCrab: 'Crab:'
 --- !u!114 &3513061654072420777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4174,7 +4174,7 @@ MonoBehaviour:
   text:
     textFrancais: 'DPS:'
     textAnglais: 'DPS:'
-    textCrab: 
+    textCrab: 'Crab:'
 --- !u!114 &96300478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4568,8 +4568,12 @@ MonoBehaviour:
   back: {fileID: 3907966890717621666}
   selectedSprite: {fileID: 21300000, guid: efb1290d9738b6d4aa7b2b823dda3b56, type: 3}
   unselectedSprite: {fileID: 21300000, guid: ab7c6339721181144ab9325ebcab335b, type: 3}
-  panelName: Crabs
+  panelName:
+    textFrancais: Soldats
+    textAnglais: Soldiers
+    textCrab: CRABBBBsSsS
   title: {fileID: 564514973794272760}
+  languageManager: {fileID: 11400000, guid: cc7173560c4531545a2a4dde441db5db, type: 2}
 --- !u!114 &3907966890717621671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7107,8 +7111,12 @@ MonoBehaviour:
   back: {fileID: 3907966891630906851}
   selectedSprite: {fileID: 21300000, guid: d6dfafac37af9194db336e02585161a0, type: 3}
   unselectedSprite: {fileID: 21300000, guid: db8b40972245266429f23147b9bb6972, type: 3}
-  panelName: Generals
+  panelName:
+    textFrancais: General
+    textAnglais: Leader
+    textCrab: CRAUUUUB
   title: {fileID: 564514973794272760}
+  languageManager: {fileID: 11400000, guid: cc7173560c4531545a2a4dde441db5db, type: 2}
 --- !u!114 &3907966891630906848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7693,7 +7701,7 @@ MonoBehaviour:
   text:
     textFrancais: 'Effectif :'
     textAnglais: 'Effectif :'
-    textCrab: 
+    textCrab: 'Crab:'
 --- !u!114 &1754394167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8072,7 +8080,7 @@ MonoBehaviour:
   text:
     textFrancais: 'Vitesse :'
     textAnglais: 'Speed :'
-    textCrab: 
+    textCrab: 'Crab:'
 --- !u!114 &1107654841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9858,8 +9866,12 @@ MonoBehaviour:
   back: {fileID: 3907966892374524457}
   selectedSprite: {fileID: 21300000, guid: 393453245e9d8534d97d0c9c86ca8777, type: 3}
   unselectedSprite: {fileID: 21300000, guid: 68970a989c0ff1a478937fa7c2652035, type: 3}
-  panelName: Enemies
+  panelName:
+    textFrancais: Hermitopedia
+    textAnglais: Hermitopedia
+    textCrab: C******B
   title: {fileID: 564514973794272760}
+  languageManager: {fileID: 11400000, guid: cc7173560c4531545a2a4dde441db5db, type: 2}
 --- !u!114 &3907966892374524462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12872,7 +12884,7 @@ MonoBehaviour:
   text:
     textFrancais: "Co\xFBt :"
     textAnglais: 'Cost :'
-    textCrab: 
+    textCrab: 'Crab :'
 --- !u!114 &1440884011
 MonoBehaviour:
   m_ObjectHideFlags: 0

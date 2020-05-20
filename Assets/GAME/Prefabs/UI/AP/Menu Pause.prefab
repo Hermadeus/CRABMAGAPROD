@@ -187,7 +187,7 @@ MonoBehaviour:
   text:
     textFrancais: Resume
     textAnglais: Resume
-    textCrab: crabinue
+    textCrab: CRABHOUU!
 --- !u!1 &7362699343031465583
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,6 +200,7 @@ GameObject:
   - component: {fileID: 7362699343031465588}
   - component: {fileID: 7362699343031465587}
   - component: {fileID: 7362699343031465585}
+  - component: {fileID: 112707953494007738}
   m_Layer: 5
   m_Name: Button Parametre
   m_TagString: Untagged
@@ -254,7 +255,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7a88d73e4eb2c3747a6b9834805f02c7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 76ca65fc9cffa314fb54f0aaf4b145da, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -292,6 +293,50 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &112707953494007738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7362699343031465583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 2
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 21300000, guid: 76ca65fc9cffa314fb54f0aaf4b145da,
+      type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: dbe5ceeaa57e7f84c8d5375ff87fbe00, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 76ca65fc9cffa314fb54f0aaf4b145da, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 76ca65fc9cffa314fb54f0aaf4b145da, type: 3}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 7362699343031465587}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7362699343139931901
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,8 +373,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.032222223, y: 0.20312501}
   m_AnchorMax: {x: 0.9617778, y: 0.790125}
-  m_AnchoredPosition: {x: 4.424988, y: 16.799988}
-  m_SizeDelta: {x: -8.85, y: 11.5}
+  m_AnchoredPosition: {x: 4.424988, y: -0.0009765625}
+  m_SizeDelta: {x: -8.8, y: -0.0019531}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7362699343139931840
 CanvasRenderer:
@@ -357,9 +402,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e2674a17597d6744a9805c54d1a43627, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bd67b21947d24304cbd96f15dff066f2, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -379,6 +424,7 @@ GameObject:
   - component: {fileID: 7362699343281561105}
   - component: {fileID: 7362699343281561104}
   - component: {fileID: 7362699343281561103}
+  - component: {fileID: 4718166959917649236}
   m_Layer: 5
   m_Name: Button Parametre (1)
   m_TagString: Untagged
@@ -433,7 +479,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7a88d73e4eb2c3747a6b9834805f02c7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 76ca65fc9cffa314fb54f0aaf4b145da, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -471,6 +517,50 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &4718166959917649236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7362699343281561101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 2
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 21300000, guid: 76ca65fc9cffa314fb54f0aaf4b145da,
+      type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: dbe5ceeaa57e7f84c8d5375ff87fbe00, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 76ca65fc9cffa314fb54f0aaf4b145da, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 76ca65fc9cffa314fb54f0aaf4b145da, type: 3}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 7362699343281561104}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7362699343349651866
 GameObject:
   m_ObjectHideFlags: 0
@@ -658,7 +748,7 @@ MonoBehaviour:
   text:
     textFrancais: Fuir
     textAnglais: Flee
-    textCrab: Crabandon
+    textCrab: CRAB HOUUUU!
 --- !u!1 &7362699343465104065
 GameObject:
   m_ObjectHideFlags: 0
@@ -853,7 +943,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: d331da7b6d6e15446b5c6fa03b53ccaa, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -929,7 +1019,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a7b6b770a0601a94f9b6131fe0ba67fc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f78ac46df11cd9b40a37869919d262a6, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -957,7 +1047,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -967,10 +1057,11 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: f78ac46df11cd9b40a37869919d262a6,
+      type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 623e64286321f024b95350e39fdbdb0e, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: f78ac46df11cd9b40a37869919d262a6, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: f78ac46df11cd9b40a37869919d262a6, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -1133,7 +1224,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.1266777}
   m_AnchorMax: {x: 1, y: 0.34854528}
-  m_AnchoredPosition: {x: 0, y: -2.0999756}
+  m_AnchoredPosition: {x: 0, y: -2.1000366}
   m_SizeDelta: {x: 0, y: 1.1000061}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2665019400689038905
@@ -1227,7 +1318,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5f28aded041ca574dbc48cfae1e16cd2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 27f08f12094e19349bdbaafdb1d9e1e9, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1255,7 +1346,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1265,10 +1356,11 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: 27f08f12094e19349bdbaafdb1d9e1e9,
+      type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 1fb8dc7ea8b9c7e40bda788eee9ec8fa, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 27f08f12094e19349bdbaafdb1d9e1e9, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 27f08f12094e19349bdbaafdb1d9e1e9, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -1510,7 +1602,7 @@ MonoBehaviour:
   text:
     textFrancais: Options
     textAnglais: Settings
-    textCrab: 
+    textCrab: CRAB CRAB ?
 --- !u!1 &7362699344750277121
 GameObject:
   m_ObjectHideFlags: 0
@@ -1698,7 +1790,7 @@ MonoBehaviour:
   text:
     textFrancais: "Reconqu\xEAte"
     textAnglais: Reconquere
-    textCrab: 
+    textCrab: CRABHOUU!
 --- !u!1 &7584828841404710027
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,13 +12,15 @@ namespace CrabMaga
         public Image back;
         public Sprite selectedSprite, unselectedSprite;
 
-        public string panelName;
+        public StringLanguage panelName;
         public TextMeshProUGUI title;
+
+        public LanguageManager languageManager;
 
         public void Select()
         {
             back.sprite = selectedSprite;
-            title.SetText(panelName);
+            title.SetText(panelName.GetCurrentText(languageManager.LanguageEnum));
         }
 
         public void UnSelect()
