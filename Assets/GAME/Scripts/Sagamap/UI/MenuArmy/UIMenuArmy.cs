@@ -34,6 +34,9 @@ namespace CrabMaga
         public Image backgroundFondFenetreDesc;
         public Sprite backgroundForce, backgroundAgile, backgroundRes;
 
+        public Image iconUnitType;
+        public Sprite iconForce, iconAgile, iconRes;
+
         public override void Init()
         {
             base.Init();
@@ -82,12 +85,17 @@ namespace CrabMaga
             {
                 case Triforce.AGILE:
                     backgroundFondFenetreDesc.sprite = backgroundAgile;
+                    iconUnitType.sprite = iconAgile;
                     break;
                 case Triforce.FORCE:
                     backgroundFondFenetreDesc.sprite = backgroundForce;
+                    iconUnitType.sprite = iconForce;
+
                     break;
                 case Triforce.RESISTANT:
                     backgroundFondFenetreDesc.sprite = backgroundRes;
+                    iconUnitType.sprite = iconRes;
+
                     break;
             }
         }
