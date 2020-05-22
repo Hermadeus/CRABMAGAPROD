@@ -87,12 +87,17 @@ namespace CrabMaga
         }
 
         public Image defText;
-        public Sprite VictoireFR, VictoireAng, DefaiteFR, DefaiteAng;
+        public Sprite VictoireFR, VictoireAng, DefaiteFR, DefaiteAng, VictoireCrab, DefaiteCrab;
+
+        public Image back;
+        public Sprite winBack, loseBack;
 
         void UpdateVictoryText(bool win)
         {
             if (win)
             {
+                back.sprite = winBack;
+
                 switch (languageManager.LanguageEnum)
                 {
                     case LanguageEnum.Francais:
@@ -103,11 +108,14 @@ namespace CrabMaga
 
                         break;
                     case LanguageEnum.Crab:
+                        defText.sprite = VictoireCrab;
                         break;
                 }
             }
             else
             {
+                back.sprite = loseBack;
+
                 switch (languageManager.LanguageEnum)
                 {
                     case LanguageEnum.Francais:
@@ -118,6 +126,7 @@ namespace CrabMaga
 
                         break;
                     case LanguageEnum.Crab:
+                        defText.sprite = DefaiteCrab;
                         break;
                 }
             }

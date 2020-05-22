@@ -16,6 +16,8 @@ namespace CrabMaga
 
         public Sprite[] Spr_UnselectedHeader, Spr_SelectedHeader;
 
+        public VenteTile[] crabsAchats, shellAchats, pearlAchat;
+
         public void OpenPage(int index)
         {
             for (int i = 0; i < pages.Length; i++)

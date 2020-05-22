@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using TMPro;
 
 namespace CrabMaga
 {
@@ -22,6 +23,9 @@ namespace CrabMaga
         public Transform parentNull;
         Transform parent;
 
+        public CodeColor CodeColor;
+        public TextMeshProUGUI lvl;
+        public Image lvlBack;
 
         public override void Init()
         {
@@ -30,6 +34,9 @@ namespace CrabMaga
             thumbnail.sprite = entitydata.thumbnail;
             parent = transform.parent;
             sibling = transform.GetSiblingIndex();
+
+            lvl.text = entitydata.currentLevel.ToString();
+            lvlBack.color = CodeColor.GetColor(entitydata.Triforce);
         }
 
         public override void OnBeginDrag(PointerEventData eventData)
