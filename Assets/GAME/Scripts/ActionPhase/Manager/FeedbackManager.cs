@@ -62,7 +62,7 @@ namespace CrabMaga
 
         IEnumerator CameraTravelling()
         {
-            cameraSlider.SetSlider(cameraSlider.clampedValue.x, timerCameraTravalling);
+            //cameraSlider.SetSlider(cameraSlider.clampedValue.x, timerCameraTravalling);
             yield return new WaitForSeconds(timerCameraTravalling);
 
             StartCoroutine(ShowAttackText());

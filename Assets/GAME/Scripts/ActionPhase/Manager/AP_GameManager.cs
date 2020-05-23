@@ -20,6 +20,7 @@ namespace CrabMaga
         public static AP_GameManager Instance;
 
         public LevelData levelData = default;
+        public LevelData nextLevel = default;
         public PlayerData playerData;
         public HeaderMoney headerMoney;
         public Vector2IntVariable XP;

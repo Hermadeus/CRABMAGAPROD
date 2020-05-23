@@ -35,7 +35,7 @@ namespace CrabMaga
             parent = transform.parent;
             sibling = transform.GetSiblingIndex();
 
-            lvl.text = entitydata.currentLevel.ToString();
+            lvl.text = "LVL " + entitydata.currentLevel.ToString();
             lvlBack.color = CodeColor.GetColor(entitydata.Triforce);
 
             if (entitydata.isLock)
@@ -55,8 +55,6 @@ namespace CrabMaga
         {
             if (entitydata.isLock)
             {
-
-
                 return;
             }
 

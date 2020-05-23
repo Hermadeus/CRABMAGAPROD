@@ -43,6 +43,7 @@ namespace CrabMaga
 
         public void ReturnToSagaMap()
         {
+            Time.timeScale = 1;
             EcranChargement ec = FindObjectOfType<EcranChargement>();
             ec.StartCoroutine(SM());
         }
@@ -57,16 +58,19 @@ namespace CrabMaga
 
         public void NextLevel()
         {
-            int index = FindObjectOfType<AP_GameManager>().levelData.LevelIndex;
-            
-            for (int i = 0; i < leveldatas.Length; i++)
-            {
-                if (leveldatas[i].LevelIndex == i + 1)
-                {
-                    Debug.Log("GO LEVEL : " + leveldatas[i].sceneLevel);
-                    SceneManager.LoadScene(leveldatas[i].sceneLevel);
-                }
-            }
+            Debug.Log("GO LEVEL : " + FindObjectOfType<AP_GameManager>().nextLevel.levelName);
+            SceneManager.LoadScene(FindObjectOfType<AP_GameManager>().nextLevel.sceneLevel);
+
+            //int index = FindObjectOfType<AP_GameManager>().levelData.LevelIndex;
+
+            //for (int i = 0; i < leveldatas.Length; i++)
+            //{
+            //    if (leveldatas[i].LevelIndex == i + 1)
+            //    {
+            //        Debug.Log("GO LEVEL : " + leveldatas[i].sceneLevel);
+            //        SceneManager.LoadScene(leveldatas[i].sceneLevel);
+            //    }
+            //}
         }
 
         public LevelData GetNextLevelData(AP_GameManager gm)

@@ -34,7 +34,10 @@ namespace CrabMaga
 
                 healthSlider.value = value;
 
-                healthBarIm.color = gradient.Evaluate(1 / (startHealth / value));
+                if (startHealth / value != 0 && value != 0)
+                {
+                    healthBarIm.color = gradient.Evaluate(1 / (startHealth / value));
+                }
 
                 pvText.text = value.ToString() + " HP";
 

@@ -32,7 +32,8 @@ namespace CrabMaga
                 
                 pvText.text = value.ToString() + " HP";
 
-                healthBarIm.color = gradient.Evaluate(1 / (startHealth / value));
+                if(startHealth / value != 0 && value != 0)
+                    healthBarIm.color = gradient.Evaluate(1 / (startHealth / value));
 
                 if (value <= 0)
                     gameManager.Lose();

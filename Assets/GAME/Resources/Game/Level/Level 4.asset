@@ -26,8 +26,8 @@ MonoBehaviour:
     textAnglais: The last str'Hike
     textCrab: Level Crab
   sceneLevel:
-    sceneAsset: {fileID: 0}
-    scenePath: 
+    sceneAsset: {fileID: 102900000, guid: 90406a9c3285b7842b498ec502e81ffd, type: 3}
+    scenePath: Assets/GAME/Scenes/AP/Scene_ActionPhase 1.unity
   LevelIndex: 4
   maxCrabInSameTime: 3
   maxCrab: 10
@@ -44,3 +44,6 @@ MonoBehaviour:
   isLock: 1
   levelTuto: 0
   entity_unlock: {fileID: 0}
+  crabGain: 0
+  pearlGain: 0
+  shellGain: 0

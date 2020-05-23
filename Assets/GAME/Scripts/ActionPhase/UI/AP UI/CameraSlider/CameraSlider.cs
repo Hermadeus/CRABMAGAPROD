@@ -68,9 +68,9 @@ namespace CrabMaga
             pos.y = cameraObj.transform.position.y;
 
             slider.value = clampedValue.y;
-            cameraObj.transform.position = new Vector3(cameraObj.transform.position.x, cameraObj.transform.position.y, clampedValue.y - OFFSET);
+            //cameraObj.transform.position = new Vector3(cameraObj.transform.position.x, cameraObj.transform.position.y, clampedValue.y - OFFSET);
 
-            slider.onValueChanged.AddListener(OnSliderMove);
+            //slider.onValueChanged.AddListener(OnSliderMove);
 
             //swipeAP.onSwipeUp.AddListener(SwipeDown);
             //swipeAP.onSwipeDown.AddListener(SwipeUp);
@@ -82,7 +82,7 @@ namespace CrabMaga
         {
             pos.z = value - OFFSET;
 
-            cameraObj.transform.position = pos;
+            //cameraObj.transform.position = pos;
         }
 
         public Tween t;
