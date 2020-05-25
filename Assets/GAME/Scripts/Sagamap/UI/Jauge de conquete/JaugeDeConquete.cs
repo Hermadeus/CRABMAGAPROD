@@ -12,117 +12,215 @@ namespace CrabMaga
     public class JaugeDeConquete : UIElement
     {
         public Slider slider;
-
-        public int maxSliderValue;
         public Vector2IntVariable currentXP; //x => current & y => previous
-
         public PlayerData playerData;
         public HeaderMoney headerMoney;
+        public TextAsset csvFile;
 
-        public Pallier[] palliers;
+        public int currentNiveau;
+        public NiveauDeJauge[] niveauDeJauges;
+
+        public float animSpeed;
 
         public override void Init()
         {
             base.Init();
 
-            slider.maxValue = maxSliderValue;
-            slider.value = currentXP.Value.y % maxSliderValue;
+            Debug.Log("jauge conquete init");
 
-            UpdateXP();
+            slider.maxValue = niveauDeJauges[currentNiveau].starMax;
+            slider.value = currentXP.GetValueY();
+
+            Invoke("AddXP", 1f);
         }
 
-        public void UpdateXP()
+        public void AddXP()
         {
-            StartCoroutine(Up());
+            int XPToAdd = currentXP.Value.x - currentXP.Value.y;
+
+            if(slider.value + XPToAdd < slider.maxValue)
+                DOTween.To(() => slider.value, (x) => slider.value = x, slider.value + XPToAdd, animSpeed).SetEase(Ease.InOutSine);
+            else if (slider.value + XPToAdd >= slider.maxValue)
+            {
+                StartCoroutine(AddXPAndReset(currentXP.GetValueX() - currentXP.GetValueY()));
+            }
         }
 
-        IEnumerator Up()
+        IEnumerator AddXPAndReset(int XPToAdd)
         {
-            int diff = currentXP.Value.x - currentXP.Value.y;
-
-            Debug.Log(diff);
+            int diff = ((int)slider.value + XPToAdd) - (int)slider.maxValue;
 
             if (slider.value + diff > slider.maxValue)
             {
-                DOTween.To(
-                () => slider.value,
-                (x) => slider.value = x,
-                slider.maxValue,
-                2f
-                ).OnComplete(delegate { Rest(diff % maxSliderValue); }); ;
-            }
-            else
-            {
-                DOTween.To(
-                () => slider.value,
-                (x) => slider.value = x,
-                currentXP.Value.x,
-                2f
-                );
+                int diffdiff = (int)slider.maxValue - (int)slider.value;
+
+                currentXP.SetValueY(currentXP.GetValueY() + diffdiff);
+                StartCoroutine(AddXPAndReset(currentXP.GetValueX() - currentXP.GetValueY()));
+                currentXP.SetValueY(currentXP.GetValueX());
+                yield break;
             }
 
-            yield return new WaitForSeconds(3f);
+            DOTween.To(() => slider.value, (x) => slider.value = x, slider.maxValue, animSpeed).SetEase(Ease.InSine);
 
-            for (int i = 0; i < currentXP.Value.x; i++)
-            {
-                if (!palliers[i].isWin)
-                {
-                    AddRecompense(palliers[i]);
-                    palliers[i].isWin = true;
-                }
-            }
+            yield return new WaitForSeconds(animSpeed + .5f);
+            currentNiveau++;
+            OnLevelUp();            
 
-            currentXP.SetValueY(currentXP.Value.x);
+            slider.value = 0;
+            slider.maxValue = niveauDeJauges[currentNiveau].starMax;
+
+            DOTween.To(() => slider.value, (x) => slider.value = x, diff, animSpeed).SetEase(Ease.InSine);
+
+            currentXP.SetValueY(currentXP.GetValueX());
 
             yield break;
         }
 
-        void Rest(int v)
+        public void OnLevelUp()
         {
-            int diff = currentXP.Value.x - currentXP.Value.y;
-
-            slider.value = 0;
-
-            DOTween.To(
-                () => slider.value,
-                (x) => slider.value = x,
-                v,
-                2f);
-        }
-
-        public void AddRecompense(Pallier p)
-        {
-            playerData.crabMoney += p.recompenseCrab;
-            playerData.shellMoney += p.recompenseShell;
-            playerData.pearlMoney += p.recompensePearl;
+            playerData.shellMoney += niveauDeJauges[currentNiveau].shellReward;
             headerMoney.UpdateMoney();
-
-            p.isWin = true;
         }
 
         [Button]
-        public void AddXP()
+        public void InitNiveauDeJauge()
         {
-            currentXP.SetValueX(currentXP.GetValueX() + 1);
-            Init();
+            int _size = 20;
+
+            string[,] s = ParseCSV();
+
+            for (int i = 1; i < _size + 1; i++)
+            {
+                string[] c2 = s[1, i].Split(';');
+                int shell = int.Parse(c2[0]);
+                niveauDeJauges[i - 1].shellReward = shell;
+
+                string[] c3 = s[2, i].Split(';');
+                int starMax = int.Parse(c3[0]);
+                niveauDeJauges[i - 1].starMax = starMax;
+            }
         }
 
-        [Button]
-        public void ResetXP()
+        public string[,] ParseCSV()
         {
-            currentXP.SetValueX(0);
-            currentXP.SetValueY(0);
-            Init();
+            //split the data on split line character
+            string[] lines = csvFile.text.Split("\n"[0]);
+
+            // find the max number of columns
+            int totalColumns = 0;
+            for (int i = 0; i < lines.Length; i++)
+            {
+                string[] row = lines[i].Split(';');
+                totalColumns = Mathf.Max(totalColumns, row.Length);
+            }
+
+            // creates new 2D string grid to output to
+            string[,] outputGrid = new string[totalColumns + 1, lines.Length + 1];
+            for (int y = 0; y < lines.Length; y++)
+            {
+                string[] row = lines[y].Split(';');
+                for (int x = 0; x < row.Length; x++)
+                {
+                    outputGrid[x, y] = row[x];
+                }
+            }
+
+            //Debug.Log("L = " + lines.Length);
+            //Debug.Log("C = " + totalColumns);
+
+            return outputGrid;
         }
-    }
 
-    [System.Serializable]
-    public class Pallier
-    {
-        public int recompenseCrab;
-        public int recompenseShell;
-        public int recompensePearl;
+        //    public void UpdateXP()
+        //    {
+        //        StartCoroutine(Up());
+        //    }
 
-        public bool isWin = false;
+        //    IEnumerator Up()
+        //    {
+        //        int diff = currentXP.Value.x - currentXP.Value.y;
+
+        //        Debug.Log(diff);
+
+        //        if (slider.value + diff > slider.maxValue)
+        //        {
+        //            DOTween.To(
+        //            () => slider.value,
+        //            (x) => slider.value = x,
+        //            slider.maxValue,
+        //            2f
+        //            ).OnComplete(delegate { Rest(diff % maxSliderValue); }); ;
+        //        }
+        //        else
+        //        {
+        //            DOTween.To(
+        //            () => slider.value,
+        //            (x) => slider.value = x,
+        //            currentXP.Value.x,
+        //            2f
+        //            );
+        //        }
+
+        //        yield return new WaitForSeconds(3f);
+
+        //        for (int i = 0; i < currentXP.Value.x; i++)
+        //        {
+        //            if (!palliers[i].isWin)
+        //            {
+        //                AddRecompense(palliers[i]);
+        //                palliers[i].isWin = true;
+        //            }
+        //        }
+
+        //        currentXP.SetValueY(currentXP.Value.x);
+
+        //        yield break;
+        //    }
+
+        //    void Rest(int v)
+        //    {
+        //        int diff = currentXP.Value.x - currentXP.Value.y;
+
+        //        slider.value = 0;
+
+        //        DOTween.To(
+        //            () => slider.value,
+        //            (x) => slider.value = x,
+        //            v,
+        //            2f);
+        //    }
+
+        //    public void AddRecompense(Pallier p)
+        //    {
+        //        playerData.crabMoney += p.recompenseCrab;
+        //        playerData.shellMoney += p.recompenseShell;
+        //        playerData.pearlMoney += p.recompensePearl;
+        //        headerMoney.UpdateMoney();
+
+        //        p.isWin = true;
+        //    }
+
+        //    [Button]
+        //    public void AddXP()
+        //    {
+        //        currentXP.SetValueX(currentXP.GetValueX() + 1);
+        //        Init();
+        //    }
+
+        //    [Button]
+        //    public void ResetXP()
+        //    {
+        //        currentXP.SetValueX(0);
+        //        currentXP.SetValueY(0);
+        //        Init();
+        //    }
+        //}
+
+        [System.Serializable]
+        public class NiveauDeJauge
+        {
+            public int starMax;
+            public int shellReward;
+        }
     }
 }

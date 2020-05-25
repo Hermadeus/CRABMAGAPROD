@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ce0ed5f1875e0d45ac2029919001e31, type: 3}
   m_Name: Var_XP
   m_EditorClassIdentifier: 
-  description: 
+  description: 'X -> XP ACTUEL
+
+    Y -> XP PREVIOUS'
   initialValue: {x: 0, y: 0}
   _value: {x: 0, y: 0}
-  oldValue: {x: 0, y: 0}
+  oldValue: {x: 18, y: 18}
   OnValueChanged: {fileID: 0}
   constante: 0
-  resetValue: 1
+  resetValue: 0
   resetOldValue: 1
   playOnValueChange: 1
