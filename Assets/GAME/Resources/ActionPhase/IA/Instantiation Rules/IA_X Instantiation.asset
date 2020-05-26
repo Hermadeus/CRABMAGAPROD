@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee9e14390d442b847989abe29d36eed1, type: 3}
-  m_Name: IA_2 Counter On Line
+  m_Script: {fileID: 11500000, guid: 04a3dcd9d2cbeda41a48ba205e5d859d, type: 3}
+  m_Name: IA_X Instantiation
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -21,8 +21,9 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  iA_CounterEnemyOnLine: {fileID: 11400000, guid: e06cfcdba855053438a917f6d29343bc,
-    type: 2}
-  IA_CounterMatrice: {fileID: 11400000, guid: ce2656b670cca2e4699cb1b2e6ee57c3, type: 2}
-  nbrUnitToInvoke: 2
-  timeBetweenEachInstantiation: 3
+  enemyDatas:
+  - {fileID: 11400000, guid: 876cc2111a08d0f4787b3b2a030aa4ae, type: 2}
+  - {fileID: 11400000, guid: 3d0180b355a067f47890c575f4122f94, type: 2}
+  - {fileID: 11400000, guid: 67609789946ed7c4a803863c1eba625b, type: 2}
+  nbr: 3
+  timer: 0.3

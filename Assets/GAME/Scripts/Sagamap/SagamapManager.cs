@@ -4,6 +4,7 @@ using UnityEngine;
 
 using QRTools.Inputs;
 using QRTools.Mobile;
+using DG.Tweening;
 
 namespace CrabMaga
 {
@@ -20,6 +21,8 @@ namespace CrabMaga
 
         public GameObject ecranchargement;
 
+        public CoquillageARamasser[] coquillages;
+
         private void Awake()
         {
             instance = this;
@@ -34,6 +37,41 @@ namespace CrabMaga
             languageManager.UpdateObservable();
             Time.timeScale = 1;
             ecranchargement.SetActive(true);
+
+            for (int i = 0; i < coquillages.Length; i++)
+            {
+                int x = Random.Range(0, 100);
+
+                if(x < 50)
+                {
+                    coquillages[i].gameObject.SetActive(true);
+                }
+                else
+                {
+                    coquillages[i].gameObject.SetActive(false);
+                }
+            }
+
+            coquillageTouch.onTouchEnter.AddListener(OnCoquillageTouch);
         }
+
+        public InputTouch coquillageTouch;
+        public void OnCoquillageTouch()
+        {
+            if (coquillageTouch.objectHit == null)
+                return;
+
+            if (coquillageTouch.objectHit.GetComponent<CoquillageARamasser>())
+            {
+                CoquillageARamasser c = coquillageTouch.objectHit.GetComponent<CoquillageARamasser>();
+                c.Ramasser();
+            }
+        }
+
+        public void RemoveCoquillage()
+        {
+
+        }
+
     }
 }

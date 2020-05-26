@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 using Sirenix.OdinInspector;
 
 using QRTools.Utilities;
+using QRTools.Variables;
 
 namespace CrabMaga
 {
@@ -42,6 +43,8 @@ namespace CrabMaga
 
         public int crabGain, pearlGain, shellGain;
 
+        public Vector2IntVariable XP;
+
         public void Load()
         {
             bestScore = PlayerPrefs.GetInt(levelName + "score");
@@ -64,20 +67,28 @@ namespace CrabMaga
 
         public void TestStars(AP_GameManager gm)
         {
+            int xp = 0;
+
             if (cond01.WinStar(gm) == true)
             {
                 star01 = true;
+                xp++;
             }
 
             if (cond02.WinStar(gm) == true)
             {
                 star02 = true;
+                xp++;
             }
 
             if (cond03.WinStar(gm) == true)
             {
                 star03 = true;
+                xp++;
             }
+
+            if(!asWin)
+                XP.SetValueX(XP.GetValueX() + xp);
         }
     }
 }

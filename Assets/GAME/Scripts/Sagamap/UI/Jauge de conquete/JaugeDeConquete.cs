@@ -93,11 +93,11 @@ namespace CrabMaga
             {
                 string[] c2 = s[1, i].Split(';');
                 int shell = int.Parse(c2[0]);
-                niveauDeJauges[i - 1].shellReward = shell;
+                niveauDeJauges[i].shellReward = shell;
 
                 string[] c3 = s[2, i].Split(';');
                 int starMax = int.Parse(c3[0]);
-                niveauDeJauges[i - 1].starMax = starMax;
+                niveauDeJauges[i].starMax = starMax;
             }
         }
 

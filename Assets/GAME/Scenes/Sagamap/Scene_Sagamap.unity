@@ -1040,6 +1040,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coquillage_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1192937652408374813, guid: ec5f2de0d3751444d8772fe07ec331e6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 2798269881448637454, guid: ec5f2de0d3751444d8772fe07ec331e6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1109,6 +1114,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 12.929289
+      objectReference: {fileID: 0}
+    - target: {fileID: 3926736769118549240, guid: ec5f2de0d3751444d8772fe07ec331e6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec5f2de0d3751444d8772fe07ec331e6, type: 3}
@@ -3141,66 +3151,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1777001558}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &176486288
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: LiberationSans SDF Material
-  m_Shader: {fileID: 4800000, guid: fe393ace9b354375a9cb14cdbbc28be4, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 1
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 28684132378477856, guid: 8f586378b4e144a9851e7b34d9b748ee,
-          type: 2}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _ColorMask: 15
-    - _FaceDilate: 0
-    - _GradientScale: 10
-    - _MaskSoftnessX: 0
-    - _MaskSoftnessY: 0
-    - _OutlineSoftness: 0
-    - _OutlineWidth: 0
-    - _PerspectiveFilter: 0.875
-    - _ScaleRatioA: 0.9
-    - _ScaleRatioB: 1
-    - _ScaleRatioC: 0.73125
-    - _ScaleX: 1
-    - _ScaleY: 1
-    - _ShaderFlags: 0
-    - _Sharpness: 0
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _TextureHeight: 1024
-    - _TextureWidth: 1024
-    - _UnderlayDilate: 0
-    - _UnderlayOffsetX: 0
-    - _UnderlayOffsetY: 0
-    - _UnderlaySoftness: 0
-    - _VertexOffsetX: 0
-    - _VertexOffsetY: 0
-    - _WeightBold: 0.75
-    - _WeightNormal: 0
-    m_Colors:
-    - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
-    - _FaceColor: {r: 1, g: 1, b: 1, a: 1}
-    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
-    - _UnderlayColor: {r: 0, g: 0, b: 0, a: 0.5}
 --- !u!1001 &190027616
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4580,6 +4530,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coquillage_01 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1192937652408374813, guid: ec5f2de0d3751444d8772fe07ec331e6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 2798269881448637454, guid: ec5f2de0d3751444d8772fe07ec331e6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4649,6 +4604,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 10.915356
+      objectReference: {fileID: 0}
+    - target: {fileID: 3926736769118549240, guid: ec5f2de0d3751444d8772fe07ec331e6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec5f2de0d3751444d8772fe07ec331e6, type: 3}
@@ -5831,6 +5791,40 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 315971416}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &316178620 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1192937652408374813, guid: ec5f2de0d3751444d8772fe07ec331e6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1297197615}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &316178621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316178620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa2cc25d2fc49d4388ad5591be6e9ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRamasser: 0
+  playerData: {fileID: 11400000, guid: 45d34bd26e670e2408b22d5402be7708, type: 2}
+  headerMoney: {fileID: 935548797}
+--- !u!135 &316178622
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316178620}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &317849972
 GameObject:
   m_ObjectHideFlags: 0
@@ -7012,6 +7006,40 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 387276816}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &397747839 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1192937652408374813, guid: ec5f2de0d3751444d8772fe07ec331e6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1589108300}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &397747840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397747839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa2cc25d2fc49d4388ad5591be6e9ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRamasser: 0
+  playerData: {fileID: 11400000, guid: 45d34bd26e670e2408b22d5402be7708, type: 2}
+  headerMoney: {fileID: 935548797}
+--- !u!135 &397747841
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397747839}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &397861904
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7482,6 +7510,40 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23f6af33c3d9b8a408528584eb205d1f, type: 3}
+--- !u!1 &408580770 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1192937652408374813, guid: ec5f2de0d3751444d8772fe07ec331e6,
+    type: 3}
+  m_PrefabInstance: {fileID: 759566462}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &408580771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408580770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa2cc25d2fc49d4388ad5591be6e9ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRamasser: 0
+  playerData: {fileID: 11400000, guid: 45d34bd26e670e2408b22d5402be7708, type: 2}
+  headerMoney: {fileID: 935548797}
+--- !u!135 &408580772
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408580770}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &414563797 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 550436467295648090, guid: 06de2e8d8ca48fe419ccfba2b19c7bc2,
@@ -8284,6 +8346,66 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06de2e8d8ca48fe419ccfba2b19c7bc2, type: 3}
+--- !u!21 &474332972
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: LiberationSans SDF Material
+  m_Shader: {fileID: 4800000, guid: fe393ace9b354375a9cb14cdbbc28be4, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 1
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 28684132378477856, guid: 8f586378b4e144a9851e7b34d9b748ee,
+          type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _ColorMask: 15
+    - _FaceDilate: 0
+    - _GradientScale: 10
+    - _MaskSoftnessX: 0
+    - _MaskSoftnessY: 0
+    - _OutlineSoftness: 0
+    - _OutlineWidth: 0
+    - _PerspectiveFilter: 0.875
+    - _ScaleRatioA: 0.9
+    - _ScaleRatioB: 1
+    - _ScaleRatioC: 0.73125
+    - _ScaleX: 1
+    - _ScaleY: 1
+    - _ShaderFlags: 0
+    - _Sharpness: 0
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _TextureHeight: 1024
+    - _TextureWidth: 1024
+    - _UnderlayDilate: 0
+    - _UnderlayOffsetX: 0
+    - _UnderlayOffsetY: 0
+    - _UnderlaySoftness: 0
+    - _VertexOffsetX: 0
+    - _VertexOffsetY: 0
+    - _WeightBold: 0.75
+    - _WeightNormal: 0
+    m_Colors:
+    - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
+    - _FaceColor: {r: 1, g: 1, b: 1, a: 1}
+    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _UnderlayColor: {r: 0, g: 0, b: 0, a: 0.5}
 --- !u!1001 &478495823
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18869,6 +18991,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coquillage_01 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1192937652408374813, guid: ec5f2de0d3751444d8772fe07ec331e6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 2798269881448637454, guid: ec5f2de0d3751444d8772fe07ec331e6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18938,6 +19065,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 9.629591
+      objectReference: {fileID: 0}
+    - target: {fileID: 3926736769118549240, guid: ec5f2de0d3751444d8772fe07ec331e6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec5f2de0d3751444d8772fe07ec331e6, type: 3}
@@ -19362,6 +19494,14 @@ MonoBehaviour:
   InternetRequest: {fileID: 11400000, guid: 487e7184262dbd94090cd68d7877d3ad, type: 2}
   languageManager: {fileID: 11400000, guid: cc7173560c4531545a2a4dde441db5db, type: 2}
   ecranchargement: {fileID: 2086429326}
+  coquillages:
+  - {fileID: 316178621}
+  - {fileID: 1388663048}
+  - {fileID: 2008449854}
+  - {fileID: 1990437970}
+  - {fileID: 397747840}
+  - {fileID: 408580771}
+  coquillageTouch: {fileID: 11400000, guid: b294211f7b67b3344b754a7d6190fae6, type: 2}
 --- !u!4 &781598519
 Transform:
   m_ObjectHideFlags: 0
@@ -28022,6 +28162,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coquillage_01
       objectReference: {fileID: 0}
+    - target: {fileID: 1192937652408374813, guid: ec5f2de0d3751444d8772fe07ec331e6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 2798269881448637454, guid: ec5f2de0d3751444d8772fe07ec331e6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -28091,6 +28236,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 8.836915
+      objectReference: {fileID: 0}
+    - target: {fileID: 3926736769118549240, guid: ec5f2de0d3751444d8772fe07ec331e6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec5f2de0d3751444d8772fe07ec331e6, type: 3}
@@ -34201,6 +34351,40 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1388552387}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1388663047 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1192937652408374813, guid: ec5f2de0d3751444d8772fe07ec331e6,
+    type: 3}
+  m_PrefabInstance: {fileID: 47858012}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1388663048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388663047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa2cc25d2fc49d4388ad5591be6e9ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRamasser: 0
+  playerData: {fileID: 11400000, guid: 45d34bd26e670e2408b22d5402be7708, type: 2}
+  headerMoney: {fileID: 935548797}
+--- !u!135 &1388663049
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388663047}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1393429356 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 9ff6356974820c14193d7678bf6e359d,
@@ -42657,6 +42841,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coquillage_01 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1192937652408374813, guid: ec5f2de0d3751444d8772fe07ec331e6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 2798269881448637454, guid: ec5f2de0d3751444d8772fe07ec331e6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -42726,6 +42915,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 7.1086836
+      objectReference: {fileID: 0}
+    - target: {fileID: 3926736769118549240, guid: ec5f2de0d3751444d8772fe07ec331e6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec5f2de0d3751444d8772fe07ec331e6, type: 3}
@@ -42842,6 +43036,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coquillage_01 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1192937652408374813, guid: ec5f2de0d3751444d8772fe07ec331e6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 2798269881448637454, guid: ec5f2de0d3751444d8772fe07ec331e6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -42911,6 +43110,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 7.8923
+      objectReference: {fileID: 0}
+    - target: {fileID: 3926736769118549240, guid: ec5f2de0d3751444d8772fe07ec331e6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec5f2de0d3751444d8772fe07ec331e6, type: 3}
@@ -43665,66 +43869,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1630703814}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &1631670447
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: LiberationSans SDF Material
-  m_Shader: {fileID: 4800000, guid: fe393ace9b354375a9cb14cdbbc28be4, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 1
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 28684132378477856, guid: 8f586378b4e144a9851e7b34d9b748ee,
-          type: 2}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _ColorMask: 15
-    - _FaceDilate: 0
-    - _GradientScale: 10
-    - _MaskSoftnessX: 0
-    - _MaskSoftnessY: 0
-    - _OutlineSoftness: 0
-    - _OutlineWidth: 0
-    - _PerspectiveFilter: 0.875
-    - _ScaleRatioA: 0.9
-    - _ScaleRatioB: 1
-    - _ScaleRatioC: 0.73125
-    - _ScaleX: 1
-    - _ScaleY: 1
-    - _ShaderFlags: 0
-    - _Sharpness: 0
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _TextureHeight: 1024
-    - _TextureWidth: 1024
-    - _UnderlayDilate: 0
-    - _UnderlayOffsetX: 0
-    - _UnderlayOffsetY: 0
-    - _UnderlaySoftness: 0
-    - _VertexOffsetX: 0
-    - _VertexOffsetY: 0
-    - _WeightBold: 0.75
-    - _WeightNormal: 0
-    m_Colors:
-    - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
-    - _FaceColor: {r: 1, g: 1, b: 1, a: 1}
-    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
-    - _UnderlayColor: {r: 0, g: 0, b: 0, a: 0.5}
 --- !u!4 &1633275602 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5372228785343190262, guid: 4df9e433c0e3c4b4da8b480c9665eb74,
@@ -54830,6 +54974,40 @@ Transform:
   m_Father: {fileID: 1803090721}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -11.122001, y: 0, z: 0}
+--- !u!1 &1990437969 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1192937652408374813, guid: ec5f2de0d3751444d8772fe07ec331e6,
+    type: 3}
+  m_PrefabInstance: {fileID: 241820323}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1990437970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990437969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa2cc25d2fc49d4388ad5591be6e9ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRamasser: 0
+  playerData: {fileID: 11400000, guid: 45d34bd26e670e2408b22d5402be7708, type: 2}
+  headerMoney: {fileID: 935548797}
+--- !u!135 &1990437971
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990437969}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1990890824
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55165,6 +55343,40 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ff6356974820c14193d7678bf6e359d, type: 3}
+--- !u!1 &2008449853 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1192937652408374813, guid: ec5f2de0d3751444d8772fe07ec331e6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1583436387}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2008449854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008449853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa2cc25d2fc49d4388ad5591be6e9ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRamasser: 0
+  playerData: {fileID: 11400000, guid: 45d34bd26e670e2408b22d5402be7708, type: 2}
+  headerMoney: {fileID: 935548797}
+--- !u!135 &2008449855
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008449853}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2017719954
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63318,16 +63530,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 1631670447}
+      objectReference: {fileID: 0}
     - target: {fileID: 2616992703450793391, guid: a0c7fcaa5f43e6740946f888cb157129,
         type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 1631670447}
+      objectReference: {fileID: 0}
     - target: {fileID: 2616992703450793391, guid: a0c7fcaa5f43e6740946f888cb157129,
         type: 3}
       propertyPath: m_padding
-      value: 1.25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2834292130513354260, guid: a0c7fcaa5f43e6740946f888cb157129,
         type: 3}
@@ -64085,16 +64297,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 1631670447}
+      objectReference: {fileID: 0}
     - target: {fileID: 5768193985272529309, guid: a0c7fcaa5f43e6740946f888cb157129,
         type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 1631670447}
+      objectReference: {fileID: 0}
     - target: {fileID: 5768193985272529309, guid: a0c7fcaa5f43e6740946f888cb157129,
         type: 3}
       propertyPath: m_padding
-      value: 1.25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5840531014954679556, guid: a0c7fcaa5f43e6740946f888cb157129,
         type: 3}

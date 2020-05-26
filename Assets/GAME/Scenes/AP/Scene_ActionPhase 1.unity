@@ -765,7 +765,7 @@ PrefabInstance:
     - target: {fileID: 2616992703450793391, guid: a0c7fcaa5f43e6740946f888cb157129,
         type: 3}
       propertyPath: m_padding
-      value: 1.25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2743318133433264439, guid: a0c7fcaa5f43e6740946f888cb157129,
         type: 3}
@@ -2001,7 +2001,7 @@ PrefabInstance:
     - target: {fileID: 3907966891909205166, guid: a0c7fcaa5f43e6740946f888cb157129,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -43.398376
+      value: -43.398438
       objectReference: {fileID: 0}
     - target: {fileID: 3907966892064779092, guid: a0c7fcaa5f43e6740946f888cb157129,
         type: 3}
@@ -2311,7 +2311,7 @@ PrefabInstance:
     - target: {fileID: 3907966892345358522, guid: a0c7fcaa5f43e6740946f888cb157129,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -43.398376
+      value: -43.398438
       objectReference: {fileID: 0}
     - target: {fileID: 3907966892358196554, guid: a0c7fcaa5f43e6740946f888cb157129,
         type: 3}
@@ -2426,7 +2426,7 @@ PrefabInstance:
     - target: {fileID: 3907966892481790624, guid: a0c7fcaa5f43e6740946f888cb157129,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -43.398376
+      value: -43.398438
       objectReference: {fileID: 0}
     - target: {fileID: 3907966892584614572, guid: a0c7fcaa5f43e6740946f888cb157129,
         type: 3}
@@ -2712,7 +2712,7 @@ PrefabInstance:
     - target: {fileID: 5768193985272529309, guid: a0c7fcaa5f43e6740946f888cb157129,
         type: 3}
       propertyPath: m_padding
-      value: 1.25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5840531014954679556, guid: a0c7fcaa5f43e6740946f888cb157129,
         type: 3}
@@ -4334,12 +4334,12 @@ PrefabInstance:
     - target: {fileID: 6108591991544296637, guid: 2665e6f843dd7b340a11f7a210066a2b,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.000061035156
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6108591991544296637, guid: 2665e6f843dd7b340a11f7a210066a2b,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.00018310547
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6108591991544296637, guid: 2665e6f843dd7b340a11f7a210066a2b,
         type: 3}
@@ -10148,66 +10148,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1245345415}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!21 &1254898107
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: LiberationSans SDF Material
-  m_Shader: {fileID: 4800000, guid: fe393ace9b354375a9cb14cdbbc28be4, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 1
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 28684132378477856, guid: 8f586378b4e144a9851e7b34d9b748ee,
-          type: 2}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _ColorMask: 15
-    - _FaceDilate: 0
-    - _GradientScale: 10
-    - _MaskSoftnessX: 0
-    - _MaskSoftnessY: 0
-    - _OutlineSoftness: 0
-    - _OutlineWidth: 0
-    - _PerspectiveFilter: 0.875
-    - _ScaleRatioA: 0.9
-    - _ScaleRatioB: 1
-    - _ScaleRatioC: 0.73125
-    - _ScaleX: 1
-    - _ScaleY: 1
-    - _ShaderFlags: 0
-    - _Sharpness: 0
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _TextureHeight: 1024
-    - _TextureWidth: 1024
-    - _UnderlayDilate: 0
-    - _UnderlayOffsetX: 0
-    - _UnderlayOffsetY: 0
-    - _UnderlaySoftness: 0
-    - _VertexOffsetX: 0
-    - _VertexOffsetY: 0
-    - _WeightBold: 0.75
-    - _WeightNormal: 0
-    m_Colors:
-    - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
-    - _FaceColor: {r: 1, g: 1, b: 1, a: 1}
-    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
-    - _UnderlayColor: {r: 0, g: 0, b: 0, a: 0.5}
 --- !u!1 &1273889893
 GameObject:
   m_ObjectHideFlags: 0
@@ -10318,6 +10258,66 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47ec9f1725a8c664fbd18990b27e7e07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!21 &1330324859
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: LiberationSans SDF Material
+  m_Shader: {fileID: 4800000, guid: fe393ace9b354375a9cb14cdbbc28be4, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 1
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 28684132378477856, guid: 8f586378b4e144a9851e7b34d9b748ee,
+          type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _ColorMask: 15
+    - _FaceDilate: 0
+    - _GradientScale: 10
+    - _MaskSoftnessX: 0
+    - _MaskSoftnessY: 0
+    - _OutlineSoftness: 0
+    - _OutlineWidth: 0
+    - _PerspectiveFilter: 0.875
+    - _ScaleRatioA: 0.9
+    - _ScaleRatioB: 1
+    - _ScaleRatioC: 0.73125
+    - _ScaleX: 1
+    - _ScaleY: 1
+    - _ShaderFlags: 0
+    - _Sharpness: 0
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _TextureHeight: 1024
+    - _TextureWidth: 1024
+    - _UnderlayDilate: 0
+    - _UnderlayOffsetX: 0
+    - _UnderlayOffsetY: 0
+    - _UnderlaySoftness: 0
+    - _VertexOffsetX: 0
+    - _VertexOffsetY: 0
+    - _WeightBold: 0.75
+    - _WeightNormal: 0
+    m_Colors:
+    - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
+    - _FaceColor: {r: 1, g: 1, b: 1, a: 1}
+    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _UnderlayColor: {r: 0, g: 0, b: 0, a: 0.5}
 --- !u!114 &1336412815 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 567442280, guid: d48b019f2a603bf4eb26500b1caf000f,
@@ -25379,19 +25379,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8109069033539136725, guid: d48b019f2a603bf4eb26500b1caf000f,
         type: 3}
-      propertyPath: serializationData.ReferencedUnityObjects.Array.size
-      value: 2
+      propertyPath: serializationData.PrefabModifications.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8109069033539136725, guid: d48b019f2a603bf4eb26500b1caf000f,
         type: 3}
       propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8109069033539136725, guid: d48b019f2a603bf4eb26500b1caf000f,
         type: 3}
-      propertyPath: serializationData.PrefabModifications.Array.size
-      value: 3
-      objectReference: {fileID: 0}
+      propertyPath: guardHouseManager
+      value: 
+      objectReference: {fileID: 992409522}
     - target: {fileID: 8109069033539136725, guid: d48b019f2a603bf4eb26500b1caf000f,
         type: 3}
       propertyPath: serializationData.Prefab
@@ -25412,8 +25412,14 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 8109069033539136725, guid: d48b019f2a603bf4eb26500b1caf000f,
         type: 3}
+      propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3d9677d2829981048a4b076440821125,
+        type: 2}
+    - target: {fileID: 8109069033539136725, guid: d48b019f2a603bf4eb26500b1caf000f,
+        type: 3}
       propertyPath: serializationData.PrefabModifications.Array.data[0]
-      value: '"path":"behaviours","length":4'
+      value: '"path":"behaviours","length":5'
       objectReference: {fileID: 0}
     - target: {fileID: 8109069033539136725, guid: d48b019f2a603bf4eb26500b1caf000f,
         type: 3}
@@ -25427,9 +25433,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8109069033539136725, guid: d48b019f2a603bf4eb26500b1caf000f,
         type: 3}
-      propertyPath: guardHouseManager
-      value: 
-      objectReference: {fileID: 992409522}
+      propertyPath: serializationData.PrefabModifications.Array.data[3]
+      value: '"path":"behaviours.[4]","value":$eref:2'
+      objectReference: {fileID: 0}
     - target: {fileID: 8109069033546107695, guid: d48b019f2a603bf4eb26500b1caf000f,
         type: 3}
       propertyPath: m_AnchorMax.x

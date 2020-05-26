@@ -267,7 +267,6 @@ namespace CrabMaga
             if (levelData.star01 == true)
             {
                 starsAnimator[0].SetTrigger("enter");
-                XP.SetValueX(XP.GetValueX() + 1);
             }
 
             yield return new WaitForSeconds(1f);
@@ -275,7 +274,6 @@ namespace CrabMaga
             if (levelData.star02 == true)
             {
                 starsAnimator[1].SetTrigger("enter");
-                XP.SetValueX(XP.GetValueX() + 1);
             }
 
             yield return new WaitForSeconds(1f);
@@ -283,7 +281,6 @@ namespace CrabMaga
             if (levelData.star03 == true)
             {
                 starsAnimator[2].SetTrigger("enter");
-                XP.SetValueX(XP.GetValueX() + 1);
             }
 
             yield return new WaitForSeconds(5f);
