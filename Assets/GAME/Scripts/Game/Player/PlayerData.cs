@@ -17,7 +17,7 @@ namespace CrabMaga
         [SerializeField] private bool rightHand = true;
 
         [BoxGroup("Economy datas")]
-        public int crabMoney = 0;
+        private int crabMoney = 0;
         [BoxGroup("Economy datas")]
         public int shellMoney = 0;
         [BoxGroup("Economy datas")]
@@ -46,12 +46,29 @@ namespace CrabMaga
             }
         }
 
+        public int CrabMoney
+        {
+            get => crabMoney;
+            set
+            {
+                crabMoney = value;
+
+                if (crabMoney < 0)
+                    crabMoney = 0;
+
+                if (crabMoney > maxCrab)
+                    crabMoney = maxCrab;
+            }
+        }
+
+        public int maxCrab = 5000;
+
         public bool sfxOn = true, musicOn = true;
 
         [Button]
         public void ResetObject()
         {
-            crabMoney = 10000;
+            CrabMoney = 10000;
             shellMoney = 600;
             pearlMoney = 0;
 
@@ -77,7 +94,7 @@ namespace CrabMaga
         [Button]
         void TRICHE()
         {
-            crabMoney = 500000;
+            CrabMoney = 500000;
             shellMoney = 500000;
             pearlMoney = 500000;
         }
@@ -86,7 +103,7 @@ namespace CrabMaga
         {
             PlayerPrefExt.SetBool("hand", RightHand);
 
-            PlayerPrefs.SetInt("crabMoney", crabMoney);
+            PlayerPrefs.SetInt("crabMoney", CrabMoney);
             PlayerPrefs.SetInt("shellMoney", shellMoney);
             PlayerPrefs.SetInt("pearlMoney", pearlMoney);
         }
@@ -95,7 +112,7 @@ namespace CrabMaga
         {
             RightHand = PlayerPrefExt.GetBool("hand");
 
-            crabMoney = PlayerPrefs.GetInt("crabMoney");
+            CrabMoney = PlayerPrefs.GetInt("crabMoney");
             shellMoney = PlayerPrefs.GetInt("shellMoney");
             pearlMoney = PlayerPrefs.GetInt("pearlMoney");
         }

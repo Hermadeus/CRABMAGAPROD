@@ -29,15 +29,15 @@ namespace CrabMaga
 
         public void UpdateMoney()
         {
-            crabMoneyText.text = playerData.crabMoney.ToString();
+            crabMoneyText.text = playerData.CrabMoney.ToString();
             shellMoneyText.text = playerData.shellMoney.ToString();
             pearlMoneyText.text = playerData.pearlMoney.ToString();
         }
 
         public void AddCrab(int x)
         {
-            playerData.crabMoney += x;
-            crabMoneyText.text = playerData.crabMoney.ToString();
+            playerData.CrabMoney += x;
+            crabMoneyText.text = playerData.CrabMoney.ToString();
         }
 
         public void AddShell(int x)

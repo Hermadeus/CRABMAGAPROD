@@ -160,6 +160,9 @@ namespace CrabMaga
             if (TokensUnit.Instance.CurrentTokenCount() <= 0)
                 return;
 
+            if (playerData.CrabMoney == 0)
+                return;
+
             CrabFormation _crabFormation = Pool<CrabFormation>(Vector3.zero) as CrabFormation;
             APgameManager.crabFormationOnBattle.Add(_crabFormation);
 
@@ -185,7 +188,7 @@ namespace CrabMaga
                 }
             }
 
-            playerData.crabMoney -= ((CrabUnitData)_crabFormation.CrabUnits[0].entityData).costUnit;
+            playerData.CrabMoney -= ((CrabUnitData)_crabFormation.CrabUnits[0].entityData).costUnit;
             crabCount.UpdateText();
             headerMoney.UpdateMoney();
 

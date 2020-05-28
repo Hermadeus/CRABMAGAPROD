@@ -67,11 +67,5 @@ namespace CrabMaga
                 c.Ramasser();
             }
         }
-
-        public void RemoveCoquillage()
-        {
-
-        }
-
     }
 }

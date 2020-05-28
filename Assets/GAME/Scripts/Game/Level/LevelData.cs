@@ -41,9 +41,11 @@ namespace CrabMaga
 
         public EntityData entity_unlock = default;
 
-        public int crabGain, pearlGain, shellGain;
+        public int crabGain, pearlGain, shellGain, maxCrabSup;
 
         public Vector2IntVariable XP;
+
+        public PlayerData playerData;
 
         public void Load()
         {
@@ -87,8 +89,11 @@ namespace CrabMaga
                 xp++;
             }
 
-            if(!asWin)
+            if (!asWin)
+            {
                 XP.SetValueX(XP.GetValueX() + xp);
+                playerData.maxCrab += maxCrabSup;
+            }
         }
     }
 }

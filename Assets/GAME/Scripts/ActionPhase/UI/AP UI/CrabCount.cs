@@ -24,9 +24,9 @@ namespace CrabMaga
 
         public void UpdateText()
         {
-            crabQuantiteText.text = playerData.crabMoney.ToString();
+            crabQuantiteText.text = playerData.CrabMoney.ToString();
 
-            if (playerData.crabMoney == 0)
+            if (playerData.CrabMoney == 0)
                 animator.SetBool("warn", true);
             else
                 animator.SetBool("warn", false);

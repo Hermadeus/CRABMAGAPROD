@@ -8,6 +8,7 @@ using QRTools.Variables;
 using DG.Tweening;
 
 using Sirenix.OdinInspector;
+using System;
 
 namespace CrabMaga
 {
@@ -37,6 +38,11 @@ namespace CrabMaga
 
         public Transform ciel;
 
+        public LevelData level4;
+        public float bornesSupChapter2 = 320;
+
+        public Transform door;
+
         private void Awake()
         {
             movingInput.onSwipeDown.AddListener(OnSwipeDown);
@@ -44,6 +50,23 @@ namespace CrabMaga
 
             currentRotation = new Vector3(mapRot.Value, 0, -90);
             mapCharger.ChunkIndex = Mathf.Abs(Mathf.RoundToInt(mapRot.Value) / 180);
+
+            if (level4.asWin)
+            {
+                bornes.y = bornesSupChapter2;
+                GoToNextChapter();
+            }
+        }
+
+        private void GoToNextChapter()
+        {
+            DOTween.To(() => currentRotation, (x) => currentRotation = x, new Vector3(-120f, currentRotation.y, currentRotation.z), 5f).SetEase(Ease.InOutSine).OnComplete(OpenDoorChapter);
+        }
+
+        void OpenDoorChapter()
+        {
+            door.DOScaleY(0, 5f).SetEase(Ease.InOutSine);
+            door.DOScaleZ(0, 5f).SetEase(Ease.InOutSine);
         }
 
         private void Update()

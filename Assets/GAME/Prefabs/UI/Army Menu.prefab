@@ -629,8 +629,8 @@ MonoBehaviour:
   languageManager: {fileID: 11400000, guid: cc7173560c4531545a2a4dde441db5db, type: 2}
   text:
     textFrancais: 'Vie :'
-    textAnglais: 'Health :'
-    textCrab: 'Crab:'
+    textAnglais: 'Health:'
+    textCrab: 'Crab  ,  :'
 --- !u!114 &3513061654072420777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4320,8 +4320,8 @@ MonoBehaviour:
   TextRef: {fileID: 0}
   languageManager: {fileID: 11400000, guid: cc7173560c4531545a2a4dde441db5db, type: 2}
   text:
-    textFrancais: 'DPS:'
-    textAnglais: 'DPS:'
+    textFrancais: 'Force :'
+    textAnglais: 'Strength:'
     textCrab: 'Crab:'
 --- !u!114 &96300478
 MonoBehaviour:
@@ -4787,9 +4787,9 @@ RectTransform:
   m_Father: {fileID: 3907966892226016099}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -289.94}
+  m_AnchorMin: {x: 0, y: 0.57100004}
+  m_AnchorMax: {x: 1, y: 0.57100004}
+  m_AnchoredPosition: {x: 0, y: 808.06}
   m_SizeDelta: {x: 0, y: 812.8999}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &3907966890774569442
@@ -4996,7 +4996,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 54.55
+  m_fontSize: 46.75
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5042,7 +5042,7 @@ MonoBehaviour:
     spaceCount: 23
     wordCount: 24
     linkCount: 0
-    lineCount: 6
+    lineCount: 7
     pageCount: 1
     materialCount: 2
   m_isUsingLegacyAnimationComponent: 0
@@ -5641,8 +5641,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -260.76}
-  m_SizeDelta: {x: 664.2, y: 158.38}
+  m_AnchoredPosition: {x: 0.0006218, y: -260.76}
+  m_SizeDelta: {x: 494.84, y: 158.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3907966891034024929
 CanvasRenderer:
@@ -5745,7 +5745,7 @@ MonoBehaviour:
     spaceCount: 11
     wordCount: 12
     linkCount: 0
-    lineCount: 2
+    lineCount: 3
     pageCount: 1
     materialCount: 2
   m_isUsingLegacyAnimationComponent: 0
@@ -6623,7 +6623,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 423.1, y: -96.80005}
+  m_AnchoredPosition: {x: 271.99, y: -95}
   m_SizeDelta: {x: 283.9, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &3907966891435518009
@@ -7848,7 +7848,7 @@ MonoBehaviour:
   languageManager: {fileID: 11400000, guid: cc7173560c4531545a2a4dde441db5db, type: 2}
   text:
     textFrancais: 'Effectif :'
-    textAnglais: 'Effectif :'
+    textAnglais: 'Squad:'
     textCrab: 'Crab:'
 --- !u!114 &1754394167
 MonoBehaviour:
@@ -7982,7 +7982,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 3907966892064779092}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.8409786
+  m_Size: 0.4454774
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -8026,9 +8026,9 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0.48789063}
   m_AnchoredPosition: {x: 0, y: 260}
-  m_SizeDelta: {x: -100, y: 991.3}
+  m_SizeDelta: {x: -100, y: -257.7}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &3907966891844215119
 CanvasRenderer:
@@ -8229,7 +8229,7 @@ MonoBehaviour:
   languageManager: {fileID: 11400000, guid: cc7173560c4531545a2a4dde441db5db, type: 2}
   text:
     textFrancais: 'Vitesse :'
-    textAnglais: 'Speed :'
+    textAnglais: 'Speed:'
     textCrab: 'Crab:'
 --- !u!114 &1107654841
 MonoBehaviour:
@@ -9345,9 +9345,9 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0.46930206, y: 1}
   m_AnchoredPosition: {x: 121, y: 1.8063965}
-  m_SizeDelta: {x: -886, y: -172.7}
+  m_SizeDelta: {x: -119.75, y: -172.7}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &3907966892249359214
 CanvasRenderer:
@@ -10868,7 +10868,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 64.55
+  m_fontSize: 48.3
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -13111,8 +13111,8 @@ MonoBehaviour:
   TextRef: {fileID: 0}
   languageManager: {fileID: 11400000, guid: cc7173560c4531545a2a4dde441db5db, type: 2}
   text:
-    textFrancais: "Co\xFBt :"
-    textAnglais: 'Cost :'
+    textFrancais: 'Cout :'
+    textAnglais: 'Cost:'
     textCrab: 'Crab :'
 --- !u!114 &1440884011
 MonoBehaviour:
@@ -15135,7 +15135,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000061035156}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 634, y: 131.1}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &5930968415322777085

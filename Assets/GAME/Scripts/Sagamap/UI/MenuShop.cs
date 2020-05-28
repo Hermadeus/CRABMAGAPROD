@@ -37,7 +37,7 @@ namespace CrabMaga
 
         public void AchatCrab(int qte)
         {
-            playerData.crabMoney += qte;
+            playerData.CrabMoney += qte;
         }
 
         public void AchatShell(int qte)

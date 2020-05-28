@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a999b0a09425524c93d8cfba2bd1366, type: 3}
-  m_Name: Var_SagamapWorldRot
+  m_Script: {fileID: 11500000, guid: 78ff6f405ebb1f54e9dab5be4838bf7e, type: 3}
+  m_Name: Var_isStart
   m_EditorClassIdentifier: 
   description: 
   initialValue: 0
@@ -18,6 +18,10 @@ MonoBehaviour:
   oldValue: 0
   OnValueChanged: {fileID: 0}
   constante: 0
-  resetValue: 0
-  resetOldValue: 0
+  resetValue: 1
+  resetOldValue: 1
   playOnValueChange: 1
+  onValueChangeToTrue: {fileID: 0}
+  onValueChangeToFalse: {fileID: 0}
+  playOnValueChangeToTrue: 1
+  playOnValueChangeToFalse: 1
