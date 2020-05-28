@@ -17,7 +17,7 @@ namespace CrabMaga
         [SerializeField] private bool rightHand = true;
 
         [BoxGroup("Economy datas")]
-        private int crabMoney = 0;
+        public int crabMoney = 0;
         [BoxGroup("Economy datas")]
         public int shellMoney = 0;
         [BoxGroup("Economy datas")]
