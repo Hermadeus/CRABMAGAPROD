@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+
 using UnityEngine;
 
 using QRTools.Inputs;
@@ -58,9 +60,58 @@ namespace CrabMaga
             }
         }
 
+        public CastleSagamap lastCastle;
+
+        public void GoToNextCastle()
+        {
+            if (lastCastle == null)
+                lastCastle = SagamapManager.instance.castles[0];
+
+            int y = 1000;
+
+            for (int i = 0; i < SagamapManager.instance.castles.Count; i++)
+            {
+                if (SagamapManager.instance.castles[i] == lastCastle)
+                    y = i;
+            }
+
+            y++;
+
+            if (y > SagamapManager.instance.castles.Count)
+                return;
+
+            GoToPos(SagamapManager.instance.castles[y].posRotCamera);
+        }
+
+        public void GoToPreviousCastle()
+        {
+            if (lastCastle == null)
+                lastCastle = SagamapManager.instance.castles[0];
+
+            int y = -1;
+
+            for (int i = 0; i < SagamapManager.instance.castles.Count; i++)
+            {
+                if (SagamapManager.instance.castles[i] == lastCastle)
+                    y = i;
+            }
+
+            y--;
+
+            if (y < 0 /*|| SagamapManager.instance.castles[y].levelData.isLock*/)
+                return;
+
+            GoToPos(SagamapManager.instance.castles[y].posRotCamera);
+        }
+
+        public void GoToPos(float rot)
+        {
+            DOTween.To(() => currentRotation, (x) => currentRotation = x, new Vector3(rot, currentRotation.y, currentRotation.z), 1.5f).SetEase(Ease.InOutSine).OnComplete(OpenDoorChapter);
+        }
+
         private void GoToNextChapter()
         {
-            DOTween.To(() => currentRotation, (x) => currentRotation = x, new Vector3(-120f, currentRotation.y, currentRotation.z), 5f).SetEase(Ease.InOutSine).OnComplete(OpenDoorChapter);
+            DOTween.To(() => currentRotation, (x) => currentRotation = x, new Vector3(-120f, currentRotation.y, currentRotation.z), 1.5f).SetEase(Ease.InOutSine).OnComplete(OpenDoorChapter);
         }
 
         void OpenDoorChapter()
@@ -81,7 +132,10 @@ namespace CrabMaga
             {
                 for (int i = 0; i < SagamapManager.instance.castles.Count; i++)
                     SagamapManager.instance.castles[i].Deselect();
-                hit.transform.GetComponent<CastleSagamap>().Select();
+
+                CastleSagamap c = hit.transform.GetComponent<CastleSagamap>();
+                c.Select();
+                lastCastle = c;
             }
         }
 

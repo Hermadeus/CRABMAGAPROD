@@ -27,9 +27,9 @@ namespace CrabMaga
         {
             instance = this;
 
-            var objs = FindObjectsOfType<CastleSagamap>();
-            for (int i = 0; i < objs.Length; i++)
-                castles.Add(objs[i]);
+            //var objs = FindObjectsOfType<CastleSagamap>();
+            //for (int i = 0; i < objs.Length; i++)
+            //    castles.Add(objs[i]);
 
             StartCoroutine(notificationsManager.TestNotif());
             //StartCoroutine(InternetRequest.getTime());

@@ -21,6 +21,8 @@ namespace CrabMaga
         public Sprite star01, star02, star03;
         public GameObject[] elementsAnnexes = default;
 
+        public float posRotCamera;
+
         private void Awake()
         {
             playButtonSG = FindObjectOfType<PlayButtonSG>();

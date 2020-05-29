@@ -968,7 +968,7 @@ MonoBehaviour:
   fadeTimer: 0.5
   ease: 1
   animationMode: 3
-  animSpeed: 1
+  animSpeed: 0.2
   c: {fileID: 0}
   playerData: {fileID: 11400000, guid: 45d34bd26e670e2408b22d5402be7708, type: 2}
   headers:
@@ -987,6 +987,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6f10f7c63389eb641810cc5fde6e031c, type: 3}
   - {fileID: 21300000, guid: b9c312739b3433f4088468e01af2047c, type: 3}
   - {fileID: 21300000, guid: 2c36feb62060e714a96459842e54313d, type: 3}
+  crabsAchats: []
+  shellAchats: []
+  pearlAchat: []
 --- !u!1 &8214322680522467171
 GameObject:
   m_ObjectHideFlags: 0
