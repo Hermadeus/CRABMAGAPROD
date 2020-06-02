@@ -47,6 +47,8 @@ namespace CrabMaga
 
         public PlayerData playerData;
 
+        public bool lvlInfini = false;
+
         public void Load()
         {
             bestScore = PlayerPrefs.GetInt(levelName + "score");
@@ -92,7 +94,9 @@ namespace CrabMaga
             if (!asWin)
             {
                 XP.SetValueX(XP.GetValueX() + xp);
-                playerData.maxCrab += maxCrabSup;
+
+                if(LevelIndex % 4 == 0) 
+                    playerData.maxCrab += maxCrabSup;
             }
         }
     }

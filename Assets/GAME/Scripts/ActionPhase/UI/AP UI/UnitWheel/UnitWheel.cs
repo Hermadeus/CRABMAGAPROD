@@ -79,6 +79,8 @@ namespace CrabMaga
 
         public LeaderToken token;
 
+        public InputTouch simpleTouch;
+
         public override void Init()
         {
             base.Init();
@@ -95,6 +97,9 @@ namespace CrabMaga
 
             UnitWheelInput.onTouchEnter.AddListener(FindLine);
             UnitWheelInput.onTouchEnd.AddListener(Unlock);
+
+            //simpleTouch.onTouchEnter.AddListener(Show);
+            //simpleTouch.onTouchEnter.AddListener(Unlock);
         }
 
         public void FindLine()
@@ -117,7 +122,6 @@ namespace CrabMaga
             rectTransform.localPosition = new Vector2(
                 UnitWheelInput.InputCurrentPosition.x - (Screen.width / 2),
                 UnitWheelInput.InputCurrentPosition.y - (Screen.height / 2));
-
         }
 
         public override void Hide()

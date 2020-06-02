@@ -13,6 +13,7 @@ namespace CrabMaga
     {
         public GameObject upgradeIcon;
         public TextMeshProUGUI value;
+        public Image logo;
 
         public void SetOff() => gameObject.SetActive(false);
         public void SetOn() => gameObject.SetActive(true);

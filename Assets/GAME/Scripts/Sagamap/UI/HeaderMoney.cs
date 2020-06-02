@@ -29,7 +29,7 @@ namespace CrabMaga
 
         public void UpdateMoney()
         {
-            crabMoneyText.text = playerData.CrabMoney.ToString();
+            crabMoneyText.text = playerData.CrabMoney.ToString() + "/" + playerData.maxCrab;
             shellMoneyText.text = playerData.shellMoney.ToString();
             pearlMoneyText.text = playerData.pearlMoney.ToString();
         }
@@ -37,7 +37,8 @@ namespace CrabMaga
         public void AddCrab(int x)
         {
             playerData.CrabMoney += x;
-            crabMoneyText.text = playerData.CrabMoney.ToString();
+            crabMoneyText.text = playerData.CrabMoney.ToString() + "/" + playerData.maxCrab;
+
         }
 
         public void AddShell(int x)

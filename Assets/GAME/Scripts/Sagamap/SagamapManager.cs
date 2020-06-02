@@ -44,11 +44,11 @@ namespace CrabMaga
 
                 if(x < 50)
                 {
-                    coquillages[i].gameObject.SetActive(true);
+                    coquillages[i]?.gameObject.SetActive(true);
                 }
                 else
                 {
-                    coquillages[i].gameObject.SetActive(false);
+                    coquillages[i]?.gameObject.SetActive(false);
                 }
             }
 
