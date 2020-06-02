@@ -72,11 +72,17 @@ namespace CrabMaga
         public void Ressucite(float timer)
         {
             if (r != null)
-                StartCoroutine(RessuciteCor(timer));
+            {
+                //StartCoroutine(RessuciteCor(timer));
+                return;
+            }
+            else r = StartCoroutine(RessuciteCor(timer));
         }
 
         public IEnumerator RessuciteCor(float timer)
         {
+            Debug.Log("ressucite Cor");
+
             yield return new WaitForSeconds(timer);
 
             if(crabUnits.Count == count)
@@ -85,8 +91,18 @@ namespace CrabMaga
             if (crabUnits.Count <= 0)
                 yield break;
 
-            poolingManager.Pool(lastDeathPos, crabUnits[0].entityData.unitType.GetType());
-            Debug.Log("ressucite");
+            IPoolable p = poolingManager.Pool(lastDeathPos, crabUnits[0].entityData.unitType.GetType());
+            if(p is Necrabancien)
+            {
+                Necrabancien n = p as Necrabancien;
+                n.transform.position = lastDeathPos;
+                n.OnPool();
+                n.Init();
+                n.graphics.SetActive(true);
+                n.animator.SetTrigger("onUlt");
+                Debug.Log("ressucite " + n.name + "  LAST DEATH POS " + lastDeathPos);
+            }
+
             StartCoroutine(RessuciteCor(timer));
         } 
     }
