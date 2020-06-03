@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 using QRTools.Inputs;
 using UnityEngine.UI;
@@ -22,6 +23,10 @@ namespace CrabMaga
         public GameObject[] elementsAnnexes = default;
 
         public float posRotCamera;
+
+        public bool SkipArmyChoiceMenu = false;
+
+        public UnityEvent tutoEvent;
 
         private void Awake()
         {
@@ -48,6 +53,16 @@ namespace CrabMaga
 
         public void ChargeLevel()
         {
+            if(SkipArmyChoiceMenu == true)
+            {
+                FindObjectOfType<EcranChargement>().Show();
+
+                tutoEvent?.Invoke();
+
+                LoadLevel();
+                return;
+            }
+
             FindObjectOfType<MenuChoixUnit>().Show();
             playButtonSG.button.onClick.AddListener(LoadLevel);
         }

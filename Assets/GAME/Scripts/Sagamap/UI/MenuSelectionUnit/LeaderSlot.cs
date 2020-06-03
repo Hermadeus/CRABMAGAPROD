@@ -58,6 +58,8 @@ namespace CrabMaga
 
         public void ResetTile()
         {
+            if (currentEntityData == null) return;
+
             thumbnail.sprite = currentEntityData.thumbnail;
         }
     }

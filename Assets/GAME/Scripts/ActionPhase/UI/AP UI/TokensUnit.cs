@@ -18,6 +18,8 @@ namespace CrabMaga
         public Image charge;
         public float timerCharge;
 
+        public bool inTuto = false;
+
         public int CurrentTokenCount()
         {
             int x = 0;
@@ -61,6 +63,9 @@ namespace CrabMaga
         [Button]
         public void UseToken()
         {
+            if (inTuto)
+                return;
+
             if (CurrentTokenCount() <= 0)
                 return;
 

@@ -34,6 +34,8 @@ namespace CrabMaga
             onUnitInstantiation = new IAEvent(),
             onGeneralInvoke = new IAEvent();
 
+        public bool tutoOne = false;
+
         private void Awake()
         {
             InitEvents();
@@ -43,7 +45,11 @@ namespace CrabMaga
         IEnumerator OnGameStartCor()
         {
             yield return new WaitForSeconds(timerOnGameStart);
-            onGameStart.Invoke(this);
+
+            if (tutoOne)
+                yield break;
+
+            onGameStart?.Invoke(this);
             yield break;
         }
 
@@ -66,8 +72,7 @@ namespace CrabMaga
                 if (behaviours[i].CallMoment == CallMoment.ON_GENERAL_INVOKE)
                     onGeneralInvoke.AddListener(behaviours[i].Play);
             }
-        }
-        
+        }        
     }
 
     [System.Serializable]

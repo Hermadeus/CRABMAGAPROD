@@ -67,5 +67,17 @@ namespace CrabMaga
                 c.Ramasser();
             }
         }
+
+        public CrabUnitData craberserk;
+        public PlayerData playerData;
+        public void InitLVLOne()
+        {
+            playerData.entityData_slot01 = craberserk;
+            playerData.entityData_slot02 = null;
+            playerData.entityData_slot03 = null;
+            playerData.entityData_slot04 = null;
+
+            playerData.leader_slot = null;
+        }
     }
 }

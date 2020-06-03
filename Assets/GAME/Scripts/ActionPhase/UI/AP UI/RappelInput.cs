@@ -14,6 +14,8 @@ namespace CrabMaga
 
         public void Rapelle()
         {
+            return;
+
             if (asStop) return;
 
             anim.SetTrigger("Rappel");

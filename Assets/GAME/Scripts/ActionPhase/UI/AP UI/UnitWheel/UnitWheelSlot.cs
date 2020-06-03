@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 using QRTools.UI;
 
@@ -13,6 +14,8 @@ namespace CrabMaga
     public class UnitWheelSlot : UIElement
     {
         public CrabUnitData entityDataRef = default;
+
+        public UnityEvent onTuto;
 
         bool isSelected = false;
         public bool IsSelected
@@ -51,6 +54,14 @@ namespace CrabMaga
 
         public void InitSlot(CrabUnitData _entityData)
         {
+            if(_entityData == null)
+            {
+                Hide();
+                Debug.Log("hide");
+                HideElement();
+                return;
+            }
+
             if(_entityData != null)
             {
                 entityDataRef = _entityData;
@@ -59,13 +70,23 @@ namespace CrabMaga
             else
                 Hide();
 
-            if(info != null)
-                info.cost.text = entityDataRef.costUnit.ToString();
+            if (_entityData != null)
+            {
+                if (info != null)
+                    info.cost.text = entityDataRef.costUnit.ToString();
+            }
+            else
+                canvasGroup.alpha = 0;
         }
 
         public void OnSelect()
         {
             //Debug.Log("select " + gameObject.name);
+
+            onTuto?.Invoke();
+
+            if (entityDataRef == null)
+                Hide();
         }
 
         public void IsSelect()
@@ -88,6 +109,9 @@ namespace CrabMaga
 
         public void IsDeselect()
         {
+            if (entityDataRef == null)
+                return;
+
             DOTween.To(
                 () => canvasGroup.alpha,
                 (x) => canvasGroup.alpha = x,
