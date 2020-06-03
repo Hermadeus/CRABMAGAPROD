@@ -99,5 +99,13 @@ namespace CrabMaga
                     playerData.maxCrab += maxCrabSup;
             }
         }
+
+        public void TestLevelInfini()
+        {
+            if (LevelIndex % 5 == 0) castleAllyHealth++;
+
+            LevelIndex++;
+            scoreToReach++;
+        }
     }
 }

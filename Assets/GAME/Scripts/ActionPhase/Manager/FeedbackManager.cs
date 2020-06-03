@@ -11,6 +11,8 @@ using QRTools.Audio;
 
 using Sirenix.OdinInspector;
 
+using TMPro;
+
 namespace CrabMaga
 {
     public class FeedbackManager : SerializedMonoBehaviour
@@ -51,6 +53,12 @@ namespace CrabMaga
         IEnumerator ShowLevelText()
         {
             yield return new WaitForEndOfFrame();
+
+            if (gameManager.levelData.lvlInfini)
+            {
+                levelText.GetComponentInChildren<TextMeshProUGUI>().text = "LEVEL " + gameManager.levelData.LevelIndex;
+            }
+
             levelText.Show();
             yield return new WaitForSeconds(timerLevelText);
             levelText.Hide();

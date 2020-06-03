@@ -189,6 +189,11 @@ namespace CrabMaga
         {
             Application.targetFrameRate = 60;
             Time.timeScale = 1f;
+
+            if (levelData.lvlInfini == true)
+            {
+                levelData.ResetObject();
+            }
         }
 
         [Button]
@@ -219,6 +224,8 @@ namespace CrabMaga
         void OnEnd()
         {
             Debug.Log("PARTIE FINIE");
+
+            
         }
 
         public CrabFormation GetFormationWithHighterCrabs()
@@ -255,13 +262,24 @@ namespace CrabMaga
             {
                 levelData.entity_unlock.isLock = false;
             }
+
+            if (levelData.lvlInfini == true)
+            {
+                levelData.TestLevelInfini();
+            }
         }
 
         IEnumerator StarsAnim()
         {
             yield return new WaitForSeconds(1f);
 
-            WinCrab(levelData.crabGain);
+            if (levelData.lvlInfini)
+            {
+                WinCrab(Mathf.RoundToInt(playerData.maxCrab / 10));
+            }
+            else
+                WinCrab(levelData.crabGain);
+
             WinShell(levelData.shellGain);
 
             if (levelData.star01 == true)
