@@ -231,7 +231,7 @@ namespace CrabMaga
         {
             T entity = Pool<T>(_position) as T;
             entity.entityData = _entityData;
-            entity.OnPool();
+            entity.Invoke("OnPool", 1f);
 
             return entity;
         }
@@ -273,7 +273,7 @@ namespace CrabMaga
                             _obj.transform.parent = parent;
 
                         if (onPool)
-                            ((IPoolable)_obj).OnPool();
+                            _obj.Invoke("OnPool", 1f);
 
                         IPoolable _poolable = poolables[i];
                         poolables.RemoveAt(i);
@@ -343,7 +343,7 @@ namespace CrabMaga
                             _obj.transform.parent = parent;
 
                         if (onPool)
-                            ((IPoolable)_obj).OnPool();
+                            _obj.Invoke("OnPool",1f);
 
                         IPoolable _poolable = poolables[i];
                         poolables.RemoveAt(i);

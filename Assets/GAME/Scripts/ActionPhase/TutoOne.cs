@@ -47,8 +47,8 @@ namespace CrabMaga
             //2
             yield return new WaitForSeconds(.2f);
             boiteDialogue.ShowDialogue(
-                "blabla fr",
-                "blabla ang",
+                "Chaque crabe qui atteint le château ennemi lui retire un point de vie.",
+                "Each crab that reaches the castle removes one health point.",
                 null
                 );
 
@@ -69,8 +69,8 @@ namespace CrabMaga
 
             //5
             boiteDialogue.ShowDialogue(
-                "BLOUBLOU FR",
-                "BLOUBLOUY AN",
+                "Mène l'assaut avec tes unités de crabes, tout en défendant ton propre château.",
+                "Lead the assault with your crab units, while defending your own castle.",
                 null
                 );
 
@@ -91,8 +91,8 @@ namespace CrabMaga
 
             //8
             boiteDialogue.ShowDialogue(
-                "BLOUBLOUPPPP FR",
-                "BLOUBLOUYAAJOAJA AN",
+                "Maintiens pour ouvrir la roue de formation d'unités.",
+                "Hold to open the units formation wheel.",
                 null
                 );
 

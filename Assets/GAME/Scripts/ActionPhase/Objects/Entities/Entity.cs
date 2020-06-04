@@ -141,10 +141,7 @@ namespace CrabMaga
         public virtual void Init()
         {
             graphics?.SetActive(true);
-
             entityData?.Init(this);
-
-            movementBehaviour?.Move(this);
 
             audiosource = GetComponent<AudioSource>();
             SoundManager.instance.PlaySound(assaultSound, audiosource);
@@ -152,7 +149,18 @@ namespace CrabMaga
             animator.enabled = true;
             animator.SetTrigger("onSpawn");
 
+            Speed = 0;
+            movementBehaviour?.Move(this);
+
+            Invoke("In", 1f);
+
             InitButton();
+        }
+
+        void In()
+        {
+            Speed = entityData.baseSpeed;
+            movementBehaviour?.Move(this);
         }
 
         public virtual void UpdateComportement()
