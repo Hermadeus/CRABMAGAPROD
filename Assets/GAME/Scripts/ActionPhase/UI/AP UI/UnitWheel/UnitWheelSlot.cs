@@ -17,7 +17,7 @@ namespace CrabMaga
 
         public UnityEvent onTuto;
 
-        bool isSelected = false;
+        [SerializeField] bool isSelected = false;
         public bool IsSelected
         {
             get => isSelected;

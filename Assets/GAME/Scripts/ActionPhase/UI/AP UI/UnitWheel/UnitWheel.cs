@@ -132,6 +132,13 @@ namespace CrabMaga
             {
                 if(CurrentSelectedSlot is UnitWheelGeneralSlot)
                 {
+                    Vector3 p;
+                    RectTransformUtility.ScreenPointToWorldPointInRectangle(rectTransform,
+                                                                            rectTransform.anchoredPosition,
+                                                                            Camera.main,
+                                                                            out p);
+                    Debug.Log(p);
+
                     poolingManager.InvokeLeader(new Vector3(UnitWheelInput.RayPoint.x,
                             0,
                             AP_GameManager.CurrentInstantiationZone.transform.position.z)

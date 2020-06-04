@@ -48,12 +48,14 @@ namespace CrabMaga
         public Image feedbackImage = default;
         public float timerbeforeFeedback = 5f;
 
+        public UnityEvent onTuto;
 
         bool canUseUlt = true;
         public void LeaderUlt()
         {
             if (canUseUlt)
             {
+                onTuto?.Invoke();
                 gameManager.leaderOnBattle.UsePassif();
                 StartCoroutine(CoolDown());
             }                
