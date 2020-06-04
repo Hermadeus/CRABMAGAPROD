@@ -5,6 +5,7 @@ using UnityEngine;
 using QRTools.Inputs;
 using QRTools.Mobile;
 using DG.Tweening;
+using QRTools.Variables;
 
 namespace CrabMaga
 {
@@ -42,7 +43,7 @@ namespace CrabMaga
             {
                 int x = Random.Range(0, 100);
 
-                if(x < 50)
+                if (x < 50)
                 {
                     coquillages[i]?.gameObject.SetActive(true);
                 }
@@ -70,6 +71,8 @@ namespace CrabMaga
 
         public CrabUnitData craberserk;
         public PlayerData playerData;
+        public BoolVariable firstPartie;
+
         public void InitLVLOne()
         {
             playerData.entityData_slot01 = craberserk;
@@ -78,6 +81,15 @@ namespace CrabMaga
             playerData.entityData_slot04 = null;
 
             playerData.leader_slot = null;
+
+            if (firstPartie.Value == true)
+            {
+                firstPartie.Value = false;
+
+                playerData.crabMoney = 1000;
+                playerData.shellMoney = 0;
+                playerData.pearlMoney = 0;
+            }
         }
     }
 }

@@ -43,6 +43,8 @@ namespace CrabMaga
         [BoxGroup("Camera Travelling")]
         public float timerCameraTravalling = 4f;
 
+        public bool isLevelTuto = false;
+
         private void Awake()
         {
             onAwake?.Invoke();
@@ -53,6 +55,7 @@ namespace CrabMaga
         IEnumerator ShowLevelText()
         {
             yield return new WaitForEndOfFrame();
+
 
             if (gameManager.levelData.lvlInfini)
             {
@@ -80,7 +83,10 @@ namespace CrabMaga
 
         IEnumerator ShowAttackText()
         {
-            attackText.Show();
+            if (!isLevelTuto)
+            { 
+                attackText.Show();
+            }
             startBattleSound.Play(source);
             yield return new WaitForSeconds(timerAttackText);
             attackText.Hide();

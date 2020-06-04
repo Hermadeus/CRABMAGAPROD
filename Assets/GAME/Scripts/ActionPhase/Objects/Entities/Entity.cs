@@ -122,6 +122,8 @@ namespace CrabMaga
             winSound,
             attackSound;
 
+        public bool inTuto = false;
+
         private void Awake()
         {
             if (initALaMano)
@@ -130,6 +132,9 @@ namespace CrabMaga
 
         private void Update()
         {
+            if (inTuto)
+                Speed = 0;
+
             UpdateComportement();
         }
 

@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -26572,8 +26572,7 @@ PrefabInstance:
         type: 3}
       propertyPath: serializationData.Prefab
       value: 
-      objectReference: {fileID: 8109069034258433926, guid: d48b019f2a603bf4eb26500b1caf000f,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 8109069034258433926, guid: d48b019f2a603bf4eb26500b1caf000f,
         type: 3}
       propertyPath: levelText
@@ -26589,6 +26588,11 @@ PrefabInstance:
       propertyPath: cameraSlider
       value: 
       objectReference: {fileID: 823224367}
+    - target: {fileID: 8109069034258433926, guid: d48b019f2a603bf4eb26500b1caf000f,
+        type: 3}
+      propertyPath: isLevelTuto
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8109069034282625367, guid: d48b019f2a603bf4eb26500b1caf000f,
         type: 3}
       propertyPath: serializationData.Prefab

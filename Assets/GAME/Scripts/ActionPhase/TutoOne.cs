@@ -37,6 +37,8 @@ namespace CrabMaga
         private void Awake()
         {
             StartCoroutine(Tuto());
+
+            
         }
 
         public IEnumerator Tuto()
@@ -47,7 +49,7 @@ namespace CrabMaga
             //2
             yield return new WaitForSeconds(.2f);
             boiteDialogue.ShowDialogue(
-                "Chaque crabe qui atteint le château ennemi lui retire un point de vie.",
+                "Chaque crabe qui atteint le chateau ennemi lui retire un point de vie.",
                 "Each crab that reaches the castle removes one health point.",
                 null
                 );
@@ -69,7 +71,7 @@ namespace CrabMaga
 
             //5
             boiteDialogue.ShowDialogue(
-                "Mène l'assaut avec tes unités de crabes, tout en défendant ton propre château.",
+                "Mene l'assaut avec tes unites de crabes, tout en défendant ton propre chateau.",
                 "Lead the assault with your crab units, while defending your own castle.",
                 null
                 );
@@ -91,7 +93,7 @@ namespace CrabMaga
 
             //8
             boiteDialogue.ShowDialogue(
-                "Maintiens pour ouvrir la roue de formation d'unités.",
+                "Maintiens pour ouvrir la roue de formation d'unites.",
                 "Hold to open the units formation wheel.",
                 null
                 );
@@ -133,8 +135,6 @@ namespace CrabMaga
 
         public void HideFleche(Image im)
         {
-            im.fillAmount = 0f;
-
             DOTween.To(
                 () => im.fillAmount,
                 (x) => im.fillAmount = x,
