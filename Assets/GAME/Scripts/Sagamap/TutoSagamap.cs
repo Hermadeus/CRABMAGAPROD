@@ -18,6 +18,7 @@ namespace CrabMaga
         public Vector2IntVariable XP;
         public Image flecheJaugeDeCOnquete;
         public JaugeDeConquete jauge;
+        public Image flecheMenuArmee;
 
         private void Awake()
         {
@@ -59,7 +60,7 @@ namespace CrabMaga
 
             ShowFleche(flecheJaugeDeCOnquete);
 
-            XP.SetValueY(3);
+            XP.SetValueX(3);
             jauge.Init();
 
             yield return new WaitForSeconds(4f);
@@ -69,7 +70,38 @@ namespace CrabMaga
             }
             Debug.Log("LE JOUEUR A CLIQUER OMG");
 
+            boiteDialogue.Hide();
+            HideFleche(flecheJaugeDeCOnquete);
+
+            yield return new WaitForSeconds(.5f);
+            boiteDialogue.ShowDialogue(
+                "Click ici pour ouvrir le menu armée",
+                ""
+                );
+            ShowFleche(flecheMenuArmee);
+
+            ArmyBtn.interactable = true;
+            ArmyBtn.onClick.AddListener(OnOpenMenuArmee);
+
+            while(onArmyMenu != true)
+            {
+                yield return null;
+            }
+
+            boiteDialogue.Hide();
+            HideFleche(flecheMenuArmee);
+
+            Debug.Log("Suiyt tuto");
+
             yield break;
+        }
+
+        bool onArmyMenu = false;
+
+        void OnOpenMenuArmee()
+        {
+            onArmyMenu = true;
+            ArmyBtn.onClick.RemoveListener(OnOpenMenuArmee);
         }
 
         IEnumerator TutoSG()
