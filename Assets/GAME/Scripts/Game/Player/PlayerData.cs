@@ -101,20 +101,20 @@ namespace CrabMaga
 
         public void Save()
         {
-            PlayerPrefExt.SetBool("hand", RightHand);
+            //PlayerPrefExt.SetBool("hand", RightHand);
 
-            PlayerPrefs.SetInt("crabMoney", CrabMoney);
-            PlayerPrefs.SetInt("shellMoney", shellMoney);
-            PlayerPrefs.SetInt("pearlMoney", pearlMoney);
+            //PlayerPrefs.SetInt("crabMoney", CrabMoney);
+            //PlayerPrefs.SetInt("shellMoney", shellMoney);
+            //PlayerPrefs.SetInt("pearlMoney", pearlMoney);
         }
 
         public void Load()
         {
-            RightHand = PlayerPrefExt.GetBool("hand");
+            //RightHand = PlayerPrefExt.GetBool("hand");
 
-            CrabMoney = PlayerPrefs.GetInt("crabMoney");
-            shellMoney = PlayerPrefs.GetInt("shellMoney");
-            pearlMoney = PlayerPrefs.GetInt("pearlMoney");
+            //CrabMoney = PlayerPrefs.GetInt("crabMoney");
+            //shellMoney = PlayerPrefs.GetInt("shellMoney");
+            //pearlMoney = PlayerPrefs.GetInt("pearlMoney");
         }
     }
 }

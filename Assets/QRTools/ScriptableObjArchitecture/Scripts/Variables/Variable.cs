@@ -14,7 +14,7 @@ namespace QRTools.Variables
 
         [SerializeField]
         [Tooltip("Edit the initial value of this variable, Value take this value")]
-        private T initialValue = default;
+        public T initialValue = default;
 
         [SerializeField]
         [Tooltip("Current value of this variable")]

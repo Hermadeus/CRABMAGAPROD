@@ -49,7 +49,7 @@ namespace CrabMaga
             //2
             yield return new WaitForSeconds(.2f);
             boiteDialogue.ShowDialogue(
-                "Chaque crabe qui atteint le chateau ennemi lui retire un point de vie.",
+                "Un crabe qui atteint le chateau ennemi lui retire un point de vie.",
                 "Each crab that reaches the castle removes one health point.",
                 null
                 );

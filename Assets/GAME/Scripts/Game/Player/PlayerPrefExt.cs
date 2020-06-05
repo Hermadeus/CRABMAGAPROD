@@ -6,24 +6,24 @@ namespace CrabMaga
 {
     public static class PlayerPrefExt
     {
-        public static void SetBool(string key, bool state)
-        {
-            PlayerPrefs.SetInt(key, state ? 1 : 0);
-        }
+        //public static void SetBool(string key, bool state)
+        //{
+        //    //PlayerPrefs.SetInt(key, state ? 1 : 0);
+        //}
 
-        public static bool GetBool(string key)
-        {
-            int value = PlayerPrefs.GetInt(key);
+        //public static bool GetBool(string key)
+        //{
+        //    //int value = PlayerPrefs.GetInt(key);
 
-            if (value == 1)
-            {
-                return true;
-            }
+        //    if (value == 1)
+        //    {
+        //        return true;
+        //    }
 
-            else
-            {
-                return false;
-            }
-        }
+        //    else
+        //    {
+        //        return false;
+        //    }
+        //}
     }
 }

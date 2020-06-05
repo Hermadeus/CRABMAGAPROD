@@ -72,6 +72,7 @@ namespace CrabMaga
         public CrabUnitData craberserk;
         public PlayerData playerData;
         public BoolVariable firstPartie;
+        public TutoSagamap tutoSagamap;
 
         public void InitLVLOne()
         {
@@ -84,11 +85,11 @@ namespace CrabMaga
 
             if (firstPartie.Value == true)
             {
-                firstPartie.Value = false;
+                //firstPartie.Value = false;
 
-                playerData.crabMoney = 1000;
-                playerData.shellMoney = 0;
-                playerData.pearlMoney = 0;
+                //playerData.crabMoney = 1000;
+                //playerData.shellMoney = 0;
+                //playerData.pearlMoney = 0;
             }
         }
     }

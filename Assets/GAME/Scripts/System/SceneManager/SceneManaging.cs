@@ -30,6 +30,8 @@ namespace CrabMaga
         public void RestartScene()
         {
             EcranChargement ec = FindObjectOfType<EcranChargement>();
+            Time.timeScale = 1;
+            FindObjectOfType<EcranChargement>().Show();
             ec.StartCoroutine(RS());
         }
 

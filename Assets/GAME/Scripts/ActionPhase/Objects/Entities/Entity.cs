@@ -154,10 +154,10 @@ namespace CrabMaga
             animator.enabled = true;
             animator.SetTrigger("onSpawn");
 
-            Speed = 0;
-            movementBehaviour?.Move(this);
+            //Speed = 0;
+            //movementBehaviour?.Move(this);
 
-            Invoke("In", 1f);
+            //Invoke("In", 1f);
 
             InitButton();
         }

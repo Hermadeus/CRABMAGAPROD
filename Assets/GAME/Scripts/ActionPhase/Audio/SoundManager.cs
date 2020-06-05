@@ -68,22 +68,22 @@ namespace CrabMaga
 
         public void Save()
         {
-            float x;
-            SFXGroup.audioMixer.GetFloat("Volume", out x);
-            PlayerPrefs.SetFloat("SFX", x);
+            //float x;
+            //SFXGroup.audioMixer.GetFloat("Volume", out x);
+            //PlayerPrefs.SetFloat("SFX", x);
 
-            float y;
-            musicGroup.audioMixer.GetFloat("Volume", out y);
-            PlayerPrefs.SetFloat("Music", y);
+            //float y;
+            //musicGroup.audioMixer.GetFloat("Volume", out y);
+            //PlayerPrefs.SetFloat("Music", y);
         }
 
         public void Load()
         {
-            float x = PlayerPrefs.GetFloat("SFX");
-            SFXGroup.audioMixer.SetFloat("Volume", x);
+            //float x = PlayerPrefs.GetFloat("SFX");
+            //SFXGroup.audioMixer.SetFloat("Volume", x);
 
-            float y = PlayerPrefs.GetFloat("Music");
-            musicGroup.audioMixer.SetFloat("Volume", y);
+            //float y = PlayerPrefs.GetFloat("Music");
+            //musicGroup.audioMixer.SetFloat("Volume", y);
         }
     }
 }

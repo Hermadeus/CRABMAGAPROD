@@ -19,7 +19,7 @@ namespace CrabMaga
         public Sprite defaultIcon;
         public Image icon;
 
-        public void ShowDialogue(string fr, string ang, Sprite _icon)
+        public void ShowDialogue(string fr, string ang, Sprite _icon = null)
         {
             switch (languageManager.LanguageEnum)
             {

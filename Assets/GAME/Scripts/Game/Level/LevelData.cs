@@ -66,7 +66,7 @@ namespace CrabMaga
 
         public void Save()
         {
-            PlayerPrefs.SetInt(levelName + "score", bestScore);
+            //PlayerPrefs.SetInt(levelName + "score", bestScore);
         }
 
         public void TestStars(AP_GameManager gm)

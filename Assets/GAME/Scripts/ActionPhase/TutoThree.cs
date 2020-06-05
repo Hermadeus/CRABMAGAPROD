@@ -35,7 +35,8 @@ namespace CrabMaga
         public Transform circle;
         public LeaderToken token;
         public CanvasGroup rappelInput;
-        public Image flecheToken; 
+        public Image flecheToken;
+        public Image flecheSagamap;
 
         private void Awake()
         {
@@ -98,14 +99,18 @@ namespace CrabMaga
 
             wheel.slotGeneral.onTuto.AddListener(OnOpenning);
 
+            yield return new WaitForSeconds(.2f);
+
             while (asTap != true)
             {
                 yield return null;
             }
 
+            yield return new WaitForSeconds(.2f);
+
             AP_GameManager.Instance.leaderOnBattle.transform.position = new Vector3(0, AP_GameManager.Instance.leaderOnBattle.transform.position.y, AP_GameManager.Instance.leaderOnBattle.transform.position.z);
 
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(7f);
 
             circle.DOScale(Vector3.zero, .5f).SetEase(Ease.InOutSine);
             AP_GameManager.Instance.leaderOnBattle.inTuto = true;
@@ -117,17 +122,33 @@ namespace CrabMaga
                 );
             ShowFleche(flecheToken);
 
+            yield return new WaitForSeconds(.5f);
+
+            while (Input.touchCount == 0)
+            {
+                yield return null;
+            }
+            Debug.Log("LE JOUEUR A CLIQUER OMG");
+
+            boiteDialogue.Hide();
+            HideFleche(flecheToken);
+
+            yield return new WaitForSeconds(.5f);
+            boiteDialogue.ShowDialogue(
+                "Attention cependant, tu ne peux appeler le général qu'une fois par niveau. Sa compétence en revanche se recharge avec le temps.",
+                "sazsazs",
+                null
+                );
+
             token.onTuto.AddListener(OnUlt);
 
             while (asTape == false)
             {
                 yield return null;
             }
-
             Debug.Log("LE JOUEUR A CLIQUER OMG");
 
             boiteDialogue.Hide();
-            HideFleche(flecheToken);
 
             AP_GameManager.Instance.leaderOnBattle.inTuto = false;
             AP_GameManager.Instance.leaderOnBattle.Speed = AP_GameManager.Instance.leaderOnBattle.entityData.baseSpeed;
@@ -150,6 +171,7 @@ namespace CrabMaga
         {
             asTape = true;
             token.onTuto.RemoveListener(OnUlt);
+            wheelInput.isActive = true;
         }
 
         public void ShowFleche(Image im)
@@ -172,6 +194,50 @@ namespace CrabMaga
                 0f,
                 .5f
                 ).SetEase(Ease.InOutSine);
+        }
+
+        public void OnWinTuto()
+        {
+            if (!onWin)
+            {
+                StartCoroutine(TutoWin());
+                onWin = true;
+            }
+        }
+
+        bool onWin = false;
+
+        public IEnumerator TutoWin()
+        {
+            yield return new WaitForSeconds(5f);
+
+            boiteDialogue.ShowDialogue(
+                "BLABLA ETOILES",
+                "sazsazs",
+                null
+                );
+
+            while (Input.touchCount == 0)
+            {
+                yield return null;
+            }
+            Debug.Log("LE JOUEUR A CLIQUER OMG");
+
+            boiteDialogue.Hide();
+
+            yield return new WaitForSeconds(.5f);
+
+            boiteDialogue.ShowDialogue(
+                "TU PEUX CLIQUER ICI POUR REVENIR TOUT MOMENT VERS LA SAGAMAP",
+                "",
+                null
+                );
+
+            ShowFleche(flecheSagamap);
+
+            PlayerPrefs.SetFloat("tutoThree", 0);
+
+            yield break;
         }
     }
 }
