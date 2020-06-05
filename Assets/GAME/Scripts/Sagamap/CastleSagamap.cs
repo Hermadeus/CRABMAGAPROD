@@ -64,17 +64,25 @@ namespace CrabMaga
             }
 
             FindObjectOfType<MenuChoixUnit>().Show();
-            playButtonSG.button.onClick.AddListener(LoadLevel);
+
+            Debug.Log(FindObjectOfType<PlayButtonSG>().name);
+
+            FindObjectOfType<PlayButtonSG>().button.onClick.AddListener(LoadLevel);
         }
 
         public void LoadLevel()
         {
-            StartCoroutine(LL());
+            Invoke("ChargeLVL", 1f);
+        }
+
+        public void ChargeLVL()
+        {
+            SceneManager.LoadScene(levelData.sceneLevel);
         }
 
         IEnumerator LL()
         {
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(.1f);
             SceneManager.LoadScene(levelData.sceneLevel);
 
             yield break;

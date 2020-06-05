@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using QRTools.Inputs;
 using DG.Tweening;
 using System;
@@ -34,6 +35,7 @@ namespace CrabMaga
         public Transform circle;
         public LeaderToken token;
         public CanvasGroup rappelInput;
+        public Image flecheToken; 
 
         private void Awake()
         {
@@ -67,7 +69,7 @@ namespace CrabMaga
             rappelInput.DOFade(1f, .5f);
 
             boiteDialogue.ShowDialogue(
-                "Hold to open gngngn",
+                "Lorsqu'un combat devient difficile, tu peux faire appel à un général crabe depuis la roue de formation.",
                 "jodajzodj",
                 null
                 );
@@ -80,7 +82,6 @@ namespace CrabMaga
                        
             boiteDialogue.Hide();
             rappelInput.DOFade(0f, .5f);
-
 
             while (Input.touchCount == 0)
             {
@@ -110,10 +111,11 @@ namespace CrabMaga
             AP_GameManager.Instance.leaderOnBattle.inTuto = true;
 
             boiteDialogue.ShowDialogue(
-                "blabla tape sur le bidule uesh bg",
+                "Les généraux possèdent une compétence spéciale très puissante.",
                 "dazda",
                 null
                 );
+            ShowFleche(flecheToken);
 
             token.onTuto.AddListener(OnUlt);
 
@@ -125,6 +127,7 @@ namespace CrabMaga
             Debug.Log("LE JOUEUR A CLIQUER OMG");
 
             boiteDialogue.Hide();
+            HideFleche(flecheToken);
 
             AP_GameManager.Instance.leaderOnBattle.inTuto = false;
             AP_GameManager.Instance.leaderOnBattle.Speed = AP_GameManager.Instance.leaderOnBattle.entityData.baseSpeed;
@@ -147,7 +150,28 @@ namespace CrabMaga
         {
             asTape = true;
             token.onTuto.RemoveListener(OnUlt);
+        }
 
+        public void ShowFleche(Image im)
+        {
+            im.fillAmount = 0f;
+
+            DOTween.To(
+                () => im.fillAmount,
+                (x) => im.fillAmount = x,
+                1f,
+                .5f
+                ).SetEase(Ease.InOutSine);
+        }
+
+        public void HideFleche(Image im)
+        {
+            DOTween.To(
+                () => im.fillAmount,
+                (x) => im.fillAmount = x,
+                0f,
+                .5f
+                ).SetEase(Ease.InOutSine);
         }
     }
 }
