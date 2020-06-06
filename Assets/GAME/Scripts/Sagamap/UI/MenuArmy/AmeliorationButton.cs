@@ -43,6 +43,7 @@ namespace CrabMaga
                 headerMoney.UpdateMoney();
                 menuArmy.currentTileSelected.entityData.UpgradeEntity();
                 menuArmy.UpdateMenu(menuArmy.currentTileSelected);
+                menuArmy.Save();
             }
         }
     }

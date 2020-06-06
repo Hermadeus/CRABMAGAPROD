@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -416,6 +416,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01cf47ba143ef92478d0cf405576686f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sldr: {fileID: 1718952711}
+  SG:
+    sceneAsset: {fileID: 102900000, guid: a627fb27f9bbe2a4cbe2eb6361e42d27, type: 3}
+    scenePath: Assets/GAME/Scenes/Sagamap/Scene_Sagamap.unity
 --- !u!4 &447123606
 Transform:
   m_ObjectHideFlags: 0
@@ -835,7 +839,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1718952708}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 63b6e785b5051224bbd07e5002268ac1, type: 2}
   m_CullingMode: 0
@@ -892,7 +896,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

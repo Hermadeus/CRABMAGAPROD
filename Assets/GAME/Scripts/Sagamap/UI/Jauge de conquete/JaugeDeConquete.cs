@@ -78,8 +78,8 @@ namespace CrabMaga
 
         public void OnLevelUp()
         {
-            playerData.shellMoney += niveauDeJauges[currentNiveau].shellReward;
-            headerMoney.UpdateMoney();
+           // playerData.shellMoney += niveauDeJauges[currentNiveau].shellReward;
+            headerMoney.AddShell(niveauDeJauges[currentNiveau].shellReward);
         }
 
         [Button]

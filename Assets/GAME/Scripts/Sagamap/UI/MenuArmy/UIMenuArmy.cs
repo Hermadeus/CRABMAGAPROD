@@ -9,7 +9,7 @@ using Math = System.Math;
 
 namespace CrabMaga
 {
-    public class UIMenuArmy : UIMenu
+    public class UIMenuArmy : UIMenu, ISavable
     {
         public LanguageManager languageManager;
 
@@ -44,6 +44,9 @@ namespace CrabMaga
             UnitMenuOpen();
             UpdateInfoUnit(tilesUnits[0]);
             tilesUnits[0].Select();
+
+            Save();
+            Load();
         }
 
         public void UpdateMenu(UITileArmy tile)
@@ -316,5 +319,24 @@ namespace CrabMaga
             leadermenu.interactable = false;
             leadermenu.interactable = true;
         }
+
+        public EntityData[] datas;
+
+        public void Load()
+        {
+            for (int i = 0; i < datas.Length; i++)
+            {
+                datas[i].currentLevel = PlayerPrefs.GetInt(datas[i].entityName.textAnglais + "Level");
+            }
+        }
+
+        public void Save()
+        {
+            for (int i = 0; i < datas.Length; i++)
+            {
+                PlayerPrefs.SetInt(datas[i].entityName.textAnglais + "Level", datas[i].currentLevel);
+            }
+        }
     }
+
 }

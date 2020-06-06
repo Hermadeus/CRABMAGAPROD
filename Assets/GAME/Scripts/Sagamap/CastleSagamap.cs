@@ -18,8 +18,7 @@ namespace CrabMaga
 
         public PlayButtonSG playButtonSG = default;
 
-        public Image s1, s2, s3;
-        public Sprite star01, star02, star03;
+        public GameObject s1, s2, s3;
         public GameObject[] elementsAnnexes = default;
 
         public float posRotCamera;
@@ -102,17 +101,17 @@ namespace CrabMaga
         {
             if (levelData.star01)
             {
-                s1.sprite = star01;
+                s1.SetActive(true);
             }
 
             if (levelData.star02)
             {
-                s2.sprite = star02;
+                s2.SetActive(true);
             }
 
             if (levelData.star03)
             {
-                s3.sprite = star03;
+                s3.SetActive(true);
             }
         }
     }
