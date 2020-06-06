@@ -26,6 +26,8 @@ namespace CrabMaga
 
         public void Close(float t)
         {
+            usable = false;
+
             tween?.Kill();
             tween = token.DOColor(
                 new Color(
@@ -35,8 +37,6 @@ namespace CrabMaga
                 0),
                 t
                 );
-
-            usable = false;
         }
 
         public void Open(float t)

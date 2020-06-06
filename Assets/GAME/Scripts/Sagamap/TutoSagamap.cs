@@ -22,7 +22,7 @@ namespace CrabMaga
 
         private void Awake()
         {
-            if(PlayerPrefs.HasKey("firstParty") == false)
+            if(PlayerPrefs.GetFloat("firstParty") == 0)
             {
                 StartCoroutine(TutoSG());
 
@@ -32,17 +32,23 @@ namespace CrabMaga
 
                 Debug.Log("C EST TA PREMIERE TIPAR");
 
-                PlayerPrefs.SetFloat("firstParty", 0);
+                PlayerPrefs.SetFloat("firstParty", 1);
             }
-            else if(PlayerPrefs.HasKey("firstParty") == true)
+            else if(PlayerPrefs.GetFloat("firstParty") == 1)
             {
                 Debug.Log("C EST PAS LA PREMIERE TIPAR");
             }
 
-            if(PlayerPrefs.HasKey("tutoThree") == true)
+            if(PlayerPrefs.GetFloat("firstParty") == 3)
             {
                 Debug.Log("TutoThree");
             }
+        }
+
+        [Button]
+        void ResetPlayerPref()
+        {
+            PlayerPrefs.SetFloat("firstParty", 0);
         }
 
         [Button]
@@ -160,5 +166,7 @@ namespace CrabMaga
                 .5f
                 ).SetEase(Ease.InOutSine);
         }
+
+        
     }
 }

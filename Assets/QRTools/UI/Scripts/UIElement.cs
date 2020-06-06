@@ -14,7 +14,7 @@ namespace QRTools.UI
     public class UIElement : MonoBehaviour, IUIElement
     {
         [HideInInspector] public RectTransform rectTransform;
-        [HideInInspector] public CanvasGroup element;
+        public CanvasGroup element;
         [HideInInspector] public Image background;
 
         [BoxGroup("Properties"), Range(0,1)]
@@ -58,6 +58,7 @@ namespace QRTools.UI
             show.Kill();
             
             hide = DOTween.To(() => element.alpha, x => element.alpha = x, 0, timerDesappear).SetEase(Ease.Linear);
+            
             element.blocksRaycasts = false;
             element.interactable = false;
         }

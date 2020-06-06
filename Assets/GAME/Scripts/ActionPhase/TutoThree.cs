@@ -124,7 +124,10 @@ namespace CrabMaga
 
             yield return new WaitForSeconds(.5f);
 
-            while (Input.touchCount == 0)
+
+            token.onTuto.AddListener(OnUlt);
+
+            while (asTape == false)
             {
                 yield return null;
             }
@@ -140,9 +143,8 @@ namespace CrabMaga
                 null
                 );
 
-            token.onTuto.AddListener(OnUlt);
 
-            while (asTape == false)
+            while (Input.touchCount == 0)
             {
                 yield return null;
             }

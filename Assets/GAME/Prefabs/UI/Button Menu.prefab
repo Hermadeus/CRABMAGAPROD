@@ -751,6 +751,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: df5283e8c722cf7499a9f3fc733f6ede, type: 2}
+        m_MethodName: ReturnToSagaMap
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4687023718756943591
 GameObject:
   m_ObjectHideFlags: 0
@@ -886,6 +897,8 @@ MonoBehaviour:
   army_off: {fileID: 21300000, guid: 3ebc77ca2b599544fb08dfb6840dbaaa, type: 3}
   options_on: {fileID: 21300000, guid: 73be482154e35b649973e19d117c5b43, type: 3}
   options_off: {fileID: 21300000, guid: 4c4d4633f33e9964888527a724544cd9, type: 3}
+  sceneManaging: {fileID: 11400000, guid: df5283e8c722cf7499a9f3fc733f6ede, type: 2}
+  returnToSG: {fileID: 4687023718710842228}
 --- !u!1 &4687023718941510942
 GameObject:
   m_ObjectHideFlags: 0

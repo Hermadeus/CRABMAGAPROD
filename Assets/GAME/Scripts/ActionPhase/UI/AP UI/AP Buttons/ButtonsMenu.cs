@@ -10,7 +10,15 @@ namespace CrabMaga
         public Image sagamap, shop, army, options;
 
         public Sprite sagamap_on, sagamap_off, shop_on, shop_off, army_on, army_off, options_on, options_off;
-        
+
+        public SceneManaging sceneManaging;
+        public Button returnToSG;
+
+        private void Awake()
+        {
+            returnToSG.onClick.AddListener(sceneManaging.ReturnToSagaMap);
+        }
+
         public void Sagamap()
         {
             DeselectAll();

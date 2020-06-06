@@ -32,6 +32,11 @@ namespace CrabMaga
 
         private void Awake()
         {
+            Init();
+        }
+
+        public void Init()
+        {
             if (!isOpen)
             {
                 if (isStart.Value == false)
@@ -82,10 +87,14 @@ namespace CrabMaga
         {
             Debug.Log("OPEN LE COFFRE");
             headerMoney.AddCrab(populationcount);
-            transform.DOShakeRotation(1f).SetEase(Ease.InOutSine);
-            GetComponentInChildren<Transform>().DOLocalMoveY(GetComponentInChildren<Transform>().localPosition.y + 5, 2f).SetEase(Ease.InOutCirc);
-            transform.DOScale(Vector3.zero, 5f).SetEase(Ease.OutBack);
-            son.Play(source);
+
+
+            //transform.DOShakeRotation(1f).SetEase(Ease.InOutSine);
+            //GetComponentInChildren<Transform>().DOLocalMoveY(GetComponentInChildren<Transform>().localPosition.y + 5, 2f).SetEase(Ease.InOutCirc);
+            //transform.DOScale(Vector3.zero, 5f).SetEase(Ease.OutBack);
+            //son.Play(source);
+
+            transform.DOScale(Vector3.zero, 2f).SetEase(Ease.InOutSine);
         }
 
         public void Deselect()

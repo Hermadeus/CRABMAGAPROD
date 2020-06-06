@@ -56,8 +56,7 @@ namespace CrabMaga
                 }
             }
         }
-
-
+        
         private bool isBlocked = false;
         public bool IsBlocked
         {
@@ -70,9 +69,9 @@ namespace CrabMaga
             }
         }
 
-        GraphicRaycaster m_Raycaster;
+        public GraphicRaycaster m_Raycaster;
         PointerEventData m_PointerEventData;
-        EventSystem m_EventSystem;
+        public EventSystem m_EventSystem;
 
         public LineSystem lineSystem;
         int line;
@@ -80,6 +79,8 @@ namespace CrabMaga
         public LeaderToken token;
 
         public InputTouch simpleTouch;
+
+        public bool IsInit = false;
 
         public override void Init()
         {
@@ -97,6 +98,9 @@ namespace CrabMaga
 
             UnitWheelInput.onTouchEnter.AddListener(FindLine);
             UnitWheelInput.onTouchEnd.AddListener(Unlock);
+
+            Debug.Log("UNIT WHEEL INITIALIZATION 2 ");
+            IsInit = true;
 
             //simpleTouch.onTouchEnter.AddListener(Show);
             //simpleTouch.onTouchEnter.AddListener(Unlock);
