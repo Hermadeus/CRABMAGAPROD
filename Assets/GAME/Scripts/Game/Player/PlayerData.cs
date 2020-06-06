@@ -35,8 +35,7 @@ namespace CrabMaga
 
         [SerializeField] List<IObservable> observables = new List<IObservable>();
         public List<IObservable> Observables { get => observables; set => observables = value; }
-
-
+        
         public bool RightHand { get => rightHand;
             set
             {

@@ -58,6 +58,9 @@ namespace CrabMaga
 
             yield return new WaitForSeconds(2f);
 
+            playerData.leader_slot = crabzilla;
+            wheel.Init();
+
             Enemy e = poolingManager.Pool(pos01.position, enemy.unitType.GetType()) as Enemy;
             Enemy r = poolingManager.Pool(pos02.position, enemy.unitType.GetType()) as Enemy;
 
@@ -136,7 +139,7 @@ namespace CrabMaga
             boiteDialogue.Hide();
             HideFleche(flecheToken);
 
-            yield return new WaitForSeconds(.5f);
+            yield return new WaitForSeconds(6f);
             boiteDialogue.ShowDialogue(
                 "Attention cependant, tu ne peux appeler le général qu'une fois par niveau. Sa compétence en revanche se recharge avec le temps.",
                 "sazsazs",
