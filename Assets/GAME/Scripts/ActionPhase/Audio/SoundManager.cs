@@ -41,29 +41,21 @@ namespace CrabMaga
         public void MuteSFX()
         {
             SFXGroup.audioMixer.SetFloat("Volume", -80f);
-            PersistableSO.Instance.Save();
-
         }
 
         public void SFXOn()
         {
             SFXGroup.audioMixer.SetFloat("Volume", 0f);
-            PersistableSO.Instance.Save();
-
         }
 
         public void MuteMusic()
         {
             musicGroup.audioMixer.SetFloat("Volume", -80f);
-            PersistableSO.Instance.Save();
-
         }
 
         public void MusicOn()
         {
             musicGroup.audioMixer.SetFloat("Volume", 0f);
-            PersistableSO.Instance.Save();
-
         }
 
         public void Save()

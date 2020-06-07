@@ -1,18 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using QRTools.Variables;
 using TMPro;
 using QRTools.Inputs;
 using QRTools.Audio;
 using DG.Tweening;
+using QRTools.UI;
 
 namespace CrabMaga
 {
     public class Coffre : MonoBehaviour, Iinteractable
     {
         public float startTimer = 5;
-        public float timer = 0;
+        public float timer = 0; //28 800
 
         public BoolVariable isStart;
 
@@ -29,6 +31,10 @@ namespace CrabMaga
         public AudioSource source;
 
         public PlayerData playerData;
+
+        public UIMenu menuAcc;
+        public TextMeshProUGUI textAchat, cost;
+        public Button btnAchatRapide;
 
         private void Awake()
         {
@@ -59,8 +65,11 @@ namespace CrabMaga
 
             if (timer > 0)
             {
-                int min = ((int)timer / 60);
-                timerTxt.text = min.ToString() + "min" + System.Math.Round(timer - (min * 60), 2).ToString() + "s";
+                int h = (int)timer / 3600;
+                int min = ((int)timer % 3600) / 60;
+                int sec = (int)timer % 60;
+
+                timerTxt.text =  h + "h " +  min + "min " + sec + "s";
             }
             else
             {
@@ -79,6 +88,49 @@ namespace CrabMaga
             if (timer <= 0 && !isOpen)
             {
                 isOpen = true;
+                Open();
+            }
+            else
+            {
+                OpenAndAccelerate();
+            }
+        }
+
+        int costAchatRapide;
+
+        public LanguageManager languageManager;
+
+        public void OpenAndAccelerate()
+        {
+            menuAcc.Show();
+            costAchatRapide = (int)timer / 100;
+
+            btnAchatRapide.onClick.AddListener(Accelerate);
+            cost.text = costAchatRapide.ToString();
+
+            switch (languageManager.LanguageEnum)
+            {
+                case LanguageEnum.Francais:
+                    textAchat.text = "Ouvre ce coffre pour " + costAchatRapide + " perles.";
+                    break;
+                case LanguageEnum.Anglais:
+                    textAchat.text = "Open this chest now for " + costAchatRapide + " pearls.";
+                    break;
+                case LanguageEnum.Crab:
+                    textAchat.text = "Crab crab craaab cr " + costAchatRapide + " crabs.";
+                    break;
+            }
+        }
+
+        void Accelerate()
+        {
+            if(playerData.pearlMoney - costAchatRapide < 0)
+            {
+                menuAcc.rectTransform.DOShakePosition(.5f, 50);
+            }
+            else
+            {
+                headerMoney.RemovePearl(costAchatRapide);
                 Open();
             }
         }

@@ -43,12 +43,18 @@ namespace CrabMaga
             {
                 Debug.Log("TutoThree");
             }
+
+            if(PlayerPrefs.GetFloat("thirdParty") == 1)
+            {
+                StartTutoThree();
+            }
         }
 
         [Button]
         void ResetPlayerPref()
         {
             PlayerPrefs.SetFloat("firstParty", 0);
+            PlayerPrefs.SetFloat("thirdParty", 0);
         }
 
         [Button]

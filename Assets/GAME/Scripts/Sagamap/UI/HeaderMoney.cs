@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using QRTools.UI;
+using QRTools.Audio;
 
 using TMPro;
 
@@ -22,6 +23,9 @@ namespace CrabMaga
             pearlMoneyText = default;
 
         public TextFeedBack crab, sheel, pearl;
+
+        public AudioEvent sonPiece;
+        public AudioSource source;
 
         public override void Init()
         {
@@ -43,6 +47,7 @@ namespace CrabMaga
             playerData.CrabMoney += x;
             crabMoneyText.text = playerData.CrabMoney.ToString() + "/" + playerData.maxCrab;
             crab.Feedback(x);
+            sonPiece.Play(source);
         }
 
         [Button]
@@ -51,6 +56,7 @@ namespace CrabMaga
             playerData.shellMoney += x;
             shellMoneyText.text = playerData.shellMoney.ToString();
             sheel.Feedback(x);
+            sonPiece.Play(source);
         }
 
         [Button]
@@ -59,6 +65,7 @@ namespace CrabMaga
             playerData.pearlMoney += x;
             pearlMoneyText.text = playerData.pearlMoney.ToString();
             pearl.Feedback(x);
+            sonPiece.Play(source);
         }
 
         [Button]

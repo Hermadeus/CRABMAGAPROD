@@ -240,7 +240,8 @@ namespace CrabMaga
 
             ShowFleche(flecheSagamap);
 
-            PlayerPrefs.SetFloat("tutoThree", 0);
+            //PlayerPrefs.SetFloat("tutoThree", 0);
+            PlayerPrefs.GetFloat("thirdParty", 1);
 
             yield break;
         }
