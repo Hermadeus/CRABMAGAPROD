@@ -48,6 +48,9 @@ namespace QRTools.UI
             HideElement(.5f);
         }
 
+        void SetOn() => gameObject.SetActive(true);
+        void SetOff() => gameObject.SetActive(false);
+
         public virtual void Show()
         {
             ShowElement(.5f);
@@ -69,7 +72,8 @@ namespace QRTools.UI
             
             show = DOTween.To(() => element.alpha, x => element.alpha = x, 1, timerAppear).SetEase(Ease.Linear);
             element.blocksRaycasts = true;
-            element.interactable = true;            
+            element.interactable = true;    
+            
         }
 
         public void ShowElementWithoutInteractable(float timer = 0f)

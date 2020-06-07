@@ -36,6 +36,8 @@ namespace QRTools.UI
 
         public Canvas c;
 
+        public bool startHide;
+
         public override void Init()
         {
             base.Init();
@@ -46,11 +48,16 @@ namespace QRTools.UI
                 InitAnim();
 
             c = FindObjectOfType<CanvasPrinc>()?.canvas;
+
+            if (startHide)
+                gameObject.SetActive(false);
         }
 
         [ButtonGroup("Debug")]
         public override void Show()
         {
+            gameObject.SetActive(true);
+
             menu.blocksRaycasts = true;
             menu.interactable = true;
 
@@ -82,7 +89,11 @@ namespace QRTools.UI
                     animHide.Invoke();
                     break;
             }
+
+            Invoke("SetOff", animSpeed);
         }
+
+        void SetOff() => gameObject.SetActive(false);
 
         void InitAnim()
         {

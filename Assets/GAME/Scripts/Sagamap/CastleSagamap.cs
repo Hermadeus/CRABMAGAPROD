@@ -97,6 +97,16 @@ namespace CrabMaga
             buttonLevel.Show();
         }
 
+        void SetOff()
+        {
+            buttonLevel.gameObject.SetActive(false);
+        }
+
+        void SetOn()
+        {
+            buttonLevel.gameObject.SetActive(true);
+        }
+
         public void SetStars()
         {
             if (levelData.star01)

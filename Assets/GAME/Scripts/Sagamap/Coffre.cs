@@ -146,7 +146,9 @@ namespace CrabMaga
             //transform.DOScale(Vector3.zero, 5f).SetEase(Ease.OutBack);
             //son.Play(source);
 
-            transform.DOScale(Vector3.zero, 2f).SetEase(Ease.InOutSine);
+            menuAcc.Hide();
+
+            this.transform.DOScale(Vector3.zero, 2f).SetEase(Ease.InOutSine);
         }
 
         public void Deselect()

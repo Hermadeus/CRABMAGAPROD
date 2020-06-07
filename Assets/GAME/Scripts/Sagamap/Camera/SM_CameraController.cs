@@ -130,10 +130,14 @@ namespace CrabMaga
 
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, mask))
             {
-                for (int i = 0; i < SagamapManager.instance.castles.Count; i++)
-                    SagamapManager.instance.castles[i].Deselect();
-
                 CastleSagamap c = hit.transform.GetComponent<CastleSagamap>();
+
+                for (int i = 0; i < SagamapManager.instance.castles.Count; i++)
+                {
+                    if(SagamapManager.instance.castles[i] != c)
+                        SagamapManager.instance.castles[i].Deselect();
+                }
+
                 c.Select();
                 lastCastle = c;
             }

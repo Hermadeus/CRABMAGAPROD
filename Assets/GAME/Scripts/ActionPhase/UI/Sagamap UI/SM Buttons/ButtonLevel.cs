@@ -16,6 +16,8 @@ namespace CrabMaga
 
         public override void Show()
         {
+            gameObject.SetActive(true);
+
             base.Show();
 
             CanvasGroup cg = GetComponent<CanvasGroup>();
