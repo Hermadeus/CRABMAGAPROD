@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14332260acdbe514dbcbeaf69e3a39bd, type: 3}
   m_Name: Crablinde
   m_EditorClassIdentifier: 
-  isLock: 1
+  isLock: 0
   behaviourSystem: {fileID: 11400000, guid: 65fa9772d44e2ec47bab627a75c1152e, type: 2}
   languageManager: {fileID: 11400000, guid: cc7173560c4531545a2a4dde441db5db, type: 2}
   entityName:
@@ -25,7 +25,7 @@ MonoBehaviour:
     textAnglais: He won every single resistance contests. It might be his only achievement,
       but he's really proud of that.
     textCrab: CRAAAABBBBLINGBLING
-  currentLevel: 1
+  currentLevel: 2
   passifDescription:
     textFrancais: "Plusieurs crabes de cette unit\xE9 ne peuvent jamais mourir de
       la m\xEAme attaque."
@@ -42,9 +42,9 @@ MonoBehaviour:
   rotationSpeed: 0.5
   accelerationEnum: 2
   acceleration: 2
-  damage: 5
+  damage: 5.13
   attackSpeed: 1
-  DamagePerSeconds: 5
+  DamagePerSeconds: 5.13
   detectionRange: 2
   detectionBehaviour: 0
   entityType: 1
@@ -59,7 +59,7 @@ MonoBehaviour:
     type: 3}
   passifBehaviour: 0
   passifEvent: 0
-  currentPriceUpdate: 12
+  currentPriceUpdate: 39
   upgradeTabs:
   - attackSpeed: 0
     damage: 0

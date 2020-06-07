@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using QRTools.UI;
+using TMPro;
 
 namespace CrabMaga
 {
@@ -12,6 +13,9 @@ namespace CrabMaga
         public CanvasGroup unitTab, leaderTab;
         public Image btnTabUnit, btnTabLeader;
         public Sprite selectedSpriteL, selectedSpriteU, unSelectedSpriteU, unSselectedSpriteL;
+
+        public TextMeshProUGUI tabTitle;
+        public LanguageManager languageManager;
 
         public void LeaderSelection()
         {
@@ -24,6 +28,18 @@ namespace CrabMaga
             leaderTab.alpha = 1;
             leaderTab.interactable = true;
             leaderTab.blocksRaycasts = true;
+
+            switch (languageManager.LanguageEnum)
+            {
+                case LanguageEnum.Francais:
+                    tabTitle.text = "Unites disponibles";
+                    break;
+                case LanguageEnum.Anglais:
+                    tabTitle.text = "Units available";
+                    break;
+                case LanguageEnum.Crab:
+                    break;
+            }
         }
 
         public void UnitsSelection()
@@ -37,6 +53,18 @@ namespace CrabMaga
             unitTab.alpha = 1;
             unitTab.interactable = true;
             unitTab.blocksRaycasts = true;
+
+            switch (languageManager.LanguageEnum)
+            {
+                case LanguageEnum.Francais:
+                    tabTitle.text = "Generaux disponibles";
+                    break;
+                case LanguageEnum.Anglais:
+                    tabTitle.text = "Leaders available";
+                    break;
+                case LanguageEnum.Crab:
+                    break;
+            }
         }
     }
 }

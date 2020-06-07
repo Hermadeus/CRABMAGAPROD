@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using QRTools.UI;
+using DG.Tweening;
 
 namespace CrabMaga
 {
@@ -33,14 +34,27 @@ namespace CrabMaga
 
         public override void OnClickButton()
         {
-            if (islock) return;
+            if (islock)
+            {
+                if (playerData.shellMoney - 50 > 0)
+                {
+                    headerMoney.RemoveShell(menuArmy.currentTileSelected.entityData.currentPriceUpdate);
+                    menuArmy.currentTileSelected.entityData.isLock = false;
+                    menuArmy.currentTileSelected.Unlock();
+                    menuArmy.Init();
+                    Islock = false;
+                }
+                else
+                {
+                    rectTransform.DOShakeAnchorPos(.5f);
+                }
+            }
 
             base.OnClickButton();
 
             if(playerData.shellMoney >= menuArmy.currentTileSelected.entityData.currentPriceUpdate)
             {
-                playerData.shellMoney -= menuArmy.currentTileSelected.entityData.currentPriceUpdate;
-                headerMoney.UpdateMoney();
+                headerMoney.RemoveShell(menuArmy.currentTileSelected.entityData.currentPriceUpdate);
                 menuArmy.currentTileSelected.entityData.UpgradeEntity();
                 menuArmy.UpdateMenu(menuArmy.currentTileSelected);
                 menuArmy.Save();

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78aca2213b529424395395c9ff25678d, type: 3}
+  m_Name: Snd_SpawnCrab
+  m_EditorClassIdentifier: 
+  Name: 
+  baseClip:
+  - {fileID: 8300000, guid: 8f518b6fe6f629842b2d67cd9662bf04, type: 3}
+  - {fileID: 8300000, guid: e3a4fd468c354804a874d8d11732056e, type: 3}
+  - {fileID: 8300000, guid: 004b36d8d8cc8614d80b7cad588c1824, type: 3}
+  - {fileID: 8300000, guid: 77a75c6374d2d8249b948f55adeae5e3, type: 3}
+  audioPlayMode: 1
+  volume: {x: 1, y: 1}
+  pitch: {x: 1, y: 1}
+  delay: {x: 0, y: 1}
+  ResetValue: 1

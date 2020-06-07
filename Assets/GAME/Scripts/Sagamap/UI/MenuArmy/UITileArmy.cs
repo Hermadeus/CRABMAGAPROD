@@ -104,6 +104,12 @@ namespace CrabMaga
             lvlBack.color = codeColor.GetColor(entityData.Triforce);
         }
 
+        public void Unlock()
+        {
+            if (cadenas != null)
+                cadenas.SetActive(false);
+        }
+
         public void Select()
         {
             menuArmy.currentTileSelected = this;
@@ -128,6 +134,7 @@ namespace CrabMaga
             if (entityData.isLock)
             {
                 menuArmy.ameliorationButton.Islock = true;
+                menuArmy.price.text = "50";
             }
             else
             {

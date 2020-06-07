@@ -120,7 +120,8 @@ namespace CrabMaga
             assaultSound,
             deathSound,
             winSound,
-            attackSound;
+            attackSound,
+            passifSound;
 
         public bool inTuto = false;
 

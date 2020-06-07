@@ -36,7 +36,13 @@ namespace CrabMaga
 
         public void UpdateMoney()
         {
-            crabMoneyText.text = playerData.CrabMoney.ToString() + "/" + playerData.maxCrab;
+            crabMoneyText.text = playerData.CrabMoney.ToString();
+
+            if (playerData.CrabMoney == playerData.maxCrab)
+                crabMoneyText.color = Color.red;
+            else
+                crabMoneyText.color = Color.white;
+
             shellMoneyText.text = playerData.shellMoney.ToString();
             pearlMoneyText.text = playerData.pearlMoney.ToString();
         }
@@ -45,7 +51,13 @@ namespace CrabMaga
         public void AddCrab(int x)
         {
             playerData.CrabMoney += x;
-            crabMoneyText.text = playerData.CrabMoney.ToString() + "/" + playerData.maxCrab;
+            crabMoneyText.text = playerData.CrabMoney.ToString();
+
+            if (playerData.CrabMoney == playerData.maxCrab)
+                crabMoneyText.color = Color.red;
+            else
+                crabMoneyText.color = Color.white;
+
             crab.Feedback(x);
             sonPiece.Play(source);
         }
@@ -72,7 +84,13 @@ namespace CrabMaga
         public void RemoveCrab(int x)
         {
             playerData.CrabMoney -= x;
-            crabMoneyText.text = playerData.CrabMoney.ToString() + "/" + playerData.maxCrab;
+
+            if (playerData.CrabMoney == playerData.maxCrab)
+                crabMoneyText.color = Color.red;
+            else
+                crabMoneyText.color = Color.white;
+
+            crabMoneyText.text = playerData.CrabMoney.ToString();
             crab.Feedback(x);
         }
 

@@ -56,7 +56,7 @@ namespace QRTools.UI
         [ButtonGroup("Debug")]
         public override void Show()
         {
-            gameObject.SetActive(true);
+            //gameObject.SetActive(true);
 
             menu.blocksRaycasts = true;
             menu.interactable = true;
@@ -90,7 +90,7 @@ namespace QRTools.UI
                     break;
             }
 
-            Invoke("SetOff", animSpeed);
+            //Invoke("SetOff", animSpeed);
         }
 
         void SetOff() => gameObject.SetActive(false);

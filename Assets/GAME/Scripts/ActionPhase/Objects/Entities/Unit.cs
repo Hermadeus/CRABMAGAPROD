@@ -271,6 +271,7 @@ namespace CrabMaga
             passifBehaviour.PassifEffect(this);
             animator.SetTrigger("onUlt");
             OnPassifFeedback();
+            passifSound?.Play(audiosource);
         }
 
         public void Stunt()
