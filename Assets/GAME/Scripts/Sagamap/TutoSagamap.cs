@@ -165,6 +165,8 @@ namespace CrabMaga
             }
             Debug.Log("LE JOUEUR A CLIQUER OMG");
 
+            yield return new WaitForSeconds(.5f);
+
             boiteDialogue.Hide();
             boiteDialogue.ShowDialogue(
                 "La <color=red>FORCE</color> bat la <color=#4F7BC4>RESILIENCE</color>, la <color=#4F7BC4>RESILIENCE</color> bat l'<color=green>AGILITE</color> et l'<color=green>AGILITE</color> bat la <color=red>FORCE</color>",
@@ -201,7 +203,7 @@ namespace CrabMaga
             yield return new WaitForSeconds(.5f);
 
             boiteDialogue.ShowDialogue(
-                "Pense a faire un tour dans le menu armee pour ameliorer tes unités apres avoir complete une jauge de conquete !",
+                "Pense a faire un tour dans le menu armee pour ameliorer tes unites apres avoir complete une jauge de conquete !",
                 "Remember to visit the army menu to upgrade your units after completing a conquest's gauge!"
                 );
 

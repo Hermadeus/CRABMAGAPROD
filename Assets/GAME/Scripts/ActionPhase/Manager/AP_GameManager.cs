@@ -243,8 +243,15 @@ namespace CrabMaga
             return crabFormation;
         }
 
+        bool finish = false;
+
         public void OnWin()
         {
+            if (finish)
+                return;
+
+            finish = true;
+
             for (int i = 0; i < crabUnitOnBattle.Count; i++)
                 crabUnitOnBattle[i].OnWin();
 
@@ -309,6 +316,10 @@ namespace CrabMaga
 
         public void OnLose()
         {
+            if (finish)
+                return;
+            finish = true;
+
             for (int i = 0; i < crabUnitOnBattle.Count; i++)
                 crabUnitOnBattle[i].OnLose();
 

@@ -37,6 +37,8 @@ namespace CrabMaga
         public Image iconUnitType;
         public Sprite iconForce, iconAgile, iconRes;
 
+        public GameObject lvl;
+
         public override void Init()
         {
             base.Init();
@@ -47,6 +49,9 @@ namespace CrabMaga
 
             Save();
             Load();
+
+            lvl.SetActive(true);
+            lvl.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
         }
 
         public void UpdateMenu(UITileArmy tile)
@@ -106,7 +111,7 @@ namespace CrabMaga
         public void UpdateInfoUnit(UITileArmy tile)
         {
             buttonUpdate.SetActive(true);
-            entityLevel.gameObject.SetActive(true);
+            //entityLevel.gameObject.SetActive(true);
             actif.gameObject.SetActive(true);
             price.gameObject.SetActive(true);
             health.gameObject.SetActive(false);
@@ -131,7 +136,7 @@ namespace CrabMaga
             if(tile.tileArmy == UITileArmy.TypeTileArmy.LEADER)
             {
                 buttonUpdate.SetActive(true);
-                entityLevel.gameObject.SetActive(true);
+                //entityLevel.gameObject.SetActive(true);
                 actif.gameObject.SetActive(true);
                 price.gameObject.SetActive(true);
                 effectif.gameObject.SetActive(false);
@@ -150,7 +155,7 @@ namespace CrabMaga
             if(tile.tileArmy == UITileArmy.TypeTileArmy.ENEMY)
             {
                 buttonUpdate.SetActive(false);
-                entityLevel.gameObject.SetActive(false);
+                //entityLevel.gameObject.SetActive(false);
                 actif.gameObject.SetActive(false);
                 price.gameObject.SetActive(false);
                 effectif.gameObject.SetActive(false);

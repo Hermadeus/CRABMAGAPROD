@@ -81,15 +81,15 @@ namespace CrabMaga
             switch (tileArmy)
             {
                 case TypeTileArmy.UNIT:
-                    levelGO.SetActive(true);
+                    //levelGO.SetActive(true);
                     level.text = "LVL " + entityData.currentLevel.ToString();
                     break;
                 case TypeTileArmy.LEADER:
-                    levelGO.SetActive(true);
+                    //levelGO.SetActive(true);
                     level.text = "LVL " + entityData.currentLevel.ToString();
                     break;
                 case TypeTileArmy.ENEMY:
-                    levelGO.SetActive(false);
+                    //levelGO.SetActive(false);
                     break;
             }
 

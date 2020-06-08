@@ -124,7 +124,7 @@ namespace CrabMaga
             AP_GameManager.Instance.leaderOnBattle.inTuto = true;
 
             boiteDialogue.ShowDialogue(
-                "Les généraux possèdent une compétence spéciale très puissante.",
+                "Les generaux possèdent une competence speciale tres puissante.",
                 "Generals have a very powerful ability.",
                 null
                 );
@@ -226,7 +226,7 @@ namespace CrabMaga
             yield return new WaitForSeconds(5f);
 
             boiteDialogue.ShowDialogue(
-                "La completion d'un niveau confere des étoiles qui remplissent une jauge de conquête.",
+                "La completion d'un niveau confere des etoiles qui remplissent une jauge de conquete.",
                 "Upon completion of a level, you earn stars that fill up conquest gauge.",
                 null
                 );

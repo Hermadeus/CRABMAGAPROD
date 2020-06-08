@@ -95,6 +95,8 @@ namespace CrabMaga
             PlayerPrefs.SetInt("lm", DateTime.Now.Minute);
 
             PlayerPrefs.SetInt("fp", 0);
+
+            PlayerPrefs.SetInt("levelQuatreAnim", 0);
         }
 
         public InputTouch coquillageTouch;

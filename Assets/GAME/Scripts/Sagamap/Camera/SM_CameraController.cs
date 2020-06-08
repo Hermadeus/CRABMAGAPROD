@@ -53,8 +53,9 @@ namespace CrabMaga
             currentRotation = new Vector3(mapRot.Value, 0, -90);
             mapCharger.ChunkIndex = Mathf.Abs(Mathf.RoundToInt(mapRot.Value) / 180);
 
-            if (level4.asWin)
+            if (level4.asWin && PlayerPrefs.GetInt("levelQuatreAnim") == 0)
             {
+                PlayerPrefs.GetInt("levelQuatreAnim", 1);
                 bornes.y = bornesSupChapter2;
                 GoToNextChapter();
             }
