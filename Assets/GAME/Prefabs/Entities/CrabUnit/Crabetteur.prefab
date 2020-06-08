@@ -108,10 +108,11 @@ MonoBehaviour:
   initALaMano: 0
   isStatic: 0
   audiosource: {fileID: 104335809}
-  assaultSound: {fileID: 11400000, guid: a99212ceb200f9c45ab4dd24ae74caf8, type: 2}
-  deathSound: {fileID: 11400000, guid: 5a0e26bce56202541b3bf05179e9e9b8, type: 2}
-  winSound: {fileID: 11400000, guid: d98f9776f27bb6c4f84a65f3a72fd779, type: 2}
-  attackSound: {fileID: 11400000, guid: 255f5f9442fd5c843a4ed9bf6741dcd8, type: 2}
+  assaultSound: {fileID: 11400000, guid: 1f4f85d053b0ae04e9c74dca6655e0de, type: 2}
+  deathSound: {fileID: 11400000, guid: 1f4c6a1cf13856947941b7d5cc7a00eb, type: 2}
+  winSound: {fileID: 11400000, guid: 05bab06023367db4180d132a521e8cfd, type: 2}
+  attackSound: {fileID: 11400000, guid: a63158c7d7bcece4cafd24e27b8c1e58, type: 2}
+  passifSound: {fileID: 11400000, guid: 6a98f6fc77b94bf4b933ba714e41a03e, type: 2}
   inTuto: 0
   lastHitUnitReceive: {fileID: 0}
   damage: 0
@@ -144,7 +145,8 @@ AudioSource:
   m_GameObject: {fileID: 950087590661998214}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 38cc19ce8f990894298b2cce20fd8366,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1

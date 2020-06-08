@@ -91,7 +91,12 @@ namespace CrabMaga
         {
             Debug.Log("reach castle !");
             Health = 0;
-            CastleToDefend.LosePV();
+
+            if (!isDead)
+            {
+                isDead = true;
+                CastleToDefend.LosePV();
+            }
         }
 
         protected override void OnUnitRangeDetectionReachZero()

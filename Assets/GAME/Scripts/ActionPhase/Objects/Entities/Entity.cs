@@ -52,7 +52,9 @@ namespace CrabMaga
                 }
             }
         }
-    
+
+        protected bool isDead = false;
+
         [FoldoutGroup("Attributes")]
         [SerializeField] protected float health = 0f;
         public virtual float Health
@@ -63,7 +65,25 @@ namespace CrabMaga
                 health = value;
                 if (value <= 0)
                 {
-                    Death();
+                    if (animator != null)
+                    {
+                        if (this is CrabInBlack)
+                        {
+                            animator?.SetTrigger("onUlt");
+                        }
+                        else
+                        {
+                            animator?.SetTrigger("onDie");
+                        }
+                    }
+
+                    lastHitUnitReceive?.WinCombat();
+
+                    onDie?.Invoke(this);
+                    SoundManager.instance.PlaySound(deathSound, audiosource);
+
+
+                    Invoke("Death", 1f);
                 }
             }
         }
@@ -106,9 +126,7 @@ namespace CrabMaga
         }
 
         [FoldoutGroup("Debug"), SerializeField] bool initALaMano = false;
-
-
-
+               
         [SerializeField] bool isStatic = false;
         public bool IsStatic { get => isStatic; set => isStatic = value; }
 
@@ -152,6 +170,9 @@ namespace CrabMaga
             audiosource = GetComponent<AudioSource>();
             SoundManager.instance.PlaySound(assaultSound, audiosource);
 
+            if (animator == null)
+                GetComponentInChildren<Animator>();
+
             animator.enabled = true;
             animator.SetTrigger("onSpawn");
 
@@ -161,6 +182,8 @@ namespace CrabMaga
             //Invoke("In", 1f);
 
             InitButton();
+
+            isDead = false;
         }
 
         void In()
@@ -184,16 +207,9 @@ namespace CrabMaga
 
         protected virtual void Death()
         {
-            lastHitUnitReceive?.WinCombat();
+            
 
-            onDie?.Invoke(this);
-
-            PushAfterDie(); // A RETIRER QUAND LES ANIMS SONT INTEGREES
-
-            if(animator != null)
-                animator?.SetTrigger("onDie");
-
-            SoundManager.instance.PlaySound(deathSound, audiosource);
+            PushAfterDie(); // A RETIRER QUAND LES ANIMS SONT INTEGREES           
 
             //Debug.Log(name + " DEATH");
         }

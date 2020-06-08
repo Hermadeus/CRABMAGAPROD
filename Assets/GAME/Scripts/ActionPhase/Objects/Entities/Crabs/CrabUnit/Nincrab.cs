@@ -33,17 +33,20 @@ namespace CrabMaga
         {
             if (esquivePercent + 15f > 90)
                 return;
-
+            
             esquivePercent += 15f;
         }
 
         protected override void Death()
         {
-            for (int i = 0; i < crabFormationReference.CrabUnits.Count; i++)
+            if (crabFormationReference != null)
             {
-                if(crabFormationReference.CrabUnits[i] is Nincrab)
+                for (int i = 0; i < crabFormationReference.CrabUnits.Count; i++)
                 {
-                    UpgardeEsquive();
+                    if (crabFormationReference.CrabUnits[i] is Nincrab)
+                    {
+                        UpgardeEsquive();
+                    }
                 }
             }
 

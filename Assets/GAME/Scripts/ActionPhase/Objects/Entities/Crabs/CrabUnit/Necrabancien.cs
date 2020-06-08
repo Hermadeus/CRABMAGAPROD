@@ -12,7 +12,7 @@ namespace CrabMaga
         {
             if (crabFormationReference != null)
             {
-                crabFormationReference.lastDeathPos = transform.position;
+                crabFormationReference.lastDeathPos = new Vector3(transform.position.x, 0, transform.position.z - .35f);
                 crabFormationReference.Ressucite(ressuciteTimer);
             }
 

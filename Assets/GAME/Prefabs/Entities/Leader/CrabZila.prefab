@@ -712,6 +712,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5332809266727315558}
   - component: {fileID: 1244175487599082764}
+  - component: {fileID: 3047197329307008101}
   m_Layer: 10
   m_Name: CrabZila
   m_TagString: Untagged
@@ -812,10 +813,11 @@ MonoBehaviour:
   initALaMano: 0
   isStatic: 0
   audiosource: {fileID: 0}
-  assaultSound: {fileID: 0}
-  deathSound: {fileID: 0}
-  winSound: {fileID: 0}
-  attackSound: {fileID: 0}
+  assaultSound: {fileID: 11400000, guid: cab4118773042eb47960bee5e13d59ca, type: 2}
+  deathSound: {fileID: 11400000, guid: 1651bd06ae803814691c53e298b8d70f, type: 2}
+  winSound: {fileID: 11400000, guid: df0250541a6079d44b5e95d0abe90a99, type: 2}
+  attackSound: {fileID: 11400000, guid: 8645256c7e3671842b09333c869eca7a, type: 2}
+  passifSound: {fileID: 11400000, guid: cd7ebae9b7500bc49a0dc8d5f4c80ea0, type: 2}
   inTuto: 0
   lastHitUnitReceive: {fileID: 0}
   damage: 0
@@ -843,6 +845,103 @@ MonoBehaviour:
   lineRendererLaser: {fileID: 862108460467694090}
   laserTarget: []
   laserAnimator: {fileID: 8743587009029494439}
+--- !u!82 &3047197329307008101
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5332809266727315557}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 38cc19ce8f990894298b2cce20fd8366,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &5343960109737732300
 GameObject:
   m_ObjectHideFlags: 0

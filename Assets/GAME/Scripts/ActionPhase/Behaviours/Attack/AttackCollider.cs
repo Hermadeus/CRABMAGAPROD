@@ -7,6 +7,8 @@ namespace CrabMaga
     [CreateAssetMenu(menuName = "CRAB MAGA/Behaviour/Attack/Collider Attack")]
     public class AttackCollider : SimpleAttack
     {
+        public float percentageBlockCrablinde = 15f;
+
         public override void Effect(Unit _unit, IAttackReceiver _receiver)
         {
             //base.Effect(_unit, _receiver);
@@ -17,13 +19,19 @@ namespace CrabMaga
 
             for (int i = 0; i < e.hitColliders.Length; i++)
             {
+
                 if (e.hitColliders[i].GetComponentInParent<Unit>() is IAttackReceiver)
                 {
                     if(e.hitColliders[i].GetComponentInParent<Unit>() is Crablinde)
                     {
-                        Debug.Log("Attaque sur crablinde");
-                        base.Effect(_unit, e.hitColliders[i].GetComponentInParent<Unit>() as IAttackReceiver);
-                        break;
+                        int x = Random.Range(0, 100);
+
+                        if (x < percentageBlockCrablinde)
+                        {
+                            Debug.Log("Attaque sur crablinde");
+                            base.Effect(_unit, e.hitColliders[i].GetComponentInParent<Unit>() as IAttackReceiver);
+                            break;
+                        }
                     }
 
                     base.Effect(_unit, e.hitColliders[i].GetComponentInParent<Unit>() as IAttackReceiver);

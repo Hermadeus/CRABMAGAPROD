@@ -28,7 +28,10 @@ namespace CrabMaga
                     stuntAttacker.AsStunt = true;
                     target.IsStunt = true;
                     target.Stunt();
-                    //Debug.Log("stunt" + stuntAttacker.StuntTime);
+
+                    unit.animator.SetTrigger("onUlt");
+
+                    Debug.Log("stunt" + stuntAttacker.StuntTime);
 
                     yield return new WaitForSeconds(stuntEffect);
 

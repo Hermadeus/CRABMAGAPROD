@@ -276,7 +276,7 @@ namespace CrabMaga
 
         public void Stunt()
         {
-            Debug.Log("stunt");
+            animator.SetTrigger("onStunt");
         }
 
         public virtual void WinCombat()

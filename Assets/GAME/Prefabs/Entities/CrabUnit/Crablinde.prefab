@@ -208,6 +208,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1569817745079531690}
   - component: {fileID: 6470439710365292162}
+  - component: {fileID: -6521339930056329537}
   m_Layer: 10
   m_Name: Crablinde
   m_TagString: Untagged
@@ -305,11 +306,12 @@ MonoBehaviour:
   destination: {fileID: 0}
   initALaMano: 0
   isStatic: 0
-  audiosource: {fileID: 0}
-  assaultSound: {fileID: 0}
-  deathSound: {fileID: 0}
-  winSound: {fileID: 0}
-  attackSound: {fileID: 0}
+  audiosource: {fileID: -6521339930056329537}
+  assaultSound: {fileID: 11400000, guid: 6e30545d93a44bd4bb255267daa0a91e, type: 2}
+  deathSound: {fileID: 11400000, guid: 47952abe9825172488602f6e4a7ac047, type: 2}
+  winSound: {fileID: 11400000, guid: f1fe2051d2e60684e93e57999dec36d7, type: 2}
+  attackSound: {fileID: 11400000, guid: 7ed95ecf8859fde468feafd919042b89, type: 2}
+  passifSound: {fileID: 11400000, guid: 28d145d7a297c5f43ab7efd636f87f3e, type: 2}
   inTuto: 0
   lastHitUnitReceive: {fileID: 0}
   damage: 0
@@ -332,6 +334,102 @@ MonoBehaviour:
   FOV_Normal_Color: {r: 0.15619439, g: 0.77461183, b: 0.8490566, a: 0.25490198}
   FOV_Detect_Color: {r: 0.8509804, g: 0.5447302, b: 0.15686272, a: 0.25490198}
   ASFeedback: {fileID: 1427393117918643567}
+--- !u!82 &-6521339930056329537
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569817745079531692}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1569817746028187297
 GameObject:
   m_ObjectHideFlags: 0

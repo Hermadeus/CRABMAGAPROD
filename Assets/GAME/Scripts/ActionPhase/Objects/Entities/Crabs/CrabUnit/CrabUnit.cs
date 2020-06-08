@@ -70,8 +70,13 @@ namespace CrabMaga
         public void ReachCastle()
         {
             Health = 0;
-            gameManager.castle.LosePV();
-            gameManager.CurrentScore++;
+
+            if (!isDead)
+            {
+                isDead = true;
+                gameManager.castle.LosePV();
+                gameManager.CurrentScore++;
+            }
         }
 
         public override void OnPush()
