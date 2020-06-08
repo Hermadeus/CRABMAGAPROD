@@ -268,10 +268,9 @@ namespace CrabMaga
 
         void PlayPassif(Entity entity)
         {
-            passifBehaviour.PassifEffect(this);
+            passifBehaviour?.PassifEffect(this);
             animator.SetTrigger("onUlt");
             OnPassifFeedback();
-            passifSound?.Play(audiosource);
         }
 
         public void Stunt()
@@ -299,10 +298,10 @@ namespace CrabMaga
             ReceiveAttack(this, 1000f);
         }
 
-
         //FEEDBACKS
         public virtual void OnPassifFeedback()
         {
+            passifSound?.Play(audiosource);
 
         }
 

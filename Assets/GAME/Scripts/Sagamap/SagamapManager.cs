@@ -7,6 +7,10 @@ using QRTools.Mobile;
 using DG.Tweening;
 using QRTools.Variables;
 
+using System;
+using Random = UnityEngine.Random;
+using Sirenix.OdinInspector;
+
 namespace CrabMaga
 {
     public class SagamapManager : MonoBehaviour
@@ -24,6 +28,10 @@ namespace CrabMaga
 
         public CoquillageARamasser[] coquillages;
 
+        public HeaderMoney headerMoney;
+
+        public NotificationsManager NotificationsManager;
+
         private void Awake()
         {
             instance = this;
@@ -38,6 +46,28 @@ namespace CrabMaga
             languageManager.UpdateObservable();
             Time.timeScale = 1;
             ecranchargement.SetActive(true);
+
+            if (PlayerPrefs.GetInt("fp") == 1)
+            {
+                int hours = PlayerPrefs.GetInt("lh");
+                int min = PlayerPrefs.GetInt("lm");
+
+                int minT = (DateTime.Now.Hour - hours) * 60 + Mathf.Abs(DateTime.Now.Minute - min);
+
+                Debug.Log("MIN : " + minT);
+
+                headerMoney.AddCrab((headerMoney.playerData.maxCrab / 480) * minT);
+                
+                PlayerPrefs.SetInt("lh", DateTime.Now.Hour);
+                PlayerPrefs.SetInt("lm", DateTime.Now.Minute);
+
+                StartCoroutine(notificationsManager.TestNotif(
+                    "Ton armée a besoin de toi !" ,
+                    "Ta population est au maximum, reviens vite !"));
+            }
+            else
+                PlayerPrefs.SetInt("fp", 1);
+
 
             for (int i = 0; i < coquillages.Length; i++)
             {
@@ -54,6 +84,15 @@ namespace CrabMaga
             }
 
             coquillageTouch.onTouchEnter.AddListener(OnCoquillageTouch);
+        }
+
+        [Button]
+        public void SetPlayerPref()
+        {
+            PlayerPrefs.SetInt("lh", DateTime.Now.Hour);
+            PlayerPrefs.SetInt("lm", DateTime.Now.Minute);
+
+            PlayerPrefs.SetInt("fp", 0);
         }
 
         public InputTouch coquillageTouch;

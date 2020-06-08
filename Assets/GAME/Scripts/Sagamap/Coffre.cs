@@ -8,6 +8,9 @@ using QRTools.Inputs;
 using QRTools.Audio;
 using DG.Tweening;
 using QRTools.UI;
+using Sirenix.OdinInspector;
+using System;
+using Random = UnityEngine.Random;
 
 namespace CrabMaga
 {
@@ -16,7 +19,7 @@ namespace CrabMaga
         public float startTimer = 5;
         public float timer = 0; //28 800
 
-        public BoolVariable isStart;
+        //public BoolVariable isStart;
 
         bool isOpen = false;
 
@@ -36,6 +39,8 @@ namespace CrabMaga
         public TextMeshProUGUI textAchat, cost;
         public Button btnAchatRapide;
 
+        public DateTime last_dt;
+
         private void Awake()
         {
             Init();
@@ -45,14 +50,22 @@ namespace CrabMaga
         {
             if (!isOpen)
             {
-                if (isStart.Value == false)
+                if (PlayerPrefs.GetFloat("coffre") == 0)
                 {
-                    isStart.Value = false;
+                    PlayerPrefs.SetFloat("coffre", 1);
                     timer = startTimer;
+                    last_dt = DateTime.Now;
+                    PlayerPrefs.SetInt("h", DateTime.Now.Hour);
+                    PlayerPrefs.SetInt("m", DateTime.Now.Minute);
+                    PlayerPrefs.SetInt("s", DateTime.Now.Second);
                 }
                 else
                 {
-                    timer = startTimer - Time.time;
+                    int h = PlayerPrefs.GetInt("h");
+                    int m = PlayerPrefs.GetInt("m");
+                    int s = PlayerPrefs.GetInt("s");
+
+                    timer = startTimer - ((DateTime.Now.Hour - h) * 60 + (DateTime.Now.Minute - m) * 60 + (DateTime.Now.Second - s));
                 }
             }
 
@@ -154,6 +167,12 @@ namespace CrabMaga
         public void Deselect()
         {
 
+        }
+
+        [Button]
+        public void InitPlayerPrefs()
+        {
+            PlayerPrefs.SetInt("coffre", 0);
         }
     }
 }

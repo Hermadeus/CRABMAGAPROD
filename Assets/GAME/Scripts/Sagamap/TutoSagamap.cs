@@ -48,6 +48,8 @@ namespace CrabMaga
 
             if(PlayerPrefs.GetFloat("thirdParty") == 1)
             {
+                if (PlayerPrefs.GetFloat("TutoFinish") == 1)
+                    return;
                 StartTutoThree();
             }
         }
@@ -57,6 +59,7 @@ namespace CrabMaga
         {
             PlayerPrefs.SetFloat("firstParty", 0);
             PlayerPrefs.SetFloat("thirdParty", 0);
+            PlayerPrefs.SetFloat("TutoFinish", 0);
         }
 
         public void StartTutoFour()
@@ -84,25 +87,13 @@ namespace CrabMaga
 
         IEnumerator TutoThree()
         {
-            boiteDialogue.ShowDialogue(
-                "La completion d'un niveau confere des etoiles qui remplissent une jauge de conquete.",
-                "Upon completion of a level, you earn stars that fill up conquest gauge."
-                );
-
-            ShowFleche(flecheJaugeDeCOnquete);
-
+            PlayerPrefs.SetFloat("TutoFinish", 1);
+                       
             XP.SetValueX(3);
             jauge.Init();
 
-            yield return new WaitForSeconds(4f);
-            while (Input.touchCount == 0)
-            {
-                yield return null;
-            }
-            Debug.Log("LE JOUEUR A CLIQUER OMG");
+            ShowFleche(flecheJaugeDeCOnquete);
 
-            boiteDialogue.Hide();
-            HideFleche(flecheJaugeDeCOnquete);
 
             yield return new WaitForSeconds(.5f);
 
@@ -118,6 +109,7 @@ namespace CrabMaga
             }
             Debug.Log("LE JOUEUR A CLIQUER OMG");
 
+            HideFleche(flecheJaugeDeCOnquete);
             boiteDialogue.Hide();
 
             yield return new WaitForSeconds(.5f);

@@ -71,7 +71,7 @@ namespace CrabMaga
 
             //5
             boiteDialogue.ShowDialogue(
-                "Mene l'assaut avec tes unites de crabes, tout en défendant ton propre chateau.",
+                "Mene l'assaut avec tes unites de crabes, tout en defendant ton propre chateau.",
                 "Lead the assault with your crab units, while defending your own castle.",
                 null
                 );

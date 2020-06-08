@@ -30,12 +30,11 @@ namespace CrabMaga
                     target.Stunt();
 
                     unit.animator.SetTrigger("onUlt");
+                    unit.OnPassifFeedback();
 
                     Debug.Log("stunt" + stuntAttacker.StuntTime);
 
                     yield return new WaitForSeconds(stuntEffect);
-
-                    //Debug.Log("end stunt");
 
                     target.IsStunt = false;
 

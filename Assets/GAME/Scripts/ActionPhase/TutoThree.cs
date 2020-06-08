@@ -38,6 +38,8 @@ namespace CrabMaga
         public Image flecheToken;
         public Image flecheSagamap;
 
+        public IA_Manager IA_Manager;
+
         private void Awake()
         {
             StartCoroutine(Tuto());
@@ -54,6 +56,9 @@ namespace CrabMaga
 
             playerData.leader_slot = crabzilla;
 
+            wheel.Init();
+
+            wheel.slotGeneral.generalDataRef = crabzilla;
             wheel.Init();
 
             yield return new WaitForSeconds(2f);
@@ -74,7 +79,7 @@ namespace CrabMaga
 
             boiteDialogue.ShowDialogue(
                 "Lorsqu'un combat devient difficile, tu peux faire appel à un général crabe depuis la roue de formation.",
-                "jodajzodj",
+                "When a battle becomes difficult, you can call a general from the units wheel at any times.",
                 null
                 );
 
@@ -120,7 +125,7 @@ namespace CrabMaga
 
             boiteDialogue.ShowDialogue(
                 "Les généraux possèdent une compétence spéciale très puissante.",
-                "dazda",
+                "Generals have a very powerful ability.",
                 null
                 );
             ShowFleche(flecheToken);
@@ -141,8 +146,8 @@ namespace CrabMaga
 
             yield return new WaitForSeconds(6f);
             boiteDialogue.ShowDialogue(
-                "Attention cependant, tu ne peux appeler le général qu'une fois par niveau. Sa compétence en revanche se recharge avec le temps.",
-                "sazsazs",
+                "Attention cependant, tu ne peux appeler le general qu'une fois par niveau. Sa competence en revanche se recharge avec le temps.",
+                "Beware for you can only call the general once by level. However, his ability will recharge with time.",
                 null
                 );
 
@@ -157,6 +162,10 @@ namespace CrabMaga
 
             AP_GameManager.Instance.leaderOnBattle.inTuto = false;
             AP_GameManager.Instance.leaderOnBattle.Speed = AP_GameManager.Instance.leaderOnBattle.entityData.baseSpeed;
+
+            PlayerPrefs.SetFloat("thirdParty", 1);
+
+            IA_Manager.onGameStart.Invoke(IA_Manager);
             
             yield break;
         }
@@ -217,8 +226,8 @@ namespace CrabMaga
             yield return new WaitForSeconds(5f);
 
             boiteDialogue.ShowDialogue(
-                "BLABLA ETOILES",
-                "sazsazs",
+                "La completion d'un niveau confere des étoiles qui remplissent une jauge de conquête.",
+                "Upon completion of a level, you earn stars that fill up conquest gauge.",
                 null
                 );
 
@@ -233,8 +242,8 @@ namespace CrabMaga
             yield return new WaitForSeconds(.5f);
 
             boiteDialogue.ShowDialogue(
-                "TU PEUX CLIQUER ICI POUR REVENIR TOUT MOMENT VERS LA SAGAMAP",
-                "",
+                "Tu peux cliquer ici pour revenir vers la carte a tout moment.",
+                "You can tap here to come back to map at any moment.",
                 null
                 );
 
