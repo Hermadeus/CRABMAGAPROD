@@ -25,6 +25,9 @@ namespace CrabMaga
 
         public EntityData craberserk;
 
+        public SagamapManager sagamapManager;
+        public TutoSagamap tutoSagamap;
+
         public void AddResources()
         {
             HeaderMoney.AddCrab(1000);
@@ -55,6 +58,9 @@ namespace CrabMaga
             menuArmy.Save();
 
             craberserk.isLock = false;
+
+            sagamapManager.SetPlayerPref();
+            tutoSagamap.ResetPlayerPref();
 
             sceneManaging.RestartScene();
         }

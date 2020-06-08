@@ -47,6 +47,8 @@ namespace CrabMaga
             Time.timeScale = 1;
             ecranchargement.SetActive(true);
 
+            headerMoney.Load();
+
             if (PlayerPrefs.GetInt("fp") == 1)
             {
                 int hours = PlayerPrefs.GetInt("lh");

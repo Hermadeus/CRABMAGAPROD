@@ -55,7 +55,7 @@ namespace CrabMaga
         }
 
         [Button]
-        void ResetPlayerPref()
+        public void ResetPlayerPref()
         {
             PlayerPrefs.SetFloat("firstParty", 0);
             PlayerPrefs.SetFloat("thirdParty", 0);

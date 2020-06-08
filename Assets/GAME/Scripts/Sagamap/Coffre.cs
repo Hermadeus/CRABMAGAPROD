@@ -41,6 +41,8 @@ namespace CrabMaga
 
         public DateTime last_dt;
 
+        public bool isBlocked = false;
+
         private void Awake()
         {
             Init();
@@ -98,6 +100,9 @@ namespace CrabMaga
 
         public void Select()
         {
+            if (isBlocked)
+                return;
+
             if (timer <= 0 && !isOpen)
             {
                 isOpen = true;
@@ -174,5 +179,7 @@ namespace CrabMaga
         {
             PlayerPrefs.SetInt("coffre", 0);
         }
+
+        public void IsBlocked(bool state) => isBlocked = state;
     }
 }

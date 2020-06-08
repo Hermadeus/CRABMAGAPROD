@@ -9,7 +9,9 @@ namespace CrabMaga
     {
         public override void PassifEffect(Unit unit)
         {
-            unit.Damage++;
+            unit.Damage += unit.Damage / 10;
+            Debug.Log(unit + "UP DAMAGE");
+            unit.OnPassifFeedback();
         }
     }
 }

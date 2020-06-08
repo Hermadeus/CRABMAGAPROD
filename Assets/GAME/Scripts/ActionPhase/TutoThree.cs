@@ -78,7 +78,7 @@ namespace CrabMaga
             rappelInput.DOFade(1f, .5f);
 
             boiteDialogue.ShowDialogue(
-                "Lorsqu'un combat devient difficile, tu peux faire appel à un général crabe depuis la roue de formation.",
+                "Lorsqu'un combat devient difficile, tu peux faire appel a un general crabe depuis la roue de formation.",
                 "When a battle becomes difficult, you can call a general from the units wheel at any times.",
                 null
                 );

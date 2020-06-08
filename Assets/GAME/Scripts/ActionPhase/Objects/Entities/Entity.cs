@@ -170,6 +170,9 @@ namespace CrabMaga
             audiosource = GetComponent<AudioSource>();
             SoundManager.instance.PlaySound(assaultSound, audiosource);
 
+            if (this is Leader)
+                assaultSound.Play(audiosource);
+
             if (animator == null)
                 GetComponentInChildren<Animator>();
 

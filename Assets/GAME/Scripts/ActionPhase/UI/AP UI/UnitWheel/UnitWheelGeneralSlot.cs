@@ -17,6 +17,7 @@ namespace CrabMaga
             {
                 generalDataRef = _entityData;
                 crabThumbnailImage.sprite = _entityData.wheelThumbnail;
+                Show();
             }
             else
                 Hide();

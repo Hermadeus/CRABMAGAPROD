@@ -58,6 +58,8 @@ namespace CrabMaga
             MovementBehaviourEnum = MovementBehaviourEnum.NULL_MOVEMENT;
             IsStatic = true;
 
+            passifSound.Play(audiosource);
+
             rotationSpeed = 0f;
 
             rotationTween.Kill();

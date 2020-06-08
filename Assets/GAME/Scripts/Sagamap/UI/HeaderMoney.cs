@@ -109,5 +109,21 @@ namespace CrabMaga
             pearlMoneyText.text = playerData.pearlMoney.ToString();
             pearl.Feedback(x);
         }
+
+        [Button]
+        public void Save()
+        {
+            PlayerPrefs.SetInt("crabMoney", playerData.crabMoney);
+            PlayerPrefs.SetInt("pearlMoney", playerData.pearlMoney);
+            PlayerPrefs.SetInt("shellMoney", playerData.shellMoney);
+        }
+
+        [Button]
+        public void Load()
+        {
+            playerData.crabMoney = PlayerPrefs.GetInt("crabMoney");
+            playerData.shellMoney = PlayerPrefs.GetInt("shellMoney");
+            playerData.pearlMoney = PlayerPrefs.GetInt("pearlMoney");
+        }
     }
 }

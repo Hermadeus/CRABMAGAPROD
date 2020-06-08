@@ -11,7 +11,24 @@ namespace CrabMaga
         public override void OnPassifFeedback()
         {
             base.OnPassifFeedback();
+            
+        }
+
+        protected override void Death()
+        {
             ClignotementAlphaFeedback(feedbackSpriteRdr);
+
+            foreach (Craberserk c in gameManager.crabUnitOnBattle)
+            {
+                c.Damage += Damage / 2f;
+
+                Debug.Log("CRABERSER EFFECT");
+
+                passifSound?.Play(audiosource);
+                animator.SetTrigger("onUlt");
+            }
+
+            base.Death();
         }
     }
 }

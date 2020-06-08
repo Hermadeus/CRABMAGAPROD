@@ -22,11 +22,13 @@ namespace CrabMaga
                 {
                     if (Vector3.Distance(_unit.UnitInRangeOfView[i].transform.position, _unit.transform.position) < _closestDist)
                     {
-                        if (_unit.UnitInRangeOfView[i].GetComponentInParent<Crablinde>())
+                        if (_unit.UnitInRangeOfView[i].GetComponentInParent<Crabouffon>())
                         {
                             //_unit.Target = _unit.UnitInRangeOfView[i].GetComponentInParent<Unit>();
 
-                            _unit.UnitInRangeOfView[i].GetComponentInParent<Crablinde>().animator.SetTrigger("onUlt");
+                            _unit.UnitInRangeOfView[i].GetComponentInParent<Crabouffon>().animator.SetTrigger("onUlt");
+
+
                             Debug.Log("Je detecte un crablinde");
                         }
 
