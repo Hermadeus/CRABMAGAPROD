@@ -379,10 +379,20 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.5992404
       objectReference: {fileID: 0}
+    - target: {fileID: 6399641986011153204, guid: c0f0513c98821a045a5cb8e6de76f55f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 7289877826235257894, guid: c0f0513c98821a045a5cb8e6de76f55f,
         type: 3}
       propertyPath: m_Name
       value: Palmier_01 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289877826235257894, guid: c0f0513c98821a045a5cb8e6de76f55f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0f0513c98821a045a5cb8e6de76f55f, type: 3}
@@ -5704,6 +5714,66 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 294663239}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &321585987
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: LiberationSans SDF Material
+  m_Shader: {fileID: 4800000, guid: fe393ace9b354375a9cb14cdbbc28be4, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 1
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 28684132378477856, guid: 8f586378b4e144a9851e7b34d9b748ee,
+          type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _ColorMask: 15
+    - _FaceDilate: 0
+    - _GradientScale: 10
+    - _MaskSoftnessX: 0
+    - _MaskSoftnessY: 0
+    - _OutlineSoftness: 0
+    - _OutlineWidth: 0
+    - _PerspectiveFilter: 0.875
+    - _ScaleRatioA: 0.9
+    - _ScaleRatioB: 1
+    - _ScaleRatioC: 0.73125
+    - _ScaleX: 1
+    - _ScaleY: 1
+    - _ShaderFlags: 0
+    - _Sharpness: 0
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _TextureHeight: 1024
+    - _TextureWidth: 1024
+    - _UnderlayDilate: 0
+    - _UnderlayOffsetX: 0
+    - _UnderlayOffsetY: 0
+    - _UnderlaySoftness: 0
+    - _VertexOffsetX: 0
+    - _VertexOffsetY: 0
+    - _WeightBold: 0.75
+    - _WeightNormal: 0
+    m_Colors:
+    - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
+    - _FaceColor: {r: 1, g: 1, b: 1, a: 1}
+    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _UnderlayColor: {r: 0, g: 0, b: 0, a: 0.5}
 --- !u!114 &330298321 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 17137609, guid: d48b019f2a603bf4eb26500b1caf000f,
@@ -11414,7 +11484,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1243780910
 Transform:
@@ -13057,7 +13127,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1808212901
 Transform:
@@ -17460,7 +17530,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &7380640378994776126
 Transform:
@@ -18153,10 +18223,20 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.7004861
       objectReference: {fileID: 0}
+    - target: {fileID: 6399641986011153204, guid: c0f0513c98821a045a5cb8e6de76f55f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 7289877826235257894, guid: c0f0513c98821a045a5cb8e6de76f55f,
         type: 3}
       propertyPath: m_Name
       value: Palmier_01 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289877826235257894, guid: c0f0513c98821a045a5cb8e6de76f55f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0f0513c98821a045a5cb8e6de76f55f, type: 3}
@@ -18798,10 +18878,20 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.76806
       objectReference: {fileID: 0}
+    - target: {fileID: 6399641986011153204, guid: c0f0513c98821a045a5cb8e6de76f55f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 7289877826235257894, guid: c0f0513c98821a045a5cb8e6de76f55f,
         type: 3}
       propertyPath: m_Name
       value: Palmier_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289877826235257894, guid: c0f0513c98821a045a5cb8e6de76f55f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8214900233839705597, guid: c0f0513c98821a045a5cb8e6de76f55f,
         type: 3}
@@ -19295,10 +19385,20 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.76806
       objectReference: {fileID: 0}
+    - target: {fileID: 6399641986011153204, guid: c0f0513c98821a045a5cb8e6de76f55f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 7289877826235257894, guid: c0f0513c98821a045a5cb8e6de76f55f,
         type: 3}
       propertyPath: m_Name
       value: Palmier_01 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289877826235257894, guid: c0f0513c98821a045a5cb8e6de76f55f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0f0513c98821a045a5cb8e6de76f55f, type: 3}
@@ -20801,10 +20901,20 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.76806
       objectReference: {fileID: 0}
+    - target: {fileID: 6399641986011153204, guid: c0f0513c98821a045a5cb8e6de76f55f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 7289877826235257894, guid: c0f0513c98821a045a5cb8e6de76f55f,
         type: 3}
       propertyPath: m_Name
       value: Palmier_01 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289877826235257894, guid: c0f0513c98821a045a5cb8e6de76f55f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8214900233839705597, guid: c0f0513c98821a045a5cb8e6de76f55f,
         type: 3}
@@ -22894,10 +23004,20 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.76806
       objectReference: {fileID: 0}
+    - target: {fileID: 6399641986011153204, guid: c0f0513c98821a045a5cb8e6de76f55f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 7289877826235257894, guid: c0f0513c98821a045a5cb8e6de76f55f,
         type: 3}
       propertyPath: m_Name
       value: Palmier_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289877826235257894, guid: c0f0513c98821a045a5cb8e6de76f55f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0f0513c98821a045a5cb8e6de76f55f, type: 3}
