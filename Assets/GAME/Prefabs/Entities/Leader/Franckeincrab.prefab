@@ -560,6 +560,36 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 0
   m_Loop: 0
+--- !u!1 &2835660573976871427
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 227285987711602341}
+  m_Layer: 10
+  m_Name: Offset
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &227285987711602341
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2835660573976871427}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 125, y: 125, z: 125}
+  m_Children: []
+  m_Father: {fileID: 5065709356111292275}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3025906452739774927
 GameObject:
   m_ObjectHideFlags: 0
@@ -653,7 +683,7 @@ Transform:
   - {fileID: 3263467164395862697}
   - {fileID: 2057937818118246252}
   m_Father: {fileID: 5065709356111292275}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1083966537741165619
 Animator:
@@ -770,6 +800,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.008, y: 0.008, z: 0.008}
   m_Children:
+  - {fileID: 227285987711602341}
   - {fileID: 6690148885460278915}
   - {fileID: 459652168367411569}
   m_Father: {fileID: 5065709356143157645}
@@ -913,7 +944,7 @@ MonoBehaviour:
   poolingManager: {fileID: 0}
   parentPoolingQueue: {fileID: 0}
   animator: {fileID: 1083966537741165619}
-  graphics: {fileID: 0}
+  graphics: {fileID: 5065709356111292236}
   onInit:
     m_PersistentCalls:
       m_Calls: []
@@ -937,6 +968,7 @@ MonoBehaviour:
   deathSound: {fileID: 0}
   winSound: {fileID: 0}
   attackSound: {fileID: 0}
+  passifSound: {fileID: 0}
   inTuto: 0
   lastHitUnitReceive: {fileID: 0}
   damage: 0
@@ -954,8 +986,16 @@ MonoBehaviour:
   passifEvent: 0
   isStunt: 0
   asUsePassif: 0
-  sliderHealth: {fileID: 0}
+  sliderHealth: {fileID: 954085871372129525}
   castlePosZ: 0
+  offset: {fileID: 227285987711602341}
+  radius: 1
+  ennemiesInRange: []
+  ennemies:
+    serializedVersion: 2
+    m_Bits: 512
+  healthRewin: 1
+  ultTimer: 6
 --- !u!1 &5072598543890260263
 GameObject:
   m_ObjectHideFlags: 0
@@ -6252,7 +6292,7 @@ PrefabInstance:
     - target: {fileID: 7878198191740282026, guid: 85b35172a98b8574ab115ff1bfafcd4b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7878198191740282026, guid: 85b35172a98b8574ab115ff1bfafcd4b,
         type: 3}

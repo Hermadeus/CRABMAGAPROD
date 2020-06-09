@@ -77,12 +77,12 @@ namespace CrabMaga
                 leveldatas[i].star03 = true;
             }
 
-            levelInfini.LevelIndex = 10;
+            levelInfini.LevelIndex = 20;
             level01.isLock = false;
 
             for (int i = 0; i < entityDatas.Length; i++)
             {
-                entityDatas[i].currentLevel = 10;
+                entityDatas[i].currentLevel = 7;
             }
 
             HeaderMoney.AddCrab(2500);
@@ -106,12 +106,12 @@ namespace CrabMaga
                 leveldatas[i].star03 = true;
             }
 
-            levelInfini.LevelIndex = 25;
+            levelInfini.LevelIndex = 70;
             level01.isLock = false;
 
             for (int i = 0; i < entityDatas.Length; i++)
             {
-                entityDatas[i].currentLevel = 25;
+                entityDatas[i].currentLevel = 22;
             }
 
             HeaderMoney.AddCrab(5000);

@@ -62,7 +62,7 @@ namespace CrabMaga
         //    }
         //}
 
-        public GameObject scramanTab, CrabetteurTab, CoelacrabTab, CrabouffonTab, CraberserkTab, CrablindeTab, CrabardeTab, NincrabTab, NecrabancienTab;
+        public GameObject scramanTab, CrabetteurTab, CoelacrabTab, CrabouffonTab, CraberserkTab, CrablindeTab, CrabardeTab, NincrabTab, NecrabancienTab, franckeincrab;
 
         private void Awake()
         {
@@ -70,6 +70,12 @@ namespace CrabMaga
             {
                 if (poolables[i] is Entity)
                     ((Entity)poolables[i]).graphics.SetActive(false);
+            }
+
+            for (int i = 0; i < franckeincrab.transform.childCount; i++)
+            {
+                franckeincrab.transform.GetChild(i).GetComponent<Franckeincrab>().InitButton();
+                poolables.Add(franckeincrab.transform.GetChild(i).GetComponent<Franckeincrab>());
             }
 
             if(playerData.entityData_slot01 != null)

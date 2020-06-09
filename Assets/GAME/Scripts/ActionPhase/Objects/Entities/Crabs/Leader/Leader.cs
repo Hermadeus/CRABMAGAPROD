@@ -70,7 +70,7 @@ namespace CrabMaga
             gameManager.CurrentScore++;
         }
 
-        public void UsePassif()
+        public virtual void UsePassif()
         {
             animator.SetTrigger("onUlt");
 
