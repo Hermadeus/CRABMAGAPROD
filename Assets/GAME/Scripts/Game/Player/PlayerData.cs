@@ -68,12 +68,14 @@ namespace CrabMaga
         public void ResetObject()
         {
             CrabMoney = 10000;
-            shellMoney = 600;
+            shellMoney = 50;
             pearlMoney = 0;
 
             rightHand = true;
             sfxOn = true;
             musicOn = true;
+
+            FindObjectOfType<HeaderMoney>().Save();
         }
 
         public void ChangeHand()
