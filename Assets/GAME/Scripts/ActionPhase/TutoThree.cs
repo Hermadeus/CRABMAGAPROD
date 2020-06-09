@@ -54,6 +54,7 @@ namespace CrabMaga
             playerData.entityData_slot03 = null;
             playerData.entityData_slot04 = null;
 
+            crabzilla.isLock = false;
             playerData.leader_slot = crabzilla;
 
             wheel.Init();
@@ -118,7 +119,7 @@ namespace CrabMaga
 
             AP_GameManager.Instance.leaderOnBattle.transform.position = new Vector3(0, AP_GameManager.Instance.leaderOnBattle.transform.position.y, AP_GameManager.Instance.leaderOnBattle.transform.position.z);
 
-            yield return new WaitForSeconds(7f);
+            yield return new WaitForSeconds(3f);
 
             circle.DOScale(Vector3.zero, .5f).SetEase(Ease.InOutSine);
             AP_GameManager.Instance.leaderOnBattle.inTuto = true;

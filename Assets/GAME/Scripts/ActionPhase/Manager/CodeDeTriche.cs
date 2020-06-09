@@ -78,6 +78,8 @@ namespace CrabMaga
             }
 
             levelInfini.LevelIndex = 20;
+            levelInfini.scoreToReach = 32;
+
             level01.isLock = false;
 
             for (int i = 0; i < entityDatas.Length; i++)
@@ -108,6 +110,7 @@ namespace CrabMaga
 
             levelInfini.LevelIndex = 70;
             level01.isLock = false;
+            levelInfini.scoreToReach = 32;
 
             for (int i = 0; i < entityDatas.Length; i++)
             {

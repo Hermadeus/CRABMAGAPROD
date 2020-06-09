@@ -2295,9 +2295,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1227111803114206767}
   - component: {fileID: 7276721803569052142}
+  - component: {fileID: 2037245108353216140}
   m_Layer: 0
   m_Name: "Menu Cr\xE9dit"
-  m_TagString: Untagged
+  m_TagString: credit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2336,7 +2337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rectTransform: {fileID: 0}
-  element: {fileID: 0}
+  element: {fileID: 2037245108353216140}
   background: {fileID: 0}
   timerAppear: 0.5
   timerDesappear: 0.5
@@ -2353,6 +2354,19 @@ MonoBehaviour:
   animationMode: 3
   animSpeed: 1
   c: {fileID: 0}
+  startHide: 0
+--- !u!225 &2037245108353216140
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6232027285352746648}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &7574184416597936063
 GameObject:
   m_ObjectHideFlags: 0

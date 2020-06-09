@@ -76,6 +76,14 @@ namespace CrabMaga
                 "Before each level, choose up 4 units and 1 general in this panel."
                 );
 
+            yield return new WaitForSeconds(.2f);
+            while (Input.touchCount == 0)
+            {
+                yield return null;
+            }
+
+            boiteDialogue.Hide();
+
             yield break;
         }
 

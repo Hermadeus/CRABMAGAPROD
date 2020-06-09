@@ -34,6 +34,7 @@ namespace CrabMaga
             //1
             wheelInput.isActive = false;
             playerData.entityData_slot01 = craberzerk;
+            crabarde.isLock = false;
             playerData.entityData_slot02 = crabarde;
             playerData.entityData_slot03 = null;
             playerData.entityData_slot04 = null;

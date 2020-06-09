@@ -64,6 +64,8 @@ namespace CrabMaga
 
         public GameObject scramanTab, CrabetteurTab, CoelacrabTab, CrabouffonTab, CraberserkTab, CrablindeTab, CrabardeTab, NincrabTab, NecrabancienTab, franckeincrab;
 
+        public bool inTuto = false;
+
         private void Awake()
         {
             for (int i = 0; i < poolables.Count; i++)
@@ -194,9 +196,12 @@ namespace CrabMaga
                 }
             }
 
-            playerData.CrabMoney -= ((CrabUnitData)_crabFormation.CrabUnits[0].entityData).costUnit;
-            crabCount.UpdateText();
-            headerMoney.UpdateMoney();
+            if (!inTuto)
+            {
+                playerData.CrabMoney -= ((CrabUnitData)_crabFormation.CrabUnits[0].entityData).costUnit;
+                crabCount.UpdateText();
+                headerMoney.UpdateMoney();
+            }
 
             _crabFormation.name = _crabFormation.CrabUnits[0].name.ToString() + " Formation";            
 

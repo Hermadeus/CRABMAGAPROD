@@ -44,5 +44,6 @@ namespace CrabMaga
             if(maps[chunkIndex + 1] != null)
                 maps[chunkIndex + 1]?.SetActive(true);
         }
+        
     }
 }

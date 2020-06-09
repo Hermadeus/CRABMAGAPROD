@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 using QRTools.UI;
 
@@ -16,10 +17,14 @@ namespace CrabMaga
 
         public SoundManager SoundManager;
 
+        public Button btnCredit;
+
         public override void Init()
         {
             base.Init();
             StartCoroutine(T());
+                        
+            btnCredit.onClick.AddListener(GameObject.FindGameObjectWithTag("credit").GetComponent<UIMenu>().Show);
         }
 
         IEnumerator T()

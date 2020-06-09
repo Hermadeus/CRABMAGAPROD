@@ -14,6 +14,8 @@ namespace CrabMaga
     {
         public Dictionary<string, SceneReference> sceneDic = new Dictionary<string, SceneReference>();
 
+        public SceneReference sagamap;
+
         public LevelData[] leveldatas;
 
         public LanguageManager languageManager;
@@ -52,9 +54,9 @@ namespace CrabMaga
 
         IEnumerator SM()
         {
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(.1f);
             languageManager.Observables.Clear();
-            SceneManager.LoadScene(GetScene("sagamap"));
+            SceneManager.LoadScene(sagamap.ScenePath);
             yield break;
         }
 

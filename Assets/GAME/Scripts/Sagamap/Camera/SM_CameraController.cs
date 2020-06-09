@@ -43,7 +43,7 @@ namespace CrabMaga
         public LevelData level4;
         public float bornesSupChapter2 = 320;
 
-        public Transform door;
+        public Transform[] door;
 
         private void Awake()
         {
@@ -117,8 +117,15 @@ namespace CrabMaga
 
         void OpenDoorChapter()
         {
-            door.DOScaleY(0, 5f).SetEase(Ease.InOutSine);
-            door.DOScaleZ(0, 5f).SetEase(Ease.InOutSine);
+            for (int i = 0; i < door.Length; i++)
+            {
+                door[i].DOScale(0, 5f).SetEase(Ease.InOutSine);
+            }
+
+            Debug.Log("LEVEL 4");
+
+            //door.DOScaleY(0, 5f).SetEase(Ease.InOutSine);
+            //door.DOScaleZ(0, 5f).SetEase(Ease.InOutSine);
         }
 
         private void Update()

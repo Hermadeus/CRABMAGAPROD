@@ -54,8 +54,19 @@ namespace CrabMaga
             lvl.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
         }
 
+        public override void Show()
+        {
+            base.Show();
+
+            if(currentTileSelected != null)
+                price.text = currentTileSelected.entityData.currentPriceUpdate.ToString();
+        }
+
         public void UpdateMenu(UITileArmy tile)
         {
+            if (currentTileSelected != null)
+                price.text = currentTileSelected.entityData.currentPriceUpdate.ToString();
+
             for (int i = 0; i < tilesUnits.Count; i++)
             {
                 tilesUnits[i].UpdateTile();
@@ -117,7 +128,10 @@ namespace CrabMaga
             health.gameObject.SetActive(false);
             type.gameObject.SetActive(true);
 
-            if(tile.tileArmy == UITileArmy.TypeTileArmy.UNIT)
+            if (currentTileSelected != null)
+                price.text = currentTileSelected.entityData.currentPriceUpdate.ToString();
+
+            if (tile.tileArmy == UITileArmy.TypeTileArmy.UNIT)
             {
                 dps.SetOn();
                 effectif.SetOn();
@@ -144,7 +158,6 @@ namespace CrabMaga
                 health.gameObject.SetActive(true);
                 type.gameObject.SetActive(true);
             }
-
 
             UpdateInfo(tile);
             UpdateInfoUnitAndLeader(tile);
@@ -343,5 +356,4 @@ namespace CrabMaga
             }
         }
     }
-
 }

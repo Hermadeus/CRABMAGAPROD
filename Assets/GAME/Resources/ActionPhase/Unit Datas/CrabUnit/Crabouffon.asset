@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14332260acdbe514dbcbeaf69e3a39bd, type: 3}
   m_Name: Crabouffon
   m_EditorClassIdentifier: 
-  isLock: 0
+  isLock: 1
   behaviourSystem: {fileID: 11400000, guid: 65fa9772d44e2ec47bab627a75c1152e, type: 2}
   languageManager: {fileID: 11400000, guid: cc7173560c4531545a2a4dde441db5db, type: 2}
   entityName:
@@ -41,8 +41,8 @@ MonoBehaviour:
   accelerationEnum: 2
   acceleration: 2
   damage: 2
-  attackSpeed: 1
-  DamagePerSeconds: 2
+  attackSpeed: 1.5
+  DamagePerSeconds: 1.3333334
   detectionRange: 2
   detectionBehaviour: 0
   entityType: 1
@@ -2222,6 +2222,6 @@ MonoBehaviour:
   type: 3
   costUnit: 60
   wheelThumbnail: {fileID: 21300000, guid: 57e1cacf1ee044c44ab97ad81ddeb25f, type: 3}
-  formationX: 5
-  formationY: 2
+  formationX: 4
+  formationY: 3
   density: 0.3
