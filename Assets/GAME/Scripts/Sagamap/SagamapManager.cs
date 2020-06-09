@@ -55,9 +55,7 @@ namespace CrabMaga
                 int min = PlayerPrefs.GetInt("lm");
 
                 int minT = (DateTime.Now.Hour - hours) * 60 + Mathf.Abs(DateTime.Now.Minute - min);
-
-                Debug.Log("MIN : " + minT);
-
+                
                 headerMoney.AddCrab((headerMoney.playerData.maxCrab / 480) * minT);
                 
                 PlayerPrefs.SetInt("lh", DateTime.Now.Hour);

@@ -93,7 +93,10 @@ namespace CrabMaga
 
             if (!asWin)
             {
-                XP.SetValueX(XP.GetValueX() + xp);
+                //XP.SetValueX(XP.GetValueX() + xp);
+
+                int xpMore = PlayerPrefs.GetInt("xpPlayer") + xp;
+                PlayerPrefs.SetInt("xpPlayer", xp);
 
                 if(LevelIndex % 4 == 0) 
                     playerData.maxCrab += maxCrabSup;

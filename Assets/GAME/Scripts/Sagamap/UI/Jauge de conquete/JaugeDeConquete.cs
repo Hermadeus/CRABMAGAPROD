@@ -12,7 +12,7 @@ namespace CrabMaga
     public class JaugeDeConquete : UIElement
     {
         public Slider slider;
-        public Vector2IntVariable currentXP; //x => current & y => previous
+        //public Vector2IntVariable currentXP; //x => current & y => previous
         public PlayerData playerData;
         public HeaderMoney headerMoney;
         public TextAsset csvFile;
@@ -28,53 +28,100 @@ namespace CrabMaga
 
             Debug.Log("jauge conquete init");
 
-            slider.maxValue = niveauDeJauges[currentNiveau].starMax;
-            slider.value = currentXP.GetValueY();
+            slider.maxValue = niveauDeJauges[PlayerPrefs.GetInt("xpLvl")].starMax;
+            slider.value = PlayerPrefs.GetInt("xpPlayerCurrent"); /*currentXP.GetValueY();*/
 
             Invoke("AddXP", 1f);
         }
 
         public void AddXP()
         {
-            int XPToAdd = currentXP.Value.x - currentXP.Value.y;
+            int XPToAdd = PlayerPrefs.GetInt("xpPlayer") - PlayerPrefs.GetInt("xpPlayerCurrent");  /*currentXP.Value.x - currentXP.Value.y;*/
+
+            Debug.Log("XP TO ADD = " + XPToAdd);
 
             if(slider.value + XPToAdd < slider.maxValue)
                 DOTween.To(() => slider.value, (x) => slider.value = x, slider.value + XPToAdd, animSpeed).SetEase(Ease.InOutSine);
             else if (slider.value + XPToAdd >= slider.maxValue)
             {
-                StartCoroutine(AddXPAndReset(currentXP.GetValueX() - currentXP.GetValueY()));
+                //StartCoroutine(AddXPAndReset(XPToAdd));
+
+                int diff = Mathf.CeilToInt(slider.maxValue - slider.value);
+                int reste = (PlayerPrefs.GetInt("xpPlayer") - PlayerPrefs.GetInt("xpPlayerCurrent")) - diff;
+
+                Debug.Log("XP TO ADD = " + reste);
+
+                DOTween.Sequence()
+                    .Append(DOTween.To(() => slider.value, (x) => slider.value = x, slider.maxValue, animSpeed).SetEase(Ease.InOutSine).OnComplete(Up))
+                    .Append(DOTween.To(() => slider.value, (x) => slider.value = x, 0, .01f).SetEase(Ease.InOutSine))
+                    .Append(DOTween.To(() => slider.value, (x) => slider.value = x, reste, animSpeed).SetEase(Ease.InOutSine)).OnComplete(TestEnd);
+
             }
+
+            PlayerPrefs.SetInt("xpPlayerCurrent", PlayerPrefs.GetInt("xpPlayer"));
         }
 
-        IEnumerator AddXPAndReset(int XPToAdd)
+        void Up()
         {
-            int diff = ((int)slider.value + XPToAdd) - (int)slider.maxValue;
-
-            if (slider.value + diff > slider.maxValue)
-            {
-                int diffdiff = (int)slider.maxValue - (int)slider.value;
-
-                currentXP.SetValueY(currentXP.GetValueY() + diffdiff);
-                StartCoroutine(AddXPAndReset(currentXP.GetValueX() - currentXP.GetValueY()));
-                currentXP.SetValueY(currentXP.GetValueX());
-                yield break;
-            }
-
-            DOTween.To(() => slider.value, (x) => slider.value = x, slider.maxValue, animSpeed).SetEase(Ease.InSine);
-
-            yield return new WaitForSeconds(animSpeed + .5f);
-            currentNiveau++;
-            OnLevelUp();            
-
-            slider.value = 0;
-            slider.maxValue = niveauDeJauges[currentNiveau].starMax;
-
-            DOTween.To(() => slider.value, (x) => slider.value = x, diff, animSpeed).SetEase(Ease.InSine);
-
-            currentXP.SetValueY(currentXP.GetValueX());
-
-            yield break;
+            PlayerPrefs.SetInt("xpLvl", PlayerPrefs.GetInt("xpLvl") + 1);
         }
+
+        void TestEnd()
+        {
+            if (slider.value == slider.maxValue)
+            {
+                slider.value = 0;
+                Up();
+            }
+        }
+
+        [Button]
+        public void InitPlayerPref()
+        {
+            PlayerPrefs.SetInt("xpLvl", 0);
+            PlayerPrefs.SetInt("xpPlayer", 0);
+            PlayerPrefs.SetInt("xpPlayerCurrent", 0);
+        }
+
+        [Button]
+        void AddTenXP()
+        {
+            PlayerPrefs.SetInt("xpPlayer", PlayerPrefs.GetInt("xpPlayer") + 6);
+            Init();
+        }
+
+        //IEnumerator AddXPAndReset(int XPToAdd)
+        //{
+        //    int diff = ((int)slider.value + XPToAdd) - (int)slider.maxValue;
+
+        //    if (slider.value + diff > slider.maxValue)
+        //    {
+        //        int diffdiff = (int)slider.maxValue - (int)slider.value;
+
+        //        //currentXP.SetValueY(currentXP.GetValueY() + diffdiff);
+
+        //        PlayerPrefs.SetInt("xpPlayerCurrent", PlayerPrefs.GetInt("xpPlayerCurrent") + diffdiff);
+                
+        //        StartCoroutine( AddXPAndReset(diffdiff /*PlayerPrefs.GetInt("xpPlayer") - PlayerPrefs.GetInt("xpPlayerCurrent")*/));
+        //        PlayerPrefs.SetInt("xpPlayerCurrent", PlayerPrefs.GetInt("xpPlayer"));
+        //        yield break;
+        //    }
+
+        //    DOTween.To(() => slider.value, (x) => slider.value = x, slider.maxValue, animSpeed).SetEase(Ease.InSine);
+
+        //    yield return new WaitForSeconds(animSpeed + .5f);
+        //    currentNiveau++;
+        //    OnLevelUp();            
+
+        //    slider.value = 0;
+        //    slider.maxValue = niveauDeJauges[currentNiveau].starMax;
+
+        //    DOTween.To(() => slider.value, (x) => slider.value = x, diff, animSpeed).SetEase(Ease.InSine);
+
+        //    PlayerPrefs.SetInt("xpPlayerCurrent", PlayerPrefs.GetInt("xpPlayer"));
+
+        //    yield break;
+        //}
 
         public void OnLevelUp()
         {
@@ -130,91 +177,8 @@ namespace CrabMaga
 
             return outputGrid;
         }
-
-        //    public void UpdateXP()
-        //    {
-        //        StartCoroutine(Up());
-        //    }
-
-        //    IEnumerator Up()
-        //    {
-        //        int diff = currentXP.Value.x - currentXP.Value.y;
-
-        //        Debug.Log(diff);
-
-        //        if (slider.value + diff > slider.maxValue)
-        //        {
-        //            DOTween.To(
-        //            () => slider.value,
-        //            (x) => slider.value = x,
-        //            slider.maxValue,
-        //            2f
-        //            ).OnComplete(delegate { Rest(diff % maxSliderValue); }); ;
-        //        }
-        //        else
-        //        {
-        //            DOTween.To(
-        //            () => slider.value,
-        //            (x) => slider.value = x,
-        //            currentXP.Value.x,
-        //            2f
-        //            );
-        //        }
-
-        //        yield return new WaitForSeconds(3f);
-
-        //        for (int i = 0; i < currentXP.Value.x; i++)
-        //        {
-        //            if (!palliers[i].isWin)
-        //            {
-        //                AddRecompense(palliers[i]);
-        //                palliers[i].isWin = true;
-        //            }
-        //        }
-
-        //        currentXP.SetValueY(currentXP.Value.x);
-
-        //        yield break;
-        //    }
-
-        //    void Rest(int v)
-        //    {
-        //        int diff = currentXP.Value.x - currentXP.Value.y;
-
-        //        slider.value = 0;
-
-        //        DOTween.To(
-        //            () => slider.value,
-        //            (x) => slider.value = x,
-        //            v,
-        //            2f);
-        //    }
-
-        //    public void AddRecompense(Pallier p)
-        //    {
-        //        playerData.crabMoney += p.recompenseCrab;
-        //        playerData.shellMoney += p.recompenseShell;
-        //        playerData.pearlMoney += p.recompensePearl;
-        //        headerMoney.UpdateMoney();
-
-        //        p.isWin = true;
-        //    }
-
-        //    [Button]
-        //    public void AddXP()
-        //    {
-        //        currentXP.SetValueX(currentXP.GetValueX() + 1);
-        //        Init();
-        //    }
-
-        //    [Button]
-        //    public void ResetXP()
-        //    {
-        //        currentXP.SetValueX(0);
-        //        currentXP.SetValueY(0);
-        //        Init();
-        //    }
-        //}
+        
+        
 
         [System.Serializable]
         public class NiveauDeJauge
