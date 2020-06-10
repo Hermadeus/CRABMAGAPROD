@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -17789,7 +17789,7 @@ PrefabInstance:
     - target: {fileID: 4370948821529717918, guid: 26a5eb3c04e7d2d4085c4eceacd1a82f,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4370948821529717918, guid: 26a5eb3c04e7d2d4085c4eceacd1a82f,
         type: 3}
@@ -17880,11 +17880,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
-      objectReference: {fileID: 102873838}
+      objectReference: {fileID: 11400000, guid: df5283e8c722cf7499a9f3fc733f6ede,
+        type: 2}
     - target: {fileID: 4370948821529717918, guid: 26a5eb3c04e7d2d4085c4eceacd1a82f,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
-      value: Hide
+      value: NextLevel
       objectReference: {fileID: 0}
     - target: {fileID: 4370948821529717918, guid: 26a5eb3c04e7d2d4085c4eceacd1a82f,
         type: 3}
@@ -19366,7 +19367,7 @@ PrefabInstance:
     - target: {fileID: 7362699343824044779, guid: 5e39af546f61b4a45a6112a6649c403c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7362699343824044779, guid: 5e39af546f61b4a45a6112a6649c403c,
         type: 3}
@@ -19391,6 +19392,32 @@ PrefabInstance:
     - target: {fileID: 7362699343824044779, guid: 5e39af546f61b4a45a6112a6649c403c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362699343824044779, guid: 5e39af546f61b4a45a6112a6649c403c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362699343824044779, guid: 5e39af546f61b4a45a6112a6649c403c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362699343824044779, guid: 5e39af546f61b4a45a6112a6649c403c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: df5283e8c722cf7499a9f3fc733f6ede,
+        type: 2}
+    - target: {fileID: 7362699343824044779, guid: 5e39af546f61b4a45a6112a6649c403c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: ReturnToSagaMap
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362699343824044779, guid: 5e39af546f61b4a45a6112a6649c403c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7362699343824044782, guid: 5e39af546f61b4a45a6112a6649c403c,
@@ -30002,7 +30029,13 @@ PrefabInstance:
         type: 3}
       propertyPath: nextLevel
       value: 
-      objectReference: {fileID: 11400000, guid: c89ee7f1eba4b4149872138eeee49965,
+      objectReference: {fileID: 11400000, guid: ac84a4fb41331734d8cfd53d31bffb31,
+        type: 2}
+    - target: {fileID: 8109069034942095073, guid: d48b019f2a603bf4eb26500b1caf000f,
+        type: 3}
+      propertyPath: levelData
+      value: 
+      objectReference: {fileID: 11400000, guid: 1d366ff375978944eb7332546e027581,
         type: 2}
     - target: {fileID: 8109069034942095075, guid: d48b019f2a603bf4eb26500b1caf000f,
         type: 3}

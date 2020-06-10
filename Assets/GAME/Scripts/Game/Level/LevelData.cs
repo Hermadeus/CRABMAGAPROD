@@ -103,9 +103,18 @@ namespace CrabMaga
             }
         }
 
+        public EntityData crablinde;
+        public EntityData necrabancien;
+
         public void TestLevelInfini()
         {
             if (LevelIndex % 5 == 0) castleAllyHealth++;
+
+            if (LevelIndex == 10)
+                crablinde.isLock = false;
+
+            if (LevelIndex == 12)
+                necrabancien.isLock = false;
 
             LevelIndex++;
             scoreToReach++;

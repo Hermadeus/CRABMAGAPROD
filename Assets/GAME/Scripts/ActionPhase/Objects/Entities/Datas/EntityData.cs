@@ -223,7 +223,7 @@ namespace CrabMaga
 
                 string[] c2 = s[2, i].Split(';');
                 float eff = float.Parse(c2[0]);
-                upgradeTabs[i].formationX = Mathf.CeilToInt(Mathf.Sqrt(eff));
+                upgradeTabs[i].formationX = Mathf.CeilToInt(Mathf.Sqrt(eff)) + 1;
                 upgradeTabs[i].formationY = Mathf.FloorToInt(Mathf.Sqrt(eff));
 
                 string[] c3 = s[3, i].Split(';');

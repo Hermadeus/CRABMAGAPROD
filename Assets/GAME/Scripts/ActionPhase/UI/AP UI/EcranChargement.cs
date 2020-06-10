@@ -14,5 +14,12 @@ namespace CrabMaga
             gameObject.SetActive(true);
             Hide();
         }
+
+        public override void Show()
+        {
+            Time.timeScale = 1;
+
+            base.Show();
+        }
     }
 }
