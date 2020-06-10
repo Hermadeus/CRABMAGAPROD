@@ -25,7 +25,7 @@ MonoBehaviour:
     textAnglais: Is there any nefarious and subtle plan behind all the destruction
       he leaves in its trail? Probably not.
     textCrab: C R A C R A A A A A B
-  currentLevel: 22
+  currentLevel: 1
   passifDescription:
     textFrancais: Forme un champ electrique infligeant des degats et le soignant.
     textAnglais: Create an electric field that heals himself and damages enemies.
@@ -42,8 +42,8 @@ MonoBehaviour:
   accelerationEnum: 1
   acceleration: 1
   damage: 30
-  attackSpeed: 1
-  DamagePerSeconds: 30
+  attackSpeed: 0.5
+  DamagePerSeconds: 60
   detectionRange: 2
   detectionBehaviour: 0
   entityType: 1

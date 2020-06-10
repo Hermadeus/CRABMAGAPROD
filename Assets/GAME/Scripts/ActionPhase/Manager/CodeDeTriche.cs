@@ -84,7 +84,8 @@ namespace CrabMaga
 
             for (int i = 0; i < entityDatas.Length; i++)
             {
-                entityDatas[i].currentLevel = 7;
+                entityDatas[i].currentLevel = 6;
+                entityDatas[i].UpgradeEntity();
             }
 
             HeaderMoney.AddCrab(2500);
@@ -114,7 +115,8 @@ namespace CrabMaga
 
             for (int i = 0; i < entityDatas.Length; i++)
             {
-                entityDatas[i].currentLevel = 22;
+                entityDatas[i].currentLevel = 21;
+                entityDatas[i].UpgradeEntity();
             }
 
             HeaderMoney.AddCrab(5000);

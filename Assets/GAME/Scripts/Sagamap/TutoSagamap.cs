@@ -24,6 +24,8 @@ namespace CrabMaga
 
         private void Awake()
         {
+            ResetPlayerPref();
+
             if(PlayerPrefs.GetFloat("firstParty") == 0)
             {
                 StartCoroutine(TutoSG());
