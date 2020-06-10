@@ -108,6 +108,11 @@ namespace CrabMaga
                 levelName.textFrancais = "Niveau " + LevelIndex.ToString();
                 levelName.textAnglais = "Level " + LevelIndex.ToString();
                 levelName.textCrab = "Crabel " + LevelIndex.ToString();
+
+                shellGain += 10;
+
+                if (PlayerPrefs.HasKey("xpPlayer"))
+                    PlayerPrefs.SetInt("xpPlayer", PlayerPrefs.GetInt("xpPlayer") + xp);
             }
         }
 

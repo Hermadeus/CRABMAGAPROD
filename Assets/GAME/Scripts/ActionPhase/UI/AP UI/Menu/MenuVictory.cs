@@ -40,7 +40,7 @@ namespace CrabMaga
         {
             base.Init();
             InitLevelName();
-            ShellIcon.GetComponentInChildren<TextMeshProUGUI>().SetText("+ " + APGameManager.levelData.shellGain.ToString());
+            ShellIcon.GetComponentInChildren<TextMeshProUGUI>().SetText("+ " + APGameManager.levelData.crabGain.ToString());
         }
 
         public override void Show()

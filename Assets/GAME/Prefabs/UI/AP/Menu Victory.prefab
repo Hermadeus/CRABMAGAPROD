@@ -1827,6 +1827,7 @@ MonoBehaviour:
   animationMode: 2
   animSpeed: 0.8
   c: {fileID: 0}
+  startHide: 0
   APGameManager: {fileID: 0}
   levelNameText: {fileID: 4370948819851107712}
   timerText: {fileID: 4370948821074710707}
@@ -3250,7 +3251,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ff22cb92ee47b6c4984ffd08ff5ffe2f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8a8b96371928f3e4e8e65916e8ee5676, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4129,7 +4130,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: + 300
+  m_text: +500
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 282de76ffcac0ca449890b033fdaf99c, type: 2}
   m_sharedMaterial: {fileID: -2392516533756492125, guid: 282de76ffcac0ca449890b033fdaf99c,
@@ -4199,9 +4200,9 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 4370948821533693726}
-    characterCount: 5
+    characterCount: 4
     spriteCount: 0
-    spaceCount: 1
+    spaceCount: 0
     wordCount: 2
     linkCount: 0
     lineCount: 1
