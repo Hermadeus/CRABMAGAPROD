@@ -101,6 +101,8 @@ namespace CrabMaga
             StartCoroutine(TutoThree());
         }
 
+        public Button[] btns;
+
         IEnumerator TutoThree()
         {
             PlayerPrefs.SetFloat("TutoFinish", 1);
@@ -110,6 +112,10 @@ namespace CrabMaga
 
             ShowFleche(flecheJaugeDeCOnquete);
 
+            for (int i = 0; i < btns.Length; i++)
+            {
+                btns[i].interactable = false;
+            }
 
             yield return new WaitForSeconds(.5f);
 
@@ -230,6 +236,11 @@ namespace CrabMaga
             }
 
             boiteDialogue.Hide();
+
+            for (int i = 0; i < btns.Length; i++)
+            {
+                btns[i].interactable = false;
+            }
 
             yield break;
         }

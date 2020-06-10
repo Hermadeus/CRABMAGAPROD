@@ -209,9 +209,7 @@ namespace CrabMaga
         }
 
         protected virtual void Death()
-        {
-            
-
+        {           
             PushAfterDie(); // A RETIRER QUAND LES ANIMS SONT INTEGREES           
 
             //Debug.Log(name + " DEATH");

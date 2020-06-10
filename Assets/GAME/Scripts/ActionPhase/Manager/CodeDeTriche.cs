@@ -92,6 +92,7 @@ namespace CrabMaga
             HeaderMoney.AddPearl(2500);
             HeaderMoney.AddShell(2500);
 
+            menuArmy.Init();
             menuArmy.Save();
 
             sceneManaging.RestartScene();
@@ -113,6 +114,9 @@ namespace CrabMaga
             level01.isLock = false;
             levelInfini.scoreToReach = 32;
 
+            levelInfini.scoreToReach = 45;
+            levelInfini.castleAllyHealth = 8;
+
             for (int i = 0; i < entityDatas.Length; i++)
             {
                 entityDatas[i].currentLevel = 21;
@@ -123,6 +127,7 @@ namespace CrabMaga
             HeaderMoney.AddPearl(5000);
             HeaderMoney.AddShell(5000);
 
+            menuArmy.Init();
             menuArmy.Save();
 
             sceneManaging.RestartScene();

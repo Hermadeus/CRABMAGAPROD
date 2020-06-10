@@ -110,10 +110,16 @@ namespace CrabMaga
 
             yield return new WaitForSeconds(.2f);
 
-            while (asTap != true)
+            //while (asTap != true)
+            //{
+            //    yield return null;
+            //}
+
+            while (Input.touchCount == 0)
             {
                 yield return null;
             }
+            Debug.Log("LE JOUEUR A CLIQUER OMG");
 
             yield return new WaitForSeconds(.2f);
 
@@ -136,10 +142,15 @@ namespace CrabMaga
 
             token.onTuto.AddListener(OnUlt);
 
-            while (asTape == false)
+            //while (asTape == false)
+            //{
+            //    yield return null;
+            //}
+            while (Input.touchCount == 0)
             {
                 yield return null;
             }
+            Debug.Log("LE JOUEUR A CLIQUER OMG");
             Debug.Log("LE JOUEUR A CLIQUER OMG");
 
             boiteDialogue.Hide();
