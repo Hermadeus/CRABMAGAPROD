@@ -88,7 +88,7 @@ namespace CrabMaga
             yield return new WaitForSeconds(1f);
 
             boiteDialogue.ShowDialogue(
-                "Avant chaque niveau, choisis jusqu'a 4 unites et 1 general depuis cette fenêtre.",
+                "Avant chaque niveau, choisis jusqu'a 4 unites et 1 general depuis cette fenetre.",
                 "Before each level, choose up 4 units and 1 general in this panel."
                 );
 
@@ -215,7 +215,7 @@ namespace CrabMaga
             yield return new WaitForSeconds(.5f);
 
             boiteDialogue.ShowDialogue(
-                "Il te reste suffisamment de coquillages pour ameliorer une unité de ton choix.",
+                "Il te reste suffisamment de coquillages pour ameliorer une unite de ton choix.",
                 "You have enough shells to level up a unit of your choice."
                 );
             ShowFleche(flecheBtnAmelioration);
