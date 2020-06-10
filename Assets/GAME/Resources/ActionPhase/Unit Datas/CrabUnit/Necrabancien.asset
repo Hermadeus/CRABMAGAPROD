@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14332260acdbe514dbcbeaf69e3a39bd, type: 3}
   m_Name: Necrabancien
   m_EditorClassIdentifier: 
-  isLock: 0
+  isLock: 1
   behaviourSystem: {fileID: 11400000, guid: 65fa9772d44e2ec47bab627a75c1152e, type: 2}
   languageManager: {fileID: 11400000, guid: cc7173560c4531545a2a4dde441db5db, type: 2}
   entityName:
@@ -27,7 +27,7 @@ MonoBehaviour:
     textCrab: CRaaAAaaab
   currentLevel: 1
   passifDescription:
-    textFrancais: "Ressuscite r\xE9guli\xE8rement un crabe mort."
+    textFrancais: Ressuscite regulierement un crabe mort.
     textAnglais: Periodically revive a dead crab.
     textCrab: CRaaAAaaAAAAaab
   unitType: {fileID: 1959261884713122405, guid: bddc855413af7384d97c31f4306185a8,

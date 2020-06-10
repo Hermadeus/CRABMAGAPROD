@@ -101,6 +101,14 @@ namespace CrabMaga
                 if(LevelIndex % 4 == 0) 
                     playerData.maxCrab += maxCrabSup;
             }
+
+            if (lvlInfini)
+            {
+                LevelIndex++;
+                levelName.textFrancais = "Niveau " + LevelIndex.ToString();
+                levelName.textAnglais = "Level " + LevelIndex.ToString();
+                levelName.textCrab = "Crabel " + LevelIndex.ToString();
+            }
         }
 
         public EntityData crablinde;

@@ -34,9 +34,7 @@ namespace CrabMaga
         public override void Effect(Unit _unit, IAttackReceiver _receiver)
         {
             base.Effect(_unit, _receiver);
-
-            //Debug.Log(((Entity)_receiver).name + " RECOIT ATTAQUE DE " + _unit.name);
-            
+                        
             Unit r = _receiver as Unit;
 
             switch (_unit.entityData.Triforce)

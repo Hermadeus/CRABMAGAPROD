@@ -206,6 +206,8 @@ namespace CrabMaga
 
         public TextAsset csvFile;
 
+        public bool blokX, bloY;
+
         [Button]
         public virtual void InitUpgradeTab()
         {
@@ -223,8 +225,17 @@ namespace CrabMaga
 
                 string[] c2 = s[2, i].Split(';');
                 float eff = float.Parse(c2[0]);
-                upgradeTabs[i].formationX = Mathf.CeilToInt(Mathf.Sqrt(eff)) + 1;
-                upgradeTabs[i].formationY = Mathf.FloorToInt(Mathf.Sqrt(eff)) - 1;
+
+                if (!blokX)
+                    upgradeTabs[i].formationX = Mathf.FloorToInt(Mathf.Sqrt(eff));
+                else
+                    upgradeTabs[i].formationX = upgradeTabs[i - 1].formationX;
+
+
+                if (!bloY)
+                    upgradeTabs[i].formationY = Mathf.FloorToInt(Mathf.Sqrt(eff));
+                else 
+                    upgradeTabs[i].formationY = upgradeTabs[i - 1].formationY;
 
                 string[] c3 = s[3, i].Split(';');
                 int costF = int.Parse(c3[0]);

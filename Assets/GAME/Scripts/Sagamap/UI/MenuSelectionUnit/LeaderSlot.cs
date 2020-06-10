@@ -43,7 +43,6 @@ namespace CrabMaga
             base.Init();
 
             currentEntityData = playerData.leader_slot;
-
             ResetTile();
         }
 

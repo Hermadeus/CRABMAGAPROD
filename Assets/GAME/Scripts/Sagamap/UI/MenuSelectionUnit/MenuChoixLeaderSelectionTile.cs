@@ -37,6 +37,9 @@ namespace CrabMaga
 
             lvl.text = entitydata.currentLevel.ToString();
             lvlBack.color = CodeColor.GetColor(entitydata.Triforce);
+
+            if (entitydata.isLock)
+                gameObject.SetActive(false);
         }
 
         public override void OnBeginDrag(PointerEventData eventData)

@@ -168,6 +168,8 @@ namespace CrabMaga
             Time.timeScale = 1;
 
             ecranChargement.SetActive(true);
+
+            castle.Health = levelData.scoreToReach;
         }
 
         private void Start()
