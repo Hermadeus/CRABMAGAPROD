@@ -24,9 +24,13 @@ namespace CrabMaga
 
         private void Awake()
         {
-            ResetPlayerPref();
+            if (!PlayerPrefs.HasKey("Reset"))
+            {
+                ResetPlayerPref();
+                PlayerPrefs.SetInt("Reset", 0);
+            }
 
-            if(PlayerPrefs.GetFloat("firstParty") == 0)
+            if (PlayerPrefs.GetFloat("firstParty") == 0)
             {
                 StartCoroutine(TutoSG());
 
@@ -59,6 +63,8 @@ namespace CrabMaga
         [Button]
         public void ResetPlayerPref()
         {
+            PlayerPrefs.DeleteKey("Reset");
+
             PlayerPrefs.SetFloat("firstParty", 0);
             PlayerPrefs.SetFloat("thirdParty", 0);
             PlayerPrefs.SetFloat("TutoFinish", 0);
