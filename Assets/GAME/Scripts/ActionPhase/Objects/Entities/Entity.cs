@@ -143,6 +143,8 @@ namespace CrabMaga
 
         public bool inTuto = false;
 
+        public Tombe tombe;
+
         private void Awake()
         {
             if (initALaMano)
@@ -209,8 +211,12 @@ namespace CrabMaga
         }
 
         protected virtual void Death()
-        {           
+        {
+            if (tombe != null)
+                Instantiate(tombe, transform.position, Quaternion.identity);
+
             PushAfterDie(); // A RETIRER QUAND LES ANIMS SONT INTEGREES           
+            
 
             //Debug.Log(name + " DEATH");
         }
