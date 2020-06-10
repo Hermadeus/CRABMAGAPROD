@@ -85,6 +85,7 @@ namespace CrabMaga
             for (int i = 0; i < entityDatas.Length; i++)
             {
                 entityDatas[i].currentLevel = 6;
+                entityDatas[i].isLock = false;
                 entityDatas[i].UpgradeEntity();
             }
 
@@ -120,6 +121,7 @@ namespace CrabMaga
             for (int i = 0; i < entityDatas.Length; i++)
             {
                 entityDatas[i].currentLevel = 21;
+                entityDatas[i].isLock = false;
                 entityDatas[i].UpgradeEntity();
             }
 
