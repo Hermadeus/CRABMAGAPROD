@@ -110,15 +110,15 @@ namespace CrabMaga
 
             yield return new WaitForSeconds(.2f);
 
-            //while (asTap != true)
-            //{
-            //    yield return null;
-            //}
-
-            while (Input.touchCount == 0)
+            while (asTap != true)
             {
                 yield return null;
             }
+
+            //while (Input.touchCount == 0)
+            //{
+            //    yield return null;
+            //}
             Debug.Log("LE JOUEUR A CLIQUER OMG");
 
             yield return new WaitForSeconds(.2f);
@@ -131,7 +131,7 @@ namespace CrabMaga
             AP_GameManager.Instance.leaderOnBattle.inTuto = true;
 
             boiteDialogue.ShowDialogue(
-                "Les generaux possèdent une competence speciale tres puissante.",
+                "Les generaux possedent une competence speciale tres puissante.",
                 "Generals have a very powerful ability.",
                 null
                 );
@@ -142,15 +142,14 @@ namespace CrabMaga
 
             token.onTuto.AddListener(OnUlt);
 
-            //while (asTape == false)
-            //{
-            //    yield return null;
-            //}
-            while (Input.touchCount == 0)
+            while (asTape == false)
             {
                 yield return null;
             }
-            Debug.Log("LE JOUEUR A CLIQUER OMG");
+            //while (Input.touchCount == 0)
+            //{
+            //    yield return null;
+            //}
             Debug.Log("LE JOUEUR A CLIQUER OMG");
 
             boiteDialogue.Hide();
