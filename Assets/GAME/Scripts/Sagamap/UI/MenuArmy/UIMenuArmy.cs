@@ -17,7 +17,7 @@ namespace CrabMaga
         public List<UITileArmy> tilesLeader = new List<UITileArmy>();
         public List<UITileArmy> tilesEnemies = new List<UITileArmy>();
 
-        public TextMeshProUGUI entityname, entityLevel, description,  actif, price;
+        public TextMeshProUGUI entityname, entityLevel, description, actif, price;
         public UIMenuArmyStat dps, effectif, speed, cost, health, type; 
         public Image thumbnail;
         public GameObject buttonUpdate;
@@ -243,7 +243,7 @@ namespace CrabMaga
             if(tile.entityData is CrabUnitData)
             {
                 CrabUnitData d = tile.entityData  as CrabUnitData;
-                effectif.value.text = (d.formationX + d.formationY).ToString();
+                effectif.value.text = (d.formationX * d.formationY).ToString();
                 cost.value.text = d.upgradeTabs[(d.currentLevel)].costformation.ToString();
             }
 
