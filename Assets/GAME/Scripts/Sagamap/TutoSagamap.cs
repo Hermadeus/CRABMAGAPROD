@@ -22,11 +22,19 @@ namespace CrabMaga
         public Image flechePassif;
         public Image flechBoutonAchat, flecheType, flecheBtnAmelioration, flechePremierChateau;
 
+        public EntityData[] entities;
+
         private void Awake()
         {
             if (!PlayerPrefs.HasKey("Reset"))
             {
                 ResetPlayerPref();
+
+                for (int i = 0; i < entities.Length; i++)
+                {
+                    entities[i].isLock = true;
+                }
+
                 PlayerPrefs.SetInt("Reset", 0);
             }
 
