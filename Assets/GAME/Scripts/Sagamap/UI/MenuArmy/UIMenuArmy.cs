@@ -39,6 +39,8 @@ namespace CrabMaga
 
         public GameObject lvl;
 
+        public AudioSource source;
+
         public override void Init()
         {
             base.Init();

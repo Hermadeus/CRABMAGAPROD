@@ -955,6 +955,7 @@ MonoBehaviour:
   cadenas: {fileID: 1916180526734714802}
   tileArmy: 0
   outline: {fileID: 6516209010651654823}
+  sound: {fileID: 11400000, guid: 8f1e71854f6c06f45b30420c3e57235d, type: 2}
 --- !u!114 &6346875100899757371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3049,6 +3050,7 @@ MonoBehaviour:
   cadenas: {fileID: 0}
   tileArmy: 1
   outline: {fileID: 6491016213142685894}
+  sound: {fileID: 0}
 --- !u!114 &6488651896927933692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4087,6 +4089,7 @@ MonoBehaviour:
   cadenas: {fileID: 4575643302919548203}
   tileArmy: 0
   outline: {fileID: 3594765572553284201}
+  sound: {fileID: 11400000, guid: 470870009da45d848ade2dde30bc7d03, type: 2}
 --- !u!114 &7347775569744699474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5628,6 +5631,7 @@ MonoBehaviour:
   cadenas: {fileID: 4265445720471482220}
   tileArmy: 0
   outline: {fileID: 6637508502779205768}
+  sound: {fileID: 11400000, guid: 535d78a7c4f121a45bb5ff516dabb504, type: 2}
 --- !u!114 &3907966890972965650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6090,6 +6094,7 @@ MonoBehaviour:
   cadenas: {fileID: 0}
   tileArmy: 1
   outline: {fileID: 6194318997294884492}
+  sound: {fileID: 11400000, guid: 8645256c7e3671842b09333c869eca7a, type: 2}
 --- !u!114 &3907966891101676431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6388,6 +6393,7 @@ MonoBehaviour:
   cadenas: {fileID: 0}
   tileArmy: 2
   outline: {fileID: 1133835173080584426}
+  sound: {fileID: 11400000, guid: 3b244417a3aa72044ac14d3def5d71bc, type: 2}
 --- !u!114 &3907966891159032575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6990,6 +6996,7 @@ MonoBehaviour:
   cadenas: {fileID: 8249266247316997336}
   tileArmy: 0
   outline: {fileID: 572729092118964432}
+  sound: {fileID: 11400000, guid: 255f5f9442fd5c843a4ed9bf6741dcd8, type: 2}
 --- !u!114 &3907966891481455279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7729,6 +7736,7 @@ MonoBehaviour:
   cadenas: {fileID: 0}
   tileArmy: 2
   outline: {fileID: 5415409743189035795}
+  sound: {fileID: 11400000, guid: 439c77828c3d9014bbcb17cdf0f17f92, type: 2}
 --- !u!114 &3907966891662941996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9305,6 +9313,7 @@ MonoBehaviour:
   cadenas: {fileID: 2496077782123988920}
   tileArmy: 0
   outline: {fileID: 2295901033925913901}
+  sound: {fileID: 11400000, guid: 547beded39111da4380caca1cddbb3ef, type: 2}
 --- !u!114 &3907966892153001655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9500,6 +9509,7 @@ GameObject:
   - component: {fileID: 3907966892226016099}
   - component: {fileID: 3907966892226016098}
   - component: {fileID: 3907966892226016097}
+  - component: {fileID: 5122601052023165028}
   m_Layer: 5
   m_Name: Army Menu
   m_TagString: Untagged
@@ -9640,6 +9650,7 @@ MonoBehaviour:
   iconAgile: {fileID: 21300000, guid: 5c6e2866a06a9a74da06215df9038639, type: 3}
   iconRes: {fileID: 21300000, guid: 4321b78cff5407945aeee8fdc803a47b, type: 3}
   lvl: {fileID: 3907966891435517956}
+  source: {fileID: 5122601052023165028}
   datas:
   - {fileID: 11400000, guid: 0bbbf29fc53e4a849b8fbe1a19925e49, type: 2}
   - {fileID: 11400000, guid: 5b96201eba637a14fb46f6895a4210c7, type: 2}
@@ -9652,6 +9663,103 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1212addbab5aa524296327aab3c67736, type: 2}
   - {fileID: 11400000, guid: 677ca474796a1874a8fe7ac637b0c5a0, type: 2}
   - {fileID: 11400000, guid: 47287fa1b1b12294b8e798a5b3e12dd1, type: 2}
+--- !u!82 &5122601052023165028
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3907966892226016108}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 38cc19ce8f990894298b2cce20fd8366,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &3907966892249359209
 GameObject:
   m_ObjectHideFlags: 0
@@ -9841,6 +9949,7 @@ MonoBehaviour:
   cadenas: {fileID: 0}
   tileArmy: 2
   outline: {fileID: 4489895110841858712}
+  sound: {fileID: 11400000, guid: c8784967177db604fbc8f1fabf556224, type: 2}
 --- !u!114 &3907966892271483256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10657,6 +10766,7 @@ MonoBehaviour:
   cadenas: {fileID: 7042242367381428325}
   tileArmy: 0
   outline: {fileID: 7347657374670582035}
+  sound: {fileID: 11400000, guid: a63158c7d7bcece4cafd24e27b8c1e58, type: 2}
 --- !u!114 &3907966892456628489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11389,6 +11499,7 @@ MonoBehaviour:
   cadenas: {fileID: 4274704465248806959}
   tileArmy: 0
   outline: {fileID: 5123400041380519064}
+  sound: {fileID: 11400000, guid: 40af19464ecf5844c95aaac4d3070be4, type: 2}
 --- !u!114 &2048255320901486491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12353,6 +12464,7 @@ MonoBehaviour:
   cadenas: {fileID: 1916180526734714802}
   tileArmy: 0
   outline: {fileID: 7441908913161582519}
+  sound: {fileID: 11400000, guid: 9499b9543f0cf9248a9b120af4a7a797, type: 2}
 --- !u!114 &1758719701616477707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15112,6 +15224,7 @@ MonoBehaviour:
   cadenas: {fileID: 2437228495710167326}
   tileArmy: 0
   outline: {fileID: 645226477251301345}
+  sound: {fileID: 11400000, guid: 7ed95ecf8859fde468feafd919042b89, type: 2}
 --- !u!114 &7055720708628596035
 MonoBehaviour:
   m_ObjectHideFlags: 0

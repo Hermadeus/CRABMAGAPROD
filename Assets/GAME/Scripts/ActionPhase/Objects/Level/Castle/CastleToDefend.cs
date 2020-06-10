@@ -7,6 +7,8 @@ using UnityEngine.UI;
 using TMPro;
 using Sirenix.OdinInspector;
 
+using QRTools.Audio;
+
 namespace CrabMaga
 {
     public class CastleToDefend : MonoBehaviour
@@ -42,6 +44,9 @@ namespace CrabMaga
 
         public Slider healthBar;
 
+        public AudioSource source;
+        public AudioEvent breakCastle;
+
         private void Awake()
         {
             Instance = this;
@@ -57,6 +62,7 @@ namespace CrabMaga
         public void LosePV()
         {
             CurrentHealth--;
+            breakCastle.Play(source);
         }
     }
 }

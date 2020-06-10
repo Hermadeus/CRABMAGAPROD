@@ -7,6 +7,8 @@ using UnityEngine.Events;
 
 using TMPro;
 
+using QRTools.Audio;
+
 namespace CrabMaga
 {
     public class Castle : MonoBehaviour
@@ -23,6 +25,7 @@ namespace CrabMaga
         int startHealth;
 
         public TextMeshProUGUI pvText;
+        public AudioSource source;
 
         [SerializeField] int health;
         public int Health
@@ -45,6 +48,8 @@ namespace CrabMaga
                     AP_GameManager.Win();
             }
         }
+
+        public AudioEvent breakSound;
         
         private void Awake()
         {
@@ -59,6 +64,7 @@ namespace CrabMaga
         public void LosePV()
         {
             Health--;
+            breakSound?.Play(source);
         }
     }
 }

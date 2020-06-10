@@ -140,6 +140,8 @@ namespace CrabMaga
         [BoxGroup("Audio")]
         public AudioEvent loseSound = default;
 
+        public AudioEvent starsSound = default;
+
         public Animator[] starsAnimator;
 
         public SceneManaging sceneManaging;
@@ -289,19 +291,21 @@ namespace CrabMaga
 
             WinShell(levelData.shellGain);
 
+            starsSound?.Play(audioSource);
+
             if (levelData.star01 == true)
             {
                 starsAnimator[0].SetTrigger("enter");
             }
 
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(.2f);
 
             if (levelData.star02 == true)
             {
                 starsAnimator[1].SetTrigger("enter");
             }
 
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(.2f);
 
             if (levelData.star03 == true)
             {

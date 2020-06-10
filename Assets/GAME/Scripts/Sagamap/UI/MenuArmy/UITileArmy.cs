@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using QRTools.UI;
 using TMPro;
+using QRTools.Audio;
 
 namespace CrabMaga
 {
@@ -55,6 +56,8 @@ namespace CrabMaga
         public enum TypeTileArmy { UNIT, LEADER, ENEMY}
         public TypeTileArmy tileArmy = TypeTileArmy.UNIT;
         public GameObject outline;
+
+        public AudioEvent sound;
 
         public override void Init()
         {
@@ -130,6 +133,7 @@ namespace CrabMaga
 
             IsSelected = true;
             menuArmy.UpdateMenu(this);
+            sound?.Play(menuArmy.source);
 
             if (entityData.isLock)
             {
